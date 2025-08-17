@@ -182,30 +182,95 @@
   </header>
 
   <!-- Hero -->
-  <section class="hero">
-    <div class="stamp" aria-hidden="true"></div>
-    <div class="container" style="display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center;padding:72px 0">
-      <div>
-        <h1>Primary & Urgent Care, simplified</h1>
-        <p class="lead"> The care you deserve without complexity</p>
-        <div class="cta">
-          <a class="btn" href="direct-primary-care.html">View plans</a>
-          <a class="btn ghost" href="https://urhealthcare.zohobookings.com/#/urhealthcare">Availability</a>
-        </div>
-        <div class="benefits">
-          <div class="pill">Same/next-day care</div>
-          <div class="pill" href="insurances.html>Accept Major Insurances</div>
-          <div class="pill"> Medications</div>
-          <div class="pill">X-ray, labs, procedures</div>
-        </div>
+  <!-- HERO (dark bg + image on right that fades/shadows to the right) -->
+<section class="hero hero--dark">
+  <style>
+    .hero--dark {
+      --brand:#0b3a83; --ink:#fff; --muted:#d8e1ff;
+      color:var(--ink);
+      background:
+        radial-gradient(1200px 600px at 10% -200px, rgba(255,255,255,.08), transparent 60%),
+        linear-gradient(180deg, #081a3b 0%, #0b2c6a 55%, #081a3b 100%);
+      padding: 48px 16px;
+    }
+    .hero--dark .container {
+      max-width: 1200px; margin: 0 auto;
+      display:grid; grid-template-columns: 1.2fr .8fr;
+      gap: 32px; align-items: center; padding: 32px 0 8px;
+    }
+    @media (max-width: 960px) {
+      .hero--dark .container { grid-template-columns: 1fr; }
+      .hero__art { order: -1; margin-bottom: 8px; }
+    }
+
+    .hero--dark h1 { font-size: clamp(28px, 5vw, 52px); margin: 0 0 10px; }
+    .hero--dark .lead { color: var(--muted); font-size: clamp(16px, 2.2vw, 18px); margin: 0 0 18px; }
+
+    .cta { display:flex; gap:12px; flex-wrap:wrap; margin: 8px 0 18px; }
+    .btn { background:#0b3a83; color:#fff; border: none; padding:10px 16px; border-radius:12px; font-weight:800; }
+    .btn.ghost { background:transparent; border:2px solid #8fb1ff; color:#eaf0ff; }
+    .btn:hover { filter: brightness(.95); }
+
+    .benefits { display:flex; flex-wrap:wrap; gap:10px; margin-top:4px; }
+    .pill {
+      background: rgba(255,255,255,.1); color:#fff; border:1px solid rgba(255,255,255,.22);
+      padding:8px 12px; border-radius:999px; font-weight:700; backdrop-filter: blur(2px);
+    }
+    .pill:hover { background: rgba(255,255,255,.16); }
+
+    /* Optional membership card living on the left column */
+    .card {
+      background:#fff; color:#111; border-radius:16px; padding:18px;
+      box-shadow: 0 18px 50px rgba(0,0,0,.25);
+      margin-top: 18px;
+    }
+    .card .muted { color:#555; }
+
+    /* Right-side image that fades/shadows to the right */
+    .hero__art {
+      position: relative; min-height: 360px; border-radius: 18px; overflow: hidden;
+      filter: drop-shadow(26px 0 48px rgba(0,0,0,.35)); /* shadow cast to the right */
+    }
+    .hero__art img {
+      width:100%; height:100%; object-fit:cover; display:block;
+      /* Fade out to the right so it "shadows away" */
+      -webkit-mask-image: linear-gradient(to right, black 78%, transparent 100%);
+              mask-image: linear-gradient(to right, black 78%, transparent 100%);
+    }
+    /* Extra darkening near the right edge for a subtle shadow feel */
+    .hero__art::after {
+      content:""; position:absolute; inset:0;
+      background: linear-gradient(to right, rgba(0,0,0,0) 60%, rgba(0,0,0,.45) 100%);
+      pointer-events:none;
+    }
+  </style>
+
+  <div class="container">
+    <!-- LEFT: copy + card -->
+    <div>
+      <h1>Primary &amp; Urgent Care, simplified</h1>
+      <p class="lead">The care you deserve without complexity</p>
+
+      <div class="cta">
+        <a class="btn" href="direct-primary-care.html">View plans</a>
+        <a class="btn ghost" href="https://urhealthcare.zohobookings.com/#/urhealthcare">Availability</a>
       </div>
+
+      <div class="benefits">
+        <div class="pill">Same/next-day care</div>
+        <a class="pill" href="insurances.html">Accept Major Insurances</a>
+        <div class="pill">Medications</div>
+        <div class="pill">X-ray, labs, procedures</div>
+      </div>
+
+      <!-- Keep your membership card below; remove if you don’t need it -->
       <div class="card">
         <h3 style="margin-top:0">Become a member</h3>
         <p class="muted">Choose a plan and get unlimited visits with no copays or deductibles.</p>
-        <ul class="clean">
+        <ul class="clean" style="padding-left:18px; margin:10px 0;">
           <li>See the provider you choose</li>
-          <li>Virtual & in-person care</li>
-          <li>Included meds, basic imaging & labs</li>
+          <li>Virtual &amp; in-person care</li>
+          <li>Included meds, basic imaging &amp; labs</li>
         </ul>
         <div class="cta">
           <a class="btn" href="direct-primary-care.html">See pricing</a>
@@ -213,6 +278,14 @@
         </div>
       </div>
     </div>
+
+    <!-- RIGHT: image slot (replace src with your image) -->
+    <figure class="hero__art">
+      <img src="assets/img/hero-urh.jpg" alt="Patients receiving care at urHealthcare">
+    </figure>
+  </div>
+</section>
+
    <!-- Why Choose section (responsive, mobile-friendly). 
      Drop this anywhere inside <body>. Replace the three image src paths with your own. -->
 <section class="why-choose">
