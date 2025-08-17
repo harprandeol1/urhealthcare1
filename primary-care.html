@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Primary Care in Sacramento Metro (Rocklin, Roseville) | urHealthcare</title>
+  <meta name="description" content="urHealthcare provides relationship-based primary care for Sacramento metro (Rocklin, Roseville, Lincoln). Same/next-day visits, preventive care, chronic disease management, and coordinated referrals—plus 7-day urgent care and 250+ meds included." />
+  <link rel="canonical" href="https://harprandeol1.github.io/urhealthcare1/primary-care.html" />
+  <meta name="theme-color" content="#0b3a83" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Primary Care in Sacramento Metro | urHealthcare" />
+  <meta property="og:description" content="Continuity, prevention, chronic care, and coordinated referrals—serving Rocklin, Roseville, and nearby communities." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://harprandeol1.github.io/urhealthcare1/primary-care.html" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Always-works stylesheet (absolute URL + cache-buster) -->
+  <link rel="stylesheet" href="https://harprandeol1.github.io/urhealthcare1/assets/styles.css?v=6" />
+
+  <!-- Dropdown + Tabs styles (inline so they always apply) -->
+  <style>
+    /* Dropdown */
+    .dropdown { position: relative; }
+    .dropbtn{
+      background:transparent; border:0; padding:8px 10px; font:inherit; font-weight:600;
+      color:#0b2a66; cursor:pointer; border-radius:8px;
+    }
+    .menu{
+      position:absolute; top:110%; left:0; min-width:280px; z-index:1000;
+      background:#fff; border:1px solid var(--border); border-radius:12px;
+      box-shadow:var(--shadow); padding:8px; list-style:none; margin:0; display:none;
+    }
+    .menu .grid{ display:grid; grid-template-columns:repeat(2,minmax(160px,1fr)); gap:4px 8px; }
+    .menu a{ display:block; padding:8px 10px; border-radius:8px; color:var(--ink); text-decoration:none; white-space:nowrap; }
+    .menu a:hover{ background:#f5f8ff; text-decoration:none; }
+    .dropdown.open .menu{ display:block !important; }
+    @media (min-width:721px){
+      .dropdown:hover .menu,
+      .dropdown:focus-within .menu{ display:block; }
+    }
+    @media (max-width:720px){
+      .navlinks{ display:none; }
+      .menu-btn{ display:inline-block; background:transparent; border:0; }
+      .menu-open .navlinks{ display:flex; flex-direction:column; align-items:flex-start; gap:10px; padding:12px 0; }
+      .dropdown{ width:100%; }
+      .menu{ position:static; box-shadow:none; border:0; padding:0; }
+    }
+
+    /* Tabs */
+    .tabs { margin-top: 16px; }
+    .tablist {
+      display: flex; gap: 8px; flex-wrap: wrap;
+      border-bottom: 1px solid var(--border); padding-bottom: 8px;
+    }
+    .tab {
+      padding: 8px 12px; border:1px solid var(--border);
+      background:#fff; border-radius:10px; cursor:pointer; font-weight:700;
+    }
+    .tab[aria-selected="true"] {
+      background: var(--brand); color:#fff; border-color: var(--brand);
+    }
+    .tabpanel {
+      display:none; padding:18px; border:1px solid var(--border);
+      border-radius:16px; background:#fff; box-shadow:var(--shadow);
+      margin-top:12px;
+    }
+    .tabpanel.active { display:block; }
+    .doc {
+      display:grid; grid-template-columns:140px 1fr; gap:18px; align-items:flex-start;
+    }
+    .doc img {
+      width:140px; height:140px; object-fit:cover; border-radius:14px; border:1px solid var(--border);
+      background:#f3f6fc;
+    }
+    @media (max-width:720px){ .doc { grid-template-columns:1fr; } }
+  </style>
+
+  <!-- Schema.org (Local clinic + providers + FAQ) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalClinic",
+    "name": "urHealthcare",
+    "url": "https://harprandeol1.github.io/urhealthcare1/",
+    "telephone": "+1-916-964-2001",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "6839 Five Star Blvd, Suite D",
+      "addressLocality": "Rocklin",
+      "addressRegion": "CA",
+      "postalCode": "95765",
+      "addressCountry": "US"
+    },
+    "medicalSpecialty": ["PrimaryCare","UrgentCare"],
+    "department": {
+      "@type": "MedicalDepartment",
+      "name": "Primary Care",
+      "areaServed": ["Sacramento Metro","Rocklin","Roseville","Lincoln"]
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"What is primary care?","acceptedAnswer":{"@type":"Answer","text":"Primary care is your first point of contact for preventive care, acute issues, and chronic condition management. Your clinician coordinates your referrals and helps you navigate the health system."}},
+      {"@type":"Question","name":"Do you offer same or next-day appointments?","acceptedAnswer":{"@type":"Answer","text":"Yes. Members get same/next-day access for primary care and 7-day urgent care."}}
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- Header -->
+  <header class="hdr">
+    <div class="container nav">
+      <a class="logo" href="index.html">urHealthcare</a>
+
+      <nav class="navlinks" aria-label="Primary">
+        <div class="dropdown" id="services-dd">
+          <button class="dropbtn" type="button" aria-expanded="false" aria-controls="menu-services">Services ▾</button>
+          <div id="menu-services" class="menu" role="menu">
+            <div class="grid">
+              <a href="primary-care.html" role="menuitem" aria-current="page">Primary Care</a>
+              <a href="urgent-care.html" role="menuitem">Urgent Care (7 days)</a>
+              <a href="x-ray.html" role="menuitem">X-ray</a>
+              <a href="labs.html" role="menuitem">Labs</a>
+              <a href="ultrasound.html" role="menuitem">Ultrasound</a>
+              <a href="minor-procedures.html" role="menuitem">Minor Procedures</a>
+              <a href="virtual-care.html" role="menuitem">Virtual Care</a>
+              <a href="included-meds.html" role="menuitem">Included Medications (250+)</a>
+            </div>
+            <div class="all"><a href="index.html#services">View all services →</a></div>
+          </div>
+        </div>
+
+        <a href="plans.html">Membership</a>
+        <a href="employers.html">Employers</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="btn">Book visit</a>
+      </nav>
+
+      <button class="menu-btn" aria-label="Menu" onclick="document.body.classList.toggle('menu-open')">☰</button>
+    </div>
+  </header>
+
+  <!-- Breadcrumb (SEO + UX) -->
+  <nav class="container" aria-label="Breadcrumb" style="padding-top:12px;">
+    <small><a href="index.html">Home</a> › Primary Care</small>
+  </nav>
+
+  <!-- Hero -->
+  <section class="section">
+    <div class="container">
+      <h1>Primary Care in the Sacramento Metro</h1>
+      <p class="muted">Serving Rocklin, Roseville, and nearby communities with relationship-based care, same/next-day access, and transparent membership pricing.</p>
+      <div class="cta" style="margin-top:12px">
+        <a class="btn" href="contact.html">Book a primary care visit</a>
+        <a class="btn ghost" href="plans.html">See membership plans</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why primary care matters (SEO-rich content) -->
+  <section class="section band">
+    <div class="container">
+      <h2>Why Primary Care Matters</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Continuity & trust</h3>
+          <p>Seeing the same clinician over time improves accuracy, safety, and satisfaction. Your provider learns your history, goals, and preferences—so care decisions fit your life.</p>
+        </div>
+        <div class="card">
+          <h3>Prevention first</h3>
+          <p>Annual wellness, screenings, vaccines, and lifestyle coaching to catch issues early and prevent avoidable problems.</p>
+        </div>
+        <div class="card">
+          <h3>Chronic condition control</h3>
+          <p>Evidence-based care plans for hypertension, diabetes, asthma/COPD, thyroid disorders, and more—plus close follow-up.</p>
+        </div>
+        <div class="card">
+          <h3>Whole-person care</h3>
+          <p>We address physical and behavioral health together, coordinate referrals, and help you navigate specialists and imaging.</p>
+        </div>
+        <div class="card">
+          <h3>Faster access</h3>
+          <p>Same/next-day primary care and <a href="urgent-care.html">7-day urgent care</a> keep care in-network and convenient.</p>
+        </div>
+        <div class="card">
+          <h3>Transparent costs</h3>
+          <p>Flat monthly membership with <strong>250+ medications included</strong>, basic labs, x-ray, and minor procedures.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Meet our primary care team (Tabs for three doctors) -->
+  <section class="section">
+    <div class="container">
+      <h2>Meet Our Primary Care Team</h2>
+
+      <div class="tabs">
+        <div class="tablist" role="tablist" aria-label="Primary care clinicians">
+          <button class="tab" id="tab-1" role="tab" aria-controls="panel-1" aria-selected="true">Dr. A. Smith, MD</button>
+          <button class="tab" id="tab-2" role="tab" aria-controls="panel-2" aria-selected="false" tabindex="-1">Dr. B. Nguyen, DO</button>
+          <button class="tab" id="tab-3" role="tab" aria-controls="panel-3" aria-selected="false" tabindex="-1">C. Patel, PA-C</button>
+        </div>
+
+        <section id="panel-1" class="tabpanel active" role="tabpanel" aria-labelledby="tab-1">
+          <div class="doc">
+            <img src="https://harprandeol1.github.io/urhealthcare1/assets/img/dr-smith.jpg" alt="Portrait of Dr. A. Smith, MD (placeholder)" />
+            <div>
+              <p><strong>Focus:</strong> preventive care, women’s health, cardiometabolic risk.</p>
+              <p><strong>Bio:</strong> Dr. Smith practices relationship-based primary care with an emphasis on prevention, shared decision-making, and clear care plans.</p>
+              <p><strong>Languages:</strong> English, Spanish</p>
+              <div class="cta"><a class="btn" href="contact.html">Book with Dr. Smith</a></div>
+              <p class="note">Photo placeholder — replace with <code>assets/img/dr-smith.jpg</code> (140×140+).</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="panel-2" class="tabpanel" role="tabpanel" aria-labelledby="tab-2">
+          <div class="doc">
+            <img src="https://harprandeol1.github.io/urhealthcare1/assets/img/dr-nguyen.jpg" alt="Portrait of Dr. B. Nguyen, DO (placeholder)" />
+            <div>
+              <p><strong>Focus:</strong> musculoskeletal medicine, men’s health, procedures.</p>
+              <p><strong>Bio:</strong> Dr. Nguyen combines primary care with hands-on procedures and careful follow-up for injuries and chronic pain.</p>
+              <p><strong>Languages:</strong> English, Vietnamese</p>
+              <div class="cta"><a class="btn" href="contact.html">Book with Dr. Nguyen</a></div>
+              <p class="note">Photo placeholder — replace with <code>assets/img/dr-nguyen.jpg</code>.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="panel-3" class="tabpanel" role="tabpanel" aria-labelledby="tab-3">
+          <div class="doc">
+            <img src="https://harprandeol1.github.io/urhealthcare1/assets/img/pa-patel.jpg" alt="Portrait of Clinician C. Patel, PA-C (placeholder)" />
+            <div>
+              <p><strong>Focus:</strong> chronic condition management, pediatrics (5+), virtual care.</p>
+              <p><strong>Bio:</strong> PA Patel builds long-term relationships and leverages virtual care for rapid access and continuity.</p>
+              <p><strong>Languages:</strong> English, Hindi</p>
+              <div class="cta"><a class="btn" href="contact.html">Book with C. Patel</a></div>
+              <p class="note">Photo placeholder — replace with <code>assets/img/pa-patel.jpg</code>.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <!-- What we do in primary care -->
+  <section class="section">
+    <div class="container">
+      <h2>What We Do in Primary Care</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Preventive Care & Screenings</h3>
+          <p>Annual wellness, cancer screening guidance, vaccines, and lifestyle coaching tailored to your risks and goals.</p>
+        </div>
+        <div class="card">
+          <h3>Acute Concerns</h3>
+          <p>Same/next-day visits for common problems—colds, rashes, minor injuries—plus <a href="urgent-care.html">7-day urgent care</a>.</p>
+        </div>
+        <div class="card">
+          <h3>Chronic Disease Care</h3>
+          <p>Diabetes, high blood pressure, high cholesterol, asthma/COPD, thyroid, obesity, depression/anxiety.</p>
+        </div>
+        <div class="card">
+          <h3>On-site Diagnostics</h3>
+          <p><a href="x-ray.html">X-ray</a>, <a href="labs.html">labs</a>, and <a href="ultrasound.html">ultrasound</a> to speed diagnosis and treatment.</p>
+        </div>
+        <div class="card">
+          <h3>Medications Included</h3>
+          <p>Access to <a href="included-meds.html">250+ commonly used meds</a> at no extra cost with membership.</p>
+        </div>
+        <div class="card">
+          <h3>Care Coordination</h3>
+          <p>Referrals to trusted local specialists and imaging centers across the Sacramento metro, with follow-through.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section band">
+    <div class="container center">
+      <h2>Ready for relationship-based primary care?</h2>
+      <p class="muted">Join today and get same/next-day access in the Sacramento metro.</p>
+      <div class="cta" style="justify-content:center">
+        <a class="btn" href="contact.html">Book a visit</a>
+        <a class="btn ghost" href="plans.html">See plans & pricing</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="ftr">
+    <div class="container">© <span id="y"></span> urHealthcare. All rights reserved.</div>
+  </footer>
+
+  <!-- JS: site base + dropdown + tabs -->
+  <script src="https://harprandeol1.github.io/urhealthcare1/assets/app.js?v=3"></script>
+  <script>
+    // Fallback year
+    const yEl = document.getElementById('y'); if (yEl && !yEl.textContent) yEl.textContent = new Date().getFullYear();
+
+    // Dropdown: click-to-open & close on outside/Esc
+    (function () {
+      const dd = document.getElementById('services-dd');
+      if (!dd) return;
+      const btn = dd.querySelector('.dropbtn');
+      const menu = dd.querySelector('.menu');
+
+      btn.addEventListener('click', (e) => {
+        e.preventDefault(); e.stopPropagation();
+        const isOpen = dd.classList.toggle('open');
+        btn.setAttribute('aria-expanded', String(isOpen));
+      });
+      document.addEventListener('click', (e) => {
+        if (!dd.contains(e.target)) { dd.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') { dd.classList.remove('open'); btn.setAttribute('aria-expanded','false'); btn.blur(); }
+      });
+    })();
+
+    // Accessible Tabs (3 doctors)
+    (function () {
+      const tabs = Array.from(document.querySelectorAll('.tab'));
+      const panels = Array.from(document.querySelectorAll('.tabpanel'));
+      function activateTab(index, focusTab = true) {
+        tabs.forEach((t, i) => {
+          const selected = i === index;
+          t.setAttribute('aria-selected', String(selected));
+          t.tabIndex = selected ? 0 : -1;
+          panels[i].classList.toggle('active', selected);
+          panels[i].hidden = !selected;
+        });
+        if (focusTab) tabs[index].focus();
+      }
+      // Init
+      panels.forEach((p, i) => { if (i !== 0) { p.hidden = true; } });
+      // Click
+      tabs.forEach((t, i) => t.addEventListener('click', () => activateTab(i)));
+      // Keyboard (← → Home End)
+      document.querySelector('.tablist')?.addEventListener('keydown', (e) => {
+        const current = tabs.findIndex(t => t.getAttribute('aria-selected') === 'true');
+        let next = current;
+        if (e.key === 'ArrowRight') next = (current + 1) % tabs.length;
+        if (e.key === 'ArrowLeft') next = (current - 1 + tabs.length) % tabs.length;
+        if (e.key === 'Home') next = 0;
+        if (e.key === 'End') next = tabs.length - 1;
+        if (next !== current) { e.preventDefault(); activateTab(next); }
+      });
+    })();
+  </script>
+</body>
+</html>
