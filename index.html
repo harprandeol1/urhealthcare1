@@ -71,7 +71,7 @@
           <div id="menu-services" class="menu" role="menu">
             <div class="grid">
               <a href="primary-care.html" role="menuitem">Primary Care</a>
-              <a href="urgent-care.html" role="menuitem">Urgent Care (7 days)</a>
+              <a href="urgent-care.html" role="menuitem">Urgent Care </a>
               
 
               <a href="x-ray.html"role="menuitem">X-ray</a>
@@ -79,7 +79,7 @@
               <a href="ultrasound.html" role="menuitem">Ultrasound</a>
               <a href="minor-procedures.html" role="menuitem">Minor Procedures</a>
               <a href="virtual-care.html" role="menuitem">Virtual Care</a>
-              <a href="included-meds.html" role="menuitem">Included Medications (250+)</a>
+              <a href="included-meds.html" role="menuitem">Medications</a>
             </div>
             <div class="all"><a href="#services">View all services →</a></div>
           </div>
@@ -89,7 +89,24 @@
         <a href="employers.html">Employers</a>
         <a href="faq.html">FAQ</a>
         <a href="contact.html">Contact</a>
-        <a href="contact.html" class="btn">Book visit</a>
+        <!-- Replace the old Book button with this -->
+<div class="login-dd">
+  <button class="btn login-dd__button" id="loginMenuButton"
+          aria-haspopup="menu" aria-expanded="false" aria-controls="loginMenu">
+    Login
+  </button>
+
+  <ul class="login-dd__menu" id="loginMenu" role="menu" aria-labelledby="loginMenuButton">
+    <!-- TODO: replace href values with your real links -->
+    <li role="none">
+      <a role="menuitem" href="/onpatient-login" class="login-dd__link">OnPatient Login</a>
+    </li>
+    <li role="none">
+      <a role="menuitem" href="/membership/login" class="login-dd__link">Membership Login</a>
+    </li>
+  </ul>
+</div>
+
       </nav>
 
       <button class="menu-btn" aria-label="Menu"
