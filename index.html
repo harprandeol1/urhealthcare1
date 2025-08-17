@@ -129,36 +129,101 @@
         </div>
       </div>
     </div>
-    <section id="why-choose" class="cards">
-  <h2>Why Choose urHealthcare for Primary Care?</h2>
-  <p class="lead">
-    We offer primary care options to fit your needs. At urHealthcare, you can expect:
-  </p>
+   <!-- Why Choose section (responsive, mobile-friendly). 
+     Drop this anywhere inside <body>. Replace the three image src paths with your own. -->
+<section class="why-choose">
+  <style>
+    .why-choose {
+      --brand: #0b3a83; /* urHealthcare dark blue; change if needed */
+      --ink: #111;
+      --muted: #5b5b5b;
+      --maxw: 1200px;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--ink);
+      padding: 48px 16px 32px;
+      background: #f8f9fb; /* subtle contrast from page */
+    }
+    .why-choose .wrap { max-width: var(--maxw); margin: 0 auto; }
+    .why-choose h2 {
+      font-weight: 800;
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1.1;
+      margin: 0 0 8px;
+      color: var(--brand);
+      letter-spacing: .2px;
+    }
+    .why-choose .lead {
+      margin: 0 0 28px;
+      color: var(--muted);
+      font-size: clamp(16px, 2.2vw, 18px);
+    }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: clamp(16px, 2.5vw, 32px);
+      align-items: start;
+    }
+    @media (max-width: 980px) {
+      .why-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    }
+    @media (max-width: 640px) {
+      .why-grid { grid-template-columns: 1fr; }
+    }
+    .why-item img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: 16px;
+      display: block;
+      box-shadow: 0 6px 24px rgba(0,0,0,.06);
+    }
+    .why-item h3 {
+      font-size: clamp(20px, 2.6vw, 26px);
+      margin: 16px 0 8px;
+      font-weight: 700;
+      color: #2b2b2b;
+    }
+    .why-item p {
+      margin: 0;
+      color: #4a4a4a;
+      line-height: 1.6;
+      font-size: 16px;
+    }
+    .why-choose .accepting {
+      margin-top: clamp(20px, 3vw, 28px);
+      font-weight: 700;
+    }
+    .why-choose .accepting a { color: var(--brand); text-decoration: underline; }
+  </style>
 
-  <div class="grid3">
-    <article class="card">
-      <h3>Personalized Care</h3>
-      <p>
-        Your primary care doctor works closely with you to understand your concerns.
-        We take the time to diagnose your condition and tailor treatment to fit your needs.
-      </p>
-    </article>
+  <div class="wrap">
+    <h2>Why Choose urHealthcare for Primary Care?</h2>
+    <p class="lead">We offer primary care options to fit your needs. At urHealthcare, you can expect:</p>
 
-    <article class="card">
-      <h3>Access to Experts</h3>
-      <p>
-        If you need specialty care, our primary care doctors can coordinate referrals
-        and connect you with trusted specialists to ensure seamless, high-quality care.
-      </p>
-    </article>
+    <div class="why-grid">
+      <article class="why-item">
+        <!-- Replace with your image -->
+        <img src="assets/img/why-personalized.jpg" alt="Clinician providing personalized primary care" />
+        <h3>Personalized Care</h3>
+        <p>Your primary care clinician works closely with you to understand your concerns. We take the time to diagnose your condition and tailor treatment to fit your needs.</p>
+      </article>
 
-    <article class="card">
-      <h3>Convenience and Choice</h3>
-      <p>
-        urHealthcare makes it easy to find the care you need with in-clinic and video visits.
-        We accept most insurance plans and also offer direct primary care memberships.
-      </p>
-    </article>
+      <article class="why-item">
+        <!-- Replace with your image -->
+        <img src="assets/img/why-experts.jpg" alt="Patient consulting with a clinician about specialist options" />
+        <h3>Access to Experts</h3>
+        <p>If you need specialty care, our primary care team coordinates referrals and connects you with trusted specialists for seamless, high-quality care.</p>
+      </article>
+
+      <article class="why-item">
+        <!-- Replace with your image -->
+        <img src="assets/img/why-convenience.jpg" alt="Clinic exterior showing convenient access" />
+        <h3>Convenience and Choice</h3>
+        <p>Find care your way—same-day visits when available, video visits, and straightforward pricing. We accept most insurance plans and also offer direct primary care memberships.</p>
+      </article>
+    </div>
+
+    <p class="accepting">Accepting new patients in <a href="#">Rocklin</a> and <a href="#">the Sacramento Metro</a>.</p>
   </div>
 </section>
 
