@@ -11,17 +11,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
 
-  <!-- Always-works stylesheet for GitHub Pages (note the absolute URL + cache-buster) -->
-  <link rel="stylesheet" href="https://harprandeol1.github.io/urhealthcare1/assets/styles.css?v=4" />
+  <!-- Always-works stylesheet for GitHub Pages (absolute URL + cache-buster) -->
+  <link rel="stylesheet" href="https://harprandeol1.github.io/urhealthcare1/assets/styles.css?v=5" />
 
-  <!-- Minimal dropdown styles (keep; rest is in styles.css) -->
+  <!-- Dropdown styles (keep inline so they apply even if main CSS is cached) -->
   <style>
     .dropdown { position: relative; }
     .dropbtn{
       background:transparent; border:0; padding:8px 10px; font:inherit; font-weight:600;
       color:#0b2a66; cursor:pointer; border-radius:8px;
     }
-    /* Menu hidden by default; shown on hover (desktop) or via .open (mobile) */
+    /* Menu hidden by default; shown via :hover (desktop) or .open (JS) */
     .menu{
       position:absolute; top:110%; left:0; min-width:280px; z-index:1000;
       background:#fff; border:1px solid var(--border); border-radius:12px;
@@ -38,14 +38,16 @@
       .dropdown:focus-within .menu{ display:block; }
     }
 
-    /* Mobile nav & dropdown */
+    /* Force open when JS adds .open (beats other rules) */
+    .dropdown.open .menu{ display:block !important; }
+
+    /* Mobile nav & dropdown layout */
     @media (max-width:720px){
       .navlinks{ display:none; }
       .menu-btn{ display:inline-block; background:transparent; border:0; }
       .menu-open .navlinks{ display:flex; flex-direction:column; align-items:flex-start; gap:10px; padding:12px 0; }
       .dropdown{ width:100%; }
       .menu{ position:static; box-shadow:none; border:0; padding:0; }
-      .dropdown.open .menu{ display:block; } /* click to open */
     }
   </style>
 
@@ -58,41 +60,40 @@
 <body>
   <!-- Header with working Services dropdown -->
   <header class="hdr">
-  <div class="container nav">
-    <a class="logo" href="index.html">urHealthcare</a>
+    <div class="container nav">
+      <a class="logo" href="index.html">urHealthcare</a>
 
-    <nav class="navlinks" aria-label="Primary">
-      <div class="dropdown" id="services-dd">
-        <button class="dropbtn" type="button" aria-expanded="false" aria-controls="menu-services">
-          Services ▾
-        </button>
-        <div id="menu-services" class="menu">
-          <div class="grid">
-            <a href="primary-care.html">Primary Care</a>
-            <a href="urgent-care.html">Urgent Care (7 days)</a>
-            <a href="x-ray.html">X-ray</a>
-            <a href="labs.html">Labs</a>
-            <a href="ultrasound.html">Ultrasound</a>
-            <a href="minor-procedures.html">Minor Procedures</a>
-            <a href="virtual-care.html">Virtual Care</a>
-            <a href="included-meds.html">Included Medications (250+)</a>
+      <nav class="navlinks" aria-label="Primary">
+        <div class="dropdown" id="services-dd">
+          <button class="dropbtn" type="button" aria-expanded="false" aria-controls="menu-services">
+            Services ▾
+          </button>
+          <div id="menu-services" class="menu">
+            <div class="grid">
+              <a href="primary-care.html">Primary Care</a>
+              <a href="urgent-care.html">Urgent Care (7 days)</a>
+              <a href="x-ray.html">X-ray</a>
+              <a href="labs.html">Labs</a>
+              <a href="ultrasound.html">Ultrasound</a>
+              <a href="minor-procedures.html">Minor Procedures</a>
+              <a href="virtual-care.html">Virtual Care</a>
+              <a href="included-meds.html">Included Medications (250+)</a>
+            </div>
+            <div class="all"><a href="#services">View all services →</a></div>
           </div>
-          <div class="all"><a href="#services">View all services →</a></div>
         </div>
-      </div>
 
-      <a href="plans.html">Membership</a>
-      <a href="employers.html">Employers</a>
-      <a href="faq.html">FAQ</a>
-      <a href="contact.html">Contact</a>
-      <a href="contact.html" class="btn">Book visit</a>
-    </nav>
+        <a href="plans.html">Membership</a>
+        <a href="employers.html">Employers</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="btn">Book visit</a>
+      </nav>
 
-    <button class="menu-btn" aria-label="Menu"
-      onclick="document.body.classList.toggle('menu-open')">☰</button>
-  </div>
-</header>
-
+      <button class="menu-btn" aria-label="Menu"
+        onclick="document.body.classList.toggle('menu-open')">☰</button>
+    </div>
+  </header>
 
   <!-- Hero -->
   <section class="hero">
@@ -203,24 +204,35 @@
     <div class="container">© <span id="y"></span> urHealthcare. All rights reserved.</div>
   </footer>
 
-  <!-- JS: year + mobile dropdown toggle (absolute URL for reliability) -->
-  <script src="https://harprandeol1.github.io/urhealthcare1/assets/app.js?v=2"></script>
+  <!-- JS: year + dropdown behavior (absolute URL for reliability) -->
+  <script src="https://harprandeol1.github.io/urhealthcare1/assets/app.js?v=3"></script>
   <script>
-    // Fallback year if app.js didn't load
+    // Fallback year if app.js didn't run
     const yEl = document.getElementById('y'); if (yEl && !yEl.textContent) yEl.textContent = new Date().getFullYear();
 
-    // Mobile: tap to open/close Services
-    document.querySelectorAll('.dropdown .dropbtn').forEach((btn) => {
+    // Robust Services dropdown: works on hover (CSS) and on click (JS), closes on outside click/Escape
+    const dd = document.getElementById('services-dd');
+    const btn = dd?.querySelector('.dropbtn');
+    const menu = dd?.querySelector('.menu');
+
+    if (dd && btn && menu) {
+      // Toggle on click (desktop + mobile)
       btn.addEventListener('click', (e) => {
-        if (window.matchMedia('(max-width: 720px)').matches) {
-          e.preventDefault();
-          const dd = btn.closest('.dropdown');
-          const expanded = btn.getAttribute('aria-expanded') === 'true';
-          btn.setAttribute('aria-expanded', String(!expanded));
-          dd.classList.toggle('open', !expanded);
-        }
+        e.preventDefault();
+        const isOpen = dd.classList.toggle('open');
+        btn.setAttribute('aria-expanded', String(isOpen));
       });
-    });
+
+      // Close on outside click
+      document.addEventListener('click', (e) => {
+        if (!dd.contains(e.target)) { dd.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }
+      });
+
+      // Close on Escape
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') { dd.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); btn.blur(); }
+      });
+    }
   </script>
 </body>
 </html>
