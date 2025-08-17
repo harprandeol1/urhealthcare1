@@ -255,6 +255,88 @@
       </div>
     </div>
   </section>
+  <!-- Insurance + DPC Membership section (responsive, mobile-friendly).
+     Drop this anywhere inside <body>. Update the hrefs to your actual pages. -->
+<section class="insurances" aria-labelledby="insurances-title">
+  <style>
+    .insurances {
+      --brand: #0b3a83; /* falls back to this if not defined site-wide */
+      --ink: #111;
+      --muted: #555;
+      --maxw: 1100px;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--ink);
+      padding: 48px 16px;
+      background: #fff;
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+    }
+    .insurances .wrap { max-width: var(--maxw); margin: 0 auto; }
+    .insurances h2 {
+      font-size: clamp(26px, 4vw, 40px);
+      margin: 0 0 10px;
+      font-weight: 800;
+      letter-spacing: .2px;
+      color: var(--brand);
+    }
+    .insurances .lead {
+      color: var(--muted);
+      font-size: clamp(16px, 2vw, 18px);
+      margin: 0 0 22px;
+    }
+    .insurances .actions {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items: center;
+      margin-top: 18px;
+    }
+    @media (max-width: 640px) {
+      .insurances .actions { grid-template-columns: 1fr; }
+    }
+    .insurances .link {
+      text-decoration: underline;
+      color: var(--brand);
+      font-weight: 700;
+    }
+    .insurances .cta {
+      justify-self: start;
+      display: inline-block;
+      padding: 10px 16px;
+      border-radius: 12px;
+      background: var(--brand);
+      color: #fff;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+    /* Optional muted note */
+    .insurances .note {
+      margin-top: 10px;
+      color: #777;
+      font-size: 14px;
+    }
+  </style>
+
+  <div class="wrap">
+    <h2 id="insurances-title">We Accept Major Health Insurance Plans</h2>
+    <p class="lead">
+      We work with many leading insurance carriers. Coverage can vary by plan and employer.
+      <a class="link" href="/accepted-insurances">Check the full list of accepted insurances</a>.
+    </p>
+
+    <div class="actions">
+      <p class="lead" style="margin:0;">
+        Prefer price transparency? We also offer a
+        <strong>Direct Primary Care (DPC) membership</strong> for simple, predictable costs.
+      </p>
+      <a class="cta" href="/plans#dpc">Explore DPC Membership</a>
+    </div>
+
+    <!-- Optional tiny note; remove if not needed -->
+    <p class="note">Tip: If your plan isn’t listed, call us—many out-of-network plans still have benefits for primary care.</p>
+  </div>
+</section>
+
 
   <!-- Plans -->
   <section id="plans" class="section band">
