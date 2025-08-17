@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>urHealthcare | Primary & Urgent Care in Sacramento Metro</title>
+  <meta name="description" content="Direct primary & urgent care. Same-day visits, 7-day urgent care, 250+ meds at no extra cost. Locations in Sacramento Metro." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header class="site">
+    <a class="logo" href="/">urHealthcare</a>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#plans">Plans</a>
+      <a href="#employers">Employers</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn" href="#contact">Book Visit</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Primary & Urgent Care, Simplified</h1>
+      <p>Unlimited visits. 7-day urgent care. 250+ medications included.</p>
+      <div class="cta">
+        <a class="btn" href="#plans">See Plans</a>
+        <a class="btn ghost" href="#contact">Schedule</a>
+      </div>
+    </section>
+
+    <section id="services" class="grid3">
+      <article>
+        <h3>Primary Care</h3>
+        <p>Continuity with the provider you choose. Preventive, chronic, and same-day care.</p>
+      </article>
+      <article>
+        <h3>Urgent Care (7 days)</h3>
+        <p>Walk-in or virtual for common injuries & illnesses, x-ray, labs, minor procedures.</p>
+      </article>
+      <article>
+        <h3>Included Meds</h3>
+        <p>Access to 250+ commonly used medications at no extra cost.</p>
+      </article>
+    </section>
+
+    <section id="plans" class="cards">
+      <h2>Direct Primary Care Plans</h2>
+      <div class="card">
+        <h3>Individual</h3>
+        <p class="price">$79/mo</p>
+        <ul>
+          <li>Unlimited primary & urgent care</li>
+          <li>Virtual care</li>
+          <li>250+ meds included</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Spouse</h3>
+        <p class="price">$50/mo</p>
+        <ul>
+          <li>Add a spouse anytime</li>
+          <li>Same great access</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Child (5+)</h3>
+        <p class="price">$30/mo</p>
+        <ul>
+          <li>Pedi visits & sick care</li>
+          <li>Rapid access</li>
+        </ul>
+      </div>
+      <p class="note">Pair with a high-deductible or catastrophic plan for specialty/hospital coverage.</p>
+    </section>
+
+    <section id="employers" class="section-narrow">
+      <h2>For Employers</h2>
+      <p>Lower premiums, faster care, healthier teams. Flat monthly pricing per employee.</p>
+      <a class="btn" href="#contact">Get a Quote</a>
+    </section>
+
+    <section id="faq" class="faq">
+      <h2>FAQ</h2>
+      <details>
+        <summary>How does it work?</summary>
+        <p>Unlimited visits with no copays or deductibles. Primary, urgent, basic imaging, labs, and many meds are included.</p>
+      </details>
+      <details>
+        <summary>Do you handle referrals?</summary>
+        <p>Yes—we coordinate referrals. Specialty/hospital services are outside the DPC fee; consider pairing with HDHP/catastrophic insurance.</p>
+      </details>
+      <details>
+        <summary>Can you help me pick insurance?</summary>
+        <p>Yes. We’ll guide you on pairing DPC with the right insurance.</p>
+      </details>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Contact & Scheduling</h2>
+      <p><strong>Address:</strong> 6839 Five Star Blvd, Suite D, Rocklin, CA • <strong>Phone:</strong> 916-964-2001 • <strong>Email:</strong> info@urhealthcare.org</p>
+      <!-- Avoid collecting PHI via plain email. Use a HIPAA-compliant form vendor if needed. -->
+      <form action="https://formspree.io/f/yourFormID" method="POST">
+        <input name="name" placeholder="Full name" required />
+        <input name="email" type="email" placeholder="Email" required />
+        <input name="phone" placeholder="Phone" />
+        <textarea name="message" placeholder="How can we help?" rows="5"></textarea>
+        <button class="btn" type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site">
+    <small>© <span id="y"></span> urHealthcare. All rights reserved.</small>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
