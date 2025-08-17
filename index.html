@@ -3,541 +3,105 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>urHealthcare | Primary & Urgent Care in Sacramento Metro</title>
-  <meta name="description" content="Direct primary & urgent care. Same-day visits, 7-day urgent care, 250+ meds at no extra cost. Locations in Sacramento Metro." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/styles.css" />
+  <title>Home | urHealthcare</title>
+  <meta name="description" content="urHealthcare — simple, affordable primary and urgent care in Rocklin, CA." />
+  <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
-  <header class="site">
-    <a class="logo" href="/">urHealthcare</a>
-    <nav>
-      <a href="#services">Services</a>
-      <a href="#plans">Plans</a>
-      <a href="#employers">Employers</a>
-      <a href="#faq">FAQ</a>
-      <a class="btn" href="#contact">Book Visit</a>
+
+<header class="site-header">
+  <div class="container navbar">
+    <a class="brand" href="/index.html">urHealthcare</a>
+    <button class="mobile-toggle" aria-label="Menu">Menu ▾</button>
+    <nav class="nav">
+      <div class="dropdown">
+        <button type="button">Services ▾</button>
+        <div class="dropdown-menu">
+          <a href="/services/primary-care.html">Primary Care</a>
+          <a href="/services/urgent-care.html">Urgent Care</a>
+          <a href="/services/labs.html">Labs</a>
+          <a href="/services/x-ray.html">X-Ray</a>
+          <a href="/services/virtual-care.html">Virtual Care</a>
+        </div>
+      </div>
+      <a href="/health-plans.html">Health Plans</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/business.html">For Business</a>
     </nav>
-  </header>
+    <div class="nav-cta">
+      <a class="btn btn-outline" href="https://urhealthcare.hint.com/login/request" target="_blank" rel="noopener">Login</a>
+    </div>
+  </div>
+</header>
 
-  <main>
-    <section class="hero">
-      <h1>Primary & Urgent Care, Simplified</h1>
-      <p>Unlimited visits. 7-day urgent care. 250+ medications included.</p>
-      <div class="cta">
-        <a class="btn" href="#plans">See Plans</a>
-        <a class="btn ghost" href="#contact">Schedule</a>
+
+<section class="hero">
+  <div class="container">
+    <span class="badge">HSA-eligible • No copays • No deductibles</span>
+    <h1>Affordable, Comprehensive Care for You & Your Family</h1>
+    <p>Unlimited primary and urgent care, 7 days a week. 250+ medications included, X‑ray, labs, minor procedures, virtual care, and ultrasound — all with transparent monthly pricing.</p>
+    <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
+      <a class="btn btn-light" href="/health-plans.html">View Health Plans</a>
+      <a class="btn btn-primary" href="rhealthcare.zohobookings.com/#/urhealthcare" target="_blank" rel="noopener">Book Appointments</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:#fff">
+  <div class="container grid grid-2" style="align-items:center">
+    <div>
+      <h2 class="section-title">Your Care, Your Provider</h2>
+      <p class="section-sub">Choose your primary care provider and get seen within 24 hours. No more red tape — just great care.</p>
+      <ul class="card" style="list-style:none;padding:16px;margin:0">
+        <li>• Unlimited visits</li>
+        <li>• Urgent care 7 days a week</li>
+        <li>• 250+ meds included</li>
+        <li>• X‑ray, labs, ultrasound</li>
+        <li>• Minor procedures</li>
+        <li>• Virtual care</li>
+      </ul>
+      <div style="margin-top:14px">
+        <a class="btn btn-outline" href="/services/primary-care.html">Explore Services</a>
       </div>
-    </section>
-
-    <section id="services" class="grid3">
-      <article>
-        <h3>Primary Care</h3>
-        <p>Continuity with the provider you choose. Preventive, chronic, and same-day care.</p>
-      </article>
-      <article>
-        <h3>Urgent Care (7 days)</h3>
-        <p>Walk-in or virtual for common injuries & illnesses, x-ray, labs, minor procedures.</p>
-      </article>
-      <article>
-        <h3>Included Meds</h3>
-        <p>Access to 250+ commonly used medications at no extra cost.</p>
-      </article>
-    </section>
-
-    <section id="plans" class="cards">
-      <h2>Direct Primary Care Plans</h2>
-      <div class="card">
-        <h3>Individual</h3>
-        <p class="price">$79/mo</p>
-        <ul>
-          <li>Unlimited primary & urgent care</li>
-          <li>Virtual care</li>
-          <li>250+ meds included</li>
-        </ul>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=1600&auto=format&fit=crop" alt="Doctor with stethoscope" style="width:100%;border-radius:12px;display:block;"/>
+      <div style="margin-top:12px;display:flex;justify-content:flex-end">
+        <a class="btn btn-primary" href="rhealthcare.zohobookings.com/#/urhealthcare" target="_blank" rel="noopener">Book Appointments</a>
       </div>
-      <div class="card">
-        <h3>Spouse</h3>
-        <p class="price">$50/mo</p>
-        <ul>
-          <li>Add a spouse anytime</li>
-          <li>Same great access</li>
-        </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container grid grid-3">
+    <div class="card feature">
+      <div>
+        <h3 class="section-title" style="font-size:22px">Simple Pricing</h3>
+        <p class="muted">$79 adult • $50 spouse • $30 child</p>
       </div>
-      <div class="card">
-        <h3>Child (5+)</h3>
-        <p class="price">$30/mo</p>
-        <ul>
-          <li>Pedi visits & sick care</li>
-          <li>Rapid access</li>
-        </ul>
+    </div>
+    <div class="card feature">
+      <div>
+        <h3 class="section-title" style="font-size:22px">Fast Access</h3>
+        <p class="muted">Same/next‑day primary care appointments guaranteed.</p>
       </div>
-      <p class="note">Pair with a high-deductible or catastrophic plan for specialty/hospital coverage.</p>
-    </section>
+    </div>
+    <div class="card feature">
+      <div>
+        <h3 class="section-title" style="font-size:22px">Complete Support</h3>
+        <p class="muted">Referrals, refills, and care coordination handled for you.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section id="employers" class="section-narrow">
-      <h2>For Employers</h2>
-      <p>Lower premiums, faster care, healthier teams. Flat monthly pricing per employee.</p>
-      <a class="btn" href="#contact">Get a Quote</a>
-    </section>
 
-    <section id="faq" class="faq">
-      <h2>FAQ</h2>
-      <details>
-        <summary>How does it work?</summary>
-        <p>Unlimited visits with no copays or deductibles. Primary, urgent, basic imaging, labs, and many meds are included.</p>
-      </details>
-      <details>
-        <summary>Do you handle referrals?</summary>
-        <p>Yes—we coordinate referrals. Specialty/hospital services are outside the DPC fee; consider pairing with HDHP/catastrophic insurance.</p>
-      </details>
-      <details>
-        <summary>Can you help me pick insurance?</summary>
-        <p>Yes. We’ll guide you on pairing DPC with the right insurance.</p>
-      </details>
-    </section>
+<footer class="site-footer">
+  © <span id="year"></span> urHealthcare • 6839 Five Star Blvd, Suite D, Rocklin, CA • (916) 964‑2001
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="/site.js"></script>
 
-    <section id="contact" class="contact">
-      <h2>Contact & Scheduling</h2>
-      <p><strong>Address:</strong> 6839 Five Star Blvd, Suite D, Rocklin, CA • <strong>Phone:</strong> 916-964-2001 • <strong>Email:</strong> info@urhealthcare.org</p>
-      <!-- Avoid collecting PHI via plain email. Use a HIPAA-compliant form vendor if needed. -->
-      <form action="https://formspree.io/f/yourFormID" method="POST">
-        <input name="name" placeholder="Full name" required />
-        <input name="email" type="email" placeholder="Email" required />
-        <input name="phone" placeholder="Phone" />
-        <textarea name="message" placeholder="How can we help?" rows="5"></textarea>
-        <button class="btn" type="submit">Send</button>
-      </form>
-    </section>
-  </main>
-
-  <footer class="site">
-    <small>© <span id="y"></span> urHealthcare. All rights reserved.</small>
-  </footer>
-
-  <script src="assets/app.js"></script>
-  
 </body>
-  <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Direct Primary Care Plan | urHealthcare</title>
-  <meta name="description" content="Direct Primary Care with unlimited visits, urgent care 7 days, 250+ medications included, X-ray, labs, minor procedures, virtual care and ultrasound." />
-  <style>
-    :root{
-      --brand:#0b2a66;           /* urHealthcare dark blue */
-      --brand-2:#0e3a8a;         /* lighter blue for gradients */
-      --ink:#0f172a;             /* slate-900 */
-      --muted:#475569;           /* slate-600 */
-      --muted-2:#64748b;         /* slate-500/600 */
-      --bg:#ffffff;
-      --card:#ffffff;
-      --soft:#eef2ff;
-      --ring:#e2e8f0;
-      --success:#059669;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,"Helvetica Neue",Arial,sans-serif;
-      color:var(--ink); background:#f8fafc; line-height:1.6;
-    }
-    .container{max-width:1100px; margin:auto; padding:0 20px}
-    .btn{
-      display:inline-block; background:#ffffff; color:var(--brand); border:2px solid #fff;
-      padding:14px 22px; border-radius:16px; font-weight:600; text-decoration:none; transition:.2s;
-    }
-    .btn:hover{background:rgba(255,255,255,.9); transform:translateY(-1px)}
-    .btn-primary{background:#fff; color:var(--brand)}
-    .btn-outline{background:transparent; color:#fff; border-color:#ffffff66}
-    .link{color:var(--brand-2); text-decoration:underline}
-    .muted{color:var(--muted)}
-    /* HERO */
-    .hero{
-      background: radial-gradient(1200px 600px at 10% -10%, #ffffff44, transparent),
-                  linear-gradient(180deg, var(--brand), var(--brand-2));
-      color:#fff; padding:80px 0 56px; position:relative; overflow:hidden;
-    }
-    .badge{
-      display:inline-flex; gap:8px; align-items:center;
-      background:#ffffff1a; padding:6px 10px; border-radius:999px; font-size:12px;
-    }
-    h1{font-size:42px; line-height:1.2; margin:14px 0 12px}
-    .hero p{max-width:800px; color:#e6ecff}
-    .cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
-
-    /* SECTION WRAPPERS */
-    section{padding:56px 0}
-    .section-title{font-size:32px; line-height:1.25; margin:0 0 6px}
-    .section-sub{color:var(--muted); margin:0 0 22px}
-
-    /* CARDS / GRID */
-    .grid{display:grid; gap:18px}
-    @media (min-width:640px){ .grid-2{grid-template-columns:repeat(2,1fr)} }
-    @media (min-width:900px){ .grid-3{grid-template-columns:repeat(3,1fr)} }
-    .card{
-      background:var(--card); border:1px solid var(--ring); border-radius:18px; padding:22px;
-      box-shadow:0 6px 20px rgba(2,6,23,.05);
-    }
-    .pricing .price{font-size:44px; font-weight:800}
-    .pricing .unit{font-size:16px; font-weight:600}
-    .list{margin:14px 0 0; padding-left:0; list-style:none}
-    .list li{display:flex; gap:10px; align-items:flex-start}
-    .check{
-      width:22px;height:22px; border-radius:50%;
-      display:inline-grid; place-items:center; background:#10b981; color:#fff; font-size:14px; flex:0 0 22px;
-      margin-top:2px;
-    }
-
-    /* FEATURES */
-    .icon{width:28px;height:28px; flex:0 0 28px}
-    .feature{display:flex; gap:14px; align-items:flex-start}
-    .feature h3{margin:0 0 4px; font-size:18px}
-
-    /* FAQ (accordion) */
-    .faq .item{
-      border:1px solid var(--ring); border-radius:14px; overflow:hidden; background:#fff;
-    }
-    .faq button{
-      width:100%; text-align:left; background:#fff; border:0; padding:16px 18px; font-weight:600; cursor:pointer;
-      display:flex; justify-content:space-between; align-items:center;
-    }
-    .faq .answer{padding:0 18px 16px; color:var(--muted); display:none}
-    .faq .item.open .answer{display:block}
-    .faq .item.open button{background:#f8fafc}
-
-    /* FORM */
-    .form .field{margin-bottom:14px}
-    .label{display:block; font-size:14px; font-weight:600; margin-bottom:6px}
-    input, textarea{
-      width:100%; border:1px solid var(--ring); border-radius:12px; padding:12px 14px; font-size:16px; background:#fff;
-    }
-    textarea{min-height:120px; resize:vertical}
-    .note{font-size:13px; color:var(--muted)}
-    .success{color:var(--success); font-weight:600}
-
-    /* FOOTER */
-    footer{background:#0b1f4a; color:#c7d2fe; text-align:center; padding:26px 12px; font-size:14px}
-  </style>
-</head>
-<body>
-
-  <!-- HERO -->
-  <header class="hero">
-    <div class="container">
-      <span class="badge">HSA-eligible • No copays • No deductibles</span>
-      <h1>Direct Primary Care Plan</h1>
-      <p>Comprehensive healthcare with simple, transparent pricing. Unlimited visits, same-day/next-day access, and a dedicated healthcare manager—without insurance red tape.</p>
-      <div class="cta">
-        <a class="btn btn-primary" href="#signup">Get Started</a>
-        <a class="btn btn-outline" href="mailto:info@urhealthcare.org">Email us at info@urhealthcare.org</a>
-      </div>
-    </div>
-  </header>
-
-  <!-- PRICING -->
-  <section class="pricing" style="background:#fff">
-    <div class="container">
-      <h2 class="section-title">Simple, Transparent Pricing</h2>
-      <p class="section-sub">Pay monthly. Cancel anytime.</p>
-
-      <div class="grid grid-3">
-        <div class="card">
-          <h3 style="margin:0 0 8px">Individual</h3>
-          <div class="price">$79<span class="unit">/mo</span></div>
-          <div class="muted">Per adult member</div>
-          <ul class="list">
-            <li><span class="check">✓</span> 24-hour appointment guarantee</li>
-            <li><span class="check">✓</span> Your chosen primary care provider</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3 style="margin:0 0 8px">Spouse</h3>
-          <div class="price">$50<span class="unit">/mo</span></div>
-          <div class="muted">Add a spouse and save</div>
-          <ul class="list">
-            <li><span class="check">✓</span> Unlimited visits, no copays</li>
-            <li><span class="check">✓</span> HSA-compatible</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3 style="margin:0 0 8px">Children</h3>
-          <div class="price">$30<span class="unit">/mo</span></div>
-          <div class="muted">Per child (with adult member)</div>
-          <ul class="list">
-            <li><span class="check">✓</span> Family-centered care</li>
-            <li><span class="check">✓</span> Same-day/next-day scheduling</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FEATURES -->
-  <section>
-    <div class="container">
-      <h2 class="section-title">What’s Included</h2>
-      <p class="section-sub">Everything you need for everyday health, without surprise bills.</p>
-
-      <div class="grid grid-3">
-        <div class="card feature">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M4 6h16M4 12h10M4 18h6"/></svg>
-          <div>
-            <h3>Primary care with your chosen provider</h3>
-            <div class="muted">Unlimited, relationship-based care with same-/next-day availability.</div>
-          </div>
-        </div>
-
-        <div class="card feature">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="9" stroke-width="2"/><path d="M12 7v5l3 3" stroke-width="2"/></svg>
-          <div>
-            <h3>Urgent care 7 days a week</h3>
-            <div class="muted">Walk in or schedule—quick treatment for acute issues without extra fees.</div>
-          </div>
-        </div>
-
-        <div class="card feature">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="5" width="18" height="14" rx="2" stroke-width="2"/><path d="M7 9h10M7 13h6" stroke-width="2"/></svg>
-          <div>
-            <h3>Access to 250+ medications</h3>
-            <div class="muted">Included at <strong>no extra cost</strong> for drugs on our list.</div>
-          </div>
-        </div>
-
-        <div class="card feature">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 7h16M4 12h16M4 17h16" stroke-width="2"/></svg>
-          <div>
-            <h3>X-ray & Ultrasound</h3>
-            <div class="muted">On-site imaging when needed, coordinated by your care team.</div>
-          </div>
-        </div>
-
-        <div class="card feature">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="9" stroke-width="2"/><path d="M8 12h8" stroke-width="2"/></svg>
-          <div>
-            <h3>Basic labs included</h3>
-            <div class="muted">Routine panels covered; complex labs routed to partner labs.</div>
-          </div>
-        </div>
-
-        <div class="card feature">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M6 8h12M6 12h12M6 16h6" stroke-width="2"/></svg>
-          <div>
-            <h3>Minor procedures</h3>
-            <div class="muted">In-clinic procedures included as part of your membership.</div>
-          </div>
-        </div>
-
-        <div class="card feature">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="5" width="18" height="14" rx="2" stroke-width="2"/><path d="M10 9h4" stroke-width="2"/></svg>
-          <div>
-            <h3>Virtual care</h3>
-            <div class="muted">Chat or video visits when you can’t make it in—no copays.</div>
-          </div>
-        </div>
-
-        <div class="card feature">
-          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 6v12M6 12h12" stroke-width="2"/></svg>
-          <div>
-            <h3>Dedicated healthcare manager (24/7)</h3>
-            <div class="muted">Referrals, refills, and coordination—one point of contact, year-round.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section style="background:#fff">
-    <div class="container">
-      <h2 class="section-title">Frequently Asked Questions</h2>
-      <p class="section-sub">If you don’t see your question here, email us at <a class="link" href="mailto:info@urhealthcare.org">info@urhealthcare.org</a>.</p>
-
-      <div class="grid faq">
-        <!-- 1 -->
-        <div class="item">
-          <button type="button" aria-expanded="false">
-            <span>How does this work?</span>
-            <span aria-hidden="true">＋</span>
-          </button>
-          <div class="answer">
-            We provide unlimited primary and urgent care, imaging, basic labs, and more—with <strong>no deductibles, no copays, and no visit limits</strong>.
-          </div>
-        </div>
-        <!-- 2 -->
-        <div class="item">
-          <button type="button" aria-expanded="false">
-            <span>What if I need a referral?</span>
-            <span aria-hidden="true">＋</span>
-          </button>
-          <div class="answer">
-            We coordinate <strong>specialist referrals</strong>. The DPC membership does not pay specialist bills. We recommend pairing DPC with a <strong>high-deductible Bronze or catastrophic insurance plan</strong> for specialty or hospital costs.
-          </div>
-        </div>
-        <!-- 3 -->
-        <div class="item">
-          <button type="button" aria-expanded="false">
-            <span>Do you help with getting health insurance?</span>
-            <span aria-hidden="true">＋</span>
-          </button>
-          <div class="answer">
-            Yes. Our team will guide you on which insurance plan to pair with your DPC membership based on your needs and budget.
-          </div>
-        </div>
-        <!-- 4 -->
-        <div class="item">
-          <button type="button" aria-expanded="false">
-            <span>Why not just buy health insurance? Why buy both?</span>
-            <span aria-hidden="true">＋</span>
-          </button>
-          <div class="answer">
-            Traditional Gold/Platinum plans are expensive, and most people use <strong>primary and urgent care for 95% of their needs</strong> yet still face high premiums and red tape.
-            Bronze plans often have <strong>$7,000–$8,000 deductibles</strong> you may never reach—meaning you still pay out-of-pocket for routine care.
-            With DPC you pay <strong>$79/month</strong> (about <strong>$1,000/year</strong> or less) for unlimited, personalized access to care. Pair it with low-cost, high-deductible insurance for financial protection.
-          </div>
-        </div>
-        <!-- 5 -->
-        <div class="item">
-          <button type="button" aria-expanded="false">
-            <span>What’s the wait time for appointments?</span>
-            <span aria-hidden="true">＋</span>
-          </button>
-          <div class="answer">
-            We <strong>guarantee appointments within 24 hours</strong> for primary care, with unrushed visits so you get more time with your doctor.
-          </div>
-        </div>
-        <!-- 6 -->
-        <div class="item">
-          <button type="button" aria-expanded="false">
-            <span>Do you cover medication cost?</span>
-            <span aria-hidden="true">＋</span>
-          </button>
-          <div class="answer">
-            Yes. Your membership covers more than <strong>90% of commonly prescribed medications</strong> on our list at no extra cost.
-          </div>
-        </div>
-        <!-- 7 -->
-        <div class="item">
-          <button type="button" aria-expanded="false">
-            <span>Labs</span>
-            <span aria-hidden="true">＋</span>
-          </button>
-          <div class="answer">
-            <strong>Basic labs are included.</strong> More complex testing is sent to partner labs at discounted cash rates.
-          </div>
-        </div>
-        <!-- 8 -->
-        <div class="item">
-          <button type="button" aria-expanded="false">
-            <span>Healthcare manager</span>
-            <span aria-hidden="true">＋</span>
-          </button>
-          <div class="answer">
-            You’ll have a <strong>dedicated healthcare manager (24/7)</strong> for referrals, prescription refills, and all care coordination.
-          </div>
-        </div>
-        <!-- 9 -->
-        <div class="item">
-          <button type="button" aria-expanded="false">
-            <span>Is this plan HSA-eligible?</span>
-            <span aria-hidden="true">＋</span>
-          </button>
-          <div class="answer">
-            Yes. Direct Primary Care memberships are <strong>HSA-compatible</strong> so you can use pre-tax dollars to pay for your plan.
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SIGNUP -->
-  <section id="signup" style="background:linear-gradient(180deg,#0b2a66,#0e3a8a); color:#fff">
-    <div class="container">
-      <div class="grid grid-2" style="gap:22px; align-items:start">
-        <div>
-          <h2 class="section-title" style="color:#fff">Ready to join?</h2>
-          <p class="section-sub" style="color:#e6ecff">Fill out the form and our team will reach out to finalize your membership and answer any questions.</p>
-          <ul class="list">
-            <li><span class="check" style="background:#22c55e">✓</span> No copays • No deductibles • Unlimited visits</li>
-            <li><span class="check" style="background:#22c55e">✓</span> Add family members anytime</li>
-            <li><span class="check" style="background:#22c55e">✓</span> 24-hour appointment guarantee</li>
-          </ul>
-        </div>
-
-        <div class="card form" style="border:none">
-          <form id="dpc-form">
-            <div class="field">
-              <label class="label" for="name">Full name</label>
-              <input id="name" name="name" placeholder="Your name" required />
-            </div>
-            <div class="grid grid-2">
-              <div class="field">
-                <label class="label" for="email">Email</label>
-                <input id="email" type="email" name="email" placeholder="you@example.com" required />
-              </div>
-              <div class="field">
-                <label class="label" for="phone">Phone</label>
-                <input id="phone" name="phone" placeholder="(916) 964-2001" />
-              </div>
-            </div>
-            <div class="field">
-              <label class="label" for="message">Questions / notes</label>
-              <textarea id="message" name="message" placeholder="Tell us anything we should know"></textarea>
-            </div>
-            <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap">
-              <button class="btn" type="submit">Submit</button>
-              <a class="link" href="mailto:info@urhealthcare.org">or email info@urhealthcare.org</a>
-            </div>
-            <p id="form-msg" class="note" style="margin-top:10px"></p>
-          </form>
-          <p class="note" style="margin-top:10px">
-            * The Direct Primary Care membership is not insurance. We recommend pairing it with a high-deductible insurance plan for specialist and hospital needs.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    © <span id="year"></span> urHealthcare • 6839 Five Star Blvd, Suite D, Rocklin, CA • (916) 964-2001
-  </footer>
-
-  <script>
-    // Footer year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // FAQ accordion toggle (accessible)
-    document.querySelectorAll('.faq .item button').forEach(btn=>{
-      btn.addEventListener('click', ()=>{
-        const item = btn.parentElement;
-        const open = item.classList.toggle('open');
-        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-        btn.querySelector('span[aria-hidden]').textContent = open ? '–' : '＋';
-      });
-    });
-
-    // Simple form handler (client-side only)
-    const form = document.getElementById('dpc-form');
-    const msg = document.getElementById('form-msg');
-    form.addEventListener('submit', (e)=>{
-      e.preventDefault();
-      const data = Object.fromEntries(new FormData(form).entries());
-      console.log('DPC inquiry', data);
-      msg.textContent = 'Thanks! We’ll be in touch shortly.';
-      msg.classList.add('success');
-      form.reset();
-
-      // OPTIONAL: send to your backend/Google Form/CRM.
-      // fetch('/api/lead', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(data) })
-      //   .then(()=> { msg.textContent='Thanks! We’ll be in touch shortly.' })
-      //   .catch(()=> { msg.textContent='Thanks! If you don’t hear from us, email info@urhealthcare.org.' });
-    });
-  </script>
-</body>
-</html>
-
 </html>
