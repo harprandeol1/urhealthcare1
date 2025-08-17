@@ -1,30 +1,45 @@
-/* Dropdowns */
-.dropdown { position: relative; }
-.dropbtn {
-  background: transparent; border: 0; padding: 8px 10px;
-  font: inherit; font-weight: 600; color: #0b2a66; cursor: pointer;
-  border-radius: 8px;
-}
-.menu {
-  position: absolute; top: 110%; left: 0; min-width: 220px;
-  background: #fff; border: 1px solid var(--border); border-radius: 12px;
-  box-shadow: var(--shadow); padding: 6px; list-style: none; margin: 0;
-}
-.menu a { display: block; padding: 8px 10px; border-radius: 8px; color: var(--ink); }
-.menu a:hover { background: #f5f8ff; text-decoration: none; }
+/* === urHealthcare — assets/styles.css === */
+:root { --brand:#0b3a83; --brand-ink:#072a61; --ink:#111; --muted:#666; --bg:#fff; --card:#fff; --border:#e9edf3; --focus:#5b9dff; --radius:16px; --shadow:0 6px 20px rgba(0,0,0,.06); }
+*{box-sizing:border-box} html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+img{max-width:100%;display:block} a{color:var(--brand);text-decoration:none} a:hover{text-decoration:underline}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
 
-/* Desktop open on hover/focus */
-@media (min-width: 721px) {
-  .dropdown:hover .menu,
-  .dropdown:focus-within .menu { display: block; }
-}
+.site{max-width:1100px;margin:0 auto;padding:16px;display:flex;align-items:center;gap:16px;justify-content:space-between}
+header.hdr{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--border);z-index:50}
+.logo{font-weight:800;letter-spacing:.2px;color:var(--brand)}
+.navlinks{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.navlinks a{font-weight:600;color:var(--brand-ink)}
 
-/* Mobile: show dropdown when aria-expanded=true */
-@media (max-width: 720px) {
-  .navlinks { display: none; }
-  .menu-btn { display: inline-block; background: transparent; border: 0; }
-  .menu-open .navlinks { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; padding: 12px 0; }
-  .dropdown { width: 100%; }
-  .menu { position: static; box-shadow: none; border: 0; padding: 0; }
-  .menu[hidden] { display: none; }
+.btn{display:inline-block;padding:10px 16px;border-radius:12px;background:var(--brand);color:#fff;font-weight:700;border:2px solid var(--brand);transition:transform .04s ease;box-shadow:0 2px 0 rgba(0,0,0,.06)}
+.btn:hover{text-decoration:none;transform:translateY(-1px)} .btn.ghost{background:transparent;color:var(--brand)}
+
+.hero{text-align:left;padding:96px 16px 64px;background:radial-gradient(1200px 600px at 50% -200px,#dfe9ff 0,transparent 60%)}
+.hero h1{font-size:clamp(28px,5vw,48px);margin:0 0 12px;line-height:1.15}
+.hero .lead{color:var(--muted);font-size:18px;margin:0}
+.cta{margin-top:20px;display:flex;gap:12px;flex-wrap:wrap}
+.benefits{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:28px}
+.pill{border:1px solid var(--border);border-radius:999px;padding:10px 14px;background:#f9fbff;display:flex;gap:10px;align-items:center}
+
+.section{padding:56px 16px} .section h2{font-size:clamp(22px,4vw,32px);margin:0 0 16px}
+.container{max-width:1140px;margin:0 auto;padding:0 16px} .muted{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.card{border:1px solid var(--border);border-radius:var(--radius);background:var(--card);box-shadow:var(--shadow);padding:18px}
+.clean{padding-left:18px;margin:0}
+.band{background:linear-gradient(180deg,#f6f9ff,transparent);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.center{text-align:center}
+.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:14px}
+.price{font-size:28px;font-weight:800;color:var(--brand);margin:.4rem 0 1rem}
+.note{color:var(--muted);margin-top:8px}
+
+.contact input,.contact textarea,input,textarea{width:100%;padding:12px 14px;border:1px solid #d7dce3;border-radius:10px;font:inherit;background:#fff;margin:8px 0}
+input:focus-visible,textarea:focus-visible{border-color:var(--focus);box-shadow:0 0 0 3px rgba(91,157,255,.25);outline:0}
+footer.ftr{border-top:1px solid var(--border);padding:18px 0;color:var(--muted)}
+
+@media (max-width:720px){
+  .navlinks{display:none}
+  .menu-btn{display:inline-block;background:transparent;border:0}
+  .menu-open .navlinks{display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:12px 0}
+  .hero{padding:72px 16px 48px}
 }
+@media print{.btn,nav,.cta,.menu-btn{display:none!important} body{color:#000} a{text-decoration:underline}}
