@@ -4,157 +4,214 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>urHealthcare — Primary & Urgent Care in Sacramento Metro</title>
-  <meta name="description" content="Direct primary & urgent care. Unlimited visits, 7-day urgent care, 250+ meds included, x-ray, labs, ultrasound, and minor procedures." />
+  <meta name="description" content="Direct primary & urgent care made simple. Unlimited visits, 7-day urgent care, 250+ meds included, x-ray, labs, and minor procedures. Rocklin location, Sacramento metro." />
+  <meta name="theme-color" content="#0b3a83" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
-  <!-- Always-works stylesheet link for GitHub Pages -->
-  <link rel="stylesheet" href="https://harprandeol1.github.io/urhealthcare1/assets/styles.css" />
-
-  <!-- Dropdown-only styles (safe to keep inline) -->
   <style>
-    .dropdown { position: relative; }
-    .dropbtn{
-      background:transparent; border:0; padding:8px 10px; font:inherit; font-weight:600;
-      color:#0b2a66; cursor:pointer; border-radius:8px;
+    :root{
+      --brand:#0b3a83; --ink:#0f172a; --muted:#64748b; --bg:#ffffff; --card:#ffffff; --border:#e5eaf1; --focus:#5b9dff;
+      --radius:16px; --shadow:0 8px 28px rgba(2,8,20,.06);
+      --max:1140px;
     }
-    /* Menu is hidden by default */
-    .menu{
-      position:absolute; top:110%; left:0; min-width:280px; z-index:1000;
-      background:#fff; border:1px solid var(--border); border-radius:12px;
-      box-shadow:var(--shadow); padding:8px; list-style:none; margin:0;
-      display:none;
+    *{box-sizing:border-box}
+    html{-webkit-text-size-adjust:100%}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+    img{max-width:100%;display:block}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:var(--max);margin:0 auto;padding:0 16px}
+    /* Header */
+    .hdr{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--border);z-index:50}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .logo{font-weight:800;color:var(--brand);letter-spacing:.2px}
+    .navlinks{display:flex;gap:16px;align-items:center}
+    .navlinks a{font-weight:600;color:#0b2a66}
+    .btn{display:inline-block;padding:10px 16px;border-radius:12px;background:var(--brand);color:#fff;font-weight:700;border:2px solid var(--brand);box-shadow:0 2px 0 rgba(0,0,0,.06);transition:transform .04s ease}
+    .btn:hover{text-decoration:none;transform:translateY(-1px)}
+    .btn.ghost{background:transparent;color:var(--brand)}
+    .menu-btn{display:none}
+    /* Hero */
+    .hero{position:relative;overflow:hidden}
+    .hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center;padding:72px 0}
+    .stamp{position:absolute;inset:-180px auto auto -180px;width:560px;height:560px;background:radial-gradient(560px 560px at 60% 40%, #dfe9ff 0, transparent 60%);pointer-events:none}
+    h1{font-size:clamp(28px,5vw,50px);line-height:1.12;margin:0 0 12px}
+    .lead{color:var(--muted);font-size:18px;margin:0}
+    .cta{margin-top:20px;display:flex;gap:12px;flex-wrap:wrap}
+    /* Benefits row */
+    .benefits{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:28px}
+    .pill{border:1px solid var(--border);border-radius:999px;padding:10px 14px;display:flex;gap:10px;align-items:center;background:#f9fbff}
+    .pill svg{flex:0 0 auto}
+    /* How it works */
+    .section{padding:56px 0}
+    .section h2{font-size:clamp(22px,4vw,32px);margin:0 0 16px}
+    .muted{color:var(--muted)}
+    .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:12px}
+    .card{border:1px solid var(--border);border-radius:var(--radius);background:var(--card);box-shadow:var(--shadow);padding:18px}
+    .num{width:36px;height:36px;border-radius:10px;background:var(--brand);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;margin-bottom:10px}
+    /* Plans */
+    .plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:14px}
+    .price{font-size:28px;font-weight:800;color:var(--brand);margin:.4rem 0 1rem}
+    .note{color:var(--muted);margin-top:8px}
+    ul.clean{padding-left:18px;margin:0}
+    /* Services */
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+    /* Employers band */
+    .band{background:linear-gradient(180deg,#f6f9ff,transparent);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+    .center{text-align:center}
+    /* FAQ */
+    details{border:1px solid var(--border);border-radius:12px;padding:12px 16px;margin:10px 0;background:#fafcff}
+    summary{font-weight:700;cursor:pointer}
+    /* Contact */
+    form{display:grid;gap:10px;margin-top:10px}
+    input,textarea{width:100%;padding:12px 14px;border:1px solid #d7dce3;border-radius:10px;font:inherit;background:#fff}
+    input:focus-visible,textarea:focus-visible{border-color:var(--focus);box-shadow:0 0 0 3px rgba(91,157,255,.25);outline:0}
+    /* Footer */
+    .ftr{border-top:1px solid var(--border);padding:18px 0;color:var(--muted)}
+    .row{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+    .col-6{grid-column:span 6}
+    .col-3{grid-column:span 3}
+    @media (max-width:900px){
+      .hero .wrap{grid-template-columns:1fr;padding:56px 0}
+      .row{grid-template-columns:1fr}
+      .col-6,.col-3{grid-column:1/-1}
     }
-    .menu .grid{ display:grid; grid-template-columns:repeat(2,minmax(160px,1fr)); gap:4px 8px; }
-    .menu a{ display:block; padding:8px 10px; border-radius:8px; color:var(--ink); text-decoration:none; white-space:nowrap; }
-    .menu a:hover{ background:#f5f8ff; text-decoration:none; }
-    .menu .all { border-top:1px solid var(--border); margin-top:6px; padding-top:6px; }
-
-    /* Desktop: open on hover or keyboard focus */
-    @media (min-width:721px){
-      .dropdown:hover .menu,
-      .dropdown:focus-within .menu{ display:block; }
-    }
-
-    /* Mobile nav & dropdown behavior */
     @media (max-width:720px){
-      .navlinks{ display:none; }
-      .menu-btn{ display:inline-block; background:transparent; border:0; }
-      .menu-open .navlinks{ display:flex; flex-direction:column; align-items:flex-start; gap:10px; padding:12px 0; }
-      .dropdown{ width:100%; }
-      .menu{ position:static; box-shadow:none; border:0; padding:0; }
-      .dropdown.open .menu{ display:block; } /* click to open */
+      .navlinks{display:none}
+      .menu-btn{display:inline-block;background:transparent;border:0;font:inherit;padding:8px 10px;border-radius:8px}
+      .menu-open .navlinks{display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:12px 0}
     }
+    @media print{nav,.cta,.menu-btn{display:none!important}}
   </style>
 
-  <!-- OG (optional) -->
+  <!-- OpenGraph (replace preview.png if you add one later) -->
   <meta property="og:title" content="urHealthcare — Primary & Urgent Care" />
   <meta property="og:description" content="Unlimited visits. 7-day urgent care. 250+ meds included. Transparent pricing." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://harprandeol1.github.io/urhealthcare1/" />
+  <meta property="og:image" content="https://harprandeol1.github.io/urhealthcare1/preview.png" />
+
+  <!-- LocalBusiness structured data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"MedicalClinic",
+    "name":"urHealthcare",
+    "url":"https://harprandeol1.github.io/urhealthcare1/",
+    "telephone":"+1-916-964-2001",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"6839 Five Star Blvd, Suite D",
+      "addressLocality":"Rocklin",
+      "addressRegion":"CA",
+      "postalCode":"95765",
+      "addressCountry":"US"
+    },
+    "medicalSpecialty":["PrimaryCare","UrgentCare"]
+  }
+  </script>
 </head>
 <body>
-  <!-- Header with working Services dropdown -->
+  <!-- Header -->
   <header class="hdr">
     <div class="container nav">
-      <a class="logo" href="index.html">urHealthcare</a>
-
+      <a class="logo" href="#">urHealthcare</a>
       <nav class="navlinks" aria-label="Primary">
-        <div class="dropdown">
-          <button class="dropbtn" type="button" aria-expanded="false" aria-controls="menu-services">Services ▾</button>
-          <div id="menu-services" class="menu">
-            <div class="grid">
-              <a href="primary-care.html">Primary Care</a>
-              <a href="urgent-care.html">Urgent Care (7 days)</a>
-              <a href="x-ray.html">X-ray</a>
-              <a href="labs.html">Labs</a>
-              <a href="ultrasound.html">Ultrasound</a>
-              <a href="minor-procedures.html">Minor Procedures</a>
-              <a href="virtual-care.html">Virtual Care</a>
-              <a href="included-meds.html">Included Medications (250+)</a>
-            </div>
-            <div class="all">
-              <a href="#services">View all services on this page →</a>
-            </div>
-          </div>
-        </div>
-
-        <a href="plans.html">Membership</a>
-        <a href="employers.html">Employers</a>
-        <a href="faq.html">FAQ</a>
-        <a href="contact.html">Contact</a>
-        <a href="contact.html" class="btn">Book visit</a>
+        <a href="#services">Services</a>
+        <a href="#plans">Membership</a>
+        <a href="#employers">Employers</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+        <a class="btn" href="#contact" rel="nofollow">Book visit</a>
       </nav>
-
-      <button class="menu-btn" aria-label="Menu"
-        onclick="document.body.classList.toggle('menu-open')">☰</button>
+      <button class="menu-btn" aria-label="Menu" onclick="document.body.classList.toggle('menu-open')">☰</button>
     </div>
   </header>
 
   <!-- Hero -->
   <section class="hero">
     <div class="stamp" aria-hidden="true"></div>
-    <div class="container wrap" style="display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center;padding:72px 0">
+    <div class="container wrap">
       <div>
         <h1>Primary & Urgent Care, simplified</h1>
         <p class="lead">Unlimited visits. 7-day urgent care. 250+ medications included. Transparent pricing.</p>
         <div class="cta">
-          <a class="btn" href="plans.html">View plans</a>
-          <a class="btn ghost" href="contact.html">Schedule</a>
+          <a class="btn" href="#plans">View plans</a>
+          <a class="btn ghost" href="#contact">Schedule</a>
         </div>
         <div class="benefits">
-          <div class="pill">Same/next-day care</div>
-          <div class="pill">7-day urgent care</div>
-          <div class="pill">250+ meds included</div>
-          <div class="pill">X-ray, labs, procedures</div>
+          <div class="pill">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            Same/next-day care
+          </div>
+          <div class="pill">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            7-day urgent care
+          </div>
+          <div class="pill">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            250+ meds included
+          </div>
+          <div class="pill">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20 6 9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            X-ray, labs, procedures
+          </div>
         </div>
       </div>
       <div class="card">
         <h3 style="margin-top:0">Become a member</h3>
         <p class="muted">Choose a plan and get unlimited visits with no copays or deductibles.</p>
         <ul class="clean">
-          <li>See the provider you choose</li>
-          <li>Virtual & in-person care</li>
+          <li>Primary & urgent care with the provider you choose</li>
+          <li>Virtual care & same/next-day appointments</li>
           <li>Included meds, basic imaging & labs</li>
         </ul>
         <div class="cta">
-          <a class="btn" href="plans.html">See pricing</a>
+          <a class="btn" href="#plans">See pricing</a>
           <a class="btn ghost" href="mailto:info@urhealthcare.org">Email us</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Services (anchor target) -->
-  <section id="services" class="section">
+  <!-- How it works -->
+  <section class="section">
     <div class="container">
-      <h2>All Services</h2>
-      <p class="muted">Primary care, urgent care, imaging, labs, and more—built for access and affordability.</p>
-      <div class="grid">
-        <div class="card"><h3>Primary Care</h3><p>Preventive, chronic, and same-day care with continuity.</p></div>
-        <div class="card"><h3>Urgent Care (7 days)</h3><p>Walk-in or virtual care for common illnesses & injuries.</p></div>
-        <div class="card"><h3>X-ray</h3><p>Common views for injuries and chest imaging.</p></div>
-        <div class="card"><h3>Labs</h3><p>Rapid tests (flu, strep, COVID) and routine labs.</p></div>
-        <div class="card"><h3>Ultrasound</h3><p>Point-of-care scans for quicker answers in clinic.</p></div>
-        <div class="card"><h3>Minor Procedures</h3><p>Stitches, splints, abscess drainage, foreign body removal.</p></div>
-        <div class="card"><h3>Virtual Care</h3><p>Video visits & secure messaging for convenience.</p></div>
-        <div class="card"><h3>Included Medications</h3><p>Access to 250+ commonly used meds at no extra cost.</p></div>
+      <h2>How it works</h2>
+      <p class="muted">Simple membership for comprehensive, accessible care.</p>
+      <div class="steps">
+        <div class="card">
+          <div class="num">1</div>
+          <h3>Pick your plan</h3>
+          <p>Choose an Individual, Spouse, or Child plan. Pair with a high-deductible or catastrophic plan for specialty/hospital coverage.</p>
+        </div>
+        <div class="card">
+          <div class="num">2</div>
+          <h3>Get seen fast</h3>
+          <p>Book same/next-day visits—7-day urgent care, in-person or virtual. Your provider knows you and your history.</p>
+        </div>
+        <div class="card">
+          <div class="num">3</div>
+          <h3>Pay one low fee</h3>
+          <p>Unlimited visits with no copays or deductibles. Many meds, x-ray, labs, and minor procedures are included.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Plans -->
   <section id="plans" class="section band">
-    <div class="container center">
-      <h2>Direct Primary Care Membership</h2>
-      <p class="muted">Flat monthly pricing. Cancel anytime.</p>
+    <div class="container">
+      <h2 class="center">Direct Primary Care Membership</h2>
+      <p class="muted center">Flat monthly pricing. Cancel anytime.</p>
       <div class="plans">
         <div class="card">
           <h3>Individual</h3>
           <p class="price">$79/mo</p>
           <ul class="clean">
             <li>Unlimited primary & urgent care</li>
-            <li>Virtual care</li>
-            <li>250+ meds included</li>
+            <li>Virtual care (video & messaging)</li>
+            <li>250+ medications included</li>
           </ul>
         </div>
         <div class="card">
@@ -162,7 +219,7 @@
           <p class="price">$50/mo</p>
           <ul class="clean">
             <li>Add a spouse anytime</li>
-            <li>Same benefits</li>
+            <li>Same benefits and access</li>
           </ul>
         </div>
         <div class="card">
@@ -170,12 +227,50 @@
           <p class="price">$30/mo</p>
           <ul class="clean">
             <li>Pediatric sick & well visits</li>
-            <li>Rapid access</li>
+            <li>Rapid access to care</li>
           </ul>
         </div>
       </div>
-      <p class="note">Specialty/hospital services are outside the DPC fee. We’ll help you pair with the right insurance.</p>
-      <p><a class="btn" href="contact.html">Join now</a></p>
+      <p class="note center">Specialty and hospital services are outside the DPC fee. We’ll help you pair with the right insurance.</p>
+      <p class="center"><a class="btn" href="#contact">Join now</a></p>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="section">
+    <div class="container">
+      <h2>Services</h2>
+      <p class="muted">Primary care, urgent care, imaging, labs, and more—designed around access and affordability.</p>
+      <div class="grid">
+        <div class="card"><h3>Primary Care</h3><p>Preventive, chronic, and same-day care with continuity—see the provider you choose.</p></div>
+        <div class="card"><h3>Urgent Care (7 days)</h3><p>Walk-in or virtual care for common illnesses and injuries.</p></div>
+        <div class="card"><h3>X-ray & Labs</h3><p>On-site basic imaging and lab tests to speed up diagnosis and treatment.</p></div>
+        <div class="card"><h3>Minor Procedures</h3><p>Stitches, splints, abscess drainage, foreign body removal, and more.</p></div>
+        <div class="card"><h3>Virtual Care</h3><p>Video visits and secure messaging for convenience and continuity.</p></div>
+        <div class="card"><h3>Ultrasound</h3><p>Point-of-care ultrasound for quicker answers in clinic.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Employers -->
+  <section id="employers" class="section band">
+    <div class="container center">
+      <h2>For Employers</h2>
+      <p class="muted">Lower costs, faster access, healthier teams. Flat monthly pricing per employee with unlimited visits.</p>
+      <div class="cta" style="justify-content:center">
+        <a class="btn" href="#contact">Request a quote</a>
+        <a class="btn ghost" href="mailto:info@urhealthcare.org">Email benefits team</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section">
+    <div class="container">
+      <h2>FAQs</h2>
+      <details><summary>How does membership work?</summary><p>Unlimited visits with no copays or deductibles. Many meds, basic imaging, labs, and minor procedures are included in your monthly fee.</p></details>
+      <details><summary>Do you handle referrals?</summary><p>Yes. We coordinate specialist referrals. Specialty/hospital care is outside the DPC fee; we’ll help you pair with high-deductible or catastrophic coverage.</p></details>
+      <details><summary>Can you help me choose insurance?</summary><p>Yes. We’ll guide you on coupling DPC with insurance based on your needs.</p></details>
     </div>
   </section>
 
@@ -184,6 +279,7 @@
     <div class="container">
       <h2>Contact & Scheduling</h2>
       <p><strong>Address:</strong> 6839 Five Star Blvd, Suite D, Rocklin, CA • <strong>Phone:</strong> <a href="tel:19169642001">916-964-2001</a> • <strong>Email:</strong> <a href="mailto:info@urhealthcare.org">info@urhealthcare.org</a></p>
+      <!-- Avoid collecting PHI via plain email. Use a HIPAA-compliant form service if you need to collect medical info. -->
       <form action="https://formspree.io/f/yourFormID" method="POST">
         <input name="name" placeholder="Full name" required />
         <input name="email" type="email" placeholder="Email" required />
@@ -191,32 +287,25 @@
         <textarea name="message" rows="5" placeholder="How can we help?"></textarea>
         <button class="btn" type="submit">Send</button>
       </form>
+      <p class="note">Prefer to pick a time now? <a href="https://scheduler.zoom.us/harpran-deol" rel="nofollow">Schedule a quick intro call</a>.</p>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="ftr">
-    <div class="container">© <span id="y"></span> urHealthcare. All rights reserved.</div>
+    <div class="container row">
+      <div class="col-6">
+        <strong>urHealthcare</strong><br />
+        © <span id="y"></span> urHealthcare. All rights reserved.
+      </div>
+      <div class="col-3"><strong>Navigate</strong><br /><a href="#services">Services</a> · <a href="#plans">Membership</a> · <a href="#employers">Employers</a> · <a href="#faq">FAQ</a></div>
+      <div class="col-3"><strong>Contact</strong><br /><a href="mailto:info@urhealthcare.org">info@urhealthcare.org</a><br /><a href="tel:19169642001">916-964-2001</a></div>
+    </div>
   </footer>
 
-  <!-- JS: year + mobile dropdown toggle -->
-  <script src="https://harprandeol1.github.io/urhealthcare1/assets/app.js"></script>
   <script>
-    // Fallback year if app.js isn't present
-    const yEl = document.getElementById('y'); if (yEl && !yEl.textContent) yEl.textContent = new Date().getFullYear();
-
-    // Mobile: tap to open/close Services
-    document.querySelectorAll('.dropdown .dropbtn').forEach((btn) => {
-      btn.addEventListener('click', (e) => {
-        if (window.matchMedia('(max-width: 720px)').matches) {
-          e.preventDefault();
-          const dd = btn.closest('.dropdown');
-          const expanded = btn.getAttribute('aria-expanded') === 'true';
-          btn.setAttribute('aria-expanded', String(!expanded));
-          dd.classList.toggle('open', !expanded);
-        }
-      });
-    });
+    // Mobile menu & year
+    document.getElementById('y').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
