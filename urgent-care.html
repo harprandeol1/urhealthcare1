@@ -1,37 +1,85 @@
-<main class="section">
- <header class="hdr">
-  <div class="container nav">
-    <a class="logo" href="index.html">urHealthcare</a>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Urgent Care (7 days) | urHealthcare</title>
+  <meta name="description" content="Walk-in or virtual urgent care 7 days a week. X-ray, labs, and minor procedures at urHealthcare in the Sacramento metro." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <!-- Absolute URL so styling works on every page in GitHub Pages -->
+  <link rel="stylesheet" href="https://harprandeol1.github.io/urhealthcare1/assets/styles.css" />
+</head>
+<body>
+  <!-- Header with dropdown nav -->
+  <header class="hdr">
+    <div class="container nav">
+      <a class="logo" href="index.html">urHealthcare</a>
 
-    <nav class="navlinks" aria-label="Primary">
-      <div class="dropdown">
-        <button class="dropbtn" aria-expanded="false" aria-controls="menu-services">Services ▾</button>
-        <ul id="menu-services" class="menu" hidden>
-          <li><a href="primary-care.html">Primary Care</a></li>
-          <li><a href="urgent-care.html">Urgent Care</a></li>
-          <li><a href="imaging-labs.html">Imaging & Labs</a></li>
-        </ul>
+      <nav class="navlinks" aria-label="Primary">
+        <div class="dropdown">
+          <button class="dropbtn" aria-expanded="false" aria-controls="menu-services">Services ▾</button>
+          <ul id="menu-services" class="menu" hidden>
+            <li><a href="primary-care.html">Primary Care</a></li>
+            <li><a href="urgent-care.html">Urgent Care</a></li>
+            <li><a href="imaging-labs.html">Imaging & Labs</a></li>
+          </ul>
+        </div>
+
+        <a href="plans.html">Membership</a>
+        <a href="employers.html">Employers</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html" class="btn">Book visit</a>
+      </nav>
+
+      <button class="menu-btn" aria-label="Menu" onclick="document.body.classList.toggle('menu-open')">☰</button>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <h1>Urgent Care (7 days)</h1>
+      <p class="muted">Walk-in or virtual care for common illnesses and injuries—with on-site X-ray, labs, and minor procedures.</p>
+
+      <div class="grid" style="margin-top:16px">
+        <div class="card">
+          <h3>Illness</h3>
+          <p>Flu, COVID, strep throat, UTI, ear/eye infections, sinusitis, rashes, migraines, dehydration.</p>
+        </div>
+        <div class="card">
+          <h3>Injury</h3>
+          <p>Sprains/strains, suspected fractures, lacerations, burns, foreign body removal, wound care.</p>
+        </div>
+        <div class="card">
+          <h3>On-site diagnostics</h3>
+          <p>X-ray, rapid tests (flu, strep, COVID), basic labs; results fast so treatment starts sooner.</p>
+        </div>
+        <div class="card">
+          <h3>Procedures</h3>
+          <p>Stitches, splints, abscess drainage, IV fluids, nebulizers, basic orthopedic care.</p>
+        </div>
+        <div class="card">
+          <h3>Virtual care</h3>
+          <p>Video visits for many concerns, refills, and follow-ups—same/next-day availability.</p>
+        </div>
+        <div class="card">
+          <h3>Transparent pricing</h3>
+          <p>Included with membership. Non-members get clear, upfront pricing at check-in.</p>
+        </div>
       </div>
 
-      <a href="plans.html">Membership</a>
-      <a href="employers.html">Employers</a>
-      <a href="faq.html">FAQ</a>
-      <a href="contact.html" class="btn">Book visit</a>
-    </nav>
+      <p class="cta" style="margin-top:18px">
+        <a class="btn" href="contact.html">Get care now</a>
+        <a class="btn ghost" href="plans.html">See membership</a>
+      </p>
 
-    <button class="menu-btn" aria-label="Menu"
-      onclick="document.body.classList.toggle('menu-open')">☰</button>
-  </div>
-</header>
-
-  <div class="container">
-    <h1>Urgent Care (7 days)</h1>
-    <p class="muted">Walk-in or virtual care for common illnesses and injuries.</p>
-    <div class="grid">
-      <div class="card"><h3>Illness</h3><p>Flu, COVID, strep, UTI, ear/eye infections, rashes.</p></div>
-      <div class="card"><h3>Injury</h3><p>Sprains, strains, simple fractures, lacerations, burns.</p></div>
-      <div class="card"><h3>On-site</h3><p>X-ray, labs, minor procedures to fast-track your care.</p></div>
+      <p class="note">Emergency symptoms (e.g., severe chest pain, major trauma, stroke signs) require calling 911 or going to the ER.</p>
     </div>
-    <p class="cta"><a class="btn" href="contact.html">Get care now</a></p>
-  </div>
-</main>
+  </main>
+
+  <footer class="ftr">
+    <div class="container">© <span id="y"></span> urHealthcare. All rights reserved.</div>
+  </footer>
+
+  <!-- Absolute JS URL (optional but consistent) -->
+  <script src="https://harprandeol1.github.io/urhealthcare1/assets/app.js"></script
