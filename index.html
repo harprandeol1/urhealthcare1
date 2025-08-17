@@ -58,40 +58,41 @@
 <body>
   <!-- Header with working Services dropdown -->
   <header class="hdr">
-    <div class="container nav">
-      <a class="logo" href="index.html">urHealthcare</a>
+  <div class="container nav">
+    <a class="logo" href="index.html">urHealthcare</a>
 
-      <nav class="navlinks" aria-label="Primary">
-        <div class="dropdown">
-          <button class="dropbtn" type="button" aria-expanded="false" aria-controls="menu-services">Services ▾</button>
-          <div id="menu-services" class="menu">
-            <div class="grid">
-              <a href="primary-care.html">Primary Care</a>
-              <a href="urgent-care.html">Urgent Care (7 days)</a>
-              <a href="x-ray.html">X-ray</a>
-              <a href="labs.html">Labs</a>
-              <a href="ultrasound.html">Ultrasound</a>
-              <a href="minor-procedures.html">Minor Procedures</a>
-              <a href="virtual-care.html">Virtual Care</a>
-              <a href="included-meds.html">Included Medications (250+)</a>
-            </div>
-            <div class="all">
-              <a href="#services">View all services on this page →</a>
-            </div>
+    <nav class="navlinks" aria-label="Primary">
+      <div class="dropdown" id="services-dd">
+        <button class="dropbtn" type="button" aria-expanded="false" aria-controls="menu-services">
+          Services ▾
+        </button>
+        <div id="menu-services" class="menu">
+          <div class="grid">
+            <a href="primary-care.html">Primary Care</a>
+            <a href="urgent-care.html">Urgent Care (7 days)</a>
+            <a href="x-ray.html">X-ray</a>
+            <a href="labs.html">Labs</a>
+            <a href="ultrasound.html">Ultrasound</a>
+            <a href="minor-procedures.html">Minor Procedures</a>
+            <a href="virtual-care.html">Virtual Care</a>
+            <a href="included-meds.html">Included Medications (250+)</a>
           </div>
+          <div class="all"><a href="#services">View all services →</a></div>
         </div>
+      </div>
 
-        <a href="plans.html">Membership</a>
-        <a href="employers.html">Employers</a>
-        <a href="faq.html">FAQ</a>
-        <a href="contact.html">Contact</a>
-        <a href="contact.html" class="btn">Book visit</a>
-      </nav>
+      <a href="plans.html">Membership</a>
+      <a href="employers.html">Employers</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="btn">Book visit</a>
+    </nav>
 
-      <button class="menu-btn" aria-label="Menu"
-        onclick="document.body.classList.toggle('menu-open')">☰</button>
-    </div>
-  </header>
+    <button class="menu-btn" aria-label="Menu"
+      onclick="document.body.classList.toggle('menu-open')">☰</button>
+  </div>
+</header>
+
 
   <!-- Hero -->
   <section class="hero">
