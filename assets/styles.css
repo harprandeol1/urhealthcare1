@@ -77,3 +77,30 @@ footer.ftr{border-top:1px solid var(--border);padding:18px 0;color:var(--muted)}
     margin-left: 0;                 /* full-width stack on mobile */
   }
 }
+/* Login dropdown */
+.login-dd { position: relative; }
+.login-dd__button {
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.login-dd__button::after { content: "▾"; font-size: .9em; line-height: 1; }
+
+.login-dd__menu {
+  position: absolute; right: 0; top: calc(100% + 8px);
+  min-width: 220px; background: #fff; border: 1px solid #e5e7eb;
+  border-radius: 12px; padding: 6px; margin: 0; list-style: none;
+  box-shadow: 0 12px 32px rgba(0,0,0,.1); z-index: 50; display: none;
+}
+.login-dd__menu[data-open="true"] { display: block; }
+
+.login-dd__link {
+  display: block; padding: 10px 12px; border-radius: 10px;
+  color: #111; text-decoration: none; font-weight: 700;
+}
+.login-dd__link:hover, .login-dd__link:focus {
+  background: #f2f7ff; color: #0b3a83; outline: none;
+}
+
+/* Optional: ensure the base .btn matches your brand */
+.btn { background:#0b3a83; color:#fff; border:none; padding:10px 16px; border-radius:12px; font-weight:800; }
+.btn:hover { filter: brightness(0.95); }
+
