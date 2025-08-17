@@ -374,6 +374,110 @@
       <p><a class="btn" href="contact.html">Know More</a></p>
     </div>
   </section>
+  <!-- Locations section (list + embedded Google Map). Mobile-friendly & easy to extend. -->
+<section class="locations" aria-labelledby="loc-title">
+  <style>
+    .locations {
+      --brand:#0b3a83; --ink:#111; --muted:#666; --bg:#fafafa; --card:#fff;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--ink); background:var(--bg); padding:48px 16px;
+    }
+    .locations .wrap { max-width:1200px; margin:0 auto; }
+    .locations h2 { font-size:clamp(28px,4vw,44px); margin:0 0 8px; color:var(--brand); font-weight:800; }
+    .locations .lead { color:var(--muted); margin:0 0 18px; }
+
+    .locations .banner {
+      background:#7a0e0f; color:#fff; border-radius:10px;
+      padding:18px 20px; margin:18px 0 22px; font-weight:700;
+    }
+    .locations .banner a { color:#fff; text-decoration:underline; }
+
+    .loc-legend { display:flex; flex-wrap:wrap; gap:18px; margin:10px 0 12px; }
+    .loc-legend .pill { display:flex; align-items:center; gap:8px; font-weight:700; color:#3a3a3a; }
+    .loc-legend .dot { width:16px; height:10px; border-radius:2px; display:inline-block; }
+    .dot.primary { background:var(--brand); }
+    .dot.urgent  { background:#be3a2e; }
+    .dot.peds    { background:#be7a2e; }
+
+    .loc-grid {
+      display:grid; grid-template-columns: 1.1fr 1.9fr; gap:22px;
+    }
+    @media (max-width: 980px) { .loc-grid { grid-template-columns: 1fr; } }
+
+    /* Left: list */
+    .loc-list { background:var(--card); border:1px solid #eee; border-radius:12px; padding:10px; }
+    .loc-item { display:grid; grid-template-columns:auto 1fr; gap:12px; padding:14px; border-bottom:1px solid #f0f0f0; }
+    .loc-item:last-child { border-bottom:none; }
+    .badge {
+      width:34px; height:34px; display:grid; place-items:center; border-radius:50%;
+      border:2px solid var(--brand); color:var(--brand); font-weight:900; background:#f2f7ff;
+    }
+    .loc-item h3 { margin:0 0 4px; font-size:18px; }
+    .loc-meta { margin:6px 0 0; color:#444; line-height:1.5; }
+    .loc-meta a { color:var(--brand); text-decoration:underline; }
+    .loc-actions { margin-top:8px; display:flex; gap:10px; flex-wrap:wrap; }
+    .btn-link {
+      display:inline-block; padding:8px 12px; border-radius:10px; font-weight:800;
+      border:2px solid var(--brand); color:var(--brand); background:#fff;
+    }
+
+    /* Right: map */
+    .loc-map { border:1px solid #eee; border-radius:12px; overflow:hidden; background:#ddd; min-height:420px; }
+    .loc-map iframe { width:100%; height:100%; min-height:420px; border:0; display:block; }
+  </style>
+
+  <div class="wrap">
+    <h2 id="loc-title">Primary Care Locations</h2>
+    <p class="lead">Find us in the Sacramento Metro. We make it easy to get the care you need with in-clinic and virtual visits.</p>
+
+    <div class="banner">
+      Now accepting new patients in <a href="https://www.google.com/maps?q=6839+Five+Star+Blvd,+Suite+D,+Rocklin,+CA+95677" target="_blank" rel="noopener">Rocklin</a>. Make an appointment today.
+    </div>
+
+    <div class="loc-legend" aria-hidden="true">
+      <span class="pill"><i class="dot primary"></i> Primary Care</span>
+      <span class="pill"><i class="dot urgent"></i> Urgent Care</span>
+      <span class="pill"><i class="dot peds"></i> Pediatrics</span>
+    </div>
+
+    <div class="loc-grid">
+      <!-- Left column: Locations list -->
+      <div class="loc-list" role="list">
+        <!-- Location item (duplicate this block to add more sites later) -->
+        <article class="loc-item" role="listitem">
+          <div class="badge" aria-hidden="true">★</div>
+          <div>
+            <div class="loc-tags" style="color:#555; font-weight:700; margin-bottom:4px;">
+              Primary Care, Urgent Care
+            </div>
+            <h3>
+              <a href="https://www.google.com/maps?q=6839+Five+Star+Blvd,+Suite+D,+Rocklin,+CA+95677" target="_blank" rel="noopener">
+                urHealthcare — Rocklin
+              </a>
+            </h3>
+            <div class="loc-meta">
+              6839 Five Star Blvd, Suite D, Rocklin, CA 95677<br>
+              <a href="tel:+19169642001">916-964-2001</a>
+            </div>
+            <div class="loc-actions">
+              <a class="btn-link" href="https://www.google.com/maps?q=6839+Five+Star+Blvd,+Suite+D,+Rocklin,+CA+95677" target="_blank" rel="noopener">Open in Google Maps</a>
+              <a class="btn-link" href="#contact">Book a Visit</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Right column: Embedded Google Map -->
+      <div class="loc-map" aria-label="Map showing urHealthcare Rocklin">
+        <iframe
+          src="https://www.google.com/maps?q=6839%20Five%20Star%20Blvd%2C%20Suite%20D%2C%20Rocklin%2C%20CA%2095677&z=14&output=embed"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
 
   <!-- Contact -->
   <section id="contact" class="section">
