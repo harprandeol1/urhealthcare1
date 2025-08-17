@@ -1,0 +1,30 @@
+/* Dropdowns */
+.dropdown { position: relative; }
+.dropbtn {
+  background: transparent; border: 0; padding: 8px 10px;
+  font: inherit; font-weight: 600; color: #0b2a66; cursor: pointer;
+  border-radius: 8px;
+}
+.menu {
+  position: absolute; top: 110%; left: 0; min-width: 220px;
+  background: #fff; border: 1px solid var(--border); border-radius: 12px;
+  box-shadow: var(--shadow); padding: 6px; list-style: none; margin: 0;
+}
+.menu a { display: block; padding: 8px 10px; border-radius: 8px; color: var(--ink); }
+.menu a:hover { background: #f5f8ff; text-decoration: none; }
+
+/* Desktop open on hover/focus */
+@media (min-width: 721px) {
+  .dropdown:hover .menu,
+  .dropdown:focus-within .menu { display: block; }
+}
+
+/* Mobile: show dropdown when aria-expanded=true */
+@media (max-width: 720px) {
+  .navlinks { display: none; }
+  .menu-btn { display: inline-block; background: transparent; border: 0; }
+  .menu-open .navlinks { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; padding: 12px 0; }
+  .dropdown { width: 100%; }
+  .menu { position: static; box-shadow: none; border: 0; padding: 0; }
+  .menu[hidden] { display: none; }
+}
