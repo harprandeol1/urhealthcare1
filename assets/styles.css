@@ -43,3 +43,38 @@ footer.ftr{border-top:1px solid var(--border);padding:18px 0;color:var(--muted)}
   .hero{padding:72px 16px 48px}
 }
 @media print{.btn,nav,.cta,.menu-btn{display:none!important} body{color:#000} a{text-decoration:underline}}
+/* --- Header: push nav to the right --- */
+.hdr .container.nav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.hdr .logo {
+  flex: 0 0 auto;              /* keep logo on the left */
+}
+
+.hdr .navlinks {
+  margin-left: auto;           /* 👈 pushes the tabs to the right */
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hdr .menu-btn {
+  margin-left: 12px;           /* hamburger sits at far right on mobile */
+}
+
+/* Mobile keeps working as before */
+@media (max-width: 720px) {
+  .hdr .navlinks { display: none; }
+  .menu-open .navlinks {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px 0;
+    margin-left: 0;            /* full-width dropdown stack */
+  }
+}
+
