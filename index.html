@@ -90,6 +90,7 @@
         <a href="faq.html">FAQ</a>
         
         <!-- Replace the old Book button with this -->
+<!-- LOGIN DROPDOWN -->
 <div class="login-dd">
   <button class="btn login-dd__button" id="loginMenuButton"
           aria-haspopup="menu" aria-expanded="false" aria-controls="loginMenu">
@@ -97,15 +98,81 @@
   </button>
 
   <ul class="login-dd__menu" id="loginMenu" role="menu" aria-labelledby="loginMenuButton">
-    <!-- TODO: replace href values with your real links -->
-    <li role="none">
-      <a role="menuitem" href="/onpatient-login" class="login-dd__link">OnPatient Login</a>
-    </li>
     <li role="none">
       <a role="menuitem" href="/membership/login" class="login-dd__link">Membership Login</a>
     </li>
+    <li role="none">
+      <a role="menuitem" href="/onpatient-login" class="login-dd__link">OnPatient Login</a>
+    </li>
   </ul>
 </div>
+
+<style>
+  /* Minimal styles; keep or merge into your CSS */
+  .login-dd { position: relative; }
+  .login-dd__button { display:inline-flex; align-items:center; gap:6px; }
+  .login-dd__button::after { content:"▾"; font-size:.9em; }
+
+  .login-dd__menu {
+    position:absolute; right:0; top:calc(100% + 8px);
+    min-width:220px; padding:6px; margin:0; list-style:none;
+    background:#fff; border:1px solid #e5e7eb; border-radius:12px;
+    box-shadow:0 12px 28px rgba(0,0,0,.12);
+    display:none; z-index:1000;
+  }
+  .login-dd__menu[data-open="true"] { display:block; }
+
+  .login-dd__link {
+    display:block; padding:10px 12px; border-radius:10px;
+    color:#111; text-decoration:none; font-weight:700;
+  }
+  .login-dd__link:hover, .login-dd__link:focus {
+    background:#f2f7ff; color:#0b3a83; outline:none;
+  }
+
+  /* Optional: brand button */
+  .btn { background:#0b3a83; color:#fff; border:none; padding:10px 16px; border-radius:12px; font-weight:800; }
+  .btn:hover { filter:brightness(.95); }
+</style>
+
+<script>
+  // Works for one or multiple dropdowns on the page
+  document.querySelectorAll('.login-dd').forEach((dd) => {
+    const btn = dd.querySelector('.login-dd__button');
+    const menu = dd.querySelector('.login-dd__menu');
+    const firstLink = dd.querySelector('.login-dd__link');
+
+    function openMenu() {
+      menu.dataset.open = 'true';
+      btn.setAttribute('aria-expanded', 'true');
+      // focus first item for accessibility
+      setTimeout(() => firstLink && firstLink.focus(), 0);
+    }
+    function closeMenu() {
+      delete menu.dataset.open;
+      btn.setAttribute('aria-expanded', 'false');
+    }
+
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (menu.dataset.open === 'true') closeMenu(); else openMenu();
+    });
+
+    // Close when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!dd.contains(e.target)) closeMenu();
+    });
+
+    // Close on Escape, basic arrow key handling
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeMenu();
+      if (e.key === 'ArrowDown' && menu.dataset.open === 'true') {
+        e.preventDefault(); firstLink && firstLink.focus();
+      }
+    });
+  });
+</script>
+
 
       </nav>
 
