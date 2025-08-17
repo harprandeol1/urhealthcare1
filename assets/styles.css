@@ -50,22 +50,22 @@ footer.ftr{border-top:1px solid var(--border);padding:18px 0;color:var(--muted)}
   gap: 16px;
 }
 
-.hdr .logo {
-  flex: 0 0 auto;              /* keep logo on the left */
+/* --- Header: push nav to the right on all pages --- */
+.hdr .container.nav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
-
+.hdr .logo { flex: 0 0 auto; }      /* keep logo on the left */
 .hdr .navlinks {
-  margin-left: auto;           /* 👈 pushes the tabs to the right */
+  margin-left: auto;                /* push tabs to the right */
   display: flex;
   align-items: center;
   gap: 12px;
 }
+.hdr .menu-btn { margin-left: 12px; }
 
-.hdr .menu-btn {
-  margin-left: 12px;           /* hamburger sits at far right on mobile */
-}
-
-/* Mobile keeps working as before */
+/* Mobile */
 @media (max-width: 720px) {
   .hdr .navlinks { display: none; }
   .menu-open .navlinks {
@@ -74,7 +74,6 @@ footer.ftr{border-top:1px solid var(--border);padding:18px 0;color:var(--muted)}
     align-items: flex-start;
     gap: 10px;
     padding: 12px 0;
-    margin-left: 0;            /* full-width dropdown stack */
+    margin-left: 0;                 /* full-width stack on mobile */
   }
 }
-
