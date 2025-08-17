@@ -182,61 +182,78 @@
   </header>
 
   <!-- Hero -->
-  <!-- HERO (dark bg + image on right that fades/shadows to the right) -->
-<section class="hero hero--dark">
+  <!-- HERO (brand blue #2196F3, darker background, right image fades to the right) -->
+<section class="hero hero--brand">
   <style>
-    .hero--dark{
-  background:
-    /* slightly stronger white glow to lighten overall */
-    radial-gradient(1200px 600px at 10% -200px, rgba(255,255,255,.12), transparent 60%),
-    /* lighter, bluer gradient */
-    linear-gradient(180deg, #0a3a8a 0%, #1d5fe6 55%, #0a3a8a 100%);
-}
+    .hero--brand{
+      /* brand color from 0xff2196f3 -> #2196F3 */
+      --brand:#2196F3; 
+      --brand-mid:#1E88E5; 
+      --brand-dark:#1565C0;
+      --ink:#ffffff;
+      --muted:#e9f3ff;
 
-    .hero--dark .container {
-      max-width: 1200px; margin: 0 auto;
-      display:grid; grid-template-columns: 1.2fr .8fr;
-      gap: 32px; align-items: center; padding: 32px 0 8px;
+      color:var(--ink);
+      padding:48px 16px;
+      background:
+        radial-gradient(1200px 600px at 10% -200px, rgba(255,255,255,.14), transparent 60%),
+        linear-gradient(180deg, var(--brand-dark) 0%, var(--brand) 55%, var(--brand-mid) 100%);
     }
-    @media (max-width: 960px) {
-      .hero--dark .container { grid-template-columns: 1fr; }
-      .hero__art { order: -1; margin-bottom: 8px; }
+    .hero--brand .container{
+      max-width:1200px; margin:0 auto;
+      display:grid; grid-template-columns:1.2fr .8fr;
+      gap:32px; align-items:center; padding:32px 0 8px;
+    }
+    @media (max-width: 960px){
+      .hero--brand .container{ grid-template-columns: 1fr; }
+      .hero__art{ order:-1; margin-bottom:8px; }
     }
 
-    .hero--dark h1 { font-size: clamp(28px, 5vw, 52px); margin: 0 0 10px; }
-    .hero--dark .lead { color: var(--muted); font-size: clamp(16px, 2.2vw, 18px); margin: 0 0 18px; }
+    .hero--brand h1{ font-size:clamp(28px,5vw,52px); margin:0 0 10px; }
+    .hero--brand .lead{ color:var(--muted); font-size:clamp(16px,2.2vw,18px); margin:0 0 18px; }
 
-    .cta { display:flex; gap:12px; flex-wrap:wrap; margin: 8px 0 18px; }
-    .btn { background:#0b3a83; color:#fff; border: none; padding:10px 16px; border-radius:12px; font-weight:800; }
-    .btn.ghost { background:transparent; border:2px solid #8fb1ff; color:#eaf0ff; }
-    .btn:hover { filter: brightness(.95); }
+    .cta{ display:flex; gap:12px; flex-wrap:wrap; margin:8px 0 18px; }
+    .btn{
+      background:#fff; color:var(--brand-dark); border:none;
+      padding:10px 16px; border-radius:12px; font-weight:800;
+    }
+    .btn.ghost{
+      background:transparent; border:2px solid #ffffff; color:#ffffff;
+    }
+    .btn:hover{ filter:brightness(.95); }
 
-    .benefits { display:flex; flex-wrap:wrap; gap:10px; margin-top:4px; }
-    .pill {
-      background: rgba(255,255,255,.1); color:#fff; border:1px solid rgba(255,255,255,.22);
+    .benefits{ display:flex; flex-wrap:wrap; gap:10px; margin-top:4px; }
+    .pill{
+      background:rgba(255,255,255,.12); color:#fff; 
+      border:1px solid rgba(255,255,255,.28);
       padding:8px 12px; border-radius:999px; font-weight:700; backdrop-filter: blur(2px);
     }
-    .pill:hover { background: rgba(255,255,255,.16); }
+    .pill:hover{ background:rgba(255,255,255,.18); }
+    .pill a, .pill:link{ color:inherit; text-decoration:none; }
 
-    
 
-    /* Right-side image that fades/shadows to the right */
-    .hero__art{ filter: drop-shadow(26px 0 48px rgba(0,0,0,.18)); } /* shadow cast to the right */
+    /* RIGHT: image slot that fades/shadows away to the right */
+    .hero__art{
+      position:relative; min-height:360px; border-radius:18px; overflow:hidden;
+      /* cast a soft shadow to the right */
+      filter: drop-shadow(26px 0 48px rgba(0,0,0,.22));
     }
-    .hero__art img {
+    .hero__art img{
       width:100%; height:100%; object-fit:cover; display:block;
-      /* Fade out to the right so it "shadows away" */
-      -webkit-mask-image: linear-gradient(to right, black 100%, transparent 100%);
-              mask-image: linear-gradient(to right, black 100%, transparent 100%);
+      /* fade image toward the right edge */
+      -webkit-mask-image: linear-gradient(to right, black 78%, transparent 100%);
+              mask-image: linear-gradient(to right, black 78%, transparent 100%);
     }
-    /* Extra darkening near the right edge for a subtle shadow feel */
+    /* Extra subtle darkening at the far right to accent the fade */
     .hero__art::after{
-  background: linear-gradient(to right, rgba(0,0,0,0) 60%, rgba(0,0,0,.22) 100%);
-}
+      content:""; position:absolute; inset:0;
+      background: linear-gradient(to right, rgba(0,0,0,0) 60%, rgba(0,0,0,.22) 100%);
+      pointer-events:none;
+    }
   </style>
 
   <div class="container">
-    <!-- LEFT: copy + card -->
+    <!-- LEFT: copy -->
     <div>
       <h1>Primary &amp; Urgent Care, simplified</h1>
       <p class="lead">The care you deserve without complexity</p>
@@ -253,10 +270,10 @@
         <div class="pill">X-ray, labs, procedures</div>
       </div>
 
-     
+      
     </div>
 
-    <!-- RIGHT: image slot (replace src with your image) -->
+    <!-- RIGHT: replace src with your image -->
     <figure class="hero__art">
       <img src="assets/img/hero-urh.jpg" alt="Patients receiving care at urHealthcare">
     </figure>
