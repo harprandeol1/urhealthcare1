@@ -114,19 +114,30 @@
 <body>
   <!-- Header -->
   <header class="hdr">
-    <div class="container nav">
-      <a class="logo" href="#">urHealthcare</a>
-      <nav class="navlinks" aria-label="Primary">
-        <a href="#services">Services</a>
-        <a href="#plans">Membership</a>
-        <a href="#employers">Employers</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact">Contact</a>
-        <a class="btn" href="#contact" rel="nofollow">Book visit</a>
-      </nav>
-      <button class="menu-btn" aria-label="Menu" onclick="document.body.classList.toggle('menu-open')">☰</button>
-    </div>
-  </header>
+  <div class="container nav">
+    <a class="logo" href="index.html">urHealthcare</a>
+
+    <nav class="navlinks" aria-label="Primary">
+      <div class="dropdown">
+        <button class="dropbtn" aria-expanded="false" aria-controls="menu-services">Services ▾</button>
+        <ul id="menu-services" class="menu" hidden>
+          <li><a href="primary-care.html">Primary Care</a></li>
+          <li><a href="urgent-care.html">Urgent Care</a></li>
+          <li><a href="imaging-labs.html">Imaging & Labs</a></li>
+        </ul>
+      </div>
+
+      <a href="plans.html">Membership</a>
+      <a href="employers.html">Employers</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html" class="btn">Book visit</a>
+    </nav>
+
+    <button class="menu-btn" aria-label="Menu"
+      onclick="document.body.classList.toggle('menu-open')">☰</button>
+  </div>
+ </header>
+
 
   <!-- Hero -->
   <section class="hero">
