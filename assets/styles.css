@@ -1,134 +1,33 @@
-/* ================================
-   urHealthcare — Global Styles
-   File: assets/styles.css
-   ================================ */
+:root { --brand:#0b3a83; --ink:#111; --muted:#666; --bg:#fff; }
+* { box-sizing:border-box; }
+body { margin:0; font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color:var(--ink); background:var(--bg); }
+a { color:var(--brand); text-decoration:none; }
+.site { max-width:1100px; margin:auto; padding:16px; display:flex; align-items:center; gap:16px; justify-content:space-between; }
+header.site nav a { margin:0 10px; font-weight:600; }
+.logo { font-weight:800; letter-spacing:.2px; color:var(--brand); }
+.btn { display:inline-block; padding:10px 16px; border-radius:12px; background:var(--brand); color:#fff; font-weight:700; }
+.btn.ghost { background:transparent; border:2px solid var(--brand); color:var(--brand); }
+.hero { text-align:center; padding:96px 16px 64px; background:
+  radial-gradient(1200px 600px at 50% -200px, #dfe9ff 0, transparent 60%);
+}
+.hero h1 { font-size:clamp(28px, 5vw, 48px); margin:0 0 12px; }
+.hero p { color:var(--muted); font-size:18px; }
+.cta { margin-top:20px; display:flex; gap:12px; justify-content:center; }
 
-/* ---- CSS Variables (Theme) ---- */
-:root {
-  --brand: #0b3a83;       /* urHealthcare dark blue */
-  --brand-ink: #072a61;
-  --ink: #111;
-  --muted: #666;
-  --bg: #fff;
-  --card: #ffffff;
-  --border: #e9edf3;
-  --focus: #5b9dff;
-  --radius: 16px;
-  --shadow: 0 6px 20px rgba(0,0,0,.06);
-}
+.grid3 { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:18px; padding:32px 16px; max-width:1100px; margin:auto; }
+.grid3 article { padding:18px; border:1px solid #eee; border-radius:16px; }
 
-/* ---- Base / Reset ---- */
-* { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; }
-body {
-  margin: 0;
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  color: var(--ink);
-  background: var(--bg);
-  line-height: 1.6;
-}
-img { max-width: 100%; display: block; }
-a { color: var(--brand); text-decoration: none; }
-a:hover { text-decoration: underline; }
-:focus-visible {
-  outline: 3px solid var(--focus);
-  outline-offset: 2px;
-}
+.cards { padding:32px 16px; max-width:1100px; margin:auto; }
+.cards .card { border:1px solid #eee; border-radius:16px; padding:18px; display:inline-block; width:min(320px,100%); margin:10px; vertical-align:top; }
+.price { font-size:28px; font-weight:800; color:var(--brand); margin:.2rem 0 1rem; }
+.note { color:var(--muted); margin-top:8px; }
 
-/* ---- Layout Shell ---- */
-.site {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 16px;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  justify-content: space-between;
-}
+#employers { max-width:900px; margin:0 auto; padding:32px 16px; text-align:center; }
+.faq { max-width:900px; margin:0 auto; padding:32px 16px; }
+details { border:1px solid #eee; border-radius:12px; padding:12px 16px; margin:10px 0; }
+summary { font-weight:700; cursor:pointer; }
+.contact { max-width:900px; margin:0 auto; padding:32px 16px; }
+input, textarea { width:100%; padding:12px; border:1px solid #ddd; border-radius:10px; margin:8px 0; font:inherit; }
+form button { width:100%; }
 
-/* ---- Header / Nav ---- */
-header.site { position: sticky; top: 0; background: var(--bg); z-index: 10; }
-.logo {
-  font-weight: 800;
-  letter-spacing: .2px;
-  color: var(--brand);
-  white-space: nowrap;
-}
-header.site nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  align-items: center;
-}
-header.site nav a {
-  font-weight: 600;
-  color: var(--brand-ink);
-}
-header.site nav a:hover { text-decoration: none; opacity: .9; }
-
-/* ---- Buttons ---- */
-.btn {
-  display: inline-block;
-  padding: 10px 16px;
-  border-radius: 12px;
-  background: var(--brand);
-  color: #fff;
-  font-weight: 700;
-  border: 2px solid var(--brand);
-  transition: transform .04s ease, box-shadow .2s ease;
-  box-shadow: 0 2px 0 rgba(0,0,0,.06);
-}
-.btn:hover { text-decoration: none; transform: translateY(-1px); }
-.btn:active { transform: translateY(0); }
-.btn.ghost {
-  background: transparent;
-  color: var(--brand);
-  border-color: var(--brand);
-}
-
-/* ---- Hero ---- */
-.hero {
-  text-align: center;
-  padding: 96px 16px 64px;
-  background:
-    radial-gradient(1200px 600px at 50% -200px, #dfe9ff 0, transparent 60%);
-}
-.hero h1 {
-  font-size: clamp(28px, 5vw, 48px);
-  margin: 0 0 12px;
-  line-height: 1.15;
-}
-.hero p { color: var(--muted); font-size: 18px; margin: 0; }
-.cta { margin-top: 20px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-
-/* ---- Sections / Utilities ---- */
-section { scroll-margin-top: 80px; }
-.section-narrow { max-width: 900px; margin: 0 auto; padding: 32px 16px; }
-
-.grid3 {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 18px;
-  padding: 32px 16px;
-  max-width: 1100px;
-  margin: auto;
-}
-.grid3 article {
-  padding: 18px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: var(--card);
-  box-shadow: var(--shadow);
-}
-
-/* ---- Cards / Plans ---- */
-.cards { padding: 32px 16px; max-width: 1100px; margin: auto; text-align: center; }
-.cards h2 { margin: 0 0 12px; }
-.cards .card {
-  display: inline-block;
-  width: min(320px, 100%);
-  margin: 10px;
-  padding: 18px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background
+footer.site { justify-content:center; color:var(--muted); }
