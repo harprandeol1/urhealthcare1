@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>In-House Medications (Dispensed on-site) | Rocklin, CA 95677 | urHealthcare</title>
+  <link rel="canonical" href="https://harprandeol1.github.io/urhealthcare1/in-house-medications.html" />
+  <meta name="robots" content="index,follow" />
+  <meta name="description" content="Clinic-dispensed medications at urHealthcare in Rocklin, CA 95677. Same-day access to common antibiotics, antivirals, blood pressure, diabetes, cholesterol, GI, dermatology, eye/ear, pain and men’s health medicines. We accept major insurance including Partnership Medi-Cal and offer Direct Primary Care." />
+  <meta name="keywords" content="in house medications Rocklin 95677, clinic dispensing, antibiotics near me, amoxicillin, doxycycline, albuterol, metformin, lisinopril, levothyroxine, rosuvastatin, sildenafil, tamsulosin, urgent care medications Rocklin, Sacramento metro" />
+
+  <!-- Global styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://harprandeol1.github.io/urhealthcare1/assets/styles.css" />
+
+  <style>
+    /* Page-specific styles */
+    .hero-med { background: linear-gradient(180deg,#e9f3ff 0%, #ffffff 100%); padding: 28px 0 12px; }
+    .hero-med h1 { margin: 0 0 8px; font-size: clamp(28px,4.5vw,44px); }
+    .muted { color:#54637a; }
+    .cta-row { display:flex; gap:12px; flex-wrap:wrap; margin-top:14px; }
+    .btn.outline { background:#fff; color:#0b3a83; border:2px solid #0b3a83; }
+
+    .toolbox { display:grid; gap:10px; grid-template-columns: 1fr auto; align-items:center; margin-top:14px; }
+    @media (max-width: 760px){ .toolbox{ grid-template-columns: 1fr; } }
+    .search { width:100%; border:1px solid #dbeafe; border-radius:12px; padding:12px 14px; font:inherit; }
+    .filters { display:flex; gap:8px; flex-wrap:wrap; }
+    .chip { border:1px solid #e2e8f0; background:#fff; padding:8px 10px; border-radius:999px; font-weight:700; cursor:pointer; }
+    .chip[data-active="true"] { background:#f3f7ff; color:#0b3a83; border-color:#d8e4ff; }
+
+    .category { margin-top:22px; }
+    .category h2 { margin:0 0 8px; font-size: clamp(20px,2.5vw,26px); }
+    .med-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:12px; }
+    .med { background:#fff; border:1px solid #edf2f7; border-radius:12px; padding:12px 14px; box-shadow:0 10px 30px rgba(0,0,0,.04); }
+    .med strong { display:block; }
+    .note { font-size:13px; color:#6b7a90; margin-top:10px; }
+
+    .loc-blurb { background:#0b3a83; color:#fff; border-radius:14px; padding:14px 16px; display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between; margin-top:26px; }
+    .loc-blurb a { color:#fff; text-decoration:underline; }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="hdr">
+    <div class="container nav">
+      <a class="logo" href="index.html">urHealthcare</a>
+
+      <nav class="navlinks" aria-label="Primary">
+        <div class="dropdown">
+          <button class="dropbtn" aria-expanded="false" aria-controls="menu-services">Services ▾</button>
+          <ul id="menu-services" class="menu" hidden>
+            <li><a href="primary-care.html">Primary Care</a></li>
+            <li><a href="urgent-care.html">Urgent Care</a></li>
+            <li><a href="in-house-labs.html">In-House Labs</a></li>
+            <li><a href="in-house-medications.html" aria-current="page">In-House Medications</a></li>
+          </ul>
+        </div>
+
+        <a href="accepted-insurances.html">Insurances</a>
+        <a href="plans.html">Membership</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html" class="btn">Book visit</a>
+      </nav>
+
+      <button class="menu-btn" aria-label="Menu" onclick="document.body.classList.toggle('menu-open')">☰</button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero-med">
+    <div class="container">
+      <h1>Medications Dispensed In-House — Rocklin, CA <span class="muted">(95677)</span></h1>
+      <p class="muted">Same-day access to commonly prescribed medicines right at our clinic. Saves time, improves adherence, and keeps your care in one place. We accept major insurance, including <strong>Partnership Medi-Cal</strong>, and we also offer <a href="plans.html">Direct Primary Care</a>.</p>
+
+      <div class="cta-row">
+        <a class="btn" href="contact.html">Questions? Contact us</a>
+        <a class="btn outline" href="https://www.google.com/maps?q=6839+Five+Star+Blvd,+Suite+D,+Rocklin,+CA+95677" target="_blank" rel="noopener">Get directions</a>
+        <a class="btn outline" href="accepted-insurances.html">Accepted insurances</a>
+      </div>
+
+      <!-- Search + Filters -->
+      <div class="toolbox">
+        <input id="medSearch" class="search" type="search" placeholder="Search medication or condition (e.g., UTI, blood pressure, diabetes, rash)…" />
+        <div class="filters" id="medFilters" aria-label="Filter categories">
+          <button class="chip" data-filter="all" data-active="true">All</button>
+          <button class="chip" data-filter="antibiotic">Antibiotics</button>
+          <button class="chip" data-filter="antiviral">Antivirals</button>
+          <button class="chip" data-filter="respiratory">Respiratory/Allergy</button>
+          <button class="chip" data-filter="cardio">Blood Pressure/Heart</button>
+          <button class="chip" data-filter="lipid">Cholesterol</button>
+          <button class="chip" data-filter="endo">Diabetes/Thyroid</button>
+          <button class="chip" data-filter="gi">GI/Pain</button>
+          <button class="chip" data-filter="derm">Dermatology</button>
+          <button class="chip" data-filter="oph">Eye/Ear</button>
+          <button class="chip" data-filter="uro">Urology</button>
+          <button class="chip" data-filter="neuro">Mental Health/Neuro</button>
+          <button class="chip" data-filter="injectable">Injectables/Procedures</button>
+        </div>
+      </div>
+
+      <p class="note">Availability can vary; medications are dispensed to established patients at the clinician’s discretion and are not sold online.</p>
+    </div>
+  </section>
+
+  <main class="section">
+    <div class="container">
+
+      <!-- Antibiotics -->
+      <section class="category" id="cat-antibiotic">
+        <h2>Antibiotics & Antimicrobials</h2>
+        <div class="med-grid">
+          <div class="med" data-cat="antibiotic" data-tags="throat ear sinus skin dental uti pneumonia">
+            <strong>Amoxicillin</strong> 400mg/5ml suspension (100ml)
+          </div>
+          <div class="med" data-cat="antibiotic" data-tags="throat ear sinus dental">
+            <strong>Amoxicillin</strong> 500mg capsules
+          </div>
+          <div class="med" data-cat="antibiotic" data-tags="sinus ear throat dental">
+            <strong>Amoxicillin</strong> 875mg tablets
+          </div>
+          <div class="med" data-cat="antibiotic" data-tags="sinus ear dental bite diverticulitis">
+            <strong>Amoxicillin/Clavulanate</strong> 500/125mg tablets
+          </div>
+          <div class="med" data-cat="antibiotic" data-tags="sinus ear dental bite">
+            <strong>Amoxicillin/Clavulanate</strong> 875/125mg tablets
+          </div>
+          <div class="med" data-cat="antibiotic" data-tags="pediatric ear sinus">
+            <strong>Amoxicillin/Clavulanate</strong> 600mg/42.9mg suspension (125ml)
+          </div>
+          <div class="med" data-cat="antibiotic" data-tags="throat sinus bronchitis atypical">
+            <strong>Azithromycin</strong> 250mg tablets
+          </div>
+          <div class="med" data-cat="antibiotic" data-tags="throat sinus bronchitis">
+            <strong>Azithromycin</strong> 500mg tablets
+          </div>
+          <div class="med" data-cat="antibiotic" data-tags="pediatric throat sinus">
+            <strong>Azithromycin</strong> 200mg/5ml suspension (15ml / 30ml)
+          </div>
+          <div class="med" data-cat="antibiotic" data-tags="skin uti dental">
+            <strong>Cephalexin</strong> 500mg capsules
+          </div>
+          <div class="med" data-cat="antibiotic" data-tags="sinus ear throat">
+            <strong>Cefuroxime Axetil</strong> 250mg tablets
+          </div>
+          <div class="med" data-cat="antibiotic" data-tags="ear sinus pneumonia skin">
+            <strong>Cefdinir</strong> 300mg capsules / 250mg/5ml suspension (60ml)
+          </div>
+          <div class="med" data-cat="antibiotic" data-tags="uti skin bone">
+            <strong>Ciprofloxacin</strong> 500mg tablets
+          </div>
+          <div class="med" data-cat="antibiotic" data-tags="skin dental pneumonia">
+            <strong>Clindamycin HCl</strong> 150mg / 300mg capsules
+          </div>
+          <div class="med" data-cat="antibiotic" data-tags="throat sinus h pylori">
+            <strong>Clarithromycin IR</strong> 500mg tablets
+          </div>
+          <div class="med" data-cat="antibiotic" data-tags="tick acne bronchitis malaria">
+            <strong>Doxycycline</strong> 100mg hyclate / monohydrate capsules
+          </div>
+          <div class="med" data-cat="antibiotic" data-tags="uti">
+            <strong>Nitrofurantoin</strong> 100mg monohydrate/macrocrystals capsules
+          </div>
+          <div class="med" data-cat="antibiotic" data-tags="strep dental">
+            <strong>Penicillin VK</strong> 500mg tablets
+          </div>
+          <div class="med" data-cat="antibiotic" data-tags="skin uti mrsa">
+            <strong>Sulfamethoxazole/Trimethoprim DS</strong> 800/160mg tablets
+          </div>
+          <div class="med" data-cat="antibiotic oph" data-tags="pink eye">
+            <strong>Ciprofloxacin</strong> 0.3% ophthalmic solution (5ml)
+          </div>
+          <div class="med" data-cat="antibiotic oph" data-tags="pink eye">
+            <strong>Gentamicin</strong> 0.3% ophthalmic solution (5ml)
+          </div>
+          <div class="med" data-cat="antibiotic oph" data-tags="pink eye">
+            <strong>Tobramycin</strong> 0.3% ophthalmic solution (5ml)
+          </div>
+          <div class="med" data-cat="antibiotic oph" data-tags="pink eye">
+            <strong>Trimethoprim/Polymyxin B</strong> ophthalmic solution (10ml)
+          </div>
+          <div class="med" data-cat="injectable" data-tags="gonorrhea cellulitis preop">
+            <strong>Ceftriaxone</strong> 1g injection
+          </div>
+          <div class="med" data-cat="injectable" data-tags="skin surgery">
+            <strong>Cefazolin</strong> 1g injection
+          </div>
+        </div>
+      </section>
+
+      <!-- Antivirals -->
+      <section class="category" id="cat-antiviral">
+        <h2>Antivirals</h2>
+        <div class="med-grid">
+          <div class="med" data-cat="antiviral" data-tags="cold sore hsv shingles">
+            <strong>Acyclovir</strong> 400mg tablets
+          </div>
+          <div class="med" data-cat="antiviral" data-tags="cold sore shingles hsv">
+            <strong>Valacyclovir</strong> 500mg / 1g tablets
+          </div>
+          <div class="med" data-cat="antiviral" data-tags="flu influenza">
+            <strong>Oseltamivir</strong> 75mg capsules
+          </div>
+        </div>
+      </section>
+
+      <!-- Respiratory / Allergy -->
+      <section class="category" id="cat-respiratory">
+        <h2>Respiratory & Allergy</h2>
+        <div class="med-grid">
+          <div class="med" data-cat="respiratory" data-tags="asthma wheeze cough">
+            <strong>Albuterol</strong> 90mcg HFA inhaler (6.7g)
+          </div>
+          <div class="med" data-cat="respiratory" data-tags="allergy nose congestion">
+            <strong>Fluticasone</strong> 50mcg nasal spray (16g)
+          </div>
+          <div class="med" data-cat="respiratory" data-tags="allergy hives rhinitis">
+            <strong>Cetirizine</strong> 10mg tablets
+          </div>
+          <div class="med" data-cat="respiratory" data-tags="cough cold congestion">
+            <strong>Pseudoephedrine/Brompheniramine/DM</strong> 30-2-10mg/5ml syrup (118ml)
+          </div>
+          <div class="med" data-cat="injectable" data-tags="anaphylaxis">
+            <strong>Epinephrine</strong> auto-injector 0.15mg
+          </div>
+        </div>
+      </section>
+
+      <!-- Blood pressure / Heart + Lipids -->
+      <section class="category" id="cat-cardio">
+        <h2>Blood Pressure & Heart</h2>
+        <div class="med-grid">
+          <div class="med" data-cat="cardio" data-tags="bp hypertension">
+            <strong>Amlodipine</strong> 5mg / 10mg tablets
+          </div>
+          <div class="med" data-cat="cardio" data-tags="bp hypertension">
+            <strong>Benazepril</strong> 40mg tablets
+          </div>
+          <div class="med" data-cat="cardio" data-tags="bp heart failure">
+            <strong>Carvedilol</strong> 3.125mg / 6.25mg / 12.5mg / 25mg tablets
+          </div>
+          <div class="med" data-cat="cardio" data-tags="bp">
+            <strong>Clonidine</strong> 0.1mg tablets
+          </div>
+          <div class="med" data-cat="cardio" data-tags="stroke heart">
+            <strong>Clopidogrel</strong> 75mg tablets
+          </div>
+          <div class="med" data-cat="cardio" data-tags="bp">
+            <strong>Enalapril</strong> 20mg tablets
+          </div>
+          <div class="med" data-cat="cardio" data-tags="bp diuretic">
+            <strong>Furosemide</strong> 20mg / 40mg tablets
+          </div>
+          <div class="med" data-cat="cardio" data-tags="bp diuretic">
+            <strong>Hydrochlorothiazide</strong> 12.5mg capsules / 25mg tablets
+          </div>
+          <div class="med" data-cat="cardio" data-tags="angina">
+            <strong>Isosorbide</strong> 20mg tablets
+          </div>
+          <div class="med" data-cat="cardio" data-tags="bp">
+            <strong>Lisinopril</strong> 10mg / 20mg / 40mg tablets
+          </div>
+          <div class="med" data-cat="cardio" data-tags="bp">
+            <strong>Losartan</strong> 25mg / 50mg / 100mg tablets
+          </div>
+          <div class="med" data-cat="cardio" data-tags="bp">
+            <strong>Metoprolol Succinate ER</strong> 25mg tablets
+          </div>
+          <div class="med" data-cat="cardio" data-tags="bp migraine tremor">
+            <strong>Propranolol</strong> 20mg / 40mg tablets
+          </div>
+          <div class="med" data-cat="cardio" data-tags="bp">
+            <strong>Ramipril</strong> 5mg capsules
+          </div>
+          <div class="med" data-cat="cardio" data-tags="bp potassium sparing">
+            <strong>Spironolactone</strong> 25mg / 50mg tablets
+          </div>
+          <div class="med" data-cat="cardio" data-tags="bp">
+            <strong>Telmisartan</strong> 80mg tablets
+          </div>
+          <div class="med" data-cat="cardio" data-tags="bp rate control">
+            <strong>Verapamil ER</strong> 180mg tablets
+          </div>
+          <div class="med" data-cat="cardio" data-tags="heart aspirin">
+            <strong>Aspirin</strong> 81mg tablets
+          </div>
+        </div>
+      </section>
+
+      <section class="category" id="cat-lipid">
+        <h2>Cholesterol</h2>
+        <div class="med-grid">
+          <div class="med" data-cat="lipid" data-tags="cholesterol">
+            <strong>Atorvastatin</strong> 10mg / 20mg / 40mg / 80mg tablets
+          </div>
+          <div class="med" data-cat="lipid" data-tags="cholesterol">
+            <strong>Rosuvastatin</strong> 10mg / 20mg / 40mg tablets
+          </div>
+          <div class="med" data-cat="lipid" data-tags="cholesterol triglycerides">
+            <strong>Fenofibrate</strong> 145mg / 160mg tablets
+          </div>
+          <div class="med" data-cat="lipid" data-tags="cholesterol">
+            <strong>Pravastatin</strong> 20mg / 40mg tablets
+          </div>
+        </div>
+      </section>
+
+      <!-- Diabetes / Thyroid -->
+      <section class="category" id="cat-endo">
+        <h2>Diabetes, Thyroid & Vitamins</h2>
+        <div class="med-grid">
+          <div class="med" data-cat="endo" data-tags="diabetes sugar">
+            <strong>Metformin</strong> 500mg / 1000mg tablets
+          </div>
+          <div class="med" data-cat="endo" data-tags="diabetes sugar">
+            <strong>Metformin ER</strong> 500mg tablets
+          </div>
+          <div class="med" data-cat="endo" data-tags="diabetes">
+            <strong>Glipizide</strong> 5mg tablets
+          </div>
+          <div class="med" data-cat="injectable" data-tags="diabetes insulin">
+            <strong>Lantus</strong> 100 units/ml multi-dose vial (10ml)
+          </div>
+          <div class="med" data-cat="endo" data-tags="thyroid">
+            <strong>Levothyroxine</strong> 25 / 50 / 75 / 100 / 125 / 150 mcg tablets
+          </div>
+          <div class="med" data-cat="endo" data-tags="anemia vitamin">
+            <strong>Ferrous Sulfate</strong> 325mg tablets
+          </div>
+          <div class="med" data-cat="endo" data-tags="vitamin">
+            <strong>Folic Acid</strong> 1mg tablets
+          </div>
+          <div class="med" data-cat="endo" data-tags="constipation liver">
+            <strong>Lactulose</strong> 10g/15ml syrup (473ml)
+          </div>
+        </div>
+      </section>
+
+      <!-- GI / Pain -->
+      <section class="category" id="cat-gi">
+        <h2>GI, Nausea & Pain</h2>
+        <div class="med-grid">
+          <div class="med" data-cat="gi" data-tags="ibs cramp">
+            <strong>Dicyclomine</strong> 20mg tablets
+          </div>
+          <div class="med" data-cat="gi" data-tags="acid reflux">
+            <strong>Esomeprazole</strong> 40mg DR capsules
+          </div>
+          <div class="med" data-cat="gi" data-tags="acid reflux">
+            <strong>Omeprazole</strong> 20mg / 40mg DR capsules
+          </div>
+          <div class="med" data-cat="gi" data-tags="heartburn">
+            <strong>Famotidine</strong> 40mg tablets
+          </div>
+          <div class="med" data-cat="gi" data-tags="nausea">
+            <strong>Metoclopramide</strong> 10mg tablets
+          </div>
+          <div class="med" data-cat="gi" data-tags="nausea">
+            <strong>Ondansetron</strong> 8mg tablets; <strong>ODT</strong> 4mg / 8mg
+          </div>
+          <div class="med" data-cat="gi" data-tags="pain migraine">
+            <strong>Ketorolac</strong> 10mg tablets
+          </div>
+          <div class="med" data-cat="gi" data-tags="pain inflammation">
+            <strong>Ibuprofen</strong> 600mg / 800mg tablets
+          </div>
+          <div class="med" data-cat="gi" data-tags="pain inflammation">
+            <strong>Naproxen</strong> 500mg tablets
+          </div>
+          <div class="med" data-cat="gi" data-tags="pain arthritis">
+            <strong>Meloxicam</strong> 15mg tablets
+          </div>
+          <div class="med" data-cat="gi" data-tags="pain gout">
+            <strong>Indomethacin</strong> 50mg capsules
+          </div>
+          <div class="med" data-cat="gi" data-tags="uti pain">
+            <strong>Phenazopyridine</strong> 200mg tablets
+          </div>
+          <div class="med" data-cat="gi" data-tags="constipation">
+            <strong>Senna</strong> 8.6mg tablets
+          </div>
+          <div class="med" data-cat="gi" data-tags="burns skin">
+            <strong>Silver Sulfadiazine</strong> 1% cream (25g)
+          </div>
+        </div>
+      </section>
+
+      <!-- Mental Health / Neuro -->
+      <section class="category" id="cat-neuro">
+        <h2>Mental Health & Neurology</h2>
+        <div class="med-grid">
+          <div class="med" data-cat="neuro" data-tags="sleep pain">
+            <strong>Amitriptyline</strong> 25mg / 50mg tablets
+          </div>
+          <div class="med" data-cat="neuro" data-tags="depression">
+            <strong>Bupropion XL</strong> 150mg / 300mg tablets
+          </div>
+          <div class="med" data-cat="neuro" data-tags="anxiety">
+            <strong>Buspirone</strong> 10mg / 15mg tablets
+          </div>
+          <div class="med" data-cat="neuro" data-tags="depression">
+            <strong>Citalopram</strong> 10mg / 20mg / 40mg tablets
+          </div>
+          <div class="med" data-cat="neuro" data-tags="depression">
+            <strong>Fluoxetine</strong> 10mg / 20mg / 40mg capsules
+          </div>
+          <div class="med" data-cat="neuro" data-tags="anxiety itching">
+            <strong>Hydroxyzine Pamoate</strong> 25mg capsules
+          </div>
+          <div class="med" data-cat="neuro" data-tags="bipolar seizures">
+            <strong>Lamotrigine</strong> 25mg tablets
+          </div>
+          <div class="med" data-cat="neuro" data-tags="depression">
+            <strong>Sertraline</strong> 50mg / 100mg tablets
+          </div>
+          <div class="med" data-cat="neuro" data-tags="sleep">
+            <strong>Trazodone</strong> 50mg / 100mg tablets
+          </div>
+          <div class="med" data-cat="neuro" data-tags="migraine">
+            <strong>Sumatriptan</strong> 100mg tablets
+          </div>
+          <div class="med" data-cat="neuro" data-tags="muscle spasm">
+            <strong>Cyclobenzaprine</strong> 10mg tablets
+          </div>
+          <div class="med" data-cat="neuro" data-tags="parkinson">
+            <strong>Carbidopa/Levodopa</strong> 25/100mg tablets
+          </div>
+          <div class="med" data-cat="neuro" data-tags="autoimmune malaria">
+            <strong>Hydroxychloroquine</strong> 200mg tablets
+          </div>
+          <div class="med" data-cat="neuro" data-tags="steroid">
+            <strong>Dexamethasone</strong> 4mg tablets; <strong>Prednisone</strong> 10mg / 20mg; <strong>Methylprednisolone</strong> 4mg dose pack
+          </div>
+        </div>
+      </section>
+
+      <!-- Dermatology -->
+      <section class="category" id="cat-derm">
+        <h2>Dermatology & Topicals</h2>
+        <div class="med-grid">
+          <div class="med" data-cat="derm" data-tags="acne">
+            <strong>Benzoyl Peroxide</strong> 10% lotion (29.5ml)
+          </div>
+          <div class="med" data-cat="derm" data-tags="eczema psoriasis">
+            <strong>Clobetasol Propionate</strong> 0.05% cream (30g)
+          </div>
+          <div class="med" data-cat="derm" data-tags="fungal ringworm">
+            <strong>Clotrimazole</strong> 1% cream (0.5oz)
+          </div>
+          <div class="med" data-cat="derm" data-tags="fungal nails">
+            <strong>Terbinafine</strong> 250mg tablets
+          </div>
+          <div class="med" data-cat="derm" data-tags="eczema itch">
+            <strong>Hydrocortisone</strong> 1% cream (1oz)
+          </div>
+          <div class="med" data-cat="derm" data-tags="itch pain">
+            <strong>Lidocaine</strong> 4% cream (5g)
+          </div>
+          <div class="med" data-cat="derm" data-tags="yeast diaper rash">
+            <strong>Nystatin</strong> 100,000 units ointment (15g)
+          </div>
+          <div class="med" data-cat="derm" data-tags="fungal dandruff">
+            <strong>Ketoconazole</strong> 2% cream (15g)
+          </div>
+          <div class="med" data-cat="derm" data-tags="eczema dermatitis">
+            <strong>Triamcinolone Acetonide</strong> 0.1% cream (15g)
+          </div>
+          <div class="med" data-cat="derm" data-tags="oral dental">
+            <strong>Chlorhexidine</strong> 0.12% oral rinse (16oz)
+          </div>
+        </div>
+      </section>
+
+      <!-- Eye/Ear -->
+      <section class="category" id="cat-oph">
+        <h2>Eye & Ear</h2>
+        <div class="med-grid">
+          <div class="med" data-cat="oph" data-tags="pink eye">
+            <strong>Ketorolac Tromethamine</strong> 0.5% ophthalmic solution (5ml)
+          </div>
+          <!-- (Antibiotic eye drops are also listed in the Antibiotics section) -->
+        </div>
+      </section>
+
+      <!-- Urology / Men's Health -->
+      <section class="category" id="cat-uro">
+        <h2>Urology & Men’s Health</h2>
+        <div class="med-grid">
+          <div class="med" data-cat="uro" data-tags="bph prostate">
+            <strong>Tamsulosin</strong> 0.4mg capsules
+          </div>
+          <div class="med" data-cat="uro" data-tags="ed">
+            <strong>Sildenafil</strong> 50mg / 100mg tablets
+          </div>
+          <div class="med" data-cat="uro" data-tags="ed">
+            <strong>Tadalafil</strong> 5mg / 10mg tablets
+          </div>
+          <div class="med" data-cat="antiparasitic" data-tags="scabies strongyloides">
+            <strong>Ivermectin</strong> 3mg tablets
+          </div>
+        </div>
+      </section>
+
+      <!-- Location / NAP -->
+      <section>
+        <div class="loc-blurb">
+          <p style="margin:0"><strong>urHealthcare — In-House Medications</strong><br>
+            6839 Five Star Blvd, Suite D, Rocklin, CA <strong>95677</strong> • <a href="tel:+19169642001">916-964-2001</a>
+          </p>
+          <p style="margin:0">
+            <a href="https://www.google.com/maps?q=6839+Five+Star+Blvd,+Suite+D,+Rocklin,+CA+95677" target="_blank" rel="noopener">Get Directions</a> •
+            <a href="contact.html">Contact / Check-in</a>
+          </p>
+        </div>
+        <p class="note">This list is a representative inventory. Stock may vary. Medications are dispensed after evaluation by a licensed clinician. We do not operate an internet pharmacy.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="ftr">
+    <div class="container">© <span id="y"></span> urHealthcare. All rights reserved.</div>
+  </footer>
+
+  <!-- Structured Data: OfferCatalog of in-house medications (sample subset for search engines) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"OfferCatalog",
+    "name":"urHealthcare In-House Medications",
+    "url":"https://harprandeol1.github.io/urhealthcare1/in-house-medications.html",
+    "itemListElement":[
+      {"@type":"Offer","itemOffered":{"@type":"Drug","name":"Amoxicillin 875 mg tablet"}},
+      {"@type":"Offer","itemOffered":{"@type":"Drug","name":"Amoxicillin/Clavulanate 875/125 mg tablet"}},
+      {"@type":"Offer","itemOffered":{"@type":"Drug","name":"Azithromycin 500 mg tablet"}},
+      {"@type":"Offer","itemOffered":{"@type":"Drug","name":"Doxycycline 100 mg capsule"}},
+      {"@type":"Offer","itemOffered":{"@type":"Drug","name":"Nitrofurantoin 100 mg capsule"}},
+      {"@type":"Offer","itemOffered":{"@type":"Drug","name":"Oseltamivir 75 mg capsule"}},
+      {"@type":"Offer","itemOffered":{"@type":"Drug","name":"Albuterol HFA 90 mcg inhaler"}},
+      {"@type":"Offer","itemOffered":{"@type":"Drug","name":"Amlodipine 10 mg tablet"}},
+      {"@type":"Offer","itemOffered":{"@type":"Drug","name":"Losartan 100 mg tablet"}},
+      {"@type":"Offer","itemOffered":{"@type":"Drug","name":"Lisinopril 20 mg tablet"}},
+      {"@type":"Offer","itemOffered":{"@type":"Drug","name":"Metformin ER 500 mg tablet"}},
+      {"@type":"Offer","itemOffered":{"@type":"Drug","name":"Levothyroxine 100 mcg tablet"}},
+      {"@type":"Offer","itemOffered":{"@type":"Drug","name":"Rosuvastatin 20 mg tablet"}},
+      {"@type":"Offer","itemOffered":{"@type":"Drug","name":"Omeprazole 20 mg delayed-release capsule"}},
+      {"@type":"Offer","itemOffered":{"@type":"Drug","name":"Ondansetron ODT 4 mg tablet"}},
+      {"@type":"Offer","itemOffered":{"@type":"Drug","name":"Sertraline 50 mg tablet"}},
+      {"@type":"Offer","itemOffered":{"@type":"Drug","name":"Tamsulosin 0.4 mg capsule"}},
+      {"@type":"Offer","itemOffered":{"@type":"Drug","name":"Sildenafil 100 mg tablet"}},
+      {"@type":"Offer","itemOffered":{"@type":"Drug","name":"Triamcinolone 0.1% cream"}}
+    ]
+  }
+  </script>
+
+  <!-- Simple search/filter script -->
+  <script>
+    (function(){
+      const y = document.getElementById('y'); if (y) y.textContent = new Date().getFullYear();
+
+      const search = document.getElementById('medSearch');
+      const chips = document.querySelectorAll('#medFilters .chip');
+      const meds = Array.from(document.querySelectorAll('.med'));
+
+      let active = 'all';
+
+      function applyFilter(){
+        const q = (search.value || '').toLowerCase().trim();
+        meds.forEach(el => {
+          const txt = (el.textContent + ' ' + (el.dataset.tags || '')).toLowerCase();
+          const cat = el.dataset.cat || '';
+          const matchText = !q || txt.includes(q);
+          const matchCat  = active === 'all' || cat.includes(active);
+          el.style.display = (matchText && matchCat) ? '' : 'none';
+        });
+      }
+
+      chips.forEach(chip => {
+        chip.addEventListener('click', () => {
+          chips.forEach(c => c.dataset.active = 'false');
+          chip.dataset.active = 'true';
+          active = chip.dataset.filter;
+          applyFilter();
+        });
+      });
+
+      search.addEventListener('input', applyFilter);
+    })();
+  </script>
+
+  <!-- Basic dropdown a11y if not already in your global JS -->
+  <script>
+    (function(){
+      const btn = document.querySelector('.dropbtn');
+      const menu = document.getElementById('menu-services');
+      if(!btn || !menu) return;
+      btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        menu.hidden = expanded;
+      });
+      document.addEventListener('click', (e) => {
+        if (!menu.contains(e.target) && !btn.contains(e.target)) {
+          btn.setAttribute('aria-expanded','false'); menu.hidden = true;
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
