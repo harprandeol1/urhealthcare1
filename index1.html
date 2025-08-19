@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>urHealthcare — Primary & Urgent Care in Sacramento Metro</title>
+  <meta name="description" content="Direct primary & urgent care. Unlimited visits, 7-day urgent care, 250+ meds included, x-ray, labs, ultrasound, and minor procedures." />
+  <meta name="theme-color" content="#0b3a83" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Always-works stylesheet for GitHub Pages (absolute URL + cache-buster) -->
+  <link rel="stylesheet" href="https://harprandeol1.github.io/urhealthcare1/assets/styles.css?v=5" />
+
+  <!-- Page/transition extras -->
+  <style>
+    /* ===== Scroll-snap “slides” + reveal transitions ===== */
+    :root { --hdrH: 72px; }
+    html, body { height: 100%; scroll-behavior: smooth; }
+    /* pad for fixed headers (if any) when snapping or using #anchors */
+    main.snap { scroll-snap-type: y mandatory; scroll-padding-top: var(--hdrH); overscroll-behavior-y: contain; }
+    section.slide { 
+      scroll-snap-align: start; 
+      min-height: calc(100vh - var(--hdrH)); 
+      padding-block: clamp(56px, 10vh, 128px);   /* clear space in every section */
+    }
+    /* soft separators so the transition feels like a new page */
+    section.slide:not(:first-of-type) { border-top: 1px solid rgba(0,0,0,.04); }
+    /* content reveal on enter */
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
+    .in .reveal { opacity: 1; transform: none; }
+    /* reduced motion preference */
+    @media (prefers-reduced-motion: reduce) {
+      main.snap { scroll-snap-type: none; }
+      .reveal, .in .reveal { opacity: 1; transform: none; transition: none; }
+    }
+
+    /* ===== Existing dropdown CSS kept from your file ===== */
+    .dropdown { position: relative; }
+    .dropbtn{
+      background:transparent; border:0; padding:8px 10px; font:inherit; font-weight:600;
+      color:#b5e2ff; cursor:pointer; border-radius:8px;
+    }
+    .menu{
+      position:absolute; top:110%; left:0; min-width:280px; z-index:1000;
+      background:#b5e2ff; border:1px solid var(--border); border-radius:12px;
+      box-shadow:var(--shadow); padding:8px; list-style:none; margin:0; display:none;
+    }
+    .menu .grid{ display:grid; grid-template-columns:repeat(2,minmax(160px,1fr)); gap:4px 8px; }
+    .menu a{ display:block; padding:8px 10px; border-radius:8px; color:var(--ink); text-decoration:none; white-space:nowrap; }
+    .menu a:hover{ background:#f5f8ff; text-decoration:none; }
+    .menu .all { border-top:1px solid var(--border); margin-top:6px; padding-top:6px; }
+    @media (min-width:721px){ .dropdown:hover .menu, .dropdown:focus-within .menu{ display:block; } }
+    .dropdown.open .menu{ display:block !important; }
+    @media (max-width:720px){
+      .navlinks{ display:none; }
+      .menu-btn{ display:inline-block; background:transparent; border:0; }
+      .menu-open .navlinks{ display:flex; flex-direction:column; align-items:flex-start; gap:10px; padding:12px 0; }
+      .dropdown{ width:100%; }
+      .menu{ position:static; box-shadow:none; border:0; padding:0; }
+    }
+  </style>
+
+  <!-- Open Graph (optional) -->
+  <meta property="og:title" content="urHealthcare — Primary & Urgent Care" />
+  <meta property="og:description" content="Unlimited visits. 7-day urgent care. 250+ meds included. Transparent pricing." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://harprandeol1.github.io/urhealthcare1/" />
+</head>
+<body>
+  <!-- Header with working Services dropdown -->
+  <header class="hdr" style="position:sticky;top:0;z-index:100;background:#0b3a83;">
+    <div class="container nav">
+      <a class="logo" href="index.html">urHealthcare</a>
+
+      <nav class="navlinks" aria-label="Primary">
+        <div class="dropdown" id="services-dd">
+          <button class="dropbtn" type="button" aria-expanded="false" aria-controls="menu-services">
+            Services ▾
+          </button>
+          <div id="menu-services" class="menu" role="menu">
+            <div class="grid">
+              <a href="primary-care.html" role="menuitem">Primary Care</a>
+              <a href="urgent-care.html" role="menuitem">Urgent Care</a>
+              <a href="x-ray.html"role="menuitem">X-ray</a>
+              <a href="labs.html" role="menuitem">Labs</a>
+              <a href="ultrasound.html" role="menuitem">Ultrasound</a>
+              <a href="minor-procedures.html" role="menuitem">Minor Procedures</a>
+              <a href="virtual-care.html" role="menuitem">Virtual Care</a>
+              <a href="included-meds.html" role="menuitem">Medications</a>
+            </div>
+            <div class="all"><a href="#services">View all services →</a></div>
+          </div>
+        </div>
+
+        <a href="direct-primary-care.html">Membership</a>
+        <a href="employers.html">Employers</a>
+        <a href="faq.html">FAQ</a>
+
+        <!-- LOGIN DROPDOWN -->
+        <div class="login-dd">
+          <button class="btn login-dd__button" id="loginMenuButton"
+                  aria-haspopup="menu" aria-expanded="false" aria-controls="loginMenu">
+            Login
+          </button>
+
+          <ul class="login-dd__menu" id="loginMenu" role="menu" aria-labelledby="loginMenuButton">
+            <li role="none">
+              <a role="menuitem" href="https://urhealthcare.hint.com/login/request" class="login-dd__link">Membership Login</a>
+            </li>
+            <li role="none">
+              <a role="menuitem" href="https://www.onpatient.com/login/" class="login-dd__link">OnPatient Login</a>
+            </li>
+          </ul>
+        </div>
+
+        <style>
+          .login-dd { position: relative; }
+          .login-dd__button { display:inline-flex; align-items:center; gap:6px; }
+          .login-dd__button::after { content:"▾"; font-size:.9em; }
+          .login-dd__menu {
+            position:absolute; right:0; top:calc(100% + 8px);
+            min-width:220px; padding:6px; margin:0; list-style:none;
+            background:#fff; border:1px solid #e5e7eb; border-radius:12px;
+            box-shadow:0 12px 28px rgba(0,0,0,.12);
+            display:none; z-index:1000;
+          }
+          .login-dd__menu[data-open="true"] { display:block; }
+          .login-dd__link { display:block; padding:10px 12px; border-radius:10px; color:#111; text-decoration:none; font-weight:700; }
+          .login-dd__link:hover, .login-dd__link:focus { background:#f2f7ff; color:#0b3a83; outline:none; }
+          .btn { background:#0b3a83; color:#fff; border:none; padding:10px 16px; border-radius:12px; font-weight:800; }
+          .btn:hover { filter:brightness(.95); }
+        </style>
+      </nav>
+
+      <button class="menu-btn" aria-label="Menu"
+        onclick="document.body.classList.toggle('menu-open')">☰</button>
+    </div>
+  </header>
+
+  <!-- ===== All “slides” are inside this snap container ===== -->
+  <main class="snap">
+
+    <!-- HERO (brand blue) -->
+    <section class="hero hero--brand slide">
+      <style>
+        .hero--brand{
+          --brand:#2196F3; --brand-mid:#1E88E5; --brand-dark:#1565C0;
+          --ink:#ffffff; --muted:#e9f3ff;
+          color:var(--ink);
+          background:
+            radial-gradient(1200px 600px at 10% -200px, rgba(255,255,255,.14), transparent 60%),
+            linear-gradient(180deg, var(--brand-dark) 0%, var(--brand) 55%, var(--brand-mid) 100%);
+        }
+        .hero--brand .container{
+          max-width:1200px; margin:0 auto;
+          display:grid; grid-template-columns:1.2fr .8fr;
+          gap:32px; align-items:center;
+        }
+        @media (max-width: 960px){
+          .hero--brand .container{ grid-template-columns: 1fr; }
+          .hero__art{ order:-1; margin-bottom:8px; }
+        }
+        .hero--brand h1{ font-size:clamp(28px,5vw,52px); margin:0 0 10px; }
+        .hero--brand .lead{ color:var(--muted); font-size:clamp(16px,2.2vw,18px); margin:0 0 18px; }
+        .cta{ display:flex; gap:12px; flex-wrap:wrap; margin:8px 0 18px; }
+        .btn{ background:#fff; color:var(--brand-dark); border:none; padding:10px 16px; border-radius:12px; font-weight:800; }
+        .btn.ghost{ background:transparent; border:2px solid #ffffff; color:#ffffff; }
+        .btn:hover{ filter:brightness(.95); }
+        .benefits{ display:flex; flex-wrap:wrap; gap:10px; margin-top:4px; }
+        .pill{ background:rgba(255,255,255,.12); color:#fff; border:1px solid rgba(255,255,255,.28);
+          padding:8px 12px; border-radius:999px; font-weight:700; backdrop-filter: blur(2px);}
+        .pill:hover{ background:rgba(255,255,255,.18); }
+        .pill a, .pill:link{ color:inherit; text-decoration:none; }
+        .hero__art{ position:relative; min-height:360px; border-radius:18px; overflow:hidden;
+          filter: drop-shadow(26px 0 48px rgba(0,0,0,.22));}
+        .hero__art img{ width:100%; height:100%; object-fit:cover; display:block;
+          -webkit-mask-image: linear-gradient(to right, black 78%, transparent 100%);
+                  mask-image: linear-gradient(to right, black 78%, transparent 100%);}
+        .hero__art::after{ content:""; position:absolute; inset:0;
+          background: linear-gradient(to right, rgba(0,0,0,0) 60%, rgba(0,0,0,.22) 100%); pointer-events:none; }
+      </style>
+
+      <div class="container reveal">
+        <div>
+          <h1>Primary &amp; Urgent Care, simplified</h1>
+          <p class="lead">The care you deserve without complexity</p>
+
+          <div class="cta">
+            <a class="btn" href="direct-primary-care.html">Membership Plans</a>
+            <a class="btn ghost" href="https://urhealthcare.zohobookings.com/#/urhealthcare">Book Appointment</a>
+          </div>
+
+          <div class="benefits">
+            <div class="pill">Same/next-day care</div>
+            <a class="pill" href="insurances.html">Accept Major Insurances</a>
+            <a class="pill" href="included-meds.html">Medications</a>
+            <a class="pill" href="labs.html">X-ray, labs, procedures</a>
+          </div>
+        </div>
+
+        <figure class="hero__art">
+          <img src="stock doc.jpg" alt="Patients receiving care at urHealthcare">
+        </figure>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE -->
+    <section class="why-choose slide">
+      <style>
+        .why-choose { --brand:#0b3a83; --ink:#111; --muted:#5b5b5b; --maxw:1200px;
+          font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; color:var(--ink);
+          background:#f8f9fb; }
+        .why-choose .wrap { max-width: var(--maxw); margin: 0 auto; }
+        .why-choose h2 { font-weight:800; font-size:clamp(28px,4vw,44px); line-height:1.1; margin:0 0 8px; color:var(--brand); letter-spacing:.2px;}
+        .why-choose .lead { margin:0 0 28px; color:var(--muted); font-size:clamp(16px,2.2vw,18px); }
+        .why-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:clamp(16px,2.5vw,32px); align-items:start;}
+        @media (max-width:980px){ .why-grid{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
+        @media (max-width:640px){ .why-grid{ grid-template-columns:1fr; } }
+        .why-item img { width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:16px; display:block; box-shadow:0 6px 24px rgba(0,0,0,.06); }
+        .why-item h3 { font-size:clamp(20px,2.6vw,26px); margin:16px 0 8px; font-weight:700; color:#2b2b2b;}
+        .why-item p { margin:0; color:#4a4a4a; line-height:1.6; font-size:16px;}
+        .why-choose .accepting { margin-top: clamp(20px, 3vw, 28px); font-weight:700; }
+        .why-choose .accepting a { color: var(--brand); text-decoration: underline; }
+      </style>
+
+      <div class="wrap reveal">
+        <h2>Why Choose urHealthcare for Primary Care?</h2>
+        <p class="lead">We offer primary care options to fit your needs. At urHealthcare, you can expect:</p>
+
+        <div class="why-grid">
+          <article class="why-item">
+            <img src="assets/img/why-personalized.jpg" alt="Clinician providing personalized primary care" />
+            <h3>Personalized Care</h3>
+            <p>Your primary care clinician works closely with you to understand your concerns. We take the time to diagnose and tailor treatment to fit your needs.</p>
+          </article>
+
+          <article class="why-item">
+            <img src="assets/img/why-experts.jpg" alt="Patient consulting with a clinician about specialist options" />
+            <h3>Access to Experts</h3>
+            <p>If you need specialty care, our primary care team coordinates referrals and connects you with trusted specialists for seamless, high-quality care.</p>
+          </article>
+
+          <article class="why-item">
+            <img src="assets/img/why-convenience.jpg" alt="Clinic exterior showing convenient access" />
+            <h3>Convenience and Choice</h3>
+            <p>Find care your way—same-day visits when available, video visits, and straightforward pricing. We accept most insurance plans and also offer DPC memberships.</p>
+          </article>
+        </div>
+
+        <p class="accepting">Accepting new patients in <a href="#">Rocklin</a> and <a href="#">the Sacramento Metro</a>.</p>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="section slide" style="background:#fff;">
+      <div class="container reveal">
+        <h2>All Services</h2>
+        <p class="muted">Primary care, urgent care, imaging, labs, and more—built for access and affordability.</p>
+        <div class="grid">
+          <div class="card">
+            <h3><a href="primary-care.html">Primary Care</a></h3>
+            <p>Preventive, chronic, and same-day care with continuity.</p>
+            <div class="card">
+              <p class="cta"><a class="btn" href="https://urhealthcare.zohobookings.com/#/urhealthcare">Book Appointment</a></p>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3><a href="urgent-care.html">Urgent Care (7 days)</a></h3>
+            <p>Walk-in or virtual care for common illnesses & injuries.</p>
+            <div class="card">
+              <p class="cta"><a class="btn" href="https://urhealthcare.zohobookings.com/#/urhealthcare">Get care now</a></p>
+            </div>
+          </div>
+
+          <div class="card"><h3>X-ray</h3><p>Common views for injuries and chest imaging.</p></div>
+          <div class="card"><h3>Labs</h3><p>Rapid tests (flu, strep, COVID) and routine labs.</p></div>
+          <div class="card"><h3>Ultrasound</h3><p>Point-of-care scans for quicker answers in clinic.</p></div>
+          <div class="card"><h3>Minor Procedures</h3><p>Stitches, splints, abscess drainage, foreign body removal.</p></div>
+          <div class="card"><h3>Virtual Care</h3><p>Video visits & secure messaging for convenience.</p></div>
+          <div class="card"><h3>Included Medications</h3><p>Access to 250+ commonly used meds.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INSURANCES / DPC -->
+    <section class="insurances slide" aria-labelledby="insurances-title" style="background:#fafcff;">
+      <style>
+        .insurances { --brand:#0b3a83; --ink:#111; --muted:#555; --maxw:1100px; color:var(--ink); border-top:1px solid #eee; border-bottom:1px solid #eee; }
+        .insurances .wrap { max-width: var(--maxw); margin: 0 auto; }
+        .insurances h2 { font-size:clamp(26px,4vw,40px); margin:0 0 10px; font-weight:800; letter-spacing:.2px; color:var(--brand); }
+        .insurances .lead { color:var(--muted); font-size:clamp(16px,2vw,18px); margin:0 0 22px; }
+        .insurances .actions { display:grid; grid-template-columns: 1fr auto; gap:12px; align-items:center; margin-top:18px; }
+        @media (max-width:640px){ .insurances .actions{ grid-template-columns:1fr; } }
+        .insurances .link { text-decoration: underline; color: var(--brand); font-weight:700; }
+        .insurances .cta { justify-self:start; display:inline-block; padding:10px 16px; border-radius:12px; background:var(--brand); color:#fff; font-weight:800; white-space:nowrap; }
+        .insurances .note { margin-top:10px; color:#777; font-size:14px; }
+      </style>
+
+      <div class="wrap reveal">
+        <h2 id="insurances-title">We Accept Major Health Insurance Plans</h2>
+        <p class="lead">
+          We work with many leading insurance carriers. Coverage can vary by plan and employer.
+          <a class="link" href="insurances.html">Check the full list of accepted insurances</a>.
+        </p>
+        <div class="actions">
+          <p class="lead" style="margin:0;">
+            Prefer price transparency? We also offer a
+            <strong>Direct Primary Care (DPC) membership</strong> for simple, predictable costs.
+          </p>
+          <a class="cta" href="/plans#dpc">Explore DPC Membership</a>
+        </div>
+        <p class="note">Tip: If your plan isn’t listed, call us—many out-of-network plans still have benefits for primary care.</p>
+      </div>
+    </section>
+
+    <!-- PLANS -->
+    <section id="plans" class="section band slide" style="background:#fff;">
+      <div class="container center reveal">
+        <h2>Direct Primary Care Membership</h2>
+        <p class="muted">Flat monthly pricing. Cancel anytime.</p>
+        <div class="plans">
+          <div class="card">
+            <h3>Individual</h3>
+            <p class="price">$79/mo</p>
+            <ul class="clean">
+              <li>Unlimited primary & urgent care</li>
+              <li>Virtual care</li>
+              <li>250+ meds included</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Spouse</h3>
+            <p class="price">$50/mo</p>
+            <ul class="clean">
+              <li>Add a spouse anytime</li>
+              <li>Same benefits</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Child (5+)</h3>
+            <p class="price">$30/mo</p>
+            <ul class="clean">
+              <li>Pediatric sick & well visits</li>
+              <li>Rapid access</li>
+            </ul>
+          </div>
+        </div>
+        <p class="note">Specialty/hospital services are outside the DPC fee. We’ll help you pair with the right insurance.</p>
+        <p><a class="btn" href="contact.html">Know More</a></p>
+      </div>
+    </section>
+
+    <!-- LOCATIONS -->
+    <section class="locations slide" aria-labelledby="loc-title">
+      <style>
+        .locations { --brand:#0b3a83; --ink:#111; --muted:#666; --bg:#fafafa; --card:#fff;
+          font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+          color:var(--ink); background:var(--bg); }
+        .locations .wrap { max-width:1200px; margin:0 auto; }
+        .locations h2 { font-size:clamp(28px,4vw,44px); margin:0 0 8px; color:var(--brand); font-weight:800; }
+        .locations .lead { color:var(--muted); margin:0 0 18px; }
+        .locations .banner { background:#7a0e0f; color:#fff; border-radius:10px; padding:18px 20px; margin:18px 0 22px; font-weight:700; }
+        .locations .banner a { color:#fff; text-decoration:underline; }
+        .loc-legend { display:flex; flex-wrap:wrap; gap:18px; margin:10px 0 12px; }
+        .loc-legend .pill { display:flex; align-items:center; gap:8px; font-weight:700; color:#3a3a3a; }
+        .loc-legend .dot { width:16px; height:10px; border-radius:2px; display:inline-block; }
+        .dot.primary { background:#0b3a83; } .dot.urgent{ background:#be3a2e; } .dot.peds{ background:#be7a2e; }
+        .loc-grid { display:grid; grid-template-columns: 1.1fr 1.9fr; gap:22px; }
+        @media (max-width:980px){ .loc-grid{ grid-template-columns:1fr; } }
+        .loc-list { background:var(--card); border:1px solid #eee; border-radius:12px; padding:10px; }
+        .loc-item { display:grid; grid-template-columns:auto 1fr; gap:12px; padding:14px; border-bottom:1px solid #f0f0f0; }
+        .loc-item:last-child { border-bottom:none; }
+        .badge { width:34px; height:34px; display:grid; place-items:center; border-radius:50%; border:2px solid #0b3a83; color:#0b3a83; font-weight:900; background:#f2f7ff; }
+        .loc-item h3 { margin:0 0 4px; font-size:18px; }
+        .loc-meta { margin:6px 0 0; color:#444; line-height:1.5; }
+        .loc-meta a { color:#0b3a83; text-decoration:underline; }
+        .loc-actions { margin-top:8px; display:flex; gap:10px; flex-wrap:wrap; }
+        .btn-link { display:inline-block; padding:8px 12px; border-radius:10px; font-weight:800; border:2px solid #0b3a83; color:#0b3a83; background:#fff; }
+        .loc-map { border:1px solid #eee; border-radius:12px; overflow:hidden; background:#ddd; min-height:420px; }
+        .loc-map iframe { width:100%; height:100%; min-height:420px; border:0; display:block; }
+      </style>
+
+      <div class="wrap reveal">
+        <h2 id="loc-title">Primary Care Locations</h2>
+        <p class="lead">Find us in the Sacramento Metro. We make it easy to get the care you need with in-clinic and virtual visits.</p>
+
+        <div class="banner">
+          Now accepting new patients in <a href="https://www.google.com/maps?q=6839+Five+Star+Blvd,+Suite+D,+Rocklin,+CA+95677" target="_blank" rel="noopener">Rocklin</a>. Make an appointment today.
+        </div>
+
+        <div class="loc-legend" aria-hidden="true">
+          <span class="pill"><i class="dot primary"></i> Primary Care</span>
+          <span class="pill"><i class="dot urgent"></i> Urgent Care</span>
+          <span class="pill"><i class="dot peds"></i> Pediatrics</span>
+        </div>
+
+        <div class="loc-grid">
+          <div class="loc-list" role="list">
+            <article class="loc-item" role="listitem">
+              <div class="badge" aria-hidden="true">★</div>
+              <div>
+                <div class="loc-tags" style="color:#555; font-weight:700; margin-bottom:4px;">
+                  Primary Care, Urgent Care
+                </div>
+                <h3>
+                  <a href="https://www.google.com/maps?q=6839+Five+Star+Blvd,+Suite+D,+Rocklin,+CA+95677" target="_blank" rel="noopener">
+                    urHealthcare — Rocklin
+                  </a>
+                </h3>
+                <div class="loc-meta">
+                  6839 Five Star Blvd, Suite D, Rocklin, CA 95677<br>
+                  <a href="tel:+19169642001">916-964-2001</a>
+                </div>
+                <div class="loc-actions">
+                  <a class="btn-link" href="https://www.google.com/maps?q=6839+Five+Star+Blvd,+Suite+D,+Rocklin,+CA+95677" target="_blank" rel="noopener">Open in Google Maps</a>
+                  <a class="btn-link" href="#contact">Book a Visit</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="loc-map" aria-label="Map showing urHealthcare Rocklin">
+            <iframe
+              src="https://www.google.com/maps?q=6839%20Five%20Star%20Blvd%2C%20Suite%20D%2C%20Rocklin%2C%20CA%2095677&z=14&output=embed"
+              loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section slide" style="background:#fff;">
+      <div class="container reveal">
+        <h2>Contact & Scheduling</h2>
+        <p><strong>Address:</strong> 6839 Five Star Blvd, Suite D, Rocklin, CA • <strong>Phone:</strong> <a href="tel:19169642001">916-964-2001</a> • <strong>Email:</strong> <a href="mailto:info@urhealthcare.org">info@urhealthcare.org</a></p>
+        <form action="https://formspree.io/f/yourFormID" method="POST">
+          <input name="name" placeholder="Full name" required />
+          <input name="email" type="email" placeholder="Email" required />
+          <input name="phone" placeholder="Phone" />
+          <textarea name="message" rows="5" placeholder="How can we help?"></textarea>
+          <button class="btn" type="submit">Send</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="ftr">
+    <div class="container">© <span id="y"></span> urHealthcare. All rights reserved.</div>
+  </footer>
+
+  <!-- JS: year + dropdown behavior + slide reveal -->
+  <script src="https://harprandeol1.github.io/urhealthcare1/assets/app.js?v=3"></script>
+  <script>
+    // Fallback year if app.js didn't run
+    const yEl = document.getElementById('y'); if (yEl && !yEl.textContent) yEl.textContent = new Date().getFullYear();
+
+    // Services dropdown
+    const dd = document.getElementById('services-dd');
+    const btn = dd?.querySelector('.dropbtn');
+    const menu = dd?.querySelector('.menu');
+    if (dd && btn && menu) {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const isOpen = dd.classList.toggle('open');
+        btn.setAttribute('aria-expanded', String(isOpen));
+      });
+      document.addEventListener('click', (e) => {
+        if (!dd.contains(e.target)) { dd.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') { dd.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); btn.blur(); }
+      });
+    }
+
+    // Login dropdown (accessibility)
+    document.querySelectorAll('.login-dd').forEach((dd) => {
+      const btn = dd.querySelector('.login-dd__button');
+      const menu = dd.querySelector('.login-dd__menu');
+      const firstLink = dd.querySelector('.login-dd__link');
+      const open = () => { menu.dataset.open = 'true'; btn.setAttribute('aria-expanded','true'); setTimeout(()=>firstLink?.focus(),0); };
+      const close = () => { menu.removeAttribute('data-open'); btn.setAttribute('aria-expanded','false'); };
+      btn.addEventListener('click', (e)=>{ e.stopPropagation(); menu.dataset.open==='true' ? close() : open(); });
+      document.addEventListener('click', (e)=>{ if(!dd.contains(e.target)) close(); });
+      document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') close(); if(e.key==='ArrowDown' && menu.dataset.open==='true'){ e.preventDefault(); firstLink?.focus(); }});
+    });
+
+    // Slide "reveal" on enter
+    const io = new IntersectionObserver((entries)=>{
+      for (const e of entries){
+        if (e.isIntersecting) e.target.classList.add('in');
+      }
+    }, { threshold: 0.25 });
+    document.querySelectorAll('section.slide').forEach(s => io.observe(s));
+  </script>
+</body>
+</html>
