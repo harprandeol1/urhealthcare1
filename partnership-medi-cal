@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Partnership Medi-Cal Clinic in Rocklin (95677) | Primary & Urgent Care | urHealthcare</title>
+  <link rel="canonical" href="https://harprandeol1.github.io/urhealthcare1/partnership-medi-cal.html" />
+  <meta name="robots" content="index,follow" />
+
+  <meta name="description" content="Partnership Medi-Cal patients welcome at urHealthcare in Rocklin, CA 95677. Primary & urgent care, in-house labs, chronic care, transportation help. Walk-in & virtual visits for flu, strep, UTI, rashes, sprains. Serving Sacramento metro." />
+  <meta name="keywords" content="Partnership Medi-Cal Rocklin, PHC clinic 95677, Medi-Cal urgent care near me, Medi-Cal primary care Rocklin, Partnership HealthPlan of California Rocklin, urgent care 95677 flu strep UTI, Sacramento metro urgent care Medi-Cal" />
+
+  <!-- Fonts and global CSS (use your repo path) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://harprandeol1.github.io/urhealthcare1/assets/styles.css" />
+
+  <style>
+    /* Page-specific styles (keeps your global theme intact) */
+    .hero-pmc{background:linear-gradient(180deg,#e9f3ff 0%, #ffffff 100%); padding:28px 0 8px}
+    .hero-pmc h1{margin:0 0 6px; font-size:clamp(28px,4.5vw,44px)}
+    .hero-pmc .muted{color:#54637a}
+    .badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+    .badge{padding:8px 12px;border-radius:999px;font-weight:700;border:1px solid #d8e4ff;background:#f3f7ff;color:#0b3a83}
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+    .btn.outline{background:#fff;color:#0b3a83;border:2px solid #0b3a83}
+
+    .grid.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:16px}
+    .card.soft{background:#fff;border:1px solid #edf2f7;border-radius:16px;padding:16px;box-shadow:0 10px 30px rgba(0,0,0,.05)}
+
+    .steps{display:grid;gap:10px;margin-top:10px}
+    .steps .step{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:start}
+    .steps .num{width:30px;height:30px;border-radius:50%;background:#0b3a83;color:#fff;display:grid;place-items:center;font-weight:800}
+
+    .symptom-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:14px}
+    .symptom-grid ul{margin:8px 0 0 18px}
+    .symptom-grid h3{margin:0 0 6px}
+
+    .loc-blurb{background:#0b3a83;color:#fff;border-radius:14px;padding:14px 16px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
+    .loc-blurb a{color:#fff;text-decoration:underline}
+
+    .areas{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;color:#42516b}
+    .areas .chip{border:1px solid #e2e8f0;border-radius:999px;padding:6px 10px;background:#fff}
+
+    .faq{margin-top:24px;display:grid;gap:12px}
+    .faq details{border:1px solid #edf2f7;border-radius:12px;padding:12px 14px;background:#fff}
+    .faq summary{cursor:pointer;font-weight:800}
+    .faq p{color:#52607a}
+
+    .note{font-size:13px;color:#6b7a90;margin-top:10px}
+  </style>
+</head>
+<body>
+  <!-- Header (reuse your site nav) -->
+  <header class="hdr">
+    <div class="container nav">
+      <a class="logo" href="index.html">urHealthcare</a>
+
+      <nav class="navlinks" aria-label="Primary">
+        <div class="dropdown">
+          <button class="dropbtn" aria-expanded="false" aria-controls="menu-services">Services ▾</button>
+          <ul id="menu-services" class="menu" hidden>
+            <li><a href="primary-care.html">Primary Care</a></li>
+            <li><a href="urgent-care.html">Urgent Care</a></li>
+            <li><a href="imaging-labs.html">Imaging & Labs</a></li>
+          </ul>
+        </div>
+
+        <a href="plans.html">Membership</a>
+        <a href="employers.html">Employers</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html" class="btn">Book visit</a>
+      </nav>
+
+      <button class="menu-btn" aria-label="Menu" onclick="document.body.classList.toggle('menu-open')">☰</button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero-pmc">
+    <div class="container">
+      <h1>Partnership Medi-Cal Patients — Welcome to urHealthcare (Rocklin 95677)</h1>
+      <p class="muted">Primary & urgent care in the Sacramento metro with in-house labs, chronic care support, and transportation help for eligible members.</p>
+
+      <div class="badges">
+        <span class="badge">Accepting Partnership Medi-Cal</span>
+        <span class="badge">Urgent care & primary care</span>
+        <span class="badge">Rocklin, CA 95677</span>
+        <span class="badge">Walk-in & virtual visits</span>
+      </div>
+
+      <div class="cta-row">
+        <a class="btn" href="contact.html">Schedule / Check-in</a>
+        <a class="btn outline" href="accepted-insurances.html">See accepted plans</a>
+        <a class="btn outline" href="plans.html">Direct Primary Care (DPC)</a>
+        <a class="btn outline" href="https://www.google.com/maps?q=6839+Five+Star+Blvd,+Suite+D,+Rocklin,+CA+95677" target="_blank" rel="noopener">Get directions</a>
+      </div>
+    </div>
+  </section>
+
+  <main class="section">
+    <div class="container">
+      <!-- Why choose us on Partnership Medi-Cal -->
+      <section>
+        <h2>Care with Partnership Medi-Cal in Rocklin (95677)</h2>
+        <div class="grid cards">
+          <div class="card soft">
+            <h3>Primary care, urgent care &amp; continuity</h3>
+            <p>Get same/next-day visits for common illnesses and injuries while staying connected with your primary care team—so you avoid unnecessary ER visits.</p>
+          </div>
+          <div class="card soft">
+            <h3>In-house labs &amp; samples</h3>
+            <p>We draw and process many tests on-site (blood, rapid tests, UA), and send out specialty labs when needed—saving you an extra trip.</p>
+          </div>
+          <div class="card soft">
+            <h3>Chronic care support</h3>
+            <p>We help you manage diabetes, blood pressure, asthma, COPD and more. Medicare CCM is available if you’re dual-eligible.</p>
+          </div>
+          <div class="card soft">
+            <h3>Transportation help</h3>
+            <p>We can assist with transportation coordination for eligible members through plan benefits and local partners.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- How to use your Partnership Medi-Cal here -->
+      <section style="margin-top:22px">
+        <h2>How to Use Your Partnership Medi-Cal at urHealthcare</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="num">1</div>
+            <div><strong>Bring your Partnership Medi-Cal ID card</strong> and a photo ID to your visit (or have them ready for video check-in).</div>
+          </div>
+          <div class="step">
+            <div class="num">2</div>
+            <div><strong>Choose urHealthcare as your PCP (if required):</strong> call the number on the back of your Partnership Medi-Cal card and request urHealthcare in Rocklin as your primary care clinic.</div>
+          </div>
+          <div class="step">
+            <div class="num">3</div>
+            <div><strong>Schedule online or walk in:</strong> we offer same/next-day urgent care and routine primary care. Many services are available virtually.</div>
+          </div>
+        </div>
+        <p class="note">Coverage, copays, and prior authorizations depend on your specific plan. We’ll verify benefits at check-in and explain any costs before treatment.</p>
+      </section>
+
+      <!-- Symptom-based local SEO -->
+      <section style="margin-top:22px">
+        <h2>“Urgent Care Near Me” in Rocklin (95677): Symptoms We Treat</h2>
+        <p class="muted">People in the Sacramento metro often search for urgent care by symptoms. We evaluate and treat the most common issues seen in Placer County.</p>
+
+        <div class="symptom-grid">
+          <div class="card soft">
+            <h3>Cold, Flu &amp; COVID-19</h3>
+            <ul>
+              <li>Fever, cough, sore throat, body aches</li>
+              <li>Rapid flu &amp; COVID tests; strep testing</li>
+              <li>Antiviral/antibiotic treatment when indicated</li>
+            </ul>
+          </div>
+          <div class="card soft">
+            <h3>Ear, Nose &amp; Throat</h3>
+            <ul>
+              <li>Ear infection &amp; ear pain</li>
+              <li>Sinus infection &amp; congestion</li>
+              <li>Pink eye (conjunctivitis), allergies</li>
+            </ul>
+          </div>
+          <div class="card soft">
+            <h3>Urinary &amp; Women’s Health</h3>
+            <ul>
+              <li>UTI, frequent urination, burning</li>
+              <li>Yeast/bacterial infections</li>
+              <li>Pregnancy testing; STI testing &amp; treatment</li>
+            </ul>
+          </div>
+          <div class="card soft">
+            <h3>Skin, Bites &amp; Rashes</h3>
+            <ul>
+              <li>Rash, hives, poison oak</li>
+              <li>Infected cuts, abscesses</li>
+              <li>Insect/animal bites (minor)</li>
+            </ul>
+          </div>
+          <div class="card soft">
+            <h3>Injuries &amp; Fractures</h3>
+            <ul>
+              <li>Sprains/strains, sports injuries</li>
+              <li>Possible fractures: on-site X-ray &amp; splints</li>
+              <li>Lacerations: stitches &amp; wound care</li>
+            </ul>
+          </div>
+          <div class="card soft">
+            <h3>Stomach &amp; Dehydration</h3>
+            <ul>
+              <li>Nausea, vomiting, diarrhea, abdominal pain</li>
+              <li>Food poisoning evaluation</li>
+              <li>IV fluids when appropriate</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Location / NAP -->
+      <section style="margin-top:22px">
+        <div class="loc-blurb">
+          <p style="margin:0"><strong>urHealthcare — Partnership Medi-Cal Clinic</strong><br>
+            6839 Five Star Blvd, Suite D, Rocklin, CA <strong>95677</strong> • <a href="tel:+19169642001">916-964-2001</a>
+          </p>
+          <p style="margin:0">
+            <a href="https://www.google.com/maps?q=6839+Five+Star+Blvd,+Suite+D,+Rocklin,+CA+95677" target="_blank" rel="noopener">Get Directions</a> •
+            <a href="contact.html">Schedule / Check-in</a>
+          </p>
+        </div>
+        <div class="areas">
+          <span class="chip">Serving Rocklin 95677, 95765</span>
+          <span class="chip">Near Roseville, Lincoln, Loomis, Granite Bay</span>
+          <span class="chip">Sacramento metro urgent & primary care</span>
+        </div>
+      </section>
+
+      <!-- Insurance & DPC -->
+      <section style="margin-top:22px">
+        <h2>Insurance &amp; Transparent Membership Options</h2>
+        <p>We accept major health insurance plans including <strong>Partnership Medi-Cal</strong>. Prefer price transparency? Our <a href="plans.html"><strong>Direct Primary Care (DPC)</strong> membership</a> offers simple, predictable monthly pricing and includes urgent care.</p>
+        <p><a href="accepted-insurances.html">See the full list of accepted insurances</a> or call us to confirm your plan.</p>
+      </section>
+
+      <!-- FAQ -->
+      <section class="faq" aria-label="Partnership Medi-Cal FAQ">
+        <h2>Partnership Medi-Cal FAQ (Rocklin 95677)</h2>
+
+        <details>
+          <summary>Do you accept Partnership Medi-Cal?</summary>
+          <p>Yes. We accept Partnership Medi-Cal. Bring your plan ID card and a photo ID to your visit, and we’ll verify benefits at check-in.</p>
+        </details>
+
+        <details>
+          <summary>How do I choose urHealthcare as my PCP?</summary>
+          <p>Call the member services number on the back of your Partnership Medi-Cal card and request <strong>urHealthcare in Rocklin</strong> as your primary care clinic. We can assist with details at the front desk.</p>
+        </details>
+
+        <details>
+          <summary>Is urgent care covered?</summary>
+          <p>Many urgent care services are covered. We’ll check your specific benefits and let you know about any copays/authorizations before treatment.</p>
+        </details>
+
+        <details>
+          <summary>Do you have in-house labs and X-ray?</summary>
+          <p>Yes. We perform many labs and rapid tests on-site and provide X-ray and basic procedures, which helps you get treated sooner without extra trips.</p>
+        </details>
+
+        <details>
+          <summary>Do you offer transportation assistance?</summary>
+          <p>We can help coordinate rides for eligible members using plan benefits and local partners. Ask our team when you schedule.</p>
+        </details>
+
+        <details>
+          <summary>Can I use Direct Primary Care (DPC) with my plan?</summary>
+          <p>Yes. Many members choose DPC for transparent pricing and quicker access while keeping insurance for specialty and hospital care. We’ll help you pair DPC with your benefits.</p>
+        </details>
+      </section>
+
+      <p class="note">Emergency symptoms (severe chest pain, stroke signs, major trauma, severe breathing trouble, uncontrolled bleeding) require 911 or the nearest ER.</p>
+    </div>
+  </main>
+
+  <footer class="ftr">
+    <div class="container">© <span id="y"></span> urHealthcare. All rights reserved.</div>
+  </footer>
+
+  <!-- Structured Data: MedicalClinic (accepts Partnership Medi-Cal) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalClinic",
+    "name": "urHealthcare — Partnership Medi-Cal Clinic",
+    "description": "Primary & urgent care for Partnership Medi-Cal members in Rocklin, CA 95677. Walk-in & virtual visits, in-house labs, chronic care, and transportation help.",
+    "url": "https://harprandeol1.github.io/urhealthcare1/partnership-medi-cal.html",
+    "telephone": "+1-916-964-2001",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "6839 Five Star Blvd, Suite D",
+      "addressLocality": "Rocklin",
+      "addressRegion": "CA",
+      "postalCode": "95677",
+      "addressCountry": "US"
+    },
+    "areaServed": ["Rocklin 95677", "Rocklin 95765", "Roseville", "Loomis", "Granite Bay", "Sacramento"],
+    "hasMap": "https://www.google.com/maps?q=6839+Five+Star+Blvd,+Suite+D,+Rocklin,+CA+95677",
+    "medicalSpecialty": ["UrgentCare", "PrimaryCare"],
+    "acceptsInsurance": ["Partnership Medi-Cal", "Partnership HealthPlan of California", "Medi-Cal"],
+    "availableService": [
+      {"@type":"MedicalTherapy","name":"Laceration repair (stitches)"},
+      {"@type":"MedicalTherapy","name":"Fracture evaluation & splinting"},
+      {"@type":"MedicalTest","name":"X-ray"},
+      {"@type":"MedicalTest","name":"COVID-19 / Flu / Strep testing"},
+      {"@type":"MedicalTest","name":"Urinalysis & pregnancy testing"},
+      {"@type":"MedicalTherapy","name":"IV fluids & nebulizers"},
+      {"@type":"MedicalTherapy","name":"Chronic disease management"}
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"Do you accept Partnership Medi-Cal?","acceptedAnswer":{"@type":"Answer","text":"Yes. We accept Partnership Medi-Cal. Bring your plan ID card and a photo ID; we’ll verify benefits at check-in."}},
+      {"@type":"Question","name":"How do I choose urHealthcare as my PCP?","acceptedAnswer":{"@type":"Answer","text":"Call the member services number on the back of your Partnership Medi-Cal card and request urHealthcare in Rocklin as your primary care clinic."}},
+      {"@type":"Question","name":"Is urgent care covered?","acceptedAnswer":{"@type":"Answer","text":"Many urgent care services are covered. We’ll check your specific benefits and let you know about any copays or authorizations before treatment."}},
+      {"@type":"Question","name":"Do you have in-house labs and X-ray?","acceptedAnswer":{"@type":"Answer","text":"Yes. We perform many labs and rapid tests on-site and provide X-ray and basic procedures."}},
+      {"@type":"Question","name":"Do you offer transportation assistance?","acceptedAnswer":{"@type":"Answer","text":"We can help coordinate rides for eligible members using plan benefits and local partners."}},
+      {"@type":"Question","name":"Can I use Direct Primary Care (DPC) with my plan?","acceptedAnswer":{"@type":"Answer","text":"Yes. Many members choose DPC for transparent pricing and quicker access while keeping insurance for specialty and hospital care."}}
+    ]
+  }
+  </script>
+
+  <!-- Breadcrumbs (optional SEO enhancement) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://harprandeol1.github.io/urhealthcare1/index.html"},
+      {"@type":"ListItem","position":2,"name":"Partnership Medi-Cal","item":"https://harprandeol1.github.io/urhealthcare1/partnership-medi-cal.html"}
+    ]
+  }
+  </script>
+
+  <!-- Absolute JS URL (your existing script) -->
+  <script src="https://harprandeol1.github.io/urhealthcare1/assets/app.js"></script>
+  <script>
+    // Basic dropdown a11y for header (if not already in app.js)
+    (function(){
+      const btn = document.querySelector('.dropbtn');
+      const menu = document.getElementById('menu-services');
+      if(!btn || !menu) return;
+      btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        menu.hidden = expanded;
+      });
+      document.addEventListener('click', (e) => {
+        if (!menu.contains(e.target) && !btn.contains(e.target)) {
+          btn.setAttribute('aria-expanded','false'); menu.hidden = true;
+        }
+      });
+      // Footer year
+      const y = document.getElementById('y'); if (y) y.textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>
