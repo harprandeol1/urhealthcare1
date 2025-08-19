@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>FAQ | urHealthcare</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Frequently asked questions about urHealthcare: insurance acceptance, Direct Primary Care memberships, in-house labs, urgent & primary care, online access, transportation and chronic care management for Medicare." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --brand:#2196F3;           /* requested brand color (0xff2196f3) */
+      --brand-ink:#0b3a83;       /* deep companion blue for accents if needed */
+      --ink:#111;
+      --muted:#52607a;
+      --bg:#ffffff;
+      --card:#f8fafc;
+      --ring:#e6eef7;
+      --shadow: 0 14px 40px rgba(0,0,0,.08);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:1100px;margin:0 auto;padding:28px 16px 64px}
+
+    header.site{
+      background:linear-gradient(180deg,#1e88e5 0%, var(--brand) 60%, #64b5f6 100%);
+      color:#fff;
+      padding:48px 16px 56px;
+      position:relative;
+      overflow:hidden;
+    }
+    header.site::after{
+      /* soft texture */
+      content:"";position:absolute;inset:-10% -20% auto -20%;height:140%;
+      background:radial-gradient(600px 300px at 15% -10%, rgba(255,255,255,.18), transparent 60%);
+      pointer-events:none;
+    }
+    header .wrap{padding:0 16px}
+    .headline{max-width:900px}
+    .headline h1{margin:0;font-size:clamp(28px,4.5vw,44px);font-weight:800;line-height:1.1}
+    .headline p{margin:10px 0 0;color:#eaf4ff;font-size:clamp(16px,2vw,18px)}
+    .quicklinks{margin-top:14px;display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-block;padding:10px 16px;border-radius:12px;font-weight:800;border:0}
+    .btn.light{background:#fff;color:#0b3a83}
+    .btn.ghost{background:transparent;border:2px solid #fff;color:#fff}
+
+    /* FAQ body */
+    .faq-intro{background:var(--card); border:1px solid var(--ring); border-radius:16px; padding:16px 18px; margin-top:-28px; box-shadow:var(--shadow);}
+    .grid{display:grid;grid-template-columns: 1fr 2fr; gap:22px; margin-top:24px}
+    @media (max-width: 920px){ .grid{grid-template-columns:1fr} }
+
+    .side{
+      position:sticky; top:16px; align-self:start;
+      background:#fff; border:1px solid var(--ring); border-radius:16px; padding:14px; box-shadow:var(--shadow);
+    }
+    .side h3{margin:6px 0 8px;font-size:16px}
+    .toc{display:grid;gap:8px;margin-top:8px}
+    .toc a{padding:8px 10px;border-radius:10px;border:1px solid var(--ring);background:#fff;font-weight:700}
+    .toc a:hover{background:#f2f7ff}
+
+    .faqs{display:grid; gap:14px}
+    details{
+      background:#fff; border:1px solid var(--ring); border-radius:14px; padding:12px 14px;
+      box-shadow: var(--shadow);
+    }
+    summary{cursor:pointer; font-weight:800; outline:none; list-style:none}
+    summary::-webkit-details-marker{display:none}
+    summary::after{content:"▾"; float:right; transition:transform .2s ease}
+    details[open] summary::after{transform: rotate(-180deg)}
+    .faq-content{margin-top:8px;color:var(--muted);line-height:1.7}
+    .faq-content ul{margin:8px 0 0 20px}
+    .note{font-size:14px;color:#6b7a90}
+
+    footer.site{
+      margin-top:40px;padding:24px 16px;border-top:1px solid var(--ring); text-align:center; color:#6b7a90;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site">
+    <div class="wrap">
+      <div class="headline">
+        <h1>Frequently Asked Questions</h1>
+        <p>Answers about insurance, Direct Primary Care, providers, labs, urgent &amp; primary care, online access, transportation and chronic care management.</p>
+        <div class="quicklinks">
+          <a class="btn light" href="/accepted-insurances">Accepted Insurances</a>
+          <a class="btn ghost" href="/direct-primary-care.html">Direct Primary Care Plans</a>
+          <a class="btn ghost" href="https://urhealthcare.zohobookings.com/#/urhealthcare">Book an Appointment</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="faq-intro">
+      <strong>Short answer:</strong> Yes—<em>we accept major health insurance plans</em> and we also offer a transparent <em>Direct Primary Care (DPC)</em> membership. We can help you choose a health plan to pair with DPC, we have multiple providers to choose from, we do many labs in-house, and we offer both urgent and primary care for better continuity. Medicare patients can access transportation and chronic care management.
+    </div>
+
+    <section class="grid" aria-labelledby="faq-start">
+      <aside class="side">
+        <h3 id="faq-start">On this page</h3>
+        <nav class="toc" aria-label="FAQ Table of Contents">
+          <a href="#faq-insurance">Insurance &amp; DPC</a>
+          <a href="#faq-plan-pairing">Help choosing a plan</a>
+          <a href="#faq-providers">Providers &amp; access</a>
+          <a href="#faq-labs">In-house labs</a>
+          <a href="#faq-urgent-primary">Urgent + Primary care</a>
+          <a href="#faq-onpatient">Online access (OnPatient)</a>
+          <a href="#faq-medicare-transport">Transportation (Medicare)</a>
+          <a href="#faq-ccm">Chronic Care Management (Medicare)</a>
+        </nav>
+      </aside>
+
+      <div class="faqs">
+        <details id="faq-insurance" open>
+          <summary>Do you accept health insurance? Do you also offer Direct Primary Care?</summary>
+          <div class="faq-content">
+            <p>Yes. We accept many major health insurance plans. For details, see our <a href="/accepted-insurances">Accepted Insurances</a> page.</p>
+            <p>We also offer a <strong>Direct Primary Care (DPC)</strong> membership for simple, predictable pricing. DPC covers unlimited primary and urgent care visits and is a great option if you prefer transparency or have a high deductible plan.</p>
+          </div>
+        </details>
+
+        <details id="faq-plan-pairing">
+          <summary>Can you help me choose a health insurance plan to pair with Direct Primary Care?</summary>
+          <div class="faq-content">
+            <p>Yes. We’ll walk you through pairing DPC with a compatible insurance option (often a high-deductible or catastrophic plan) to help cover specialty, imaging, and hospital services. We can also coordinate with your broker if you have one.</p>
+            <p class="note">We provide education and guidance; final benefit decisions are made by you and your insurer/broker.</p>
+          </div>
+        </details>
+
+        <details id="faq-providers">
+          <summary>Do you have multiple providers to choose from?</summary>
+          <div class="faq-content">
+            <p>Yes. You can choose from multiple primary care clinicians and switch if your needs change. This improves continuity and access—virtual visits are available, too.</p>
+          </div>
+        </details>
+
+        <details id="faq-labs">
+          <summary>Do you do labs in-house? Will I need to drive to another lab?</summary>
+          <div class="faq-content">
+            <p>We collect <strong>most common samples in-house</strong> (blood draws, swabs, and more) so there’s usually <strong>no need to drive to another lab</strong>. Many tests are processed on-site; when a test must be sent out, we handle the logistics for you and share results through your online portal.</p>
+          </div>
+        </details>
+
+        <details id="faq-urgent-primary">
+          <summary>Do you provide both urgent and primary care?</summary>
+          <div class="faq-content">
+            <p>Yes. We provide <strong>both urgent and primary care</strong> under one roof. That continuity helps you avoid unnecessary ER visits for preventable issues and keeps your history in one place.</p>
+            <ul>
+              <li>Same/next-day access when available</li>
+              <li>Integrated records and follow-up</li>
+              <li>On-site basics like X-ray and labs</li>
+            </ul>
+          </div>
+        </details>
+
+        <details id="faq-onpatient">
+          <summary>Do you offer online access to medical records and messaging?</summary>
+          <div class="faq-content">
+            <p>Yes. Use our <strong>OnPatient</strong> portal to see visit summaries, results, medications, and to message the clinic.</p>
+            <ul>
+              <li><a href="/onpatient-login">OnPatient Login</a></li>
+              <li><a href="https://urhealthcare.zohobookings.com/#/urhealthcare">Book an appointment</a></li>
+            </ul>
+          </div>
+        </details>
+
+        <details id="faq-medicare-transport">
+          <summary>Do you offer transportation for Medicare patients?</summary>
+          <div class="faq-content">
+            <p>Yes. We can help <strong>arrange transportation for eligible Medicare patients</strong> through available benefits and local partners. Ask our front desk and we’ll coordinate the ride that fits your plan and appointment.</p>
+          </div>
+        </details>
+
+        <details id="faq-ccm">
+          <summary>Do you provide Chronic Care Management (CCM) for Medicare?</summary>
+          <div class="faq-content">
+            <p>Yes. Our <strong>Chronic Care Management</strong> program supports eligible Medicare patients with monthly check-ins, care plans, medication reviews, and coordination between visits—designed to keep you healthier and out of the hospital.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site">
+    © <span id="y"></span> urHealthcare • <a href="mailto:info@urhealthcare.org">info@urhealthcare.org</a> • <a href="https://www.google.com/maps?q=6839+Five+Star+Blvd,+Suite+D,+Rocklin,+CA+95677" target="_blank" rel="noopener">6839 Five Star Blvd, Suite D, Rocklin, CA 95677</a>
+  </footer>
+
+  <!-- SEO: FAQ structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Do you accept health insurance? Do you also offer Direct Primary Care?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. We accept many major health insurance plans, and we also offer a Direct Primary Care (DPC) membership for transparent, predictable pricing and unlimited visits."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you help me choose a plan to pair with Direct Primary Care?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. We guide you on pairing DPC with insurance options (often high-deductible or catastrophic) to cover specialty and hospital care."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you have multiple providers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. You can choose from multiple providers and switch as needed for better continuity."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you do labs in-house?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We collect most common samples in-house, so you usually don’t need to drive to another lab. When a test must be sent out, we handle the logistics."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you provide both urgent and primary care?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. We offer both urgent and primary care, which improves continuity and helps avoid preventable ER visits."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer online access to records and messaging?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Use our OnPatient portal to access your records and communicate with the clinic."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is transportation available for Medicare patients?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. We help arrange transportation for eligible Medicare patients using available benefits and local partners."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you provide Chronic Care Management (CCM) for Medicare?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Our CCM program includes monthly check-ins, care plans, and coordination between visits."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script>
+    // year
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
