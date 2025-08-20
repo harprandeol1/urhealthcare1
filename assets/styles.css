@@ -107,11 +107,13 @@ footer.ftr{border-top:1px solid var(--border);padding:18px 0;color:var(--muted)}
 #plans {
   background: repeating-linear-gradient(
     135deg,
-    #f9f9f9,
-    #f9f9f9 40px,
-    #eef2f7 40px,
-    #eef2f7 80px
+    #ffffff,
+    #ffffff 60px,
+    #0b3a83 60px,
+    #0b3a83 120px
   );
+  color: #000; /* make sure text stays readable */
 }
+
 
 
