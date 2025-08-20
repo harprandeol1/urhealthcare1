@@ -115,5 +115,9 @@ footer.ftr{border-top:1px solid var(--border);padding:18px 0;color:var(--muted)}
   color: #000; /* make sure text stays readable */
 }
 
+nav ul li a.different {
+  color: #0b3a83 !important;
+}
+
 
 
