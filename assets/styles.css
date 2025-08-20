@@ -104,3 +104,14 @@ footer.ftr{border-top:1px solid var(--border);padding:18px 0;color:var(--muted)}
 .btn { background:#0b3a83; color:#fff; border:none; padding:10px 16px; border-radius:12px; font-weight:800; }
 .btn:hover { filter: brightness(0.95); }
 
+#plans {
+  background: repeating-linear-gradient(
+    135deg,
+    #f9f9f9,
+    #f9f9f9 40px,
+    #eef2f7 40px,
+    #eef2f7 80px
+  );
+}
+
+
