@@ -285,7 +285,10 @@
           <div class="card"><h3>Ultrasound</h3><p>Point-of-care scans for quicker answers in clinic.</p></div>
           <div class="card"><h3>Minor Procedures</h3><p>Stitches, splints, abscess drainage, foreign body removal.</p></div>
           <div class="card"><h3>Virtual Care</h3><p>Video visits & secure messaging for convenience.</p></div>
-          <div class="card"><h3>Included Medications</h3><p>Access to 250+ commonly used meds.</p></div>
+          <div class="card"><h3>Included Medications</h3><p>
+  Access to <a href="https://www.urhealthcare.org/faq" target="_blank" rel="noopener noreferrer">250+ commonly used meds</a>.
+</p>
+</div>
         </div>
       </div>
     </section>
@@ -348,7 +351,7 @@
             <h3>Child (5+)</h3>
             <p class="price">$30/mo</p>
             <ul class="clean">
-              <li>Pediatric sick & well visits</li>
+              <li>Pediatric sick visits</li>
               <li>Rapid access</li>
             </ul>
           </div>
@@ -399,7 +402,7 @@
         <div class="loc-legend" aria-hidden="true">
           <span class="pill"><i class="dot primary"></i> Primary Care</span>
           <span class="pill"><i class="dot urgent"></i> Urgent Care</span>
-          <span class="pill"><i class="dot peds"></i> Pediatrics</span>
+          <span class="pill"><i class="dot peds"></i> X- Ray</span>
         </div>
 
         <div class="loc-grid">
@@ -437,27 +440,32 @@
       </div>
     </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="section slide" style="background:#fff;">
-      <div class="container reveal">
-        <h2>Contact & Scheduling</h2>
-        <p><strong>Address:</strong> 6839 Five Star Blvd, Suite D, Rocklin, CA • <strong>Phone:</strong> <a href="tel:19169642001">916-964-2001</a> • <strong>Email:</strong> <a href="mailto:info@urhealthcare.org">info@urhealthcare.org</a></p>
-        <form action="https://formspree.io/f/yourFormID" method="POST">
-          <input name="name" placeholder="Full name" required />
-          <input name="email" type="email" placeholder="Email" required />
-          <input name="phone" placeholder="Phone" />
-          <textarea name="message" rows="5" placeholder="How can we help?"></textarea>
-          <button class="btn" type="submit">Send</button>
-        </form>
-      </div>
-    </section>
-
-  </main>
-
   <!-- Footer -->
-  <footer class="ftr">
-    <div class="container">© <span id="y"></span> urHealthcare. All rights reserved.</div>
-  </footer>
+<footer class="ftr" style="background:#0b3a83; color:#fff; padding:20px 0; text-align:center;">
+  <div class="container">
+    <nav>
+      <a href="index.html" style="color:#fff; margin:0 10px; text-decoration:none;">Home</a> |
+      <a href="primary-care.html" style="color:#fff; margin:0 10px; text-decoration:none;">Primary Care</a> |
+      <a href="urgent-care.html" style="color:#fff; margin:0 10px; text-decoration:none;">Urgent Care</a> |
+      <a href="health-plans.html" style="color:#fff; margin:0 10px; text-decoration:none;">Health Plans</a> |
+      <a href="faq.html" style="color:#fff; margin:0 10px; text-decoration:none;">FAQ</a> |
+      <a href="business.html" style="color:#fff; margin:0 10px; text-decoration:none;">For Business</a> |
+      <a href="contact.html" style="color:#fff; margin:0 10px; text-decoration:none;">Contact</a>
+    </nav>
+    <p style="margin-top:15px;">
+      <strong>Address:</strong> 6839 Five Star Blvd, Suite D, Rocklin, CA<br>
+      <strong>Phone:</strong> <a href="tel:19169642001" style="color:#fff;">916-964-2001</a> • 
+      <strong>Email:</strong> <a href="mailto:info@urhealthcare.org" style="color:#fff;">info@urhealthcare.org</a>
+    </p>
+    <p style="margin-top:10px;">© <span id="y"></span> urHealthcare. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // Auto-insert current year
+  document.getElementById("y").textContent = new Date().getFullYear();
+</script>
+
 
   <!-- JS: year + dropdown behavior + slide reveal -->
   <script src="https://harprandeol1.github.io/urhealthcare1/assets/app.js?v=3"></script>
