@@ -257,121 +257,49 @@
       </div>
     </section>
 
-   <!-- SERVICES — OPTION A: Gradient canvas + icon tiles -->
-<section id="services" class="slide services-full services--gradient">
+   <!-- SERVICES — OPTION B: Dark backdrop + glassmorphism tiles -->
+<section id="services" class="slide services-full services--dark">
   <style>
-    /* Shared layout for all options */
-    .services-full{
-      --brand:#2196F3; --brand-dark:#1565C0; --ink:#0b1b2b; --muted:#4b5b6b;
-      min-height: calc(100vh - var(--hdrH));
-      display:flex; align-items:center; /* vertically center content */
-      padding: clamp(28px, 6vh, 72px) 16px;
-      position: relative; overflow:hidden;
-    }
-    .services-full .wrap{ width:100%; max-width:1200px; margin:0 auto; }
-    .services-full h2{ font-size: clamp(28px,4.5vw,48px); margin:0 0 6px; font-weight:800; }
-    .services-full .lead{ color:var(--muted); margin:0 0 18px; font-size: clamp(16px,2vw,18px); }
-
-    .services-grid{
-      display:grid; gap:16px;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    }
-    .service-card{
-      background:#fff; border:1px solid #e8eef5; border-radius:16px;
-      padding:16px; box-shadow: 0 10px 30px rgba(0,0,0,.06);
-      display:grid; gap:10px; align-content:start;
-      transition: transform .25s ease, box-shadow .25s ease;
-    }
-    .service-card:hover{ transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,.10); }
-    .service-card h3{ margin:0; font-size:20px; }
-    .service-card p{ margin:0; color:#445566; }
-    .service-card .cta{ margin-top:6px; }
-    .service-card .btn{ display:inline-block; padding:8px 12px; border-radius:10px; font-weight:800; border:2px solid var(--brand); color:var(--brand); background:#fff; text-decoration:none; }
-    .service-card .btn:hover{ filter:brightness(.95); }
-
-    /* Icons */
-    .icon{
-      width:44px; height:44px; border-radius:12px;
-      display:grid; place-items:center; font-size:22px; font-weight:700;
-      background: #eef6ff; color: var(--brand);
-    }
-
-    /* Slide reveal */
-    .services-full .reveal{ opacity:0; transform: translateY(22px); transition:opacity .6s ease, transform .6s ease; }
-    .services-full.in .reveal{ opacity:1; transform:none; }
-
-    /* This option's background */
-    .services--gradient{
+    .services--dark{
+      --brand:#2196F3;
+      color:#eaf2ff;
       background:
-        radial-gradient(900px 420px at 5% -120px, rgba(255,255,255,.35), transparent 60%),
-        linear-gradient(180deg, #f0f7ff 0%, #ffffff 40%, #e9f2ff 100%);
+        radial-gradient(1200px 500px at 0% -15%, rgba(33,150,243,.25), transparent 55%),
+        linear-gradient(180deg, #0b1b2b 0%, #0a1422 100%);
     }
-    .services--gradient::before{
-      content:""; position:absolute; inset:-20% -20% auto -20%;
-      height:70%; z-index:0;
-      background: radial-gradient(600px 300px at 10% 0%, rgba(33,150,243,.18), transparent 60%);
-      pointer-events:none;
+    .services--dark h2{ color:#ffffff; }
+    .services--dark .lead{ color:#b7c6d9; }
+
+    .services--dark .service-card{
+      background: rgba(255,255,255,.06);
+      border-color: rgba(255,255,255,.12);
+      backdrop-filter: blur(6px);
+      color:#eaf2ff;
     }
+    .services--dark .service-card p{ color:#c7d4e6; }
+    .services--dark .service-card .btn{
+      border-color:var(--brand); color:#fff; background:linear-gradient(180deg, var(--brand), #1E88E5);
+    }
+    .services--dark .icon{ background:rgba(33,150,243,.18); color:#fff; }
   </style>
 
   <div class="wrap reveal">
     <h2>All Services</h2>
     <p class="lead">Primary care, urgent care, imaging, labs, and more—built for access and affordability.</p>
 
-    <div class="services-grid" aria-label="Service list">
-      <article class="service-card">
-        <div class="icon" aria-hidden="true">🩺</div>
-        <h3><a href="primary-care.html">Primary Care</a></h3>
-        <p>Preventive, chronic, and same-day care with continuity.</p>
-        <p class="cta"><a class="btn" href="https://urhealthcare.zohobookings.com/#/urhealthcare">Book Appointment</a></p>
-      </article>
-
-      <article class="service-card">
-        <div class="icon" aria-hidden="true">⏱️</div>
-        <h3><a href="urgent-care.html">Urgent Care (7 days)</a></h3>
-        <p>Walk-in or virtual care for common illnesses & injuries.</p>
-        <p class="cta"><a class="btn" href="https://urhealthcare.zohobookings.com/#/urhealthcare">Get Care Now</a></p>
-      </article>
-
-      <article class="service-card">
-        <div class="icon" aria-hidden="true">🩻</div>
-        <h3>X-ray</h3>
-        <p>Common views for injuries and chest imaging.</p>
-      </article>
-
-      <article class="service-card">
-        <div class="icon" aria-hidden="true">🧪</div>
-        <h3>Labs</h3>
-        <p>Rapid tests (flu, strep, COVID) and routine labs.</p>
-      </article>
-
-      <article class="service-card">
-        <div class="icon" aria-hidden="true">🔎</div>
-        <h3>Ultrasound</h3>
-        <p>Point-of-care scans for quicker answers in clinic.</p>
-      </article>
-
-      <article class="service-card">
-        <div class="icon" aria-hidden="true">🩹</div>
-        <h3>Minor Procedures</h3>
-        <p>Stitches, splints, abscess drainage, foreign body removal.</p>
-      </article>
-
-      <article class="service-card">
-        <div class="icon" aria-hidden="true">💻</div>
-        <h3>Virtual Care</h3>
-        <p>Video visits & secure messaging for convenience.</p>
-      </article>
-
-      <article class="service-card">
-        <div class="icon" aria-hidden="true">💊</div>
-        <h3>Included Medications</h3>
-        <p>Access to <a href="included-meds.html" target="_blank" rel="noopener">250+ commonly used meds</a>.</p>
-      </article>
+    <div class="services-grid">
+      <!-- Copy the same service-card blocks from Option A -->
+      <article class="service-card"><div class="icon">🩺</div><h3><a href="primary-care.html">Primary Care</a></h3><p>Preventive, chronic, and same-day care with continuity.</p><p class="cta"><a class="btn" href="https://urhealthcare.zohobookings.com/#/urhealthcare">Book Appointment</a></p></article>
+      <article class="service-card"><div class="icon">⏱️</div><h3><a href="urgent-care.html">Urgent Care (7 days)</a></h3><p>Walk-in or virtual care for common illnesses & injuries.</p><p class="cta"><a class="btn" href="https://urhealthcare.zohobookings.com/#/urhealthcare">Get Care Now</a></p></article>
+      <article class="service-card"><div class="icon">🩻</div><h3>X-ray</h3><p>Common views for injuries and chest imaging.</p></article>
+      <article class="service-card"><div class="icon">🧪</div><h3>Labs</h3><p>Rapid tests (flu, strep, COVID) and routine labs.</p></article>
+      <article class="service-card"><div class="icon">🔎</div><h3>Ultrasound</h3><p>Point-of-care scans for quicker answers in clinic.</p></article>
+      <article class="service-card"><div class="icon">🩹</div><h3>Minor Procedures</h3><p>Stitches, splints, abscess drainage, foreign body removal.</p></article>
+      <article class="service-card"><div class="icon">💻</div><h3>Virtual Care</h3><p>Video visits & secure messaging for convenience.</p></article>
+      <article class="service-card"><div class="icon">💊</div><h3>Included Medications</h3><p>Access to <a href="included-meds.html" target="_blank" rel="noopener">250+ commonly used meds</a>.</p></article>
     </div>
   </div>
 </section>
-
 
 
 
