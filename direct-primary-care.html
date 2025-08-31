@@ -3,152 +3,149 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Direct Primary Care in Sacramento Metro (Rocklin, Roseville) | urHealthcare</title>
-  <meta name="description" content="Transparent direct primary care in the Sacramento metro. Same/next-day access, unlimited visits, 250+ meds included, basic labs, X-ray, and minor procedures. Serving Rocklin, Roseville, Lincoln." />
-  <link rel="canonical" href="https://harprandeol1.github.io/urhealthcare1/direct-primary-care.html" />
-  <meta name="theme-color" content="#0b3a83" />
+  <title>urHealthcare — Primary & Urgent Care in Sacramento Metro</title>
+  <meta name="description" content="Direct primary & urgent care. Unlimited visits, 7-day urgent care, 250+ meds included, x-ray, labs, ultrasound, and minor procedures." />
+  <meta name="theme-color" content="##FFFFFF" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
 
-  <!-- Design System -->
+  <!-- Always-works stylesheet for GitHub Pages (absolute URL + cache-buster) -->
+  <link rel="stylesheet" href="https://harprandeol1.github.io/urhealthcare1/assets/styles.css?v=5" />
+
+  <!-- Page/transition extras -->
   <style>
-    :root{
-      --brand:#0b3a83;
-      --brand-700:#0a3170;
-      --brand-800:#072a60;
-
-      --ink:#0e1a2f;
-      --muted:#5a6780;
-      --bg:#ffffff;
-      --bg-soft:#f6f8fc;
-      --border:#e6ebf3;
-
-      --radius:16px;
-      --radius-lg:20px;
-      --shadow:0 10px 30px rgba(11,58,131,.08);
-      --shadow-lg:0 20px 40px rgba(11,58,131,.12);
+    /* ===== Scroll-snap “slides” + reveal transitions ===== */
+    :root { --hdrH: 72px; }
+    html, body { height: 100%; scroll-behavior: smooth; }
+    /* pad for fixed headers (if any) when snapping or using #anchors */
+    main.snap { scroll-snap-type: y mandatory; scroll-padding-top: var(--hdrH); overscroll-behavior-y: contain; }
+    section.slide { 
+      scroll-snap-align: start; 
+      min-height: calc(100vh - var(--hdrH)); 
+      padding-block: clamp(56px, 10vh, 128px);   /* clear space in every section */
+    }
+    /* soft separators so the transition feels like a new page */
+    section.slide:not(:first-of-type) { border-top: 1px solid rgba(0,0,0,.04); }
+    /* content reveal on enter */
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
+    .in .reveal { opacity: 1; transform: none; }
+    /* reduced motion preference */
+    @media (prefers-reduced-motion: reduce) {
+      main.snap { scroll-snap-type: none; }
+      .reveal, .in .reveal { opacity: 1; transform: none; transition: none; }
     }
 
-    /* Base */
-    body{
-      margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
-      color:var(--ink); background:var(--bg); line-height:1.6;
+    /* ===== Existing dropdown CSS kept from your file ===== */
+    .dropdown { position: relative; }
+    .dropbtn{
+      background:transparent; border:0; padding:8px 10px; font:inherit; font-weight:600;
+      color:#0b3a83; cursor:pointer; border-radius:8px;
     }
-    a{color:var(--brand); text-decoration:none}
-    a:hover{text-decoration:underline}
-    img{max-width:100%; display:block}
-    .container{max-width:1120px; margin:auto; padding:0 16px}
-    .section{padding:56px 0}
-    .section.band{background:var(--bg-soft)}
-    @media(min-width:960px){.section{padding:72px 0}}
-
-    /* Header */
-    .hdr{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.85);
-      backdrop-filter:saturate(160%) blur(8px); border-bottom:1px solid var(--border);}
-    .hdr .container.nav{display:flex;align-items:center;gap:16px}
-    .hdr .logo{font-weight:800;font-size:20px;color:var(--brand);text-decoration:none}
-    .hdr .navlinks{margin-left:auto;display:flex;align-items:center;gap:12px}
-    .hdr a{color:#0b2a66;font-weight:600;padding:8px 10px;border-radius:10px}
-    .hdr a:hover{background:#f2f6ff;text-decoration:none}
-    .hdr .menu-btn{margin-left:12px;display:none;background:transparent;border:0;font-size:22px;cursor:pointer}
-    @media(max-width:720px){
-      .hdr .navlinks{display:none}
-      .menu-open .navlinks{display:flex;flex-direction:column;align-items:flex-start;gap:8px;
-        position:absolute;top:60px;left:0;right:0;padding:12px 16px;background:#fff;border-bottom:1px solid var(--border)}
-      .hdr .menu-btn{display:block}
+    .menu{
+      position:absolute; top:110%; left:0; min-width:280px; z-index:1000;
+      background:#b5e2ff; border:1px solid var(--border); border-radius:12px;
+      box-shadow:var(--shadow); padding:8px; list-style:none; margin:0; display:none;
     }
-
-    /* Dropdown */
-    .dropdown{position:relative}
-    .dropbtn{background:transparent;border:0;padding:8px 10px;font:inherit;font-weight:700;
-      color:#0b2a66;cursor:pointer;border-radius:10px}
-    .dropbtn:hover{background:#f2f6ff}
-    .menu{position:absolute;top:110%;left:0;min-width:300px;z-index:1000;display:none;
-      background:#fff;border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow);padding:10px}
-    .menu .grid{display:grid;grid-template-columns:repeat(2,minmax(160px,1fr));gap:6px 10px}
-    .menu a{display:block;padding:8px 10px;border-radius:10px;color:var(--ink)}
-    .menu a:hover{background:#f5f8ff;text-decoration:none}
-    .dropdown.open .menu{display:block!important}
-    @media(min-width:721px){.dropdown:hover .menu,.dropdown:focus-within .menu{display:block}}
-    @media(max-width:720px){.dropdown{width:100%}.menu{position:static;box-shadow:none;border:0;padding:0;min-width:0}}
-
-    /* Buttons */
-    .btn{display:inline-block;font-weight:800;border-radius:999px;padding:10px 16px;
-      border:1px solid transparent;background:var(--brand);color:#fff;box-shadow:var(--shadow);
-      transition:transform .15s ease,box-shadow .2s ease}
-    .btn:hover{text-decoration:none;transform:translateY(-1px);box-shadow:var(--shadow-lg)}
-    .btn.ghost{background:#fff;color:var(--brand);border-color:var(--brand)}
-    .btn.ghost:hover{background:#f5f8ff}
-
-    /* Hero */
-    .section:first-of-type{
-      background:
-        radial-gradient(1200px 600px at 10% -10%, rgba(11,58,131,.12), transparent 60%),
-        radial-gradient(900px 500px at 95% 0%, rgba(11,58,131,.08), transparent 55%),
-        linear-gradient(180deg,#ffffff,#fafcff);
-      border-bottom:1px solid var(--border);
+    .menu .grid{ display:grid; grid-template-columns:repeat(2,minmax(160px,1fr)); gap:4px 8px; }
+    .menu a{ display:block; padding:8px 10px; border-radius:8px; color:var(--ink); text-decoration:none; white-space:nowrap; }
+    .menu a:hover{ background:#f5f8ff; text-decoration:none; }
+    .menu .all { border-top:1px solid var(--border); margin-top:6px; padding-top:6px; }
+    @media (min-width:721px){ .dropdown:hover .menu, .dropdown:focus-within .menu{ display:block; } }
+    .dropdown.open .menu{ display:block !important; }
+    @media (max-width:720px){
+      .navlinks{ display:none; }
+      .menu-btn{ display:inline-block; background:transparent; border:0; }
+      .menu-open .navlinks{ display:flex; flex-direction:column; align-items:flex-start; gap:10px; padding:12px 0; }
+      .dropdown{ width:100%; }
+      .menu{ position:static; box-shadow:none; border:0; padding:0; }
     }
-    .kicker{color:var(--muted);text-transform:uppercase;letter-spacing:.09em;font-weight:800;font-size:12px}
-    .section:first-of-type h1{margin:.2em 0;font-size:clamp(28px,4vw,44px);line-height:1.15}
-
-    /* Grid & Cards */
-    .grid{display:grid;gap:16px}
-    @media(min-width:720px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-    @media(min-width:980px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-    .card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:16px;
-      box-shadow:var(--shadow);transition:transform .15s ease,box-shadow .2s ease}
-    .card:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
-    .card h3{margin:.1em 0 .3em;font-size:18px}
-
-    /* FAQ */
-    details.faqitem{border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px;
-      background:#fff;margin:12px 0;box-shadow:var(--shadow)}
-    details.faqitem > summary{list-style:none;font-weight:800;cursor:pointer;position:relative;padding-right:26px}
-    details.faqitem > summary::-webkit-details-marker{display:none}
-    details.faqitem > summary:after{content:"▾";position:absolute;right:0;top:0;transform:rotate(-90deg);
-      transition:transform .15s ease}
-    details.faqitem[open] > summary:after{transform:rotate(0)}
-    details.faqitem[open]{background:#f7faff}
-
-    /* Helpers */
-    .list-clean{margin:0;padding-left:18px}
-    .small{font-size:12px;color:var(--muted)}
   </style>
+
+  <!-- Open Graph (optional) -->
+  <meta property="og:title" content="urHealthcare — Primary & Urgent Care" />
+  <meta property="og:description" content="Unlimited visits. 7-day urgent care. 250+ meds included. Transparent pricing." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://harprandeol1.github.io/urhealthcare1/" />
 </head>
 <body>
-  <!-- Header -->
-  <header class="hdr">
+  <!-- Header with working Services dropdown -->
+  <header class="hdr" style="position:sticky;top:0;z-index:100;background:#fff;">
     <div class="container nav">
-      <a class="logo" href="index.html">urHealthcare</a>
-      <nav class="navlinks">
-        <div class="dropdown">
-          <button class="dropbtn" type="button" aria-expanded="false">Services ▾</button>
-          <div class="menu">
+      <a class="logo" href="index.html" style="font-size: 28px; font-weight: 600; color: #0b3a83; text-decoration: none;">
+  urHealthcare
+</a>
+
+
+
+      <nav class="navlinks" aria-label="Primary">
+        <div class="dropdown" id="services-dd">
+          <button class="dropbtn" type="button" aria-expanded="false" aria-controls="menu-services">
+            Services ▾
+          </button>
+          <div id="menu-services" class="menu" role="menu">
             <div class="grid">
-              <a href="direct-primary-care.html" aria-current="page">Direct Primary Care</a>
-              <a href="urgent-care.html">Urgent Care (7 days)</a>
-              <a href="x-ray.html">X-ray</a>
-              <a href="labs.html">Labs</a>
-              <a href="ultrasound.html">Ultrasound</a>
-              <a href="minor-procedures.html">Minor Procedures</a>
-              <a href="virtual-care.html">Virtual Care</a>
-              <a href="included-meds.html">Included Medications (250+)</a>
+              <a href="primary-care.html" role="menuitem">Primary Care</a>
+              <a href="urgent-care.html" role="menuitem">Urgent Care</a>
+              <a href="x-ray.html"role="menuitem">X-ray</a>
+              <a href="labs.html" role="menuitem">Labs</a>
+              <a href="ultrasound.html" role="menuitem">Ultrasound</a>
+              <a href="minor-procedures.html" role="menuitem">Minor Procedures</a>
+              <a href="virtual-care.html" role="menuitem">Virtual Care</a>
+              <a href="included-meds.html" role="menuitem">Medications</a>
             </div>
-            <div><a href="index.html#services">View all services →</a></div>
+            <div class="all"><a href="#services">View all services →</a></div>
           </div>
         </div>
-        <a href="plans.html">Membership</a>
+
+        <a href="direct-primary-care.html">Membership</a>
         <a href="employers.html">Employers</a>
         <a href="faq.html">FAQ</a>
-        <a href="contact.html">Contact</a>
-        <a href="contact.html" class="btn">Book visit</a>
+
+        <!-- LOGIN DROPDOWN -->
+        <div class="login-dd">
+          <button class="btn login-dd__button" id="loginMenuButton"
+                  aria-haspopup="menu" aria-expanded="false" aria-controls="loginMenu">
+            Login
+          </button>
+
+          <ul class="login-dd__menu" id="loginMenu" role="menu" aria-labelledby="loginMenuButton">
+            <li role="none">
+              <a role="menuitem" href="https://urhealthcare.hint.com/login/request" class="login-dd__link">Membership Login</a>
+            </li>
+            <li role="none">
+              <a role="menuitem" href="https://www.onpatient.com/login/" class="login-dd__link">OnPatient Login</a>
+            </li>
+          </ul>
+        </div>
+
+        <style>
+          .login-dd { position: relative; }
+          .login-dd__button { display:inline-flex; align-items:center; gap:6px; }
+          .login-dd__button::after { content:"▾"; font-size:.9em; }
+          .login-dd__menu {
+            position:absolute; right:0; top:calc(100% + 8px);
+            min-width:220px; padding:6px; margin:0; list-style:none;
+            background:#fff; border:1px solid #e5e7eb; border-radius:12px;
+            box-shadow:0 12px 28px rgba(0,0,0,.12);
+            display:none; z-index:1000;
+          }
+          .login-dd__menu[data-open="true"] { display:block; }
+          .login-dd__link { display:block; padding:10px 12px; border-radius:10px; color:#111; text-decoration:none; font-weight:700; }
+          .login-dd__link:hover, .login-dd__link:focus { background:#f2f7ff; color:#0b3a83; outline:none; }
+          .btn { background:#0b3a83; color:#fff; border:none; padding:10px 16px; border-radius:12px; font-weight:800; }
+          .btn:hover { filter:brightness(.95); }
+        </style>
       </nav>
-      <button class="menu-btn" aria-label="Menu" onclick="document.body.classList.toggle('menu-open')">☰</button>
+
+      <button class="menu-btn" aria-label="Menu"
+        onclick="document.body.classList.toggle('menu-open')">☰</button>
     </div>
   </header>
 
+  <!-- ===== All “slides” are inside this snap container ===== -->
+  <main class="snap">
   <!-- Hero -->
   <section class="section">
     <div class="container">
