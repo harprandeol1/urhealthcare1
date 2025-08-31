@@ -15,49 +15,26 @@
   <!-- Design System -->
   <style>
     :root{
-      --brand:#0b3a83;
-      --brand-700:#0a3170;
-      --brand-800:#072a60;
-
-      --ink:#0e1a2f;
-      --muted:#5a6780;
-      --bg:#ffffff;
-      --bg-soft:#f6f8fc;
-      --border:#e6ebf3;
-
-      --accent-1:#e9f1ff;   /* soft blue */
-      --accent-2:#eefcf5;   /* soft green */
-      --accent-3:#fff4ec;   /* soft orange */
-
-      --radius:16px;
-      --radius-lg:22px;
-      --shadow:0 10px 30px rgba(11,58,131,.08);
-      --shadow-lg:0 22px 44px rgba(11,58,131,.16);
+      --brand:#0b3a83; --brand-700:#0a3170; --brand-800:#072a60;
+      --ink:#0e1a2f; --muted:#5a6780; --bg:#ffffff; --bg-soft:#f6f8fc; --border:#e6ebf3;
+      --accent-1:#e9f1ff; --accent-2:#eefcf5; --accent-3:#fff4ec;
+      --radius:16px; --radius-lg:22px;
+      --shadow:0 10px 30px rgba(11,58,131,.08); --shadow-lg:0 22px 44px rgba(11,58,131,.16);
     }
-
-    /* Base */
     *{box-sizing:border-box}
-    body{
-      margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
-      color:var(--ink); background:var(--bg); line-height:1.6;
-    }
-    a{color:var(--brand); text-decoration:none}
-    a:hover{text-decoration:underline}
-    img{max-width:100%; display:block}
-    .container{max-width:1160px; margin:auto; padding:0 16px}
-    .section{padding:68px 0}
-    .section.band{background:var(--bg-soft)}
-    h1,h2{letter-spacing:-.02em}
-    h2{font-size:clamp(24px,3vw,36px); margin:.1em 0 .4em}
-    h3{font-size:20px; margin:.2em 0 .4em}
-    .kicker{color:var(--muted); text-transform:uppercase; font-weight:800; letter-spacing:.09em; font-size:12px}
-    .muted{color:var(--muted)}
-    .small{font-size:12px; color:var(--muted)}
-    .list-clean{margin:0; padding-left:18px}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;color:var(--ink);background:var(--bg);line-height:1.6}
+    a{color:var(--brand);text-decoration:none} a:hover{text-decoration:underline}
+    img{max-width:100%;display:block}
+    .container{max-width:1160px;margin:auto;padding:0 16px}
+    .section{padding:68px 0} .section.band{background:var(--bg-soft)}
+    h1,h2{letter-spacing:-.02em} h2{font-size:clamp(24px,3vw,36px);margin:.1em 0 .4em}
+    h3{font-size:20px;margin:.2em 0 .4em}
+    .kicker{color:var(--muted);text-transform:uppercase;font-weight:800;letter-spacing:.09em;font-size:12px}
+    .muted{color:var(--muted)} .small{font-size:12px;color:var(--muted)}
+    .list-clean{margin:0;padding-left:18px}
 
     /* Header */
-    .hdr{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.85);
-      backdrop-filter:saturate(160%) blur(8px); border-bottom:1px solid var(--border)}
+    .hdr{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.85);backdrop-filter:saturate(160%) blur(8px);border-bottom:1px solid var(--border)}
     .hdr .container.nav{display:flex;align-items:center;gap:16px}
     .hdr .logo{font-weight:800;font-size:20px;color:var(--brand);text-decoration:none}
     .hdr .navlinks{margin-left:auto;display:flex;align-items:center;gap:12px}
@@ -66,18 +43,15 @@
     .hdr .menu-btn{margin-left:12px;display:none;background:transparent;border:0;font-size:22px;cursor:pointer}
     @media(max-width:720px){
       .hdr .navlinks{display:none}
-      .menu-open .navlinks{display:flex;flex-direction:column;align-items:flex-start;gap:8px;
-        position:absolute;top:60px;left:0;right:0;padding:12px 16px;background:#fff;border-bottom:1px solid var(--border)}
+      .menu-open .navlinks{display:flex;flex-direction:column;align-items:flex-start;gap:8px;position:absolute;top:60px;left:0;right:0;padding:12px 16px;background:#fff;border-bottom:1px solid var(--border)}
       .hdr .menu-btn{display:block}
     }
 
     /* Dropdown */
     .dropdown{position:relative}
-    .dropbtn{background:transparent;border:0;padding:8px 10px;font:inherit;font-weight:700;
-      color:#0b2a66;cursor:pointer;border-radius:10px}
+    .dropbtn{background:transparent;border:0;padding:8px 10px;font:inherit;font-weight:700;color:#0b2a66;cursor:pointer;border-radius:10px}
     .dropbtn:hover{background:#f2f6ff}
-    .menu{position:absolute;top:110%;left:0;min-width:300px;z-index:1000;display:none;
-      background:#fff;border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow);padding:10px}
+    .menu{position:absolute;top:110%;left:0;min-width:300px;z-index:1000;display:none;background:#fff;border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow);padding:10px}
     .menu .grid{display:grid;grid-template-columns:repeat(2,minmax(160px,1fr));gap:6px 10px}
     .menu a{display:block;padding:8px 10px;border-radius:10px;color:var(--ink)}
     .menu a:hover{background:#f5f8ff;text-decoration:none}
@@ -85,101 +59,74 @@
     @media(min-width:721px){.dropdown:hover .menu,.dropdown:focus-within .menu{display:block}}
     @media(max-width:720px){.dropdown{width:100%}.menu{position:static;box-shadow:none;border:0;padding:0;min-width:0}}
 
-    /* Buttons */
-    .btn{display:inline-block;font-weight:800;border-radius:999px;padding:10px 16px;
-      border:1px solid transparent;background:var(--brand);color:#fff;box-shadow:var(--shadow);
-      transition:transform .15s ease,box-shadow .2s ease}
+    /* Buttons & badges */
+    .btn{display:inline-block;font-weight:800;border-radius:999px;padding:10px 16px;border:1px solid transparent;background:var(--brand);color:#fff;box-shadow:var(--shadow);transition:transform .15s ease,box-shadow .2s ease}
     .btn:hover{text-decoration:none;transform:translateY(-1px);box-shadow:var(--shadow-lg)}
-    .btn.ghost{background:#fff;color:var(--brand);border-color:var(--brand)}
-    .btn.ghost:hover{background:#f5f8ff}
+    .btn.ghost{background:#fff;color:var(--brand);border-color:var(--brand)} .btn.ghost:hover{background:#f5f8ff}
+    .badge{display:inline-block;font-size:12px;font-weight:800;border-radius:999px;padding:4px 10px;background:#eef3ff;color:#10346b;border:1px solid #dce6ff}
 
     /* Hero */
-    .hero{
-      background:
-       radial-gradient(1200px 600px at 10% -10%, rgba(11,58,131,.12), transparent 60%),
-       radial-gradient(900px 500px at 95% 0%, rgba(11,58,131,.08), transparent 55%),
-       linear-gradient(180deg,#ffffff,#fafcff);
-      border-bottom:1px solid var(--border);
-      padding:64px 0;
-    }
+    .hero{background:radial-gradient(1200px 600px at 10% -10%, rgba(11,58,131,.12), transparent 60%),radial-gradient(900px 500px at 95% 0%, rgba(11,58,131,.08), transparent 55%),linear-gradient(180deg,#ffffff,#fafcff);border-bottom:1px solid var(--border);padding:64px 0}
     .hero h1{margin:.2em 0;font-size:clamp(28px,4vw,44px);line-height:1.15}
+    .hero-wrap{display:grid;gap:20px;align-items:center}
+    @media(min-width:960px){.hero-wrap{grid-template-columns:1.1fr .9fr}}
+    .hero img{border-radius:18px;border:1px solid var(--border);box-shadow:var(--shadow)}
 
-    /* Cards & grids */
+    /* Grid & cards */
     .grid{display:grid;gap:16px}
     @media(min-width:720px){.grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}}
     @media(min-width:960px){.grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}}
+    .card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow);transition:transform .15s ease, box-shadow .2s ease}
+    .card:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+    .card h3{margin:.1em 0 .35em;font-size:18px}
+    .icon{width:28px;height:28px;margin-bottom:8px;opacity:.92}
 
-    .card{
-      background:#fff;border:1px solid var(--border);border-radius:var(--radius);
-      padding:18px; box-shadow:var(--shadow); transition:transform .15s ease, box-shadow .2s ease
-    }
-    .card:hover{transform:translateY(-2px); box-shadow:var(--shadow-lg)}
-    .card h3{margin:.1em 0 .35em; font-size:18px}
+    /* Alternating image sections */
+    .split{display:grid;gap:24px;align-items:center}
+    @media(min-width:960px){.split{grid-template-columns:1.05fr .95fr}}
+    .split img{border-radius:18px;border:1px solid var(--border);box-shadow:var(--shadow)}
 
-    /* Pricing cards */
-    .pricing{display:grid; gap:16px}
-    @media(min-width:820px){ .pricing{ grid-template-columns:repeat(3, minmax(0,1fr)) } }
-    .price-card{ text-align:left }
-    .price{ font-size:30px; font-weight:800; color:var(--brand); margin:.2em 0 .5em }
-
-    /* “Who Benefits” staggered layout */
-    .benefits{ display:grid; gap:16px; }
-    @media(min-width:960px){ .benefits{ grid-template-columns:repeat(12,1fr) } }
-    .benefit{
-      border-radius:var(--radius-lg); padding:22px; box-shadow:var(--shadow); border:1px solid var(--border);
-      transform:translateY(8px); opacity:.98;
-    }
-    /* Positions for desktop: left, right, center */
-    .benefit.one{ background:var(--accent-1) }
-    .benefit.two{ background:var(--accent-2) }
-    .benefit.three{ background:var(--accent-3) }
+    /* Benefits stagger */
+    .benefits{display:grid;gap:16px}
+    @media(min-width:960px){.benefits{grid-template-columns:repeat(12,1fr)}}
+    .benefit{border-radius:var(--radius-lg);padding:22px;box-shadow:var(--shadow);border:1px solid var(--border);opacity:.98}
+    .benefit.one{background:var(--accent-1)}
+    .benefit.two{background:var(--accent-2)}
+    .benefit.three{background:var(--accent-3)}
     @media(min-width:960px){
-      .benefit.one{ grid-column:1 / span 5 }
-      .benefit.two{ grid-column:8 / span 5 }
-      .benefit.three{ grid-column:4 / span 6 }
+      .benefit.one{grid-column:1 / span 5}
+      .benefit.two{grid-column:8 / span 5}
+      .benefit.three{grid-column:4 / span 6}
     }
+
+    /* Pricing */
+    .pricing{display:grid;gap:16px}
+    @media(min-width:820px){.pricing{grid-template-columns:repeat(3,minmax(0,1fr))}}
+    .price{font-size:30px;font-weight:800;color:var(--brand);margin:.2em 0 .5em}
 
     /* FAQ */
-    details.faqitem{
-      border:1px solid var(--border); border-radius:var(--radius); padding:14px 16px;
-      background:#fff; margin:12px 0; box-shadow:var(--shadow)
-    }
-    details.faqitem > summary{
-      list-style:none; font-weight:800; cursor:pointer; position:relative; padding-right:26px
-    }
-    details.faqitem > summary::-webkit-details-marker{display:none}
-    details.faqitem > summary:after{
-      content:"▾"; position:absolute; right:0; top:0; transform:rotate(-90deg); transition:transform .15s ease
-    }
-    details.faqitem[open] > summary:after{transform:rotate(0)}
-    details.faqitem[open]{background:#f7faff}
+    details.faqitem{border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px;background:#fff;margin:12px 0;box-shadow:var(--shadow)}
+    details.faqitem>summary{list-style:none;font-weight:800;cursor:pointer;position:relative;padding-right:26px}
+    details.faqitem>summary::-webkit-details-marker{display:none}
+    details.faqitem>summary:after{content:"▾";position:absolute;right:0;top:0;transform:rotate(-90deg);transition:transform .15s ease}
+    details.faqitem[open]>summary:after{transform:rotate(0)} details.faqitem[open]{background:#f7faff}
 
-    /* ==== Scroll reveal & POP effects ==== */
-    .reveal{ opacity:0; transform:translateY(14px); transition:opacity .6s ease, transform .6s ease, filter .6s ease }
-    .reveal.in{ opacity:1; transform:none }
-    .reveal.delay-1{ transition-delay:.08s }
-    .reveal.delay-2{ transition-delay:.16s }
-    .reveal.delay-3{ transition-delay:.24s }
+    /* Reveal + pop */
+    .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease, transform .6s ease, filter .6s ease}
+    .reveal.in{opacity:1;transform:none}
+    .pop{transform:scale(.985);filter:brightness(.98)} .pop.in{transform:scale(1);filter:brightness(1);box-shadow:0 26px 60px rgba(11,58,131,.18)}
+    .pop-wrap{position:relative;border-radius:var(--radius-lg);overflow:hidden;background:#fff;border:1px solid var(--border)}
+    .pop-wrap:before{content:"";position:absolute;inset:-20%;background:radial-gradient(600px 220px at 20% 0, rgba(11,58,131,.12), transparent 60%);opacity:0;transition:opacity .6s ease}
+    .pop-wrap.pop-in:before{opacity:1}
 
-    /* Pop spotlight: slight scale + stronger shadow + backdrop glow */
-    .pop{ transform:scale(.985); filter:brightness(.98) drop-shadow(0 0 0 rgba(11,58,131,0)); }
-    .pop.in{
-      transform:scale(1); filter:brightness(1);
-      box-shadow:0 26px 60px rgba(11,58,131,.18);
-    }
-    .pop-wrap{
-      position:relative; border-radius:var(--radius-lg); overflow:hidden; background:#fff;
-      border:1px solid var(--border);
-    }
-    .pop-wrap:before{
-      content:""; position:absolute; inset:-20%; background:radial-gradient(600px 220px at 20% 0,
-        rgba(11,58,131,.12), transparent 60%);
-      opacity:0; transition:opacity .6s ease;
-    }
-    .pop-wrap.pop-in:before{ opacity:1 }
+    /* Sticky CTA */
+    .sticky-cta{position:sticky;bottom:0;z-index:900;background:rgba(255,255,255,.9);backdrop-filter:blur(8px);border-top:1px solid var(--border)}
+    .sticky-cta .inner{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:10px 16px}
+    .sticky-cta .label{font-weight:800;color:#0b2a66}
+    @media(min-width:900px){.sticky-cta .inner{justify-content:center;gap:16px}}
 
     /* Footer */
-    .ftr{border-top:1px solid var(--border); background:#fff; color:var(--muted); padding:28px 0}
+    .ftr{border-top:1px solid var(--border);background:#fff;color:var(--muted);padding:28px 0}
   </style>
 </head>
 <body>
@@ -214,28 +161,32 @@
     </div>
   </header>
 
-  <!-- HERO -->
+  <!-- HERO (image + copy, inspired flow) -->
   <section class="hero">
-    <div class="container">
-      <div class="kicker">Direct Primary Care • Sacramento Metro</div>
-      <h1>Membership Care that Puts You First</h1>
-      <p class="muted">Unlimited visits, same/next-day access, and transparent pricing. Serving Rocklin, Roseville, Lincoln, and nearby communities.</p>
-      <div style="margin-top:12px">
-        <a class="btn" href="contact.html">Join & book a visit</a>
-        <a class="btn ghost" href="plans.html">See plans & pricing</a>
+    <div class="container hero-wrap">
+      <div>
+        <div class="kicker">Direct Primary Care • Sacramento Metro</div>
+        <h1>Membership Care that Puts You First</h1>
+        <p class="muted">Unlimited visits, same/next-day access, and transparent pricing. Serving Rocklin, Roseville, Lincoln, and nearby communities.</p>
+        <div style="margin-top:12px">
+          <a class="btn" href="contact.html">Join & book a visit</a>
+          <a class="btn ghost" href="plans.html">See plans & pricing</a>
+        </div>
       </div>
+      <img src="assets/img/hero-dpc.jpg" alt="Friendly primary care visit at urHealthcare" loading="lazy">
     </div>
   </section>
 
-  <!-- 1) WHAT IS DIRECT PRIMARY CARE (POP on scroll) -->
+  <!-- 1) WHAT IS DPC (pops on scroll) -->
   <section class="section">
     <div class="container">
       <div class="pop-wrap" id="what-pop">
         <div class="card pop reveal" id="what-is-dpc">
-          <h2>What is Direct Primary Care?</h2>
-          <p>Direct Primary Care (DPC) is a modern, patient-centered approach to healthcare that removes the middlemen—insurance companies, networks, and third-party approvals—so you can focus on your health with your doctor. Instead of paying for each visit or service, patients join through a simple <strong>monthly membership</strong> that covers unlimited access to primary and urgent care.</p>
+          <span class="badge">What is Direct Primary Care?</span>
+          <h2>Healthcare without the headaches—just a simple membership</h2>
+          <p>Direct Primary Care (DPC) is a modern, patient-centered approach that removes insurance middlemen so you can focus on your health with your doctor. Instead of paying for each visit, you join through a <strong>monthly membership</strong> that covers unlimited access to primary and urgent care.</p>
           <ul class="list-clean">
-            <li><strong>Membership model:</strong> Unlimited visits, extended appointments, same/next-day access, and direct communication with your care team.</li>
+            <li><strong>Membership model:</strong> Unlimited visits, extended appointments, same/next-day access, and direct messaging with your care team.</li>
             <li><strong>No insurance hassles:</strong> No copays, deductibles, or surprise bills.</li>
             <li><strong>Comprehensive care:</strong> Preventive, chronic, urgent care, many meds, basic labs, and minor procedures included.</li>
           </ul>
@@ -244,26 +195,38 @@
     </div>
   </section>
 
-  <!-- 2) WHAT’S INCLUDED AT urHealthcare (Blocks) -->
+  <!-- Alternating image + copy strip (keeps page lively like One Medical) -->
   <section class="section band">
-    <div class="container">
-      <h2>What’s Included at urHealthcare Direct Care</h2>
-      <div class="grid three">
-        <div class="card reveal"><h3>Continuity Primary Care</h3><p>Preventive, chronic, and acute care with the provider you choose.</p></div>
-        <div class="card reveal delay-1"><h3>7-Day Urgent Care</h3><p>Walk-in or virtual care for common illnesses & injuries.</p></div>
-        <div class="card reveal delay-2"><h3>250+ Included Medications</h3><p>Provided at no extra cost. <a href="included-meds.html">See the list</a>.</p></div>
-        <div class="card reveal"><h3>Basic Labs</h3><p>Routine panels and rapid tests. <a href="labs.html">See labs</a>.</p></div>
-        <div class="card reveal delay-1"><h3>X-ray & Ultrasound</h3><p>On-site imaging for faster diagnosis and treatment.</p></div>
-        <div class="card reveal delay-2"><h3>Minor Procedures</h3><p>Stitches, splints, abscess drainage, foreign body removal.</p></div>
-        <div class="card reveal"><h3>Virtual Care</h3><p>Video visits and secure messaging for convenience and continuity.</p></div>
-        <div class="card reveal delay-1"><h3>Care Coordination</h3><p>Referrals and follow-through across the Sacramento metro.</p></div>
-        <div class="card reveal delay-2"><h3>Same/Next-Day Access</h3><p>Prompt appointments that respect your time.</p></div>
+    <div class="container split">
+      <img src="assets/img/visit-family.jpg" alt="Family primary care visit" loading="lazy" class="reveal">
+      <div class="reveal">
+        <h2>Care that fits your life</h2>
+        <p>In-person or virtual, seven days a week for urgent needs—so you get answers and treatment fast, without the runaround.</p>
+        <p class="small">Specialty and hospital services are outside the DPC fee; many members pair DPC with a high-deductible or catastrophic plan.</p>
       </div>
     </div>
   </section>
 
-  <!-- 3) WHY PATIENTS CHOOSE DIRECT CARE (Broader, more space) -->
+  <!-- 2) WHAT’S INCLUDED (blocks with icons) -->
   <section class="section">
+    <div class="container">
+      <h2 class="reveal">What’s Included at urHealthcare Direct Care</h2>
+      <div class="grid three">
+        <div class="card reveal"><img class="icon" src="assets/icons/steth.svg" alt=""><h3>Continuity Primary Care</h3><p>Preventive, chronic, and acute care with the provider you choose.</p></div>
+        <div class="card reveal delay-1"><img class="icon" src="assets/icons/urgent.svg" alt=""><h3>7-Day Urgent Care</h3><p>Walk-in or virtual care for common illnesses & injuries.</p></div>
+        <div class="card reveal delay-2"><img class="icon" src="assets/icons/pill.svg" alt=""><h3>250+ Included Meds</h3><p>Provided at no extra cost. <a href="included-meds.html">See list</a>.</p></div>
+        <div class="card reveal"><img class="icon" src="assets/icons/lab.svg" alt=""><h3>Basic Labs</h3><p>Routine panels & rapid tests. <a href="labs.html">See labs</a>.</p></div>
+        <div class="card reveal delay-1"><img class="icon" src="assets/icons/xray.svg" alt=""><h3>X-ray & Ultrasound</h3><p>On-site imaging for faster diagnosis and treatment.</p></div>
+        <div class="card reveal delay-2"><img class="icon" src="assets/icons/procedure.svg" alt=""><h3>Minor Procedures</h3><p>Stitches, splints, abscess drainage, foreign body removal.</p></div>
+        <div class="card reveal"><img class="icon" src="assets/icons/video.svg" alt=""><h3>Virtual Care</h3><p>Video visits & secure messaging for convenience and continuity.</p></div>
+        <div class="card reveal delay-1"><img class="icon" src="assets/icons/coord.svg" alt=""><h3>Care Coordination</h3><p>Referrals and follow-through across the Sacramento metro.</p></div>
+        <div class="card reveal delay-2"><img class="icon" src="assets/icons/clock.svg" alt=""><h3>Same/Next-Day Access</h3><p>Prompt appointments that respect your time.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3) WHY PATIENTS CHOOSE (broader) -->
+  <section class="section band">
     <div class="container">
       <h2 class="reveal">Why Patients Choose Direct Care</h2>
       <div class="card reveal pop">
@@ -289,28 +252,29 @@
     </div>
   </section>
 
-  <!-- 4) WHY IT’S DIFFERENT -->
-  <section class="section band">
-    <div class="container">
-      <h2 class="reveal">Why It’s Different from Traditional Healthcare</h2>
-      <div class="card reveal">
+  <!-- 4) WHY IT’S DIFFERENT (image + copy) -->
+  <section class="section">
+    <div class="container split">
+      <div class="reveal">
+        <h2>Why It’s Different from Traditional Healthcare</h2>
         <p>In traditional healthcare, insurance companies often dictate how doctors practice—limiting time with patients and inflating costs. Direct Primary Care flips that model: your membership is a direct relationship with your doctor. This means your provider works for <em>you</em>—not the insurance company.</p>
       </div>
+      <img src="assets/img/different.jpg" alt="Relaxed clinic experience" loading="lazy" class="reveal">
     </div>
   </section>
 
-  <!-- 5) WHO BENEFITS (colored, left — right — center; staggered as you scroll) -->
-  <section class="section">
+  <!-- 5) WHO BENEFITS (colored, staggered left/right/center) -->
+  <section class="section band">
     <div class="container">
       <h2 class="reveal">Who Benefits from DPC?</h2>
       <div class="benefits">
         <div class="benefit one reveal">
           <h3>Individuals & Families</h3>
-          <p>Affordable, predictable healthcare costs with unlimited access and rapid scheduling—ideal for busy households.</p>
+          <p>Affordable, predictable costs with unlimited access and rapid scheduling—ideal for busy households.</p>
         </div>
         <div class="benefit two reveal delay-1">
           <h3>Employers</h3>
-          <p>Lower overall healthcare spend, faster access for employees, less absenteeism, and better retention.</p>
+          <p>Lower total healthcare spend, faster access for employees, less absenteeism, and better retention.</p>
         </div>
         <div class="benefit three reveal delay-2">
           <h3>Patients with Chronic Conditions</h3>
@@ -320,13 +284,13 @@
     </div>
   </section>
 
-  <!-- 6) MEMBERSHIP PRICING (three blocks) -->
-  <section class="section band">
+  <!-- 6) MEMBERSHIP PRICING (blocks) + sticky CTA -->
+  <section class="section">
     <div class="container">
       <h2 class="reveal">Membership Pricing</h2>
       <p class="muted reveal">Flat monthly fees. No copays. Cancel anytime.</p>
       <div class="pricing">
-        <div class="card price-card reveal">
+        <div class="card reveal">
           <h3>Individual</h3>
           <div class="price">$79<span class="small">/month</span></div>
           <ul class="list-clean">
@@ -335,7 +299,7 @@
             <li>Virtual care (video & messaging)</li>
           </ul>
         </div>
-        <div class="card price-card reveal delay-1">
+        <div class="card reveal delay-1">
           <h3>Spouse</h3>
           <div class="price">$50<span class="small">/month</span></div>
           <ul class="list-clean">
@@ -343,7 +307,7 @@
             <li>All membership benefits</li>
           </ul>
         </div>
-        <div class="card price-card reveal delay-2">
+        <div class="card reveal delay-2">
           <h3>Child (5+)</h3>
           <div class="price">$30<span class="small">/month</span></div>
           <ul class="list-clean">
@@ -360,13 +324,13 @@
     </div>
   </section>
 
-  <!-- FAQ (optional keep) -->
-  <section class="section">
+  <!-- FAQ -->
+  <section class="section band">
     <div class="container">
       <h2 class="reveal">Direct Primary Care — FAQ</h2>
       <details class="faqitem reveal">
         <summary>Is DPC the same as health insurance?</summary>
-        <p>No. DPC covers primary and urgent care, many medications, basic labs, and minor procedures. Specialty and hospital services are outside the membership. Many members pair DPC with a high-deductible insurance plan.</p>
+        <p>No. DPC covers primary and urgent care, many medications, basic labs, and minor procedures. Specialty and hospital services are outside the membership. Many members pair DPC with a high-deductible plan.</p>
       </details>
       <details class="faqitem reveal">
         <summary>How do I sign up?</summary>
@@ -374,6 +338,17 @@
       </details>
     </div>
   </section>
+
+  <!-- Sticky CTA (repeated prompt inspired by One Medical’s repeated signup CTAs) -->
+  <div class="sticky-cta">
+    <div class="container inner">
+      <div class="label">Ready to join Direct Primary Care?</div>
+      <div>
+        <a class="btn" href="contact.html">Join & book a visit</a>
+        <a class="btn ghost" href="plans.html">See plans</a>
+      </div>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer class="ftr">
@@ -406,17 +381,15 @@
       }
     });
 
-    // IntersectionObserver for reveal + POP effects
+    // IntersectionObserver for reveal + POP
     const io = new IntersectionObserver((entries)=>{
       entries.forEach(entry=>{
         if(entry.isIntersecting){
           entry.target.classList.add('in');
-          // Special glow backdrop for the WHAT section wrapper
           if(entry.target.id === 'what-is-dpc'){
             document.getElementById('what-pop')?.classList.add('pop-in');
           }
-        } else {
-          // allow re-triggering on scroll up/down (attention-catching)
+        }else{
           entry.target.classList.remove('in');
           if(entry.target.id === 'what-is-dpc'){
             document.getElementById('what-pop')?.classList.remove('pop-in');
@@ -424,8 +397,8 @@
         }
       });
     }, { threshold: 0.25 });
-
     document.querySelectorAll('.reveal, .pop').forEach(el=>io.observe(el));
   </script>
 </body>
 </html>
+
