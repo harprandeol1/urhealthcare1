@@ -7,115 +7,12 @@
   <meta name="description" content="Transparent direct primary care in the Sacramento metro. Same/next-day access, unlimited visits, 250+ meds included, basic labs, X-ray, and minor procedures. Serving Rocklin, Roseville, Lincoln." />
   <link rel="canonical" href="https://harprandeol1.github.io/urhealthcare1/direct-primary-care.html" />
   <meta name="theme-color" content="#0b3a83" />
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
-
-  <!-- Always-works stylesheet for GitHub Pages -->
-  <link rel="stylesheet" href="https://harprandeol1.github.io/urhealthcare1/assets/styles.css?v=8" />
-
-  <!-- Page-specific styles (header right-aligned, tabs, accordion) -->
-  <style>
-    /* Push nav tabs to the right */
-    .hdr .container.nav { display:flex; align-items:center; gap:16px; }
-    .hdr .logo { flex:0 0 auto; }
-    .hdr .navlinks { margin-left:auto; display:flex; align-items:center; gap:12px; }
-    .hdr .menu-btn { margin-left:12px; }
-    @media (max-width:720px){
-      .hdr .navlinks{ display:none; }
-      .menu-open .navlinks{ display:flex; flex-direction:column; align-items:flex-start; gap:10px; padding:12px 0; margin-left:0; }
-    }
-
-    /* Services dropdown */
-    .dropdown { position:relative; }
-    .dropbtn{ background:transparent; border:0; padding:8px 10px; font:inherit; font-weight:600; color:#0b2a66; cursor:pointer; border-radius:8px; }
-    .menu{
-      position:absolute; top:110%; left:0; min-width:280px; z-index:1000;
-      background:#fff; border:1px solid var(--border); border-radius:12px;
-      box-shadow:var(--shadow); padding:8px; list-style:none; margin:0; display:none;
-    }
-    .menu .grid{ display:grid; grid-template-columns:repeat(2,minmax(160px,1fr)); gap:4px 8px; }
-    .menu a{ display:block; padding:8px 10px; border-radius:8px; color:var(--ink); text-decoration:none; white-space:nowrap; }
-    .menu a:hover{ background:#f5f8ff; text-decoration:none; }
-    .dropdown.open .menu{ display:block !important; }
-    @media (min-width:721px){ .dropdown:hover .menu, .dropdown:focus-within .menu{ display:block; } }
-    @media (max-width:720px){
-      .dropdown{ width:100%; }
-      .menu{ position:static; box-shadow:none; border:0; padding:0; }
-    }
-
-    /* Section helpers */
-    .kicker{ color:var(--muted); text-transform:uppercase; letter-spacing:.08em; font-weight:700; font-size:12px; }
-    .list-clean{ margin:0; padding-left:18px; }
-
-    /* Medications/Labs "tabs" that link to pages */
-    .linktabs{ display:flex; gap:10px; flex-wrap:wrap; margin-top:8px; }
-    .linktabs a{
-      display:inline-block; padding:8px 12px; border:1px solid var(--border);
-      border-radius:999px; font-weight:700; text-decoration:none; color:var(--ink); background:#fff;
-    }
-    .linktabs a:hover{ background:#f5f8ff; }
-    .linktabs a.active{ background:var(--brand); color:#fff; border-color:var(--brand); }
-
-    /* FAQ accordion (details/summary) */
-    details.faqitem{
-      border:1px solid var(--border); border-radius:12px; padding:12px 16px; background:#fafcff; margin:10px 0;
-    }
-    details.faqitem > summary{ font-weight:700; cursor:pointer; list-style:none; }
-    details.faqitem[open]{ background:#f7faff; }
-
-    /* Small print note */
-    .small{ font-size:12px; color:var(--muted); }
-  </style>
-
-  <!-- Schema.org (clinic + product offers) -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"MedicalClinic",
-    "name":"urHealthcare",
-    "url":"https://harprandeol1.github.io/urhealthcare1/",
-    "telephone":"+1-916-964-2001",
-    "address":{"@type":"PostalAddress","streetAddress":"6839 Five Star Blvd, Suite D","addressLocality":"Rocklin","addressRegion":"CA","postalCode":"95765","addressCountry":"US"},
-    "medicalSpecialty":["PrimaryCare","UrgentCare"],
-    "department":{"@type":"MedicalDepartment","name":"Direct Primary Care","areaServed":["Sacramento Metro","Rocklin","Roseville","Lincoln"]}
-  }
-  </script>
+  ...
 </head>
 <body>
   <!-- Header -->
   <header class="hdr">
-    <div class="container nav">
-      <a class="logo" href="index.html">urHealthcare</a>
-
-      <nav class="navlinks" aria-label="Primary">
-        <div class="dropdown" id="services-dd">
-          <button class="dropbtn" type="button" aria-expanded="false" aria-controls="menu-services">Services ▾</button>
-          <div id="menu-services" class="menu" role="menu">
-            <div class="grid">
-              <a href="direct-primary-care.html" role="menuitem" aria-current="page">Direct Primary Care</a>
-              <a href="urgent-care.html" role="menuitem">Urgent Care (7 days)</a>
-              <a href="x-ray.html" role="menuitem">X-ray</a>
-              <a href="labs.html" role="menuitem">Labs</a>
-              <a href="ultrasound.html" role="menuitem">Ultrasound</a>
-              <a href="minor-procedures.html" role="menuitem">Minor Procedures</a>
-              <a href="virtual-care.html" role="menuitem">Virtual Care</a>
-              <a href="included-meds.html" role="menuitem">Included Medications (250+)</a>
-            </div>
-            <div class="all"><a href="index.html#services">View all services →</a></div>
-          </div>
-        </div>
-
-        <a href="plans.html">Membership</a>
-        <a href="employers.html">Employers</a>
-        <a href="faq.html">FAQ</a>
-        <a href="contact.html">Contact</a>
-        <a href="contact.html" class="btn">Book visit</a>
-      </nav>
-
-      <button class="menu-btn" aria-label="Menu" onclick="document.body.classList.toggle('menu-open')">☰</button>
-    </div>
+    ...
   </header>
 
   <!-- Hero -->
@@ -131,90 +28,56 @@
     </div>
   </section>
 
-  <!-- Pricing -->
+  <!-- Direct Primary Care Overview -->
   <section class="section band">
     <div class="container">
-      <h2>Membership Pricing</h2>
-      <p class="muted">Flat monthly fees. No copays. Cancel anytime.</p>
-      <div class="plans">
-        <div class="card">
-          <h3>Individual</h3>
-          <p class="price">$79/mo</p>
-          <ul class="list-clean">
-            <li>Unlimited primary & urgent care</li>
-            <li>Same/next-day appointments</li>
-            <li>Virtual care (video & messaging)</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Spouse</h3>
-          <p class="price">$50/mo</p>
-          <ul class="list-clean">
-            <li>Add any time</li>
-            <li>All membership benefits</li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Child (5+)</h3>
-          <p class="price">$30/mo</p>
-          <ul class="list-clean">
-            <li>Pedi sick & well visits</li>
-            <li>Rapid access for families</li>
-          </ul>
-        </div>
-      </div>
-      <p class="small">Specialty and hospital services are outside the DPC fee. Pair with a high-deductible or catastrophic plan for broader coverage.</p>
+      <h2>What is Direct Primary Care?</h2>
+      <p>Direct Primary Care (DPC) is a modern, patient-centered approach to healthcare that removes the middlemen—insurance companies, networks, and third-party approvals—so you can focus on your health with your doctor. Instead of paying for each visit or service, patients join through a simple <strong>monthly membership</strong> that covers unlimited access to primary and urgent care.</p>
+
+      <h3>Our Membership Pricing</h3>
+      <ul class="list-clean">
+        <li><strong>Individual:</strong> $79/month – Unlimited primary & urgent care, same/next-day access, and virtual visits.</li>
+        <li><strong>Spouse:</strong> $50/month – Add your partner with full membership benefits.</li>
+        <li><strong>Child (5+):</strong> $30/month – Pediatric sick & well visits with rapid access for families.</li>
+      </ul>
+      <p class="small">Specialty and hospital services are outside the DPC fee. Many members pair DPC with a high-deductible or catastrophic insurance plan for broader coverage.</p>
+
+      <h3>What’s Included at urHealthcare</h3>
+      <ul class="list-clean">
+        <li><strong>Continuity Primary Care</strong> – Preventive, chronic, and acute care with the provider you choose.</li>
+        <li><strong>7-Day Urgent Care</strong> – Walk-in or virtual care for common illnesses and injuries.</li>
+        <li><strong>250+ Included Medications</strong> – <a href="included-meds.html">See covered list</a>, provided at no extra cost.</li>
+        <li><strong>Basic Labs</strong> – Routine panels and rapid tests (<a href="labs.html">see labs</a>).</li>
+        <li><strong>X-ray & Ultrasound</strong> – On-site imaging for quick diagnosis and treatment.</li>
+        <li><strong>Minor Procedures</strong> – Stitches, splints, abscess drainage, foreign body removal.</li>
+        <li><strong>Virtual Care</strong> – Video visits and secure messaging for convenience and continuity.</li>
+        <li><strong>Care Coordination</strong> – Referrals and follow-up across the Sacramento metro.</li>
+      </ul>
+
+      <h3>Why Patients Choose DPC</h3>
+      <ul class="list-clean">
+        <li><strong>Transparent Pricing</strong> – One flat monthly fee. No surprise bills.</li>
+        <li><strong>Better Access</strong> – Shorter wait times and more time with your doctor.</li>
+        <li><strong>Personalized Care</strong> – Direct communication via phone, text, or telehealth.</li>
+        <li><strong>Whole-Person Health</strong> – Prevention, wellness, and stronger doctor-patient relationships.</li>
+      </ul>
+
+      <h3>Why It’s Different</h3>
+      <p>In traditional healthcare, insurance companies often dictate how doctors practice—limiting time with patients and inflating costs. Direct Primary Care flips that model: your membership is a direct relationship with your doctor. This means your provider works for you—not for the insurance company.</p>
+
+      <h3>Who Benefits from DPC?</h3>
+      <ul class="list-clean">
+        <li><strong>Individuals & Families</strong> – Affordable, predictable healthcare costs with unlimited access.</li>
+        <li><strong>Employers</strong> – Lower healthcare costs while providing better access and fewer sick days.</li>
+        <li><strong>Patients with Chronic Conditions</strong> – Ongoing support without worrying about visit costs.</li>
+      </ul>
+
+      <p><strong>In short:</strong> Direct Primary Care at urHealthcare is simple, affordable, and built entirely around you. It’s healthcare the way it should be—transparent, convenient, and relationship-driven.</p>
     </div>
   </section>
 
-  <!-- What's included -->
-  <section class="section">
-    <div class="container">
-      <h2>What’s Included in Direct Primary Care</h2>
-      <div class="grid">
-        <div class="card"><h3>Continuity Primary Care</h3><p>Preventive, chronic, and acute care with the provider you choose.</p></div>
-        <div class="card"><h3>7-Day Urgent Care</h3><p>Walk-in or virtual care for common illnesses & injuries.</p></div>
-        <div class="card"><h3>Included Medications</h3><p>Access to <a href="included-meds.html">250+ commonly used meds</a> at no extra cost.</p></div>
-        <div class="card"><h3>Basic Labs</h3><p>Routine panels and rapid tests. See our <a href="labs.html">Labs</a> page.</p></div>
-        <div class="card"><h3>X-ray & Ultrasound</h3><p>On-site imaging to speed diagnosis and treatment.</p></div>
-        <div class="card"><h3>Minor Procedures</h3><p>Stitches, splints, abscess drainage, foreign body removal.</p></div>
-        <div class="card"><h3>Virtual Care</h3><p>Video visits and secure messaging for convenience and continuity.</p></div>
-        <div class="card"><h3>Care Coordination</h3><p>Referrals and follow-through across the Sacramento metro.</p></div>
-      </div>
+  <!-- (Pricing and included services sections can now be removed or shortened since they’re merged above) -->
+  ...
+</body>
+</html>
 
-      <!-- Tabs that link out -->
-      <div style="margin-top:18px">
-        <div class="kicker">Details</div>
-        <div class="linktabs">
-          <a href="included-meds.html" class="tablink">Medications (250+)</a>
-          <a href="labs.html" class="tablink">Labs</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- How it works -->
-  <section class="section band">
-    <div class="container">
-      <h2>How Direct Primary Care Works</h2>
-      <div class="steps grid">
-        <div class="card"><h3>1) Join</h3><p>Pick the plan that fits you or your family. Enrollment takes minutes.</p></div>
-        <div class="card"><h3>2) Get Seen Fast</h3><p>Same/next-day appointments, in-person or virtual. 7-day urgent care access.</p></div>
-        <div class="card"><h3>3) One Transparent Fee</h3><p>Unlimited visits, many meds, basic labs, and procedures included.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ (accordion) -->
-  <section class="section">
-    <div class="container">
-      <h2>Direct Primary Care — FAQ</h2>
-
-      <details class="faqitem">
-        <summary>What is direct primary care (DPC)?</summary>
-        <p>DPC is a membership model for comprehensive, relationship-based primary care. You pay a simple monthly fee for unlimited visits and direct access to your care team, with many services included.</p>
-      </details>
-
-      <details class="faqitem">
-        <summary>Is DPC the same as health insurance?</summary>
-        <p>No. DPC covers primary and urgent care, many medications, basic labs, and minor procedures. Specialty and hospital services are outside the membership. Many members pair DPC with a high-deductible
