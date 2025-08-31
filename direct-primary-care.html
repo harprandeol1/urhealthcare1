@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
 
-  <!-- Design System (airy version) -->
+  <!-- Design System (airy) -->
   <style>
     :root{
       --brand:#0b3a83; --ink:#0e1a2f; --muted:#5a6780; --bg:#ffffff; --bg-soft:#f9fbfd;
@@ -30,6 +30,9 @@
     .container{max-width:1160px;margin:auto;padding:0 20px}
     .section{padding:90px 0}
     .section.band{background:var(--bg-soft)}
+    .muted{color:var(--muted)}
+    .small{font-size:12px;color:var(--muted)}
+    .list-clean{margin:0;padding-left:18px}
 
     /* Header */
     .hdr{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:1px solid var(--border)}
@@ -37,6 +40,10 @@
     .hdr .logo{font-weight:800;font-size:22px;color:var(--brand);text-decoration:none}
     .hdr nav a{margin-left:20px;font-weight:600;color:var(--ink)}
     .hdr .btn{margin-left:20px}
+
+    /* Buttons */
+    .btn{display:inline-block;padding:14px 22px;border-radius:999px;font-weight:700;background:var(--brand);color:#fff;box-shadow:var(--shadow)}
+    .btn.ghost{background:#fff;color:var(--brand);border:2px solid var(--brand)}
 
     /* Hero */
     .hero{padding:120px 0 100px;background:linear-gradient(180deg,#fff,#f9fbfd)}
@@ -51,11 +58,6 @@
     .card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);
       padding:28px;box-shadow:var(--shadow)}
 
-    /* Pricing */
-    .pricing{display:grid;gap:32px;margin-top:40px}
-    @media(min-width:860px){.pricing{grid-template-columns:repeat(3,1fr)}}
-    .price{font-size:34px;font-weight:800;color:var(--brand);margin-bottom:14px}
-
     /* Benefits stagger */
     .benefits{display:grid;gap:32px}
     @media(min-width:960px){.benefits{grid-template-columns:repeat(12,1fr)}}
@@ -69,9 +71,14 @@
       .benefit.three{grid-column:4/ span 6}
     }
 
-    /* Buttons */
-    .btn{display:inline-block;padding:14px 22px;border-radius:999px;font-weight:700;background:var(--brand);color:#fff;box-shadow:var(--shadow)}
-    .btn.ghost{background:#fff;color:var(--brand);border:2px solid var(--brand)}
+    /* Pricing */
+    .pricing{display:grid;gap:32px;margin-top:40px}
+    @media(min-width:860px){.pricing{grid-template-columns:repeat(3,1fr)}}
+    .price{font-size:34px;font-weight:800;color:var(--brand);margin-bottom:14px}
+    .toggle{display:flex;gap:8px;align-items:center;margin:8px 0 22px}
+    .pill{display:inline-flex;gap:6px;border:1px solid var(--border);border-radius:999px;padding:6px}
+    .pill button{border:0;background:transparent;padding:8px 14px;border-radius:999px;font-weight:700;cursor:pointer}
+    .pill button.active{background:#eaf1ff;color:#0b2a83}
 
     /* FAQ */
     details{padding:24px;margin:20px 0;border:1px solid var(--border);border-radius:var(--radius);background:#fff;box-shadow:var(--shadow)}
@@ -90,7 +97,7 @@
         <a href="plans.html">Membership</a>
         <a href="employers.html">Employers</a>
         <a href="faq.html">FAQ</a>
-        <a href="contact.html" class="btn">Book Visit</a>
+        <a href="https://urhealthcare.hint.com/signup/membership/contacts?=" class="btn">Join Online</a>
       </nav>
     </div>
   </header>
@@ -101,7 +108,7 @@
       <div>
         <h1>Direct Primary Care That Puts You First</h1>
         <p>Unlimited visits, same/next-day access, and transparent pricing. Serving Rocklin, Roseville, Lincoln, and nearby communities.</p>
-        <a class="btn" href="contact.html">Join Now</a>
+        <a class="btn" href="https://urhealthcare.hint.com/signup/membership/contacts?=">Join Online</a>
         <a class="btn ghost" href="plans.html">See Plans</a>
       </div>
       <img src="assets/img/hero-dpc.jpg" alt="Doctor and patient smiling">
@@ -158,8 +165,27 @@
     </div>
   </section>
 
-  <!-- Who Benefits -->
+  <!-- NEW: Clubbing with HDHP / Catastrophic -->
   <section class="section">
+    <div class="container">
+      <h2>Pair DPC with High-Deductible or Catastrophic Insurance</h2>
+      <p>We help you <strong>combine your DPC membership</strong> with a high-deductible (HDHP) or catastrophic insurance plan to cover specialty, hospital, or emergency needs.</p>
+      <div class="card">
+        <ul class="list-clean">
+          <li><strong>Lower total cost:</strong> Many members see premiums and overall healthcare costs go down by <strong>~20–25%</strong> when pairing DPC with an HDHP, while enjoying better access and continuity of care. (Savings vary.)</li>
+          <li><strong>Coverage for the rare stuff:</strong> About <strong>95% of everyday care</strong> is primary care—we take care of that directly. Catastrophic/HDHP plans handle the bigger, rarer events.</li>
+          <li><strong>We’ll guide you:</strong> Our team can walk you through options so your plan fits your health and budget.</li>
+        </ul>
+      </div>
+      <div style="margin-top:16px">
+        <a class="btn" href="https://urhealthcare.hint.com/signup/membership/contacts?=">Join Online</a>
+        <a class="btn ghost" href="plans.html">See Plan Details</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who Benefits -->
+  <section class="section band">
     <div class="container">
       <h2>Who Benefits from DPC?</h2>
       <div class="benefits">
@@ -170,24 +196,69 @@
     </div>
   </section>
 
-  <!-- Pricing -->
-  <section class="section band">
+  <!-- Pricing (Monthly + Yearly) -->
+  <section class="section">
     <div class="container">
       <h2>Membership Pricing</h2>
-      <div class="pricing">
-        <div class="card"><h3>Individual</h3><div class="price">$79/mo</div><p>Unlimited care, same-day access.</p></div>
-        <div class="card"><h3>Spouse</h3><div class="price">$50/mo</div><p>Add a partner anytime.</p></div>
-        <div class="card"><h3>Child (5+)</h3><div class="price">$30/mo</div><p>Pediatric sick & well visits.</p></div>
+      <div class="toggle">
+        <div class="pill" role="tablist" aria-label="Billing period">
+          <button id="tab-monthly" class="active" role="tab" aria-selected="true">Monthly</button>
+          <button id="tab-yearly" role="tab" aria-selected="false">Yearly (Save more)</button>
+        </div>
       </div>
+
+      <!-- Monthly -->
+      <div id="prices-monthly" class="pricing" aria-labelledby="tab-monthly">
+        <div class="card"><h3>Individual</h3><div class="price">$79/mo</div><p>Unlimited care, same/next-day access.</p><a class="btn" href="https://urhealthcare.hint.com/signup/membership/contacts?=">Join Online</a></div>
+        <div class="card"><h3>Spouse</h3><div class="price">$50/mo</div><p>Add a partner anytime.</p><a class="btn" href="https://urhealthcare.hint.com/signup/membership/contacts?=">Add Spouse</a></div>
+        <div class="card"><h3>Child (5+)</h3><div class="price">$30/mo</div><p>Pediatric sick & well visits.</p><a class="btn" href="https://urhealthcare.hint.com/signup/membership/contacts?=">Add Child</a></div>
+      </div>
+
+      <!-- Yearly -->
+      <div id="prices-yearly" class="pricing" aria-labelledby="tab-yearly" style="display:none">
+        <div class="card"><h3>Individual</h3><div class="price">$599/yr</div><p>Pay once, save vs. monthly.</p><a class="btn" href="https://urhealthcare.hint.com/signup/membership/contacts?=">Join Yearly</a></div>
+        <div class="card"><h3>Spouse</h3><div class="price">$499/yr</div><p>Spouse membership, billed yearly.</p><a class="btn" href="https://urhealthcare.hint.com/signup/membership/contacts?=">Add Spouse Yearly</a></div>
+        <div class="card"><h3>Child (5+)</h3><div class="price">$199/yr</div><p>Child membership, billed yearly.</p><a class="btn" href="https://urhealthcare.hint.com/signup/membership/contacts?=">Add Child Yearly</a></div>
+      </div>
+
+      <p class="small" style="margin-top:12px">Specialty and hospital services are outside the DPC fee. Many members pair DPC with a high-deductible or catastrophic plan for broader coverage. Plan available for patients <strong>65 years and younger</strong>.</p>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section class="section">
+  <section class="section band">
     <div class="container">
       <h2>FAQ</h2>
-      <details><summary>Is DPC insurance?</summary><p>No, DPC covers direct care, not hospital/specialty. Pair with a high-deductible plan.</p></details>
-      <details><summary>How do I sign up?</summary><p><a href="contact.html">Contact us</a> or join online in minutes.</p></details>
+
+      <details>
+        <summary>Is DPC the same as health insurance?</summary>
+        <p>No. DPC covers primary and urgent care, many medications, basic labs, and minor procedures. Specialty and hospital services are outside the membership. Most members pair DPC with a high-deductible or catastrophic plan.</p>
+      </details>
+
+      <details>
+        <summary>Are medications included?</summary>
+        <p>Yes. Medications listed on our <a href="included-meds.html">covered list</a> are provided at <strong>no extra cost</strong> and are included in your monthly (or yearly) membership.</p>
+      </details>
+
+      <details>
+        <summary>What if I need a specialist or imaging not covered by DPC?</summary>
+        <p>We’ll coordinate referrals and help manage your care. Costs for outside specialty, advanced imaging, hospital, or surgery are typically covered through your traditional insurance plan (e.g., HDHP/catastrophic) and are not part of the DPC membership.</p>
+      </details>
+
+      <details>
+        <summary>Is the DPC membership HSA-eligible?</summary>
+        <p><strong>Yes—effective January 2026</strong>, DPC membership will be HSA-eligible. (Check with your tax advisor and plan administrator; eligibility may vary by plan.)</p>
+      </details>
+
+      <details>
+        <summary>Is there an age limit?</summary>
+        <p>Yes. This membership is available to patients <strong>65 years and younger</strong>.</p>
+      </details>
+
+      <details>
+        <summary>How do I sign up?</summary>
+        <p>You can <a href="https://urhealthcare.hint.com/signup/membership/contacts?=">join online here</a>. Enrollment takes just a few minutes.</p>
+      </details>
     </div>
   </section>
 
@@ -197,6 +268,25 @@
       <p>© 2025 urHealthcare • Direct Primary Care & Urgent Care in Sacramento Metro</p>
     </div>
   </footer>
+
+  <!-- Simple tabs script for Monthly/Yearly toggle -->
+  <script>
+    const tabM = document.getElementById('tab-monthly');
+    const tabY = document.getElementById('tab-yearly');
+    const m = document.getElementById('prices-monthly');
+    const y = document.getElementById('prices-yearly');
+    function setTab(which){
+      const yearly = which === 'yearly';
+      m.style.display = yearly ? 'none' : '';
+      y.style.display = yearly ? '' : 'none';
+      tabM.classList.toggle('active', !yearly);
+      tabY.classList.toggle('active', yearly);
+      tabM.setAttribute('aria-selected', String(!yearly));
+      tabY.setAttribute('aria-selected', String(yearly));
+    }
+    tabM.addEventListener('click', ()=>setTab('monthly'));
+    tabY.addEventListener('click', ()=>setTab('yearly'));
+  </script>
 </body>
 </html>
 
