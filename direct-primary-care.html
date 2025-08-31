@@ -3,81 +3,337 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+
   <title>Direct Primary Care in Sacramento Metro (Rocklin, Roseville) | urHealthcare</title>
-  <meta name="description" content="Transparent direct primary care in the Sacramento metro. Same/next-day access, unlimited visits, 250+ meds included, basic labs, X-ray, and minor procedures. Serving Rocklin, Roseville, Lincoln." />
+  <meta name="description" content="Transparent direct primary care membership in the Sacramento metro. Unlimited visits, same/next-day access, 250+ meds included, basic labs, X-ray, and minor procedures. Serving Rocklin 95677, Roseville, Lincoln." />
   <link rel="canonical" href="https://harprandeol1.github.io/urhealthcare1/direct-primary-care.html" />
-  <meta name="theme-color" content="#0b3a83" />
-  ...
+  <meta name="theme-color" content="#2196F3" />
+
+  <!-- Fonts & global -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://harprandeol1.github.io/urhealthcare1/assets/styles.css" />
+
+  <!-- Page styles -->
+  <style>
+    :root{
+      --brand:#2196F3; --brand-mid:#1E88E5; --brand-dark:#1565C0;
+      --ink:#0b1b2b; --muted:#566579; --bg:#f7faff;
+    }
+    html,body{background:#fff;color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+
+    /* Header */
+    .hdr{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid #eee}
+    .hdr .logo{font-weight:800;color:#0b3a83;font-size:clamp(22px,3vw,30px)}
+    .hdr .nav{display:flex;align-items:center;gap:16px}
+    .hdr .nav a{color:#0b3a83;font-weight:700}
+    .btn{background:#2196F3;color:#fff;border:0;padding:10px 16px;border-radius:12px;font-weight:800;text-decoration:none;display:inline-block}
+    .btn:hover{filter:brightness(.95)}
+    .btn.ghost{background:transparent;border:2px solid currentColor;color:#0b3a83}
+
+    /* Hero */
+    .hero{
+      color:#fff;
+      background:
+        radial-gradient(1200px 520px at -10% -20%, rgba(255,255,255,.15), transparent 60%),
+        linear-gradient(180deg, var(--brand-dark) 0%, var(--brand) 55%, var(--brand-mid) 100%);
+      padding: clamp(32px,7vh,88px) 16px;
+    }
+    .hero .wrap{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}
+    @media (max-width:960px){ .hero .wrap{grid-template-columns:1fr} }
+    .kicker{letter-spacing:.12em;text-transform:uppercase;color:#e3efff;font-weight:800;margin-bottom:6px;font-size:12px}
+    .hero h1{margin:0 0 8px;font-size:clamp(28px,4.8vw,48px)}
+    .hero .muted{color:#e9f3ff}
+    .pillrow{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+    .pill{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);color:#fff;padding:8px 12px;border-radius:999px;font-weight:700}
+    .hero-art{position:relative;min-height:340px;border-radius:18px;overflow:hidden;filter:drop-shadow(26px 0 48px rgba(0,0,0,.22))}
+    .hero-art img{width:100%;height:100%;object-fit:cover;display:block;-webkit-mask-image:linear-gradient(to right, black 78%, transparent 100%);mask-image:linear-gradient(to right, black 78%, transparent 100%)}
+    .hero-art::after{content:"";position:absolute;inset:0;background:linear-gradient(to right, rgba(0,0,0,0) 60%, rgba(0,0,0,.22) 100%);pointer-events:none}
+
+    /* Sections */
+    .section{padding: clamp(28px,6vh,72px) 16px}
+    .container{max-width:1100px;margin:0 auto}
+    .band{background:var(--bg);border-top:1px solid #eef3ff;border-bottom:1px solid #eef3ff}
+
+    /* Pricing */
+    .plans{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin-top:16px}
+    .card{background:#fff;border:1px solid #edf2f7;border-radius:16px;padding:16px;box-shadow:0 10px 30px rgba(0,0,0,.05)}
+    .plan .price{font-size:28px;font-weight:800;margin:6px 0 2px}
+    .plan small{color:#6c7b90}
+    .list-clean{margin:10px 0 0 0;padding:0;list-style:none}
+    .list-clean li{margin:6px 0;padding-left:26px;position:relative}
+    .list-clean li::before{content:"✔";position:absolute;left:0;top:0;color:#1f8f3a;font-weight:900}
+
+    /* Features grid */
+    .features{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+    .feat{display:grid;gap:8px;align-content:start}
+    .icon{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:#eef6ff;color:#1565C0;font-size:22px;font-weight:900}
+
+    /* How it works */
+    .steps{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+    .step{display:flex;gap:12px}
+    .step i{width:38px;height:38px;border-radius:10px;display:grid;place-items:center;background:#e8f2ff;color:#1565C0;font-weight:900}
+
+    /* Comparison */
+    .cmp{width:100%;border-collapse:separate;border-spacing:0;border:1px solid #eaf0f7;border-radius:12px;overflow:hidden}
+    .cmp th,.cmp td{padding:12px;border-bottom:1px solid #eef3fa;text-align:left}
+    .cmp thead th{background:#f4f8ff;color:#0b1b2b;font-weight:800}
+    .cmp tr:last-child td{border-bottom:0}
+
+    /* Callouts */
+    .note{color:#6b7a90;font-size:13px}
+    .loc{background:#0b3a83;color:#fff;border-radius:14px;padding:14px 16px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
+    .loc a{color:#fff;text-decoration:underline}
+
+    /* FAQ */
+    .faq{display:grid;gap:12px}
+    .faq details{background:#fff;border:1px solid #edf2f7;border-radius:12px;padding:12px 14px}
+    .faq summary{cursor:pointer;font-weight:800}
+
+    /* Tiny reveal */
+    .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease}
+    .in .reveal{opacity:1;transform:none}
+  </style>
 </head>
 <body>
   <!-- Header -->
   <header class="hdr">
-    ...
+    <div class="container nav">
+      <a class="logo" href="index.html">urHealthcare</a>
+      <nav class="nav">
+        <a href="primary-care.html">Primary Care</a>
+        <a href="urgent-care.html">Urgent Care</a>
+        <a href="accepted-insurances.html">Insurances</a>
+        <a href="in-house-labs.html">Labs</a>
+        <a href="in-house-medications.html">Medications</a>
+        <a class="btn" href="https://urhealthcare.zohobookings.com/#/urhealthcare">Join / Book</a>
+      </nav>
+      <button class="menu-btn" aria-label="Menu" onclick="document.body.classList.toggle('menu-open')">☰</button>
+    </div>
   </header>
 
   <!-- Hero -->
-  <section class="section">
+  <section class="hero">
+    <div class="wrap">
+      <div class="reveal">
+        <div class="kicker">Direct Primary Care • Sacramento Metro</div>
+        <h1>Membership Care that Puts You First</h1>
+        <p class="muted">Unlimited visits, same/next-day access, and transparent pricing. Serving Rocklin, Roseville, Lincoln, and nearby communities.</p>
+        <div class="pillrow" aria-label="Highlights">
+          <span class="pill">✔ Unlimited visits</span>
+          <span class="pill">✔ 250+ meds included</span>
+          <span class="pill">✔ Basic labs on-site</span>
+          <span class="pill">✔ Virtual & in-person</span>
+        </div>
+        <div class="cta" style="margin-top:14px">
+          <a class="btn" href="https://urhealthcare.zohobookings.com/#/urhealthcare">Join & book a visit</a>
+          <a class="btn ghost" href="#pricing">See plans & pricing</a>
+        </div>
+      </div>
+
+      <figure class="hero-art reveal" aria-hidden="true">
+        <img src="assets/img/dpc-hero.jpg" alt="">
+      </figure>
+    </div>
+  </section>
+
+  <!-- What is DPC + Pricing -->
+  <section id="pricing" class="section band">
     <div class="container">
-      <div class="kicker">Direct Primary Care • Sacramento Metro</div>
-      <h1>Membership Care that Puts You First</h1>
-      <p class="muted">Unlimited visits, same/next-day access, and transparent pricing. Serving Rocklin, Roseville, Lincoln, and nearby communities.</p>
-      <div class="cta" style="margin-top:12px">
-        <a class="btn" href="contact.html">Join & book a visit</a>
-        <a class="btn ghost" href="plans.html">See plans & pricing</a>
+      <div class="reveal">
+        <h2>What is Direct Primary Care?</h2>
+        <p>Direct Primary Care (DPC) removes insurance middlemen so you get a direct relationship with your clinician. Instead of paying per visit, you join with a simple <strong>monthly membership</strong> that covers unlimited primary and urgent care access.</p>
+
+        <h3 style="margin-top:18px">Membership Pricing</h3>
+        <div class="plans">
+          <article class="card plan">
+            <h3 style="margin:0">Individual</h3>
+            <p class="price">$79<span style="font-size:16px">/mo</span></p>
+            <small>Cancel anytime</small>
+            <ul class="list-clean">
+              <li>Unlimited primary & urgent care</li>
+              <li>Same/next-day access</li>
+              <li>Video visits included</li>
+            </ul>
+            <p style="margin-top:10px"><a class="btn" href="https://urhealthcare.zohobookings.com/#/urhealthcare">Join now</a></p>
+          </article>
+
+          <article class="card plan">
+            <h3 style="margin:0">Spouse Add-On</h3>
+            <p class="price">$50<span style="font-size:16px">/mo</span></p>
+            <small>Same benefits</small>
+            <ul class="list-clean">
+              <li>Add anytime</li>
+              <li>Unlimited visits</li>
+              <li>Virtual & in-person</li>
+            </ul>
+            <p style="margin-top:10px"><a class="btn" href="https://urhealthcare.zohobookings.com/#/urhealthcare">Add spouse</a></p>
+          </article>
+
+          <article class="card plan">
+            <h3 style="margin:0">Child (5+)</h3>
+            <p class="price">$30<span style="font-size:16px">/mo</span></p>
+            <small>With adult member</small>
+            <ul class="list-clean">
+              <li>Pediatric sick & well visits</li>
+              <li>Rapid access</li>
+              <li>Messaging & telehealth</li>
+            </ul>
+            <p style="margin-top:10px"><a class="btn" href="https://urhealthcare.zohobookings.com/#/urhealthcare">Add child</a></p>
+          </article>
+        </div>
+
+        <p class="note" style="margin-top:10px">Specialty and hospital services are outside the DPC fee. Many members pair DPC with a high-deductible or catastrophic insurance plan.</p>
       </div>
     </div>
   </section>
 
-  <!-- Direct Primary Care Overview -->
-  <section class="section band">
+  <!-- What's included -->
+  <section class="section">
     <div class="container">
-      <h2>What is Direct Primary Care?</h2>
-      <p>Direct Primary Care (DPC) is a modern, patient-centered approach to healthcare that removes the middlemen—insurance companies, networks, and third-party approvals—so you can focus on your health with your doctor. Instead of paying for each visit or service, patients join through a simple <strong>monthly membership</strong> that covers unlimited access to primary and urgent care.</p>
-
-      <h3>Our Membership Pricing</h3>
-      <ul class="list-clean">
-        <li><strong>Individual:</strong> $79/month – Unlimited primary & urgent care, same/next-day access, and virtual visits.</li>
-        <li><strong>Spouse:</strong> $50/month – Add your partner with full membership benefits.</li>
-        <li><strong>Child (5+):</strong> $30/month – Pediatric sick & well visits with rapid access for families.</li>
-      </ul>
-      <p class="small">Specialty and hospital services are outside the DPC fee. Many members pair DPC with a high-deductible or catastrophic insurance plan for broader coverage.</p>
-
-      <h3>What’s Included at urHealthcare</h3>
-      <ul class="list-clean">
-        <li><strong>Continuity Primary Care</strong> – Preventive, chronic, and acute care with the provider you choose.</li>
-        <li><strong>7-Day Urgent Care</strong> – Walk-in or virtual care for common illnesses and injuries.</li>
-        <li><strong>250+ Included Medications</strong> – <a href="included-meds.html">See covered list</a>, provided at no extra cost.</li>
-        <li><strong>Basic Labs</strong> – Routine panels and rapid tests (<a href="labs.html">see labs</a>).</li>
-        <li><strong>X-ray & Ultrasound</strong> – On-site imaging for quick diagnosis and treatment.</li>
-        <li><strong>Minor Procedures</strong> – Stitches, splints, abscess drainage, foreign body removal.</li>
-        <li><strong>Virtual Care</strong> – Video visits and secure messaging for convenience and continuity.</li>
-        <li><strong>Care Coordination</strong> – Referrals and follow-up across the Sacramento metro.</li>
-      </ul>
-
-      <h3>Why Patients Choose DPC</h3>
-      <ul class="list-clean">
-        <li><strong>Transparent Pricing</strong> – One flat monthly fee. No surprise bills.</li>
-        <li><strong>Better Access</strong> – Shorter wait times and more time with your doctor.</li>
-        <li><strong>Personalized Care</strong> – Direct communication via phone, text, or telehealth.</li>
-        <li><strong>Whole-Person Health</strong> – Prevention, wellness, and stronger doctor-patient relationships.</li>
-      </ul>
-
-      <h3>Why It’s Different</h3>
-      <p>In traditional healthcare, insurance companies often dictate how doctors practice—limiting time with patients and inflating costs. Direct Primary Care flips that model: your membership is a direct relationship with your doctor. This means your provider works for you—not for the insurance company.</p>
-
-      <h3>Who Benefits from DPC?</h3>
-      <ul class="list-clean">
-        <li><strong>Individuals & Families</strong> – Affordable, predictable healthcare costs with unlimited access.</li>
-        <li><strong>Employers</strong> – Lower healthcare costs while providing better access and fewer sick days.</li>
-        <li><strong>Patients with Chronic Conditions</strong> – Ongoing support without worrying about visit costs.</li>
-      </ul>
-
-      <p><strong>In short:</strong> Direct Primary Care at urHealthcare is simple, affordable, and built entirely around you. It’s healthcare the way it should be—transparent, convenient, and relationship-driven.</p>
+      <div class="reveal">
+        <h2>What’s Included at urHealthcare</h2>
+        <div class="features" style="margin-top:12px">
+          <article class="card feat"><div class="icon">🩺</div><h3 style="margin:0">Continuity Primary Care</h3><p class="muted">Preventive, chronic, and acute care with the provider you choose.</p></article>
+          <article class="card feat"><div class="icon">⏱️</div><h3 style="margin:0">7-Day Urgent Care</h3><p class="muted">Walk-in or virtual care for common illnesses and injuries.</p></article>
+          <article class="card feat"><div class="icon">💊</div><h3 style="margin:0">250+ Meds Included</h3><p class="muted">Common prescriptions at no extra cost. <a href="in-house-medications.html">See list</a>.</p></article>
+          <article class="card feat"><div class="icon">🧪</div><h3 style="margin:0">Basic Labs</h3><p class="muted">Routine panels & rapid tests on site. <a href="in-house-labs.html">See labs</a>.</p></article>
+          <article class="card feat"><div class="icon">🩻</div><h3 style="margin:0">Imaging</h3><p class="muted">X-ray & ultrasound coordination for quick answers.</p></article>
+          <article class="card feat"><div class="icon">🩹</div><h3 style="margin:0">Minor Procedures</h3><p class="muted">Stitches, splints, abscess drainage, foreign body removal.</p></article>
+          <article class="card feat"><div class="icon">📱</div><h3 style="margin:0">Virtual Care</h3><p class="muted">Video visits & secure messaging for convenience and continuity.</p></article>
+          <article class="card feat"><div class="icon">🔗</div><h3 style="margin:0">Care Coordination</h3><p class="muted">Referrals & follow-up across the Sacramento metro.</p></article>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- (Pricing and included services sections can now be removed or shortened since they’re merged above) -->
-  ...
+  <!-- How it works -->
+  <section class="section band">
+    <div class="container">
+      <div class="reveal">
+        <h2>How DPC Works</h2>
+        <div class="steps" style="margin-top:12px">
+          <article class="card step"><i>1</i><div><h3 style="margin:0 0 6px">Join in minutes</h3><p class="muted">Enroll online and choose your clinician.</p></div></article>
+          <article class="card step"><i>2</i><div><h3 style="margin:0 0 6px">Get seen fast</h3><p class="muted">Same/next-day appointments and easy video visits.</p></div></article>
+          <article class="card step"><i>3</i><div><h3 style="margin:0 0 6px">Use it freely</h3><p class="muted">Unlimited visits, included meds & basic labs keep costs predictable.</p></div></article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison -->
+  <section class="section">
+    <div class="container">
+      <div class="reveal">
+        <h2>DPC vs. Traditional Primary Care</h2>
+        <div style="overflow-x:auto;margin-top:10px">
+          <table class="cmp" aria-label="Comparison table">
+            <thead><tr><th>Feature</th><th>urHealthcare DPC</th><th>Traditional (insurance)</th></tr></thead>
+            <tbody>
+              <tr><td>Visits</td><td>Unlimited; longer visits</td><td>Copays & time limits</td></tr>
+              <tr><td>Access</td><td>Same/next-day + video</td><td>Days–weeks for openings</td></tr>
+              <tr><td>Medications</td><td>250+ common meds included</td><td>Pharmacy copays</td></tr>
+              <tr><td>Labs</td><td>Basic labs on-site</td><td>External lab bills</td></tr>
+              <tr><td>Pricing</td><td>Flat monthly fee</td><td>Deductibles & surprise bills</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note" style="margin-top:8px">DPC is not insurance; specialty/hospital services are separate. Many members keep a high-deductible plan for major events.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location / Local SEO -->
+  <section class="section">
+    <div class="container">
+      <div class="loc reveal">
+        <p style="margin:0"><strong>urHealthcare — Rocklin</strong><br/>6839 Five Star Blvd, Suite D, Rocklin, CA <strong>95677</strong> • <a href="tel:+19169642001">916-964-2001</a></p>
+        <p style="margin:0">
+          <a href="https://www.google.com/maps?q=6839+Five+Star+Blvd,+Suite+D,+Rocklin,+CA+95677" target="_blank" rel="noopener">Get Directions</a> •
+          <a href="https://urhealthcare.zohobookings.com/#/urhealthcare">Join / Book</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section band">
+    <div class="container">
+      <div class="reveal">
+        <h2>Membership FAQ</h2>
+        <div class="faq" style="margin-top:10px">
+          <details>
+            <summary>Do you accept insurance with DPC?</summary>
+            <p>Membership is separate from insurance and covers primary & urgent care at urHealthcare. Many members keep a high-deductible plan for outside services.</p>
+          </details>
+          <details>
+            <summary>Is Partnership Medi-Cal accepted?</summary>
+            <p>Yes, for non-membership patients we accept major plans including <a href="medi-cal-partnership-healthplan-doctors-sacramento-rocklin-95677.html">Partnership Medi-Cal</a>. Many patients also choose DPC for predictable costs.</p>
+          </details>
+          <details>
+            <summary>What meds and labs are included?</summary>
+            <p>Over 250 common medications and basic labs are included. See our <a href="in-house-medications.html">med list</a> and <a href="in-house-labs.html">lab menu</a>.</p>
+          </details>
+          <details>
+            <summary>Can employers enroll teams?</summary>
+            <p>Yes—DPC reduces costs and improves access. See <a href="employers.html">Employers</a> for options.</p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="section">
+    <div class="container reveal" style="text-align:center">
+      <h2>Ready to join?</h2>
+      <p class="muted">It takes just a few minutes. Start today and get seen this week.</p>
+      <p class="cta" style="margin-top:12px">
+        <a class="btn" href="https://urhealthcare.zohobookings.com/#/urhealthcare">Join & Book</a>
+        <a class="btn ghost" href="contact.html">Questions? Contact us</a>
+      </p>
+    </div>
+  </section>
+
+  <footer class="ftr">
+    <div class="container">© <span id="y"></span> urHealthcare. All rights reserved.</div>
+  </footer>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"OfferCatalog",
+    "name":"urHealthcare DPC Membership",
+    "url":"https://harprandeol1.github.io/urhealthcare1/direct-primary-care.html",
+    "itemListElement":[
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Individual DPC Membership"},"priceSpecification":{"@type":"UnitPriceSpecification","price":79,"priceCurrency":"USD","billingIncrement":1}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Spouse Add-On"},"priceSpecification":{"@type":"UnitPriceSpecification","price":50,"priceCurrency":"USD","billingIncrement":1}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Child (5+) Add-On"},"priceSpecification":{"@type":"UnitPriceSpecification","price":30,"priceCurrency":"USD","billingIncrement":1}}
+    ],
+    "provider":{"@type":"MedicalClinic","name":"urHealthcare","address":{"@type":"PostalAddress","streetAddress":"6839 Five Star Blvd, Suite D","addressLocality":"Rocklin","addressRegion":"CA","postalCode":"95677","addressCountry":"US"},"telephone":"+1-916-964-2001"}
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"Do you accept insurance with DPC?","acceptedAnswer":{"@type":"Answer","text":"Membership is separate from insurance and covers primary & urgent care at urHealthcare. Many members keep a high-deductible plan for outside services."}},
+      {"@type":"Question","name":"Is Partnership Medi-Cal accepted?","acceptedAnswer":{"@type":"Answer","text":"Yes, for non-membership patients we accept major plans including Partnership Medi-Cal. Many patients also choose DPC for predictable costs."}},
+      {"@type":"Question","name":"What meds and labs are included?","acceptedAnswer":{"@type":"Answer","text":"Over 250 common medications and basic labs are included for members."}},
+      {"@type":"Question","name":"Can employers enroll teams?","acceptedAnswer":{"@type":"Answer","text":"Yes—DPC reduces costs and improves access for employees."}}
+    ]
+  }
+  </script>
+
+  <!-- Tiny JS: year + reveal -->
+  <script>
+    const y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();
+    const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.2});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  </script>
 </body>
 </html>
 
