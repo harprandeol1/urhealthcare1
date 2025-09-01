@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ultrasound Imaging • Same-Day Appointments | Rocklin 95677 | urHealthcare</title>
+  <meta name="description" content="Same-day ultrasound imaging in Rocklin 95677. Point-of-care and diagnostic ultrasound for abdomen, OB, soft tissue, DVT, gallbladder, kidneys and more. Transparent cash pricing. Most insurances accepted." />
+  <meta name="theme-color" content="#FFFFFF" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Page styles (self-contained) -->
+  <style>
+    :root{
+      --brand:#0b3a83;
+      --ink:#0e1a2f;
+      --muted:#5a6780;
+      --bg:#fff;
+      --soft:#f6fbff;            /* sky-blue wash */
+      --soft-strong:#eaf6ff;     /* stronger sky-blue */
+      --border:#e6ebf3;
+      --radius:18px;
+      --shadow:0 10px 30px rgba(11,58,131,.08);
+      --focus:#5aa7ff;
+    }
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:var(--bg);color:var(--ink);line-height:1.65;font-size:17px}
+    h1,h2,h3{letter-spacing:-.02em;line-height:1.2;margin:.5em 0 .6em}
+    h1{font-size:clamp(34px,4vw,52px)}
+    h2{font-size:clamp(26px,3vw,38px)}
+    h3{font-size:21px}
+    p{margin:0 0 1.05em}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .muted{color:var(--muted)}
+    .small{font-size:12px;color:var(--muted)}
+    .container{max-width:1160px;margin:auto;padding:0 20px}
+    .section{padding:80px 0}
+    .section.band{background:var(--soft)}
+    .badge{display:inline-block;font-size:12px;font-weight:800;border-radius:999px;padding:6px 10px;background:#eef6ff;color:#10346b;border:1px solid #d7ebff}
+    .btn{display:inline-block;padding:12px 18px;border-radius:999px;font-weight:800;background:var(--brand);color:#fff;box-shadow:var(--shadow);border:2px solid transparent}
+    .btn:hover{filter:brightness(.96)}
+    .btn.ghost,.btn.outline{background:#fff;color:var(--brand);border-color:var(--brand)}
+    .grid{display:grid;gap:28px}
+    .grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .grid.four{grid-template-columns:repeat(4,minmax(0,1fr))}
+    @media (max-width:1024px){ .grid.four{grid-template-columns:repeat(2,minmax(0,1fr))} }
+    @media (max-width:900px){ .grid.two,.grid.three{grid-template-columns:1fr} }
+    .card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+    .list-clean{margin:0 0 0 1em}
+    .list-clean li{margin:.25em 0}
+    .pillrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    .pill{display:inline-block;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid var(--border);box-shadow:var(--shadow);font-weight:600}
+    .price{font-size:28px;font-weight:900;color:var(--brand)}
+    .hero-wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:32px;align-items:center}
+    .hero-img{width:100%;border-radius:16px;box-shadow:var(--shadow)}
+    @media(max-width:980px){ .hero-wrap{grid-template-columns:1fr} }
+
+    /* Reveal */
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .75s ease,transform .75s ease}
+    .reveal.in{opacity:1;transform:none}
+    @media (prefers-reduced-motion: reduce){ .reveal,.reveal.in{opacity:1;transform:none;transition:none} }
+
+    /* Header */
+    .hdr{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:1px solid var(--border)}
+    .hdr .container.nav{display:flex;align-items:center;gap:16px}
+    .logo{font-weight:800;font-size:24px;color:var(--brand);text-decoration:none}
+    .navlinks{margin-left:auto;display:flex;align-items:center;gap:12px}
+    .menu-btn{margin-left:12px;background:transparent;border:0;font-size:22px}
+    @media (max-width:720px){
+      .navlinks{display:none}
+      .menu-open .navlinks{display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:12px 0;margin-left:0}
+    }
+    /* Dropdowns */
+    .dropdown{position:relative}
+    .dropbtn{background:transparent;border:0;padding:8px 10px;font:inherit;font-weight:600;color:var(--brand);cursor:pointer;border-radius:8px}
+    .dropbtn:focus{outline:2px solid var(--focus);outline-offset:2px}
+    .menu{
+      position:absolute; top:110%; left:0; min-width:280px; z-index:1000;
+      background:#fff; border:1px solid var(--border); border-radius:12px;
+      box-shadow:var(--shadow); padding:8px; list-style:none; margin:0; display:none;
+    }
+    .menu .grid{display:grid;grid-template-columns:repeat(2,minmax(160px,1fr));gap:4px 8px}
+    .menu a{display:block;padding:8px 10px;border-radius:8px;color:#111;white-space:nowrap}
+    .menu a:hover{background:#f5f8ff}
+    .menu .all{border-top:1px solid var(--border);margin-top:6px;padding-top:6px}
+    .dropdown.open .menu{display:block !important}
+    @media(min-width:721px){ .dropdown:hover .menu, .dropdown:focus-within .menu{display:block} }
+    @media(max-width:720px){ .dropdown{width:100%} .menu{position:static;box-shadow:none;border:0;padding:0} }
+
+    /* Footer */
+    .ftr{background:var(--brand);color:#fff;padding:28px 0;margin-top:40px}
+    .ftr a{color:#fff}
+
+    /* Focus ring */
+    :is(a,button,input,select,details,summary):focus{outline:2px solid var(--focus);outline-offset:2px;border-radius:8px}
+  </style>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Ultrasound Imaging • Same-Day in Rocklin 95677" />
+  <meta property="og:description" content="Point-of-care and diagnostic ultrasound. Fast scheduling, clear results, transparent pricing. Most insurances accepted." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://urhealthcare.co/ultrasound.html" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="hdr">
+    <div class="container nav">
+      <a class="logo" href="index.html">urHealthcare</a>
+
+      <nav class="navlinks" aria-label="Primary">
+        <div class="dropdown" id="services-dd">
+          <button class="dropbtn" type="button" aria-expanded="false" aria-controls="menu-services">Services ▾</button>
+          <div id="menu-services" class="menu" role="menu">
+            <div class="grid">
+              <a href="primary-care.html" role="menuitem">Primary Care</a>
+              <a href="urgent-care.html" role="menuitem">Urgent Care</a>
+              <a href="x-ray.html" role="menuitem">X-ray</a>
+              <a href="labs.html" role="menuitem">Labs</a>
+              <a href="ultrasound.html" role="menuitem" aria-current="page">Ultrasound</a>
+              <a href="minor-procedures.html" role="menuitem">Minor Procedures</a>
+              <a href="virtual-care.html" role="menuitem">Virtual Care</a>
+              <a href="included-meds.html" role="menuitem">Medications</a>
+            </div>
+            <div class="all"><a href="index.html#services">View all services →</a></div>
+          </div>
+        </div>
+
+        <a href="direct-primary-care.html">Membership</a>
+        <a href="employers.html">Employers</a>
+        <a href="faq.html">FAQ</a>
+
+        <!-- LOGIN -->
+        <div class="dropdown" id="login-dd">
+          <button class="dropbtn btn" id="loginMenuButton" aria-haspopup="menu" aria-expanded="false" aria-controls="loginMenu">Login</button>
+          <ul class="menu" id="loginMenu" role="menu" aria-labelledby="loginMenuButton" style="right:0;left:auto;min-width:220px">
+            <li role="none"><a role="menuitem" href="https://urhealthcare.hint.com/login/request">Membership Login</a></li>
+            <li role="none"><a role="menuitem" href="https://www.onpatient.com/login/">OnPatient Login</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <button class="menu-btn" aria-label="Menu" onclick="document.body.classList.toggle('menu-open')">☰</button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="section">
+    <div class="container hero-wrap">
+      <div>
+        <span class="badge">Same-Day Ultrasound • Rocklin, CA 95677</span>
+        <h1>Ultrasound Imaging — Fast, Clear, Convenient</h1>
+        <p class="muted">Point-of-care and diagnostic ultrasound for common conditions. On-site scans, quick reads, and care in one place. We accept major insurance, including <strong>Partnership Medi-Cal</strong>, and offer transparent cash prices.</p>
+        <div class="pillrow" aria-label="Highlights">
+          <span class="pill">Abdomen & Gallbladder</span>
+          <span class="pill">Kidneys & Bladder</span>
+          <span class="pill">OB/First-Trimester</span>
+          <span class="pill">Soft Tissue & Hernia</span>
+          <span class="pill">DVT (leg veins)</span>
+          <span class="pill">Point-of-Care (POCUS)</span>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
+          <a class="btn" href="contact.html">Request ultrasound</a>
+          <a class="btn ghost" href="#prices">See prices</a>
+          <a class="btn outline" href="https://www.google.com/maps?q=6839+Five+Star+Blvd,+Suite+D,+Rocklin,+CA+95677" target="_blank_
