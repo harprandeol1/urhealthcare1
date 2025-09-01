@@ -1,342 +1,384 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Direct Primary Care for Employers | Rocklin 95677 | urHealthcare</title>
-  <meta name="description" content="Lower healthcare spend 20–25% with Direct Primary Care for employers in Rocklin 95677. Unlimited primary & urgent care, included meds/labs, 24/7 care navigation. Pair with an HDHP." />
-  <meta name="theme-color" content="#FFFFFF" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Direct Primary Care for Employers | Rocklin 95677 | urHealthcare</title>
+<meta name="description" content="Lower healthcare spend with Direct Primary Care for employers in Rocklin 95677. Unlimited primary & urgent care, included meds/labs, 24/7 navigation. Pair with an HDHP." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://harprandeol1.github.io/urhealthcare1/assets/styles.css?v=9" />
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --brand:#0b3a83; --ink:#0c1b33; --muted:#5b6a84; --bg:#fff; --soft:#f6f9ff;
+    --border:#e6ebf3; --radius:18px; --shadow:0 10px 30px rgba(11,58,131,.10);
+    /* pastel accents for “random colors” */
+    --p1:#ffe9ef; --p2:#e6f7ff; --p3:#ecffe7; --p4:#fff7e6; --p5:#f2e8ff; --p6:#e9f9f6;
+    --dark:#0a2c65; --dark-ink:#e9f1ff;
+  }
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:var(--bg);color:var(--ink);line-height:1.75;font-size:17px}
+  h1,h2,h3{letter-spacing:-.02em;line-height:1.2;margin:.5em 0 .6em}
+  h1{font-size:clamp(34px,4.2vw,56px)}
+  h2{font-size:clamp(26px,3vw,40px)}
+  h3{font-size:clamp(20px,2vw,24px)}
+  p{margin:0 0 1.1em}
+  a{color:var(--brand);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .muted{color:var(--muted)} .small{font-size:12px;color:var(--muted)}
+  .container{max-width:1160px;margin:auto;padding:0 20px}
+  .section{padding:90px 0} .section.band{background:var(--soft)}
+  .badge{display:inline-block;font-size:12px;font-weight:800;border-radius:999px;padding:6px 10px;background:#eef3ff;color:#10346b;border:1px solid #dce6ff}
 
-  <!-- Global stylesheet (absolute URL + cache-buster) -->
-  <link rel="stylesheet" href="https://harprandeol1.github.io/urhealthcare1/assets/styles.css?v=8" />
+  .btn{display:inline-block;padding:12px 18px;border-radius:999px;font-weight:800;background:var(--brand);color:#fff;box-shadow:var(--shadow);border:2px solid transparent}
+  .btn:hover{filter:brightness(.96)}
+  .btn.ghost,.btn.outline{background:#fff;color:var(--brand);border-color:var(--brand)}
 
-  <!-- Page styles -->
-  <style>
-    :root{
-      --brand:#0b3a83; --ink:#0e1a2f; --muted:#5a6780; --bg:#fff; --soft:#f6f9ff;
-      --border:#e6ebf3; --radius:18px; --shadow:0 10px 30px rgba(11,58,131,.08);
-    }
-    html{scroll-behavior:smooth}
-    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:var(--bg);color:var(--ink);line-height:1.75;font-size:17px}
-    h1,h2,h3{letter-spacing:-.02em;line-height:1.25;margin:.5em 0 .6em}
-    h1{font-size:clamp(32px,4vw,50px)} h2{font-size:clamp(26px,3vw,38px)} h3{font-size:22px}
-    p{margin:0 0 1.15em} a{color:var(--brand);text-decoration:none} a:hover{text-decoration:underline}
-    .muted{color:var(--muted)} .small{font-size:12px;color:var(--muted)}
-    .container{max-width:1160px;margin:auto;padding:0 20px}
-    .section{padding:90px 0} .section.band{background:var(--soft)}
-    .badge{display:inline-block;font-size:12px;font-weight:800;border-radius:999px;padding:6px 10px;background:#eef3ff;color:#10346b;border:1px solid #dce6ff}
-    .btn{display:inline-block;padding:12px 18px;border-radius:999px;font-weight:800;background:var(--brand);color:#fff;box-shadow:var(--shadow);border:2px solid transparent}
-    .btn:hover{filter:brightness(.96)}
-    .btn.ghost,.btn.outline{background:#fff;color:var(--brand);border-color:var(--brand)}
-    .grid{display:grid;gap:28px}
-    .grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
-    .grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
-    .grid.four{grid-template-columns:repeat(4,minmax(0,1fr))}
-    @media (max-width:1020px){ .grid.four{grid-template-columns:repeat(2,minmax(0,1fr))} }
-    @media (max-width:900px){ .grid.two,.grid.three{grid-template-columns:1fr} .grid.four{grid-template-columns:1fr} }
-    .card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
-    .list-clean{margin:.25em 0 0 1.1em}
-    .pill{display:inline-block;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid var(--border);box-shadow:var(--shadow);margin:4px 6px 0 0}
-    .form-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:20px;box-shadow:var(--shadow)}
-    input,select,textarea{width:100%;padding:12px 14px;border:1px solid var(--border);border-radius:12px;font:inherit}
-    textarea{min-height:120px;resize:vertical}
-    .disclaimer{font-size:12px;color:var(--muted);margin-top:8px}
-    /* Header */
-    .hdr{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:1px solid var(--border)}
-    .hdr .container.nav{display:flex;align-items:center;gap:16px}
-    .logo{font-weight:800;font-size:24px;color:var(--brand);text-decoration:none}
-    .navlinks{margin-left:auto;display:flex;align-items:center;gap:12px}
-    .menu-btn{margin-left:12px;background:transparent;border:0;font-size:22px}
-    @media (max-width:720px){
-      .navlinks{display:none}
-      .menu-open .navlinks{display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:12px 0;margin-left:0}
-    }
-    /* Services dropdown */
-    .dropdown{position:relative}
-    .dropbtn{background:transparent;border:0;padding:8px 10px;font:inherit;font-weight:600;color:#0b3a83;cursor:pointer;border-radius:8px}
-    .menu{
-      position:absolute; top:110%; left:0; min-width:280px; z-index:1000;
-      background:#b5e2ff; border:1px solid var(--border); border-radius:12px;
-      box-shadow:var(--shadow); padding:8px; list-style:none; margin:0; display:none;
-    }
-    .menu .grid{display:grid;grid-template-columns:repeat(2,minmax(160px,1fr));gap:4px 8px}
-    .menu a{display:block;padding:8px 10px;border-radius:8px;color:#111;white-space:nowrap}
-    .menu a:hover{background:#f5f8ff}
-    .menu .all{border-top:1px solid var(--border);margin-top:6px;padding-top:6px}
-    .dropdown.open .menu{display:block !important}
-    @media(min-width:721px){ .dropdown:hover .menu, .dropdown:focus-within .menu{display:block} }
-    @media(max-width:720px){ .dropdown{width:100%} .menu{position:static;box-shadow:none;border:0;padding:0} }
-    /* Login dropdown */
-    .login-dd{position:relative}
-    .login-dd__button{display:inline-flex;align-items:center;gap:6px;background:var(--brand);color:#fff;border:none;padding:10px 16px;border-radius:12px;font-weight:800}
-    .login-dd__button::after{content:"▾";font-size:.9em}
-    .login-dd__menu{
-      position:absolute;right:0;top:calc(100% + 8px);min-width:220px;padding:6px;margin:0;list-style:none;
-      background:#fff;border:1px solid #e5e7eb;border-radius:12px;box-shadow:0 12px 28px rgba(0,0,0,.12);display:none;z-index:1000;
-    }
-    .login-dd__menu[data-open="true"]{display:block}
-    .login-dd__link{display:block;padding:10px 12px;border-radius:10px;color:#111;text-decoration:none;font-weight:700}
-    .login-dd__link:hover,.login-dd__link:focus{background:#f2f7ff;color:var(--brand);outline:none}
-    /* Reveal */
-    .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
-    .reveal.in{opacity:1;transform:none}
-    @media (prefers-reduced-motion: reduce){ .reveal, .reveal.in{opacity:1;transform:none;transition:none} }
-    /* Hero question bubble */
-    .question{display:flex;align-items:center;gap:10px;font-weight:700}
-    .bubble{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:#0b3a83;color:#fff}
-    /* Simple two-column split */
-    .split{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px}
-    @media (max-width:900px){ .split{grid-template-columns:1fr} }
-  </style>
+  .grid{display:grid;gap:28px}
+  .grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+  @media (max-width:960px){ .grid.two,.grid.three{grid-template-columns:1fr}}
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Direct Primary Care for Employers | Rocklin 95677" />
-  <meta property="og:description" content="Unlimited primary & urgent care with included meds, labs, and navigation. Pair with an HDHP to lower total healthcare spend." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://harprandeol1.github.io/urhealthcare1/employers.html" />
+  .card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+  .list-clean{margin:.25em 0 0 1.1em}
+
+  /* Header */
+  .hdr{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:1px solid var(--border)}
+  .hdr .container.nav{display:flex;align-items:center;gap:16px}
+  .logo{font-weight:800;font-size:24px;color:var(--brand);text-decoration:none}
+  .navlinks{margin-left:auto;display:flex;align-items:center;gap:12px}
+  .menu-btn{margin-left:12px;background:transparent;border:0;font-size:22px}
+  @media (max-width:720px){
+    .navlinks{display:none}
+    .menu-open .navlinks{display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:12px 0;margin-left:0}
+  }
+  /* Services dropdown (kept) */
+  .dropdown{position:relative}
+  .dropbtn{background:transparent;border:0;padding:8px 10px;font:inherit;font-weight:600;color:#0b3a83;cursor:pointer;border-radius:8px}
+  .menu{position:absolute;top:110%;left:0;min-width:280px;z-index:1000;background:#b5e2ff;border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow);padding:8px;list-style:none;margin:0;display:none}
+  .menu .grid{display:grid;grid-template-columns:repeat(2,minmax(160px,1fr));gap:4px 8px}
+  .menu a{display:block;padding:8px 10px;border-radius:8px;color:#111;white-space:nowrap}
+  .menu a:hover{background:#f5f8ff}
+  .dropdown.open .menu{display:block !important}
+  @media(min-width:721px){ .dropdown:hover .menu, .dropdown:focus-within .menu{display:block}}
+  @media(max-width:720px){ .dropdown{width:100%} .menu{position:static;box-shadow:none;border:0;padding:0}}
+
+  /* Reveal */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion: reduce){ .reveal, .reveal.in{opacity:1;transform:none;transition:none}}
+
+  /* HERO */
+  .hero-wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:30px;align-items:center}
+  .hero-wrap img{width:100%;border-radius:16px;box-shadow:var(--shadow)}
+  @media(max-width:960px){ .hero-wrap{grid-template-columns:1fr}}
+  .question{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:-.01em;
+    font-size:clamp(20px,2.6vw,28px);} /* increased as requested */
+  .bubble{display:inline-grid;place-items:center;width:32px;height:32px;border-radius:50%;background:#0b3a83;color:#fff}
+
+  /* ===== Connected “Lower costs. Better access. Happier teams.” ===== */
+  .connected{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;position:relative}
+  @media(max-width:960px){ .connected{grid-template-columns:1fr}}
+  .connected .c{
+    position:relative;border-radius:18px;padding:24px;border:1px dashed #cfe3ff;box-shadow:var(--shadow);background:#fff
+  }
+  /* random-looking color headers */
+  .c h3{margin-top:0;padding:6px 10px;border-radius:10px;display:inline-block}
+  .c:nth-child(1) h3{background:var(--p2)}
+  .c:nth-child(2) h3{background:var(--p5)}
+  .c:nth-child(3) h3{background:var(--p4)}
+  /* arrows between cards (desktop) */
+  @media(min-width:961px){
+    .c:not(:last-child)::after{
+      content:"→"; position:absolute; top:50%; right:-16px; transform:translateY(-50%);
+      background:#0b3a83; color:#fff; width:28px; height:28px; border-radius:999px; display:grid; place-items:center;
+      box-shadow:0 6px 18px rgba(0,0,0,.12);
+    }
+  }
+
+  /* ===== Plan Design Made Easy — corrected background ===== */
+  .plan-bg{
+    background:
+      radial-gradient(1200px 400px at 10% -20%, #e6f2ff 0%, transparent 60%),
+      radial-gradient(1000px 420px at 110% 120%, #f6e9ff 0%, transparent 55%),
+      linear-gradient(0deg,#f9fbff,#f9fbff);
+  }
+
+  /* ===== Vertical, alternating “What Your Team Gets” timeline ===== */
+  .timeline{position:relative;margin:24px 0}
+  .timeline::before{
+    content:""; position:absolute; left:50%; top:0; bottom:0; width:0; border-left:2px dashed #cfd9ee; transform:translateX(-50%);
+  }
+  .t-item{
+    position:relative; display:grid; grid-template-columns:1fr 1fr; gap:24px; margin:28px 0;
+  }
+  .t-item .side{background:#fff;border:1px solid var(--border);border-radius:16px;padding:18px 20px;box-shadow:var(--shadow)}
+  /* light pastel fills alternating */
+  .t-item:nth-child(1) .side{background:var(--p6)}
+  .t-item:nth-child(2) .side{background:var(--p1)}
+  .t-item:nth-child(3) .side{background:var(--p2)}
+  .t-item:nth-child(4) .side{background:var(--p3)}
+  .t-item:nth-child(5) .side{background:var(--p5)}
+  .t-item:nth-child(6) .side{background:var(--p4)}
+  /* marker */
+  .t-item::after{
+    content:""; position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
+    width:14px; height:14px; border-radius:50%; background:#0b3a83; box-shadow:0 0 0 6px #e8f1ff;
+  }
+  /* stack vertically on mobile */
+  @media(max-width:960px){
+    .timeline::before{left:22px; transform:none}
+    .t-item{grid-template-columns:1fr; padding-left:28px}
+    .t-item::after{left:22px}
+  }
+
+  /* ===== FAQ as BIG TABS ===== */
+  .faq-tabs{margin-top:8px}
+  .faq-tablist{
+    display:flex; gap:10px; flex-wrap:wrap; margin-bottom:14px
+  }
+  .faq-tab{
+    padding:12px 16px; border-radius:12px; font-weight:800; border:2px solid var(--brand);
+    background:#fff; color:var(--brand); cursor:pointer;
+  }
+  .faq-tab[aria-selected="true"]{background:var(--brand); color:#fff}
+  .faq-panel{display:none}
+  .faq-panel[aria-hidden="false"]{display:block}
+  .faq-panel .card{margin-bottom:12px}
+  details summary{cursor:pointer;font-weight:700}
+
+  /* ===== Contact: darker blue background ===== */
+  .contact-wrap{background:var(--dark); color:var(--dark-ink); border-radius:18px; padding:28px}
+  .contact-wrap .form-card{background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.18)}
+  .contact-wrap input,.contact-wrap select,.contact-wrap textarea{
+    background:#0f397c; border-color:#3a5aa0; color:#fff
+  }
+  .contact-wrap input::placeholder,.contact-wrap textarea::placeholder{color:#cfe0ff}
+  .contact-wrap label{color:#e9f1ff}
+  .contact-wrap .btn{background:#fff;color:#0b3a83}
+  .contact-wrap .btn.ghost{background:transparent;color:#fff;border-color:#fff}
+
+  /* utility */
+  .pill{display:inline-block;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid var(--border);box-shadow:var(--shadow);margin:4px 6px 0 0}
+</style>
 </head>
+
 <body>
-  <!-- Header -->
-  <header class="hdr">
-    <div class="container nav">
-      <a class="logo" href="index.html">urHealthcare</a>
-
-      <nav class="navlinks" aria-label="Primary">
-        <div class="dropdown" id="services-dd">
-          <button class="dropbtn" type="button" aria-expanded="false" aria-controls="menu-services">Services ▾</button>
-          <div id="menu-services" class="menu" role="menu">
-            <div class="grid">
-              <a href="primary-care.html" role="menuitem">Primary Care</a>
-              <a href="urgent-care.html" role="menuitem">Urgent Care</a>
-              <a href="x-ray.html" role="menuitem">X-ray</a>
-              <a href="labs.html" role="menuitem">Labs</a>
-              <a href="ultrasound.html" role="menuitem">Ultrasound</a>
-              <a href="minor-procedures.html" role="menuitem">Minor Procedures</a>
-              <a href="virtual-care.html" role="menuitem">Virtual Care</a>
-              <a href="included-meds.html" role="menuitem">Medications</a>
-            </div>
-            <div class="all"><a href="index.html#services">View all services →</a></div>
+<header class="hdr">
+  <div class="container nav">
+    <a class="logo" href="index.html">urHealthcare</a>
+    <nav class="navlinks" aria-label="Primary">
+      <div class="dropdown" id="services-dd">
+        <button class="dropbtn" type="button" aria-expanded="false" aria-controls="menu-services">Services ▾</button>
+        <div id="menu-services" class="menu" role="menu">
+          <div class="grid">
+            <a href="primary-care.html" role="menuitem">Primary Care</a>
+            <a href="urgent-care.html" role="menuitem">Urgent Care</a>
+            <a href="x-ray.html" role="menuitem">X-ray</a>
+            <a href="labs.html" role="menuitem">Labs</a>
+            <a href="ultrasound.html" role="menuitem">Ultrasound</a>
+            <a href="minor-procedures.html" role="menuitem">Minor Procedures</a>
+            <a href="virtual-care.html" role="menuitem">Virtual Care</a>
+            <a href="included-meds.html" role="menuitem">Medications</a>
           </div>
-        </div>
-
-        <a href="direct-primary-care.html">Membership</a>
-        <a href="employers.html" aria-current="page">Employers</a>
-        <a href="faq.html">FAQ</a>
-
-        <!-- LOGIN DROPDOWN -->
-        <div class="login-dd">
-          <button class="login-dd__button" id="loginMenuButton" aria-haspopup="menu" aria-expanded="false" aria-controls="loginMenu">Login</button>
-          <ul class="login-dd__menu" id="loginMenu" role="menu" aria-labelledby="loginMenuButton">
-            <li role="none"><a role="menuitem" href="https://urhealthcare.hint.com/login/request" class="login-dd__link">Membership Login</a></li>
-            <li role="none"><a role="menuitem" href="https://www.onpatient.com/login/" class="login-dd__link">OnPatient Login</a></li>
-          </ul>
-        </div>
-      </nav>
-
-      <button class="menu-btn" aria-label="Menu" onclick="document.body.classList.toggle('menu-open')">☰</button>
-    </div>
-  </header>
-
-  <!-- HERO -->
-  <section class="section">
-    <div class="container hero-wrap">
-      <div class="reveal in">
-        <div class="question"><span class="bubble" aria-hidden="true">?</span> Frustrated with rising health costs and poor access?</div>
-        <h1>Direct Primary Care for Employers in <strong>95677</strong></h1>
-        <p class="muted">Unlimited primary & urgent care, 24/7 care navigation, and transparent pricing. Pair with a high-deductible plan for specialty/hospital coverage — employees get faster care, you get lower costs.</p>
-        <div class="cta" style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
-          <a class="btn" href="#contact">Request a demo</a>
-          <a class="btn ghost" href="#value">How it lowers costs</a>
+          <div class="all"><a href="index.html#services">View all services →</a></div>
         </div>
       </div>
-      <img class="reveal" src="assets/img/employers-hero.jpg" alt="HR leader reviewing benefits with team">
-    </div>
-  </section>
-
-  <!-- WHY IT WORKS FOR EMPLOYERS -->
-  <section id="value" class="section">
-    <div class="container">
-      <span class="badge reveal">Built for employers</span>
-      <h2 class="reveal">Lower costs. Better access. Happier teams.</h2>
-
-      <div class="split">
-        <div class="card reveal">
-          <h3>Club DPC + High-Deductible/Catastrophic Plans</h3>
-          <p>We help you design a benefit that combines our DPC membership for everyday care with an HDHP/catastrophic plan for the rare, high-cost events. The result: <strong>better access</strong> and <strong>lower spend</strong>.</p>
-          <ul class="list-clean">
-            <li>Fewer ER/urgent care claims — we handle ~95% of needs in primary care</li>
-            <li>Employees get <strong>same/next-day</strong> appointments and 24/7 messaging</li>
-            <li>Simple, transparent pricing — no surprise bills</li>
-          </ul>
-        </div>
-        <div class="card reveal delay-1">
-          <h3>Only 5% need low-deductible plans</h3>
-          <p>Most employees primarily need convenient, high-quality primary & urgent care. We cover that at a fraction of the cost. For the ~<strong>5%</strong> who need more frequent specialty/hospital care, we’ll help you choose the right low-deductible option.</p>
-          <div style="margin-top:10px">
-            <span class="pill">~95% routine care → DPC</span>
-            <span class="pill">~5% complex care → richer plan</span>
-            <span class="pill">Everyone → faster access</span>
-          </div>
-        </div>
+      <a href="direct-primary-care.html">Membership</a>
+      <a href="employers.html" aria-current="page">Employers</a>
+      <a href="faq.html">FAQ</a>
+      <div class="login-dd">
+        <button class="btn" id="loginMenuButton" aria-haspopup="menu" aria-expanded="false" aria-controls="loginMenu">Login</button>
+        <ul class="login-dd__menu" id="loginMenu" role="menu" aria-labelledby="loginMenuButton">
+          <li role="none"><a role="menuitem" href="https://urhealthcare.hint.com/login/request" class="login-dd__link">Membership Login</a></li>
+          <li role="none"><a role="menuitem" href="https://www.onpatient.com/login/" class="login-dd__link">OnPatient Login</a></li>
+        </ul>
       </div>
+    </nav>
+    <button class="menu-btn" aria-label="Menu" onclick="document.body.classList.toggle('menu-open')">☰</button>
+  </div>
+</header>
 
-      <div class="split" style="margin-top:28px">
-        <div class="card reveal">
-          <h3>Workers’ Compensation spillover savings</h3>
-          <p>When employees access same-day care, injuries are addressed earlier and managed better. That can help reduce lost time, unnecessary referrals, and overall workers’ comp costs.</p>
-          <ul class="list-clean">
-            <li>Rapid access → faster return to work</li>
-            <li>On-site X-ray, procedures & splints</li>
-            <li>Care navigation to in-network specialists</li>
-          </ul>
-        </div>
-        <div class="card reveal delay-1">
-          <h3>24/7 Healthcare Manager + Single Admin Portal</h3>
-          <p>Your HR team gets a single pane of glass to enroll/track members, and employees get a <strong>24/7 care manager</strong> for navigation and referrals.</p>
-          <ul class="list-clean">
-            <li>Self-service enrollment & roster management</li>
-            <li>Care navigation & referrals managed for you</li>
-            <li>Tailored plans per location, population, or role</li>
-          </ul>
-        </div>
+<!-- HERO -->
+<section class="section">
+  <div class="container hero-wrap">
+    <div class="reveal in">
+      <div class="question"><span class="bubble" aria-hidden="true">?</span> Frustrated with rising health costs and poor access?</div>
+      <h1>Direct Primary Care for Employers in <strong>95677</strong></h1>
+      <p class="muted">Unlimited primary & urgent care, 24/7 care navigation, and transparent pricing. Pair with a high-deductible plan for specialty/hospital coverage — employees get faster care, you get lower costs.</p>
+      <div class="cta" style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
+        <a class="btn" href="#contact">Request a demo</a>
+        <a class="btn ghost" href="#value">How it lowers costs</a>
       </div>
     </div>
-  </section>
+    <img class="reveal" src="assets/img/employers-hero.jpg" alt="HR leader reviewing benefits with team">
+  </div>
+</section>
 
-  <!-- IMPACT / PROOF -->
-  <section class="section band">
-    <div class="container">
-      <h2 class="reveal">Savings & Guarantees that De-risk Your Decision</h2>
-      <div class="grid three">
-        <div class="card reveal">
-          <h3>20–25% lower healthcare spend</h3>
-          <p>Pairing DPC with HDHP typically reduces premiums & total cost of care while improving access and productivity.</p>
-        </div>
-        <div class="card reveal delay-1">
-          <h3>Self-funded? Big potential</h3>
-          <p>Direct access, on-site diagnostics, and proactive care reduce avoidable claims and downstream spend.</p>
-        </div>
-        <div class="card reveal delay-2">
-          <h3>Money-back guarantee</h3>
-          <p>If we don’t lower your healthcare premiums, we guarantee <strong>50% money back</strong> on our membership fees for that year.</p>
-        </div>
-      </div>
-      <div class="reveal" style="margin-top:22px">
-        <strong>Bonus:</strong> Employers with <strong>50+ employees</strong> get the first <strong>month free</strong> to try us out.
-      </div>
-    </div>
-  </section>
+<!-- Connected value cards -->
+<section id="value" class="section">
+  <div class="container">
+    <span class="badge reveal">Built for employers</span>
+    <h2 class="reveal">Lower costs. Better access. Happier teams.</h2>
 
-  <!-- WHAT EMPLOYEES GET -->
-  <section class="section">
-    <div class="container">
-      <h2 class="reveal">What Your Team Gets with urHealthcare DPC</h2>
-      <div class="grid three">
-        <div class="card reveal"><h3>Unlimited Primary & Urgent Care</h3><p>Same/next-day visits, 7-day urgent care, and virtual care.</p></div>
-        <div class="card reveal delay-1"><h3>250+ Medications Included</h3><p>Common meds at <strong>no extra cost</strong> to your employees.</p></div>
-        <div class="card reveal delay-2"><h3>Labs, X-ray & Procedures</h3><p>On-site basics to diagnose and treat quickly.</p></div>
-        <div class="card reveal"><h3>Care Navigation</h3><p>Referrals and follow-through across Sacramento metro.</p></div>
-        <div class="card reveal delay-1"><h3>24/7 Care Manager</h3><p>Employees never get stuck — we guide next steps.</p></div>
-        <div class="card reveal delay-2"><h3>Built for 95677</h3><p>Rocklin/Roseville/Lincoln access with predictable, transparent pricing.</p></div>
+    <div class="connected">
+      <div class="c reveal">
+        <h3>Club DPC + HDHP</h3>
+        <p>Combine unlimited primary/urgent care with a high-deductible or catastrophic plan for rare events.</p>
+        <ul class="list-clean">
+          <li>~95% of needs handled in primary care</li>
+          <li>Transparent pricing, fewer surprise bills</li>
+        </ul>
       </div>
-      <p class="small" style="margin-top:10px">Specialty and hospital services are outside the DPC fee; we help “club” DPC with the right HDHP/catastrophic plan for complete coverage.</p>
-    </div>
-  </section>
-
-  <!-- HOW PRICING WORKS -->
-  <section id="plans" class="section band">
-    <div class="container">
-      <h2 class="reveal">Plan Design Made Easy</h2>
-      <div class="split">
-        <div class="card reveal">
-          <h3>Our Role</h3>
-          <ul class="list-clean">
-            <li>Design and administer your DPC membership</li>
-            <li>Help select/implement a high-deductible or catastrophic plan</li>
-            <li>Provide a single employer portal for roster & reporting</li>
-            <li>Measure outcomes: access, utilization, absenteeism</li>
-          </ul>
-        </div>
-        <div class="card reveal delay-1">
-          <h3>Your Outcomes</h3>
-          <ul class="list-clean">
-            <li><strong>Lower premiums</strong> and total cost of care</li>
-            <li><strong>No wait time</strong> → higher productivity & retention</li>
-            <li>Employees love the experience — fewer HR escalations</li>
-            <li>Clear ROI with our <strong>50% money-back guarantee</strong></li>
-          </ul>
-        </div>
+      <div class="c reveal delay-1">
+        <h3>Faster Access</h3>
+        <p>Same/next-day visits and 24/7 messaging reduce ER/urgent care usage and absenteeism.</p>
+        <ul class="list-clean">
+          <li>On-site X-ray, procedures & labs</li>
+          <li>Care navigation to in-network specialists</li>
+        </ul>
       </div>
-      <div class="cta" style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">
-        <a class="btn" href="#contact">Talk to a benefits specialist</a>
-        <a class="btn ghost" href="https://urhealthcare.hint.com/signup/membership/contacts?=">Join Online</a>
+      <div class="c reveal delay-2">
+        <h3>Admin Simplicity</h3>
+        <p>Single employer portal + reporting. Tailor by role, population, or location.</p>
+        <ul class="list-clean">
+          <li>Roster management & outcomes</li>
+          <li>Money-back guarantee on premiums</li>
+        </ul>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FAQ -->
-  <section class="section">
-    <div class="container">
-      <h2 class="reveal">Employer FAQ</h2>
-
-      <details class="reveal"><summary>How does DPC reduce our healthcare costs?</summary>
-        <p>We offload ~95% of everyday needs into unlimited, rapid-access primary care — reducing ER/urgent visits, avoidable specialty, and time away from work. We then pair your plan with a high-deductible or catastrophic option for big, rare events.</p>
-      </details>
-
-      <details class="reveal delay-1"><summary>Do you help us combine DPC with an HDHP?</summary>
-        <p>Yes. We’ll help select and implement the right HDHP/catastrophic plan so employees keep great access while you trim premiums.</p>
-      </details>
-
-      <details class="reveal delay-1"><summary>Will this impact workers’ compensation?</summary>
-        <p>Earlier access often means faster recovery and fewer escalations, contributing to lower overall workers’ comp costs.</p>
-      </details>
-
-      <details class="reveal delay-2"><summary>Can you support self-funded employers?</summary>
-        <p>Absolutely — proactive care, included meds/labs, and on-site diagnostics reduce high-cost claims. Savings can be substantial for self-funded groups.</p>
-      </details>
-
-      <details class="reveal delay-2"><summary>What’s the guarantee?</summary>
-        <p>If we don’t lower your healthcare premiums, we guarantee <strong>50% money back</strong> on urHealthcare membership fees for that plan year.</p>
-      </details>
-
-      <details class="reveal delay-3"><summary>Any trials for larger employers?</summary>
-        <p>Yes. Employers with <strong>50+ employees</strong> receive <strong>one month free</strong> to try us out.</p>
-      </details>
-
-      <details class="reveal delay-3"><summary>How do we manage employees?</summary>
-        <p>All employees can be managed in a <strong>single portal</strong> — simple enrollments, roster syncs, and usage insights. Plans can be tailored by location, role, or population needs.</p>
-      </details>
+<!-- Plan Design with corrected background -->
+<section id="plans" class="section plan-bg">
+  <div class="container">
+    <h2 class="reveal">Plan Design Made Easy</h2>
+    <div class="grid two">
+      <div class="card reveal" style="background:var(--p2)">
+        <h3>Our Role</h3>
+        <ul class="list-clean">
+          <li>Design & administer DPC membership</li>
+          <li>Help select an HDHP/catastrophic plan</li>
+          <li>Single employer portal for roster & reporting</li>
+          <li>Measure access, utilization, absenteeism</li>
+        </ul>
+      </div>
+      <div class="card reveal delay-1" style="background:var(--p5)">
+        <h3>Your Outcomes</h3>
+        <ul class="list-clean">
+          <li><strong>Lower premiums</strong> & total cost of care</li>
+          <li><strong>No wait time</strong> → productivity & retention</li>
+          <li>Employees love it → fewer HR escalations</li>
+          <li>Clear ROI + <strong>50% money-back guarantee</strong></li>
+        </ul>
+      </div>
     </div>
-  </section>
+    <div class="cta" style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">
+      <a class="btn" href="#contact">Talk to a benefits specialist</a>
+      <a class="btn ghost" href="https://urhealthcare.hint.com/signup/membership/contacts?=">Join Online</a>
+    </div>
+  </div>
+</section>
 
-  <!-- CONTACT FORM -->
-  <section id="contact" class="section band">
-    <div class="container">
+<!-- Vertical alternating timeline for “What Your Team Gets” -->
+<section class="section">
+  <div class="container">
+    <h2 class="reveal">What Your Team Gets with urHealthcare DPC</h2>
+    <div class="timeline">
+      <div class="t-item reveal">
+        <div class="side"><h3>Unlimited Primary & Urgent Care</h3><p>Same/next-day visits, 7-day urgent care, and virtual care.</p></div>
+        <div></div>
+      </div>
+      <div class="t-item reveal">
+        <div></div>
+        <div class="side"><h3>250+ Medications Included</h3><p>Common meds at <strong>no extra cost</strong> for members.</p></div>
+      </div>
+      <div class="t-item reveal">
+        <div class="side"><h3>Labs, X-ray & Procedures</h3><p>On-site basics to diagnose and treat quickly.</p></div>
+        <div></div>
+      </div>
+      <div class="t-item reveal">
+        <div></div>
+        <div class="side"><h3>Care Navigation</h3><p>Referrals and follow-through across Sacramento metro.</p></div>
+      </div>
+      <div class="t-item reveal">
+        <div class="side"><h3>24/7 Care Manager</h3><p>Employees never get stuck — we guide next steps.</p></div>
+        <div></div>
+      </div>
+      <div class="t-item reveal">
+        <div></div>
+        <div class="side"><h3>Built for 95677</h3><p>Rocklin/Roseville/Lincoln access with predictable pricing.</p></div>
+      </div>
+    </div>
+    <p class="small">Specialty & hospital services are outside the DPC fee; we help pair DPC with the right HDHP.</p>
+  </div>
+</section>
+
+<!-- BIG-TAB FAQ -->
+<section class="section band" id="faq">
+  <div class="container">
+    <h2 class="reveal">Employer FAQ</h2>
+    <div class="faq-tabs">
+      <div class="faq-tablist" role="tablist" aria-label="FAQ Categories">
+        <button class="faq-tab" role="tab" aria-selected="true" aria-controls="faq1" id="t1">Costs & Savings</button>
+        <button class="faq-tab" role="tab" aria-selected="false" aria-controls="faq2" id="t2">Plan & Coverage</button>
+        <button class="faq-tab" role="tab" aria-selected="false" aria-controls="faq3" id="t3">Operations</button>
+        <button class="faq-tab" role="tab" aria-selected="false" aria-controls="faq4" id="t4">Employees</button>
+      </div>
+
+      <div class="faq-panel" id="faq1" role="tabpanel" aria-labelledby="t1" aria-hidden="false">
+        <div class="card"><details open><summary>How does DPC reduce our healthcare costs?</summary><p>We offload ~95% of everyday needs into rapid-access primary care — reducing ER/urgent visits, avoidable specialty, and time away from work.</p></details></div>
+        <div class="card"><details><summary>What savings should we expect?</summary><p>Many employers see 20–25% lower total spend when pairing DPC with an HDHP, depending on current plan design and utilization.</p></details></div>
+        <div class="card"><details><summary>What’s the guarantee?</summary><p>If we don’t lower your healthcare premiums, we guarantee <strong>50% money back</strong> on urHealthcare membership fees for that plan year.</p></details></div>
+      </div>
+
+      <div class="faq-panel" id="faq2" role="tabpanel" aria-labelledby="t2" aria-hidden="true">
+        <div class="card"><details open><summary>Is DPC insurance?</summary><p>No. DPC covers primary/urgent care, many meds, basic labs & procedures. Specialty/hospital care runs through your HDHP/insurer.</p></details></div>
+        <div class="card"><details><summary>Can you help select an HDHP?</summary><p>Yes — we help select & implement an HDHP/catastrophic plan that pairs with DPC, keeping access high while trimming premiums.</p></details></div>
+        <div class="card"><details><summary>Self-funded groups?</summary><p>Yes. Proactive care, included meds/labs, and on-site diagnostics reduce high-cost claims and downstream spend.</p></details></div>
+      </div>
+
+      <div class="faq-panel" id="faq3" role="tabpanel" aria-labelledby="t3" aria-hidden="true">
+        <div class="card"><details open><summary>How do we manage employees?</summary><p>Single employer portal: roster, enrollments, usage & outcomes. Plans can be tailored by role, population, or location.</p></details></div>
+        <div class="card"><details><summary>Impact on workers’ compensation?</summary><p>Earlier access → faster recovery, fewer escalations, and typically lower overall workers’ comp costs.</p></details></div>
+        <div class="card"><details><summary>Implementation timeline?</summary><p>Most groups can go live within a few weeks depending on carrier and payroll coordination.</p></details></div>
+      </div>
+
+      <div class="faq-panel" id="faq4" role="tabpanel" aria-labelledby="t4" aria-hidden="true">
+        <div class="card"><details open><summary>Employee experience</summary><p>Same/next-day appointments, 7-day urgent care, virtual care, included meds & labs, and 24/7 care manager.</p></details></div>
+        <div class="card"><details><summary>How do employees get help after hours?</summary><p>24/7 care navigation & messaging for guidance and next steps.</p></details></div>
+        <div class="card"><details><summary>Any trials for larger employers?</summary><p>Yes — employers with <strong>50+ employees</strong> get one month free to try us.</p></details></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT (dark blue background) -->
+<section id="contact" class="section">
+  <div class="container">
+    <div class="contact-wrap">
       <h2 class="reveal">Contact Us</h2>
-      <p class="muted reveal">Tell us about your company — we’ll share a tailored plan design and savings model.</p>
+      <p class="reveal muted" style="color:#cfe0ff">Tell us about your company — we’ll share a tailored plan design and savings model.</p>
       <div class="form-card reveal">
-        <!-- mailto works on static hosting; we prefill subject -->
         <form action="mailto:hsdeol@urhealthcare.org" method="post" enctype="text/plain">
           <div class="grid two">
             <div>
               <label for="company"><strong>Company Name</strong></label>
-              <input id="company" name="Company" required />
+              <input id="company" name="Company" required placeholder="Acme, Inc." />
             </div>
             <div>
               <label for="employees"><strong>Employee Count</strong></label>
-              <input id="employees" name="Employees" type="number" min="1" required />
+              <input id="employees" name="Employees" type="number" min="1" required placeholder="75" />
             </div>
             <div>
               <label for="name"><strong>Your Name</strong></label>
-              <input id="name" name="Name" required />
+              <input id="name" name="Name" required placeholder="Jordan Lee" />
             </div>
             <div>
               <label for="email"><strong>Work Email</strong></label>
-              <input id="email" name="Email" type="email" required />
+              <input id="email" name="Email" type="email" required placeholder="jordan@acme.com" />
             </div>
           </div>
 
@@ -360,98 +402,72 @@
             <textarea id="message" name="Message" placeholder="Lower premiums, better access, workers’ comp, pharmacy, absenteeism, etc."></textarea>
           </div>
 
-          <!-- Hidden subject line for mailto-friendly clients -->
           <input type="hidden" name="Subject" value="Employer Inquiry via urHealthcare Employers Page" />
 
           <div class="cta" style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
             <button type="submit" class="btn">Send Inquiry</button>
             <a class="btn ghost" href="https://urhealthcare.hint.com/signup/membership/contacts?=">Join Online</a>
           </div>
-          <div class="disclaimer">Submitting opens your email client to send to <a href="mailto:hsdeol@urhealthcare.org">hsdeol@urhealthcare.org</a>. Prefer a hosted form? We can wire this to Formspree/EmailJS.</div>
+          <div class="small" style="margin-top:8px;color:#cfe0ff">Submitting opens your email client to send to hsdeol@urhealthcare.org. Prefer a hosted form? We can wire this to Formspree/EmailJS.</div>
         </form>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer class="ftr">
-    <div class="container">
-      <p>© <span id="y"></span> urHealthcare • Employer Direct Primary Care in Rocklin (95677), Roseville, Lincoln</p>
-    </div>
-  </footer>
+<footer class="ftr">
+  <div class="container">
+    <p>© <span id="y"></span> urHealthcare • Employer Direct Primary Care in Rocklin (95677), Roseville, Lincoln</p>
+  </div>
+</footer>
 
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"urHealthcare",
-    "url":"https://harprandeol1.github.io/urhealthcare1/",
-    "logo":"https://harprandeol1.github.io/urhealthcare1/assets/logo.png",
-    "department":{
-      "@type":"MedicalDepartment",
-      "name":"Employer Direct Primary Care",
-      "areaServed":["Rocklin 95677","Roseville","Lincoln","Sacramento Metro"]
-    },
-    "contactPoint":{
-      "@type":"ContactPoint",
-      "contactType":"Sales",
-      "email":"hsdeol@urhealthcare.org",
-      "areaServed":"US-CA"
-    }
-  }
-  </script>
+<!-- Scripts -->
+<script>
+  // Reveal
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); }});
+  }, {threshold:0.15});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "mainEntity":[
-      {"@type":"Question","name":"How does DPC reduce our healthcare costs?","acceptedAnswer":{"@type":"Answer","text":"urHealthcare handles ~95% of everyday needs in direct primary care, reducing ER/urgent visits and avoidable specialty. We pair with a high-deductible plan for rare, high-cost events."}},
-      {"@type":"Question","name":"Do you help combine DPC with an HDHP?","acceptedAnswer":{"@type":"Answer","text":"Yes, we help select and implement an HDHP or catastrophic plan alongside DPC so you keep great access while trimming premiums."}},
-      {"@type":"Question","name":"Will this impact workers’ compensation?","acceptedAnswer":{"@type":"Answer","text":"Faster access often leads to earlier recovery and fewer escalations, contributing to lower workers’ comp costs."}},
-      {"@type":"Question","name":"Can you support self-funded employers?","acceptedAnswer":{"@type":"Answer","text":"Yes. Proactive care, included meds/labs, and on-site diagnostics reduce high-cost claims for self-funded groups."}},
-      {"@type":"Question","name":"What’s the guarantee?","acceptedAnswer":{"@type":"Answer","text":"If we don’t lower your healthcare premiums, we guarantee 50% money back on urHealthcare membership fees for that plan year."}},
-      {"@type":"Question","name":"Any trials for larger employers?","acceptedAnswer":{"@type":"Answer","text":"Employers with 50+ employees get one month free to try urHealthcare."}}
-    ]
-  }
-  </script>
+  // Services dropdown
+  const servicesDD = document.getElementById('services-dd');
+  const servicesBtn = servicesDD?.querySelector('.dropbtn');
+  servicesBtn?.addEventListener('click', () => {
+    const open = servicesDD.classList.toggle('open');
+    servicesBtn.setAttribute('aria-expanded', String(open));
+  });
 
-  <!-- Scripts -->
-  <script>
-    // Reveal on scroll
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); } });
-    }, {threshold:0.15});
-    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  // Login dropdown
+  const loginBtn = document.getElementById('loginMenuButton');
+  const loginMenu = document.getElementById('loginMenu');
+  function closeLogin(){ loginMenu?.setAttribute('data-open','false'); loginBtn?.setAttribute('aria-expanded','false'); }
+  loginBtn?.addEventListener('click', (e) => {
+    const isOpen = loginMenu.getAttribute('data-open') === 'true';
+    loginMenu.setAttribute('data-open', String(!isOpen));
+    loginBtn.setAttribute('aria-expanded', String(!isOpen));
+    e.stopPropagation();
+  });
+  document.addEventListener('click', (e) => { if (!loginMenu.contains(e.target) && !loginBtn.contains(e.target)) closeLogin(); });
+  document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeLogin(); });
 
-    // Services dropdown
-    const servicesDD = document.getElementById('services-dd');
-    const servicesBtn = servicesDD?.querySelector('.dropbtn');
-    servicesBtn?.addEventListener('click', () => {
-      const open = servicesDD.classList.toggle('open');
-      servicesBtn.setAttribute('aria-expanded', String(open));
+  // Footer year
+  const y = document.getElementById('y'); if (y) y.textContent = new Date().getFullYear();
+
+  // FAQ big tabs
+  const tabs = Array.from(document.querySelectorAll('.faq-tab'));
+  const panels = Array.from(document.querySelectorAll('.faq-panel'));
+  tabs.forEach(tab=>{
+    tab.addEventListener('click', ()=>{
+      tabs.forEach(t=>t.setAttribute('aria-selected','false'));
+      panels.forEach(p=>p.setAttribute('aria-hidden','true'));
+      tab.setAttribute('aria-selected','true');
+      const panel = document.getElementById(tab.getAttribute('aria-controls'));
+      panel.setAttribute('aria-hidden','false');
     });
-
-    // Login dropdown
-    const loginBtn = document.getElementById('loginMenuButton');
-    const loginMenu = document.getElementById('loginMenu');
-    function closeLogin(){ loginMenu?.setAttribute('data-open','false'); loginBtn?.setAttribute('aria-expanded','false'); }
-    loginBtn?.addEventListener('click', (e) => {
-      const isOpen = loginMenu.getAttribute('data-open') === 'true';
-      loginMenu.setAttribute('data-open', String(!isOpen));
-      loginBtn.setAttribute('aria-expanded', String(!isOpen));
-      e.stopPropagation();
-    });
-    document.addEventListener('click', (e) => {
-      if (!loginMenu.contains(e.target) && !loginBtn.contains(e.target)) closeLogin();
-    });
-    document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeLogin(); });
-
-    // Footer year
-    const y = document.getElementById('y'); if (y) y.textContent = new Date().getFullYear();
-  </script>
+  });
+</script>
 </body>
 </html>
+
 
 
