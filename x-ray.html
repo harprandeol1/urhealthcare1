@@ -3,99 +3,135 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>urHealthcare — Primary & Urgent Care in Sacramento Metro</title>
-  <meta name="description" content="Direct primary & urgent care. Unlimited visits, 7-day urgent care, 250+ meds included, x-ray, labs, ultrasound, and minor procedures." />
-  <meta name="theme-color" content="##FFFFFF" />
+  <title>X-ray Near Me in 95677 (Rocklin) | Walk-In • $75 Cash Price | urHealthcare</title>
+  <meta name="description" content="Walk-in X-ray in Rocklin 95677. No appointment needed. $75 cash price. Fast results for injuries and chest X-rays. Serving Rocklin, Roseville, Lincoln, Loomis, Granite Bay." />
+  <meta name="theme-color" content="#FFFFFF" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
 
-  <!-- Always-works stylesheet for GitHub Pages (absolute URL + cache-buster) -->
-  <link rel="stylesheet" href="https://harprandeol1.github.io/urhealthcare1/assets/styles.css?v=5" />
+  <!-- Global stylesheet (safe to keep) -->
+  <link rel="stylesheet" href="https://harprandeol1.github.io/urhealthcare1/assets/styles.css?v=8" />
 
-  <!-- Page/transition extras -->
   <style>
-    /* ===== Scroll-snap “slides” + reveal transitions ===== */
-    :root { --hdrH: 72px; }
-    html, body { height: 100%; scroll-behavior: smooth; }
-    /* pad for fixed headers (if any) when snapping or using #anchors */
-    main.snap { scroll-snap-type: y mandatory; scroll-padding-top: var(--hdrH); overscroll-behavior-y: contain; }
-    section.slide { 
-      scroll-snap-align: start; 
-      min-height: calc(100vh - var(--hdrH)); 
-      padding-block: clamp(56px, 10vh, 128px);   /* clear space in every section */
+    /* ---------- Base variables so components render even without global CSS ---------- */
+    :root{
+      --brand:#0b3a83; --ink:#0e1a2f; --muted:#5a6780; --bg:#ffffff; --bg-soft:#f6f9ff;
+      --border:#e6ebf3; --radius:18px; --shadow:0 10px 30px rgba(11,58,131,.08);
+      --accent1:#eef5ff; --accent2:#f0fbf4; --accent3:#fff7f0;
+      --hdrH:72px;
     }
-    /* soft separators so the transition feels like a new page */
-    section.slide:not(:first-of-type) { border-top: 1px solid rgba(0,0,0,.04); }
-    /* content reveal on enter */
-    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
-    .in .reveal { opacity: 1; transform: none; }
-    /* reduced motion preference */
-    @media (prefers-reduced-motion: reduce) {
-      main.snap { scroll-snap-type: none; }
-      .reveal, .in .reveal { opacity: 1; transform: none; transition: none; }
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:var(--bg);color:var(--ink);line-height:1.75;font-size:17px}
+    h1,h2,h3{letter-spacing:-.02em;line-height:1.25;margin:.5em 0 .6em}
+    h1{font-size:clamp(32px,4vw,50px)} h2{font-size:clamp(26px,3vw,36px)} h3{font-size:22px}
+    p{margin:0 0 1.15em} a{color:var(--brand);text-decoration:none} a:hover{text-decoration:underline}
+    img{max-width:100%;border-radius:16px}
+    .container{max-width:1160px;margin:auto;padding:0 20px}
+    .section{padding:90px 0} .section.band{background:var(--bg-soft)}
+    .muted{color:var(--muted)} .small{font-size:12px;color:var(--muted)}
+    .list-clean{margin:0;padding-left:18px}
+
+    /* ---------- Buttons, badges ---------- */
+    .btn{display:inline-block;padding:12px 18px;border-radius:999px;font-weight:800;background:var(--brand);color:#fff;box-shadow:var(--shadow);border:2px solid transparent}
+    .btn.ghost{background:#fff;color:var(--brand);border-color:var(--brand)}
+    .badge{display:inline-block;font-size:12px;font-weight:800;border-radius:999px;padding:6px 10px;background:#eef3ff;color:#10346b;border:1px solid #dce6ff}
+    .price{font-size:40px;font-weight:900;color:#0b3a83}
+    .cta{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+
+    /* ---------- Header & nav (keeps your dropdowns) ---------- */
+    .hdr{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:1px solid var(--border)}
+    .hdr .container.nav{display:flex;align-items:center;gap:16px}
+    .logo{font-weight:800;font-size:24px;color:var(--brand);text-decoration:none}
+    .navlinks{margin-left:auto;display:flex;align-items:center;gap:12px}
+    .menu-btn{margin-left:12px;background:transparent;border:0;font-size:22px}
+    @media (max-width:720px){
+      .navlinks{display:none}
+      .menu-open .navlinks{display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:12px 0;margin-left:0}
     }
 
-    /* ===== Existing dropdown CSS kept from your file ===== */
-    .dropdown { position: relative; }
-    .dropbtn{
-      background:transparent; border:0; padding:8px 10px; font:inherit; font-weight:600;
-      color:#0b3a83; cursor:pointer; border-radius:8px;
-    }
+    /* Services dropdown */
+    .dropdown{position:relative}
+    .dropbtn{background:transparent;border:0;padding:8px 10px;font:inherit;font-weight:600;color:#0b3a83;cursor:pointer;border-radius:8px}
     .menu{
       position:absolute; top:110%; left:0; min-width:280px; z-index:1000;
       background:#b5e2ff; border:1px solid var(--border); border-radius:12px;
       box-shadow:var(--shadow); padding:8px; list-style:none; margin:0; display:none;
     }
-    .menu .grid{ display:grid; grid-template-columns:repeat(2,minmax(160px,1fr)); gap:4px 8px; }
-    .menu a{ display:block; padding:8px 10px; border-radius:8px; color:var(--ink); text-decoration:none; white-space:nowrap; }
-    .menu a:hover{ background:#f5f8ff; text-decoration:none; }
-    .menu .all { border-top:1px solid var(--border); margin-top:6px; padding-top:6px; }
-    @media (min-width:721px){ .dropdown:hover .menu, .dropdown:focus-within .menu{ display:block; } }
-    .dropdown.open .menu{ display:block !important; }
-    @media (max-width:720px){
-      .navlinks{ display:none; }
-      .menu-btn{ display:inline-block; background:transparent; border:0; }
-      .menu-open .navlinks{ display:flex; flex-direction:column; align-items:flex-start; gap:10px; padding:12px 0; }
-      .dropdown{ width:100%; }
-      .menu{ position:static; box-shadow:none; border:0; padding:0; }
+    .menu .grid{display:grid;grid-template-columns:repeat(2,minmax(160px,1fr));gap:4px 8px}
+    .menu a{display:block;padding:8px 10px;border-radius:8px;color:var(--ink);text-decoration:none;white-space:nowrap}
+    .menu a:hover{background:#f5f8ff;text-decoration:none}
+    .menu .all{border-top:1px solid var(--border);margin-top:6px;padding-top:6px}
+    .dropdown.open .menu{display:block !important}
+    @media (min-width:721px){ .dropdown:hover .menu, .dropdown:focus-within .menu{display:block} }
+    @media (max-width:720px){ .dropdown{width:100%} .menu{position:static;box-shadow:none;border:0;padding:0} }
+
+    /* Login dropdown */
+    .login-dd{position:relative}
+    .login-dd__button{display:inline-flex;align-items:center;gap:6px;background:var(--brand);color:#fff;border:none;padding:10px 16px;border-radius:12px;font-weight:800}
+    .login-dd__button::after{content:"▾";font-size:.9em}
+    .login-dd__menu{
+      position:absolute;right:0;top:calc(100% + 8px);min-width:220px;padding:6px;margin:0;list-style:none;
+      background:#fff;border:1px solid #e5e7eb;border-radius:12px;box-shadow:0 12px 28px rgba(0,0,0,.12);
+      display:none;z-index:1000;
+    }
+    .login-dd__menu[data-open="true"]{display:block}
+    .login-dd__link{display:block;padding:10px 12px;border-radius:10px;color:#111;text-decoration:none;font-weight:700}
+    .login-dd__link:hover,.login-dd__link:focus{background:#f2f7ff;color:var(--brand);outline:none}
+
+    /* ---------- Hero & grids ---------- */
+    .hero{padding:100px 0;background:linear-gradient(180deg,#fff,#f6f9ff);border-bottom:1px solid var(--border)}
+    .hero-wrap{display:grid;gap:28px;align-items:center}
+    @media(min-width:960px){.hero-wrap{grid-template-columns:1.2fr .8fr}}
+
+    .grid{display:grid;gap:28px}
+    @media(min-width:820px){.grid.two{grid-template-columns:repeat(2,1fr)}}
+    @media(min-width:980px){.grid.three{grid-template-columns:repeat(3,1fr)}}
+
+    .card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+    .soft{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+    .soft.a1{background:var(--accent1)} .soft.a2{background:var(--accent2)} .soft.a3{background:var(--accent3)}
+
+    /* ---------- FAQ ---------- */
+    details{padding:24px;margin:20px 0;border:1px solid var(--border);border-radius:var(--radius);background:#fff;box-shadow:var(--shadow)}
+    summary{cursor:pointer;font-weight:800;font-size:20px}
+
+    /* ---------- Reveal on scroll ---------- */
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+    .in .reveal, .reveal.in{opacity:1;transform:none}
+    @media (prefers-reduced-motion: reduce){
+      .reveal, .in .reveal{opacity:1;transform:none;transition:none}
     }
   </style>
 
-  <!-- Open Graph (optional) -->
-  <meta property="og:title" content="urHealthcare — Primary & Urgent Care" />
-  <meta property="og:description" content="Unlimited visits. 7-day urgent care. 250+ meds included. Transparent pricing." />
+  <!-- Open Graph -->
+  <meta property="og:title" content="X-ray Near Me in 95677 (Rocklin) | Walk-In • $75 Cash" />
+  <meta property="og:description" content="No appointment needed. Walk-in X-ray with $75 cash price. Fast results." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://harprandeol1.github.io/urhealthcare1/" />
+  <meta property="og:url" content="https://harprandeol1.github.io/urhealthcare1/x-ray.html" />
 </head>
 <body>
-  <!-- Header with working Services dropdown -->
-  <header class="hdr" style="position:sticky;top:0;z-index:100;background:#fff;">
+  <!-- Header -->
+  <header class="hdr">
     <div class="container nav">
-      <a class="logo" href="index.html" style="font-size: 28px; font-weight: 600; color: #0b3a83; text-decoration: none;">
-  urHealthcare
-</a>
-
-
+      <a class="logo" href="index.html">urHealthcare</a>
 
       <nav class="navlinks" aria-label="Primary">
         <div class="dropdown" id="services-dd">
-          <button class="dropbtn" type="button" aria-expanded="false" aria-controls="menu-services">
-            Services ▾
-          </button>
+          <button class="dropbtn" type="button" aria-expanded="false" aria-controls="menu-services">Services ▾</button>
           <div id="menu-services" class="menu" role="menu">
             <div class="grid">
               <a href="primary-care.html" role="menuitem">Primary Care</a>
               <a href="urgent-care.html" role="menuitem">Urgent Care</a>
-              <a href="x-ray.html"role="menuitem">X-ray</a>
+              <a href="x-ray.html" role="menuitem">X-ray</a> <!-- FIXED SPACE -->
               <a href="labs.html" role="menuitem">Labs</a>
               <a href="ultrasound.html" role="menuitem">Ultrasound</a>
               <a href="minor-procedures.html" role="menuitem">Minor Procedures</a>
               <a href="virtual-care.html" role="menuitem">Virtual Care</a>
               <a href="included-meds.html" role="menuitem">Medications</a>
             </div>
-            <div class="all"><a href="#services">View all services →</a></div>
+            <div class="all"><a href="index.html#services">View all services →</a></div>
           </div>
         </div>
 
@@ -103,44 +139,19 @@
         <a href="employers.html">Employers</a>
         <a href="faq.html">FAQ</a>
 
-        <!-- LOGIN DROPDOWN -->
+        <!-- Login dropdown -->
         <div class="login-dd">
-          <button class="btn login-dd__button" id="loginMenuButton"
-                  aria-haspopup="menu" aria-expanded="false" aria-controls="loginMenu">
+          <button class="login-dd__button" id="loginMenuButton" aria-haspopup="menu" aria-expanded="false" aria-controls="loginMenu">
             Login
           </button>
-
           <ul class="login-dd__menu" id="loginMenu" role="menu" aria-labelledby="loginMenuButton">
-            <li role="none">
-              <a role="menuitem" href="https://urhealthcare.hint.com/login/request" class="login-dd__link">Membership Login</a>
-            </li>
-            <li role="none">
-              <a role="menuitem" href="https://www.onpatient.com/login/" class="login-dd__link">OnPatient Login</a>
-            </li>
+            <li role="none"><a role="menuitem" href="https://urhealthcare.hint.com/login/request" class="login-dd__link">Membership Login</a></li>
+            <li role="none"><a role="menuitem" href="https://www.onpatient.com/login/" class="login-dd__link">OnPatient Login</a></li>
           </ul>
         </div>
-
-        <style>
-          .login-dd { position: relative; }
-          .login-dd__button { display:inline-flex; align-items:center; gap:6px; }
-          .login-dd__button::after { content:"▾"; font-size:.9em; }
-          .login-dd__menu {
-            position:absolute; right:0; top:calc(100% + 8px);
-            min-width:220px; padding:6px; margin:0; list-style:none;
-            background:#fff; border:1px solid #e5e7eb; border-radius:12px;
-            box-shadow:0 12px 28px rgba(0,0,0,.12);
-            display:none; z-index:1000;
-          }
-          .login-dd__menu[data-open="true"] { display:block; }
-          .login-dd__link { display:block; padding:10px 12px; border-radius:10px; color:#111; text-decoration:none; font-weight:700; }
-          .login-dd__link:hover, .login-dd__link:focus { background:#f2f7ff; color:#0b3a83; outline:none; }
-          .btn { background:#0b3a83; color:#fff; border:none; padding:10px 16px; border-radius:12px; font-weight:800; }
-          .btn:hover { filter:brightness(.95); }
-        </style>
       </nav>
 
-      <button class="menu-btn" aria-label="Menu"
-        onclick="document.body.classList.toggle('menu-open')">☰</button>
+      <button class="menu-btn" aria-label="Menu" onclick="document.body.classList.toggle('menu-open')">☰</button>
     </div>
   </header>
 
@@ -183,22 +194,13 @@
           <h3>What X-rays we perform (same-day)</h3>
           <div class="grid three">
             <ul class="list-clean">
-              <li>Ankle / Foot</li>
-              <li>Wrist / Hand</li>
-              <li>Forearm / Elbow</li>
-              <li>Knee</li>
+              <li>Ankle / Foot</li><li>Wrist / Hand</li><li>Forearm / Elbow</li><li>Knee</li>
             </ul>
             <ul class="list-clean">
-              <li>Shoulder / Clavicle</li>
-              <li>Hip / Pelvis</li>
-              <li>Ribs</li>
-              <li>Chest</li>
+              <li>Shoulder / Clavicle</li><li>Hip / Pelvis</li><li>Ribs</li><li>Chest</li>
             </ul>
             <ul class="list-clean">
-              <li>Cervical Spine</li>
-              <li>Thoracic Spine</li>
-              <li>Lumbar Spine</li>
-              <li>KUB (as ordered)</li>
+              <li>Cervical Spine</li><li>Thoracic Spine</li><li>Lumbar Spine</li><li>KUB (as ordered)</li>
             </ul>
           </div>
           <p class="small">If your provider requested a specific view, bring the order — we can match it.</p>
@@ -289,38 +291,14 @@
   <section id="faq" class="section">
     <div class="container">
       <h2 class="reveal">X-ray FAQ (Rocklin 95677)</h2>
-
-      <details class="reveal"><summary>Do I need an appointment for an X-ray?</summary>
-        <p>No. Walk-ins are welcome — no appointment needed.</p>
-      </details>
-
-      <details class="reveal"><summary>How much does an X-ray cost?</summary>
-        <p>Most single-area studies are <strong>$75 cash price</strong>. We’ll quote any add-ons (extra views, second area) before imaging.</p>
-      </details>
-
-      <details class="reveal"><summary>How fast are results?</summary>
-        <p>We perform X-rays on site and review promptly with you. If a radiology over-read is needed, we’ll arrange it and explain timing.</p>
-      </details>
-
-      <details class="reveal"><summary>Can I submit to insurance or use HSA/FSA?</summary>
-        <p>Yes. We can provide an itemized receipt. Many patients use HSA/FSA cards for eligible services. Check your plan for details.</p>
-      </details>
-
-      <details class="reveal"><summary>Is X-ray safe?</summary>
-        <p>X-rays use a small amount of ionizing radiation. We follow safety protocols and use the lowest exposure needed for accurate imaging. If you are or may be pregnant, please tell us before your exam.</p>
-      </details>
-
-      <details class="reveal"><summary>Which body parts can you X-ray?</summary>
-        <p>Common studies include ankle, foot, wrist, hand, knee, shoulder, ribs, chest, cervical/thoracic/lumbar spine, hip/pelvis, and KUB (as ordered).</p>
-      </details>
-
-      <details class="reveal"><summary>Do you accept outside orders?</summary>
-        <p>Yes. Bring your provider’s order and any specific view instructions. We’ll share images and reports per your request.</p>
-      </details>
-
-      <details class="reveal"><summary>Where are you located?</summary>
-        <p>6839 Five Star Blvd, Suite D, Rocklin, CA 95765. Call <a href="tel:+19169642001">(916) 964-2001</a> for today’s hours.</p>
-      </details>
+      <details class="reveal"><summary>Do I need an appointment for an X-ray?</summary><p>No. Walk-ins are welcome — no appointment needed.</p></details>
+      <details class="reveal"><summary>How much does an X-ray cost?</summary><p>Most single-area studies are <strong>$75 cash price</strong>. We’ll quote any add-ons (extra views, second area) before imaging.</p></details>
+      <details class="reveal"><summary>How fast are results?</summary><p>We perform X-rays on site and review promptly with you. If a radiology over-read is needed, we’ll arrange it and explain timing.</p></details>
+      <details class="reveal"><summary>Can I submit to insurance or use HSA/FSA?</summary><p>Yes. We can provide an itemized receipt. Many patients use HSA/FSA cards for eligible services. Check your plan for details.</p></details>
+      <details class="reveal"><summary>Is X-ray safe?</summary><p>X-rays use a small amount of ionizing radiation. We follow safety protocols and use the lowest exposure needed for accurate imaging. If you are or may be pregnant, please tell us before your exam.</p></details>
+      <details class="reveal"><summary>Which body parts can you X-ray?</summary><p>Common studies include ankle, foot, wrist, hand, knee, shoulder, ribs, chest, cervical/thoracic/lumbar spine, hip/pelvis, and KUB (as ordered).</p></details>
+      <details class="reveal"><summary>Do you accept outside orders?</summary><p>Yes. Bring your provider’s order and any specific view instructions. We’ll share images and reports per your request.</p></details>
+      <details class="reveal"><summary>Where are you located?</summary><p>6839 Five Star Blvd, Suite D, Rocklin, CA 95765. Call <a href="tel:+19169642001">(916) 964-2001</a> for today’s hours.</p></details>
     </div>
   </section>
 
@@ -333,74 +311,54 @@
 
   <!-- Structured Data -->
   <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"MedicalClinic",
-    "name":"urHealthcare - X-ray",
-    "url":"https://harprandeol1.github.io/urhealthcare1/x-ray.html",
-    "telephone":"+1-916-964-2001",
-    "address":{
-      "@type":"PostalAddress",
-      "streetAddress":"6839 Five Star Blvd, Suite D",
-      "addressLocality":"Rocklin",
-      "addressRegion":"CA",
-      "postalCode":"95765",
-      "addressCountry":"US"
-    },
-    "medicalSpecialty":["Radiography","UrgentCare","PrimaryCare"],
-    "areaServed":["Rocklin 95677","Roseville","Lincoln","Loomis","Granite Bay"],
-    "priceRange":"$",
-    "department":{
-      "@type":"MedicalDepartment",
-      "name":"Walk-in X-ray",
-      "description":"Walk-in X-ray with $75 cash price. No appointment needed."
-    }
-  }
+  {"@context":"https://schema.org","@type":"MedicalClinic","name":"urHealthcare - X-ray","url":"https://harprandeol1.github.io/urhealthcare1/x-ray.html","telephone":"+1-916-964-2001","address":{"@type":"PostalAddress","streetAddress":"6839 Five Star Blvd, Suite D","addressLocality":"Rocklin","addressRegion":"CA","postalCode":"95765","addressCountry":"US"},"medicalSpecialty":["Radiography","UrgentCare","PrimaryCare"],"areaServed":["Rocklin 95677","Roseville","Lincoln","Loomis","Granite Bay"],"priceRange":"$","department":{"@type":"MedicalDepartment","name":"Walk-in X-ray","description":"Walk-in X-ray with $75 cash price. No appointment needed."}}
   </script>
-
   <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Service",
-    "name":"Walk-in X-ray",
-    "serviceType":"X-ray Imaging",
-    "areaServed":["95677","Rocklin","Roseville","Lincoln","Loomis","Granite Bay"],
-    "provider":{
-      "@type":"MedicalClinic",
-      "name":"urHealthcare"
-    },
-    "offers":{
-      "@type":"Offer",
-      "priceCurrency":"USD",
-      "price":"75",
-      "availability":"https://schema.org/InStock",
-      "url":"https://harprandeol1.github.io/urhealthcare1/x-ray.html"
-    }
-  }
+  {"@context":"https://schema.org","@type":"Service","name":"Walk-in X-ray","serviceType":"X-ray Imaging","areaServed":["95677","Rocklin","Roseville","Lincoln","Loomis","Granite Bay"],"provider":{"@type":"MedicalClinic","name":"urHealthcare"},"offers":{"@type":"Offer","priceCurrency":"USD","price":"75","availability":"https://schema.org/InStock","url":"https://harprandeol1.github.io/urhealthcare1/x-ray.html"}}
   </script>
-
   <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "mainEntity":[
-      {"@type":"Question","name":"Do I need an appointment for an X-ray?","acceptedAnswer":{"@type":"Answer","text":"No. Walk-ins are welcome — no appointment needed."}},
-      {"@type":"Question","name":"How much does an X-ray cost?","acceptedAnswer":{"@type":"Answer","text":"Most single-area studies are $75 cash price. We quote any add-ons before imaging."}},
-      {"@type":"Question","name":"How fast are results?","acceptedAnswer":{"@type":"Answer","text":"X-rays are performed on site with prompt review. If a radiology over-read is needed, we explain timing and options."}},
-      {"@type":"Question","name":"Can I use HSA/FSA or submit to insurance?","acceptedAnswer":{"@type":"Answer","text":"Yes. We provide itemized receipts to submit to insurance or use with HSA/FSA."}},
-      {"@type":"Question","name":"Is X-ray safe?","acceptedAnswer":{"@type":"Answer","text":"We use the lowest exposure needed. Tell us if you are or may be pregnant before your exam."}},
-      {"@type":"Question","name":"Which body parts do you X-ray?","acceptedAnswer":{"@type":"Answer","text":"Ankle, foot, wrist, hand, knee, shoulder, ribs, chest, cervical/thoracic/lumbar spine, hip/pelvis, and KUB (as ordered)."}},
-      {"@type":"Question","name":"Where are you located?","acceptedAnswer":{"@type":"Answer","text":"6839 Five Star Blvd, Suite D, Rocklin, CA 95765. Call (916) 964-2001 for today's hours."}}
-    ]
-  }
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Do I need an appointment for an X-ray?","acceptedAnswer":{"@type":"Answer","text":"No. Walk-ins are welcome — no appointment needed."}},
+    {"@type":"Question","name":"How much does an X-ray cost?","acceptedAnswer":{"@type":"Answer","text":"Most single-area studies are $75 cash price. We quote any add-ons before imaging."}},
+    {"@type":"Question","name":"How fast are results?","acceptedAnswer":{"@type":"Answer","text":"X-rays are performed on site with prompt review. If a radiology over-read is needed, we explain timing and options."}},
+    {"@type":"Question","name":"Can I use HSA/FSA or submit to insurance?","acceptedAnswer":{"@type":"Answer","text":"Yes. We provide itemized receipts to submit to insurance or use with HSA/FSA."}},
+    {"@type":"Question","name":"Is X-ray safe?","acceptedAnswer":{"@type":"Answer","text":"We use the lowest exposure needed. Tell us if you are or may be pregnant before your exam."}},
+    {"@type":"Question","name":"Which body parts do you X-ray?","acceptedAnswer":{"@type":"Answer","text":"Ankle, foot, wrist, hand, knee, shoulder, ribs, chest, cervical/thoracic/lumbar spine, hip/pelvis, and KUB (as ordered)."}},
+    {"@type":"Question","name":"Where are you located?","acceptedAnswer":{"@type":"Answer","text":"6839 Five Star Blvd, Suite D, Rocklin, CA 95765. Call (916) 964-2001 for today's hours."}}
+  ]}
   </script>
 
-  <!-- Simple reveal on scroll -->
+  <!-- Dropdown JS (Services + Login) & reveal -->
   <script>
+    // Services dropdown (mobile click)
+    const servicesDD = document.getElementById('services-dd');
+    const servicesBtn = servicesDD?.querySelector('.dropbtn');
+    servicesBtn?.addEventListener('click', () => {
+      const open = servicesDD.classList.toggle('open');
+      servicesBtn.setAttribute('aria-expanded', String(open));
+    });
+
+    // Login dropdown
+    const loginBtn = document.getElementById('loginMenuButton');
+    const loginMenu = document.getElementById('loginMenu');
+    function closeLogin(){ loginMenu?.setAttribute('data-open','false'); loginBtn?.setAttribute('aria-expanded','false'); }
+    loginBtn?.addEventListener('click', (e) => {
+      const isOpen = loginMenu.getAttribute('data-open') === 'true';
+      loginMenu.setAttribute('data-open', String(!isOpen));
+      loginBtn.setAttribute('aria-expanded', String(!isOpen));
+      e.stopPropagation();
+    });
+    document.addEventListener('click', (e) => {
+      if (!loginMenu.contains(e.target) && !loginBtn.contains(e.target)) closeLogin();
+    });
+    document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeLogin(); });
+
+    // Reveal on scroll
     const io = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); } else { e.target.classList.remove('in'); } });
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); } });
     },{threshold:0.15});
     document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
   </script>
 </body>
 </html>
+
