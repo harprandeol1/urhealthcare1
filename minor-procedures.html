@@ -3,99 +3,116 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>urHealthcare — Primary & Urgent Care in Sacramento Metro</title>
-  <meta name="description" content="Direct primary & urgent care. Unlimited visits, 7-day urgent care, 250+ meds included, x-ray, labs, ultrasound, and minor procedures." />
-  <meta name="theme-color" content="##FFFFFF" />
+  <title>Minor Procedures in Rocklin (95677) | Walk-In Urgent Care | urHealthcare</title>
+  <meta name="description" content="Walk-in urgent care minor procedures in Rocklin 95677: stitches, abscess drainage, ingrown toenail, splints, wound care, nosebleed cautery, earwax removal, nail trephination, joint injections and more. Transparent cash prices. Most insurances accepted." />
+  <meta name="theme-color" content="#FFFFFF" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
 
-  <!-- Always-works stylesheet for GitHub Pages (absolute URL + cache-buster) -->
-  <link rel="stylesheet" href="https://harprandeol1.github.io/urhealthcare1/assets/styles.css?v=5" />
+  <!-- Global stylesheet (safe to keep) -->
+  <link rel="stylesheet" href="https://harprandeol1.github.io/urhealthcare1/assets/styles.css?v=8" />
 
-  <!-- Page/transition extras -->
+  <!-- Local styles so this page doesn’t depend on globals -->
   <style>
-    /* ===== Scroll-snap “slides” + reveal transitions ===== */
-    :root { --hdrH: 72px; }
-    html, body { height: 100%; scroll-behavior: smooth; }
-    /* pad for fixed headers (if any) when snapping or using #anchors */
-    main.snap { scroll-snap-type: y mandatory; scroll-padding-top: var(--hdrH); overscroll-behavior-y: contain; }
-    section.slide { 
-      scroll-snap-align: start; 
-      min-height: calc(100vh - var(--hdrH)); 
-      padding-block: clamp(56px, 10vh, 128px);   /* clear space in every section */
+    :root{
+      --brand:#0b3a83; --ink:#0e1a2f; --muted:#5a6780; --bg:#ffffff; --bg-soft:#f6f9ff;
+      --border:#e6ebf3; --radius:18px; --shadow:0 10px 30px rgba(11,58,131,.08);
+      --accent1:#eef5ff; --accent2:#f0fbf4; --accent3:#fff7f0; --accent4:#fff1f1;
     }
-    /* soft separators so the transition feels like a new page */
-    section.slide:not(:first-of-type) { border-top: 1px solid rgba(0,0,0,.04); }
-    /* content reveal on enter */
-    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
-    .in .reveal { opacity: 1; transform: none; }
-    /* reduced motion preference */
-    @media (prefers-reduced-motion: reduce) {
-      main.snap { scroll-snap-type: none; }
-      .reveal, .in .reveal { opacity: 1; transform: none; transition: none; }
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:var(--bg);color:var(--ink);line-height:1.75;font-size:17px}
+    h1,h2,h3{letter-spacing:-.02em;line-height:1.25;margin:.5em 0 .6em}
+    h1{font-size:clamp(32px,4vw,50px)} h2{font-size:clamp(26px,3vw,38px)} h3{font-size:22px}
+    p{margin:0 0 1.15em} a{color:var(--brand);text-decoration:none} a:hover{text-decoration:underline}
+    .muted{color:var(--muted)} .small{font-size:12px;color:var(--muted)}
+    .container{max-width:1160px;margin:auto;padding:0 20px}
+    .section{padding:90px 0} .section.band{background:var(--bg-soft)}
+    .badge{display:inline-block;font-size:12px;font-weight:800;border-radius:999px;padding:6px 10px;background:#eef3ff;color:#10346b;border:1px solid #dce6ff}
+    .btn{display:inline-block;padding:12px 18px;border-radius:999px;font-weight:800;background:var(--brand);color:#fff;box-shadow:var(--shadow);border:2px solid transparent}
+    .btn:hover{filter:brightness(.96)}
+    .btn.ghost{background:#fff;color:var(--brand);border-color:var(--brand)}
+    .price{font-weight:900;color:var(--brand)}
+    .grid{display:grid;gap:28px}
+    .grid.three{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+    .grid.four{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+    .card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+    .soft{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+    .soft.a1{background:var(--accent1)} .soft.a2{background:var(--accent2)} .soft.a3{background:var(--accent3)} .soft.a4{background:var(--accent4)}
+    .list-clean{margin:0;padding-left:18px}
+    /* Header */
+    .hdr{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:1px solid var(--border)}
+    .hdr .container.nav{display:flex;align-items:center;gap:16px}
+    .logo{font-weight:800;font-size:24px;color:var(--brand);text-decoration:none}
+    .navlinks{margin-left:auto;display:flex;align-items:center;gap:12px}
+    .menu-btn{margin-left:12px;background:transparent;border:0;font-size:22px}
+    @media (max-width:720px){
+      .navlinks{display:none}
+      .menu-open .navlinks{display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:12px 0;margin-left:0}
     }
-
-    /* ===== Existing dropdown CSS kept from your file ===== */
-    .dropdown { position: relative; }
-    .dropbtn{
-      background:transparent; border:0; padding:8px 10px; font:inherit; font-weight:600;
-      color:#0b3a83; cursor:pointer; border-radius:8px;
-    }
+    /* Services dropdown */
+    .dropdown{position:relative}
+    .dropbtn{background:transparent;border:0;padding:8px 10px;font:inherit;font-weight:600;color:#0b3a83;cursor:pointer;border-radius:8px}
     .menu{
       position:absolute; top:110%; left:0; min-width:280px; z-index:1000;
       background:#b5e2ff; border:1px solid var(--border); border-radius:12px;
       box-shadow:var(--shadow); padding:8px; list-style:none; margin:0; display:none;
     }
-    .menu .grid{ display:grid; grid-template-columns:repeat(2,minmax(160px,1fr)); gap:4px 8px; }
-    .menu a{ display:block; padding:8px 10px; border-radius:8px; color:var(--ink); text-decoration:none; white-space:nowrap; }
-    .menu a:hover{ background:#f5f8ff; text-decoration:none; }
-    .menu .all { border-top:1px solid var(--border); margin-top:6px; padding-top:6px; }
-    @media (min-width:721px){ .dropdown:hover .menu, .dropdown:focus-within .menu{ display:block; } }
-    .dropdown.open .menu{ display:block !important; }
-    @media (max-width:720px){
-      .navlinks{ display:none; }
-      .menu-btn{ display:inline-block; background:transparent; border:0; }
-      .menu-open .navlinks{ display:flex; flex-direction:column; align-items:flex-start; gap:10px; padding:12px 0; }
-      .dropdown{ width:100%; }
-      .menu{ position:static; box-shadow:none; border:0; padding:0; }
+    .menu .grid{display:grid;grid-template-columns:repeat(2,minmax(160px,1fr));gap:4px 8px}
+    .menu a{display:block;padding:8px 10px;border-radius:8px;color:#111;text-decoration:none;white-space:nowrap}
+    .menu a:hover{background:#f5f8ff}
+    .menu .all{border-top:1px solid var(--border);margin-top:6px;padding-top:6px}
+    .dropdown.open .menu{display:block !important}
+    @media(min-width:721px){ .dropdown:hover .menu, .dropdown:focus-within .menu{display:block} }
+    @media(max-width:720px){ .dropdown{width:100%} .menu{position:static;box-shadow:none;border:0;padding:0} }
+    /* Login dropdown */
+    .login-dd{position:relative}
+    .login-dd__button{display:inline-flex;align-items:center;gap:6px;background:var(--brand);color:#fff;border:none;padding:10px 16px;border-radius:12px;font-weight:800}
+    .login-dd__button::after{content:"▾";font-size:.9em}
+    .login-dd__menu{
+      position:absolute;right:0;top:calc(100% + 8px);min-width:220px;padding:6px;margin:0;list-style:none;
+      background:#fff;border:1px solid #e5e7eb;border-radius:12px;box-shadow:0 12px 28px rgba(0,0,0,.12);display:none;z-index:1000;
     }
+    .login-dd__menu[data-open="true"]{display:block}
+    .login-dd__link{display:block;padding:10px 12px;border-radius:10px;color:#111;text-decoration:none;font-weight:700}
+    .login-dd__link:hover,.login-dd__link:focus{background:#f2f7ff;color:var(--brand);outline:none}
+    /* FAQ */
+    details{padding:18px;border:1px solid var(--border);border-radius:16px;background:#fff;box-shadow:var(--shadow);margin:12px 0}
+    summary{cursor:pointer;font-weight:800}
+    /* Reveal on scroll */
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+    .reveal.in{opacity:1;transform:none}
+    @media (prefers-reduced-motion: reduce){ .reveal, .reveal.in{opacity:1;transform:none;transition:none} }
   </style>
 
-  <!-- Open Graph (optional) -->
-  <meta property="og:title" content="urHealthcare — Primary & Urgent Care" />
-  <meta property="og:description" content="Unlimited visits. 7-day urgent care. 250+ meds included. Transparent pricing." />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Minor Procedures in Rocklin (95677) | Walk-In Urgent Care" />
+  <meta property="og:description" content="Same-day stitches, abscess drainage, ingrown toenail, earwax removal, splints, nail trephination, and more. Transparent cash prices. Most insurances accepted." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://harprandeol1.github.io/urhealthcare1/" />
+  <meta property="og:url" content="https://harprandeol1.github.io/urhealthcare1/minor-procedures.html" />
 </head>
 <body>
   <!-- Header with working Services dropdown -->
-  <header class="hdr" style="position:sticky;top:0;z-index:100;background:#fff;">
+  <header class="hdr">
     <div class="container nav">
-      <a class="logo" href="index.html" style="font-size: 28px; font-weight: 600; color: #0b3a83; text-decoration: none;">
-  urHealthcare
-</a>
-
-
+      <a class="logo" href="index.html">urHealthcare</a>
 
       <nav class="navlinks" aria-label="Primary">
         <div class="dropdown" id="services-dd">
-          <button class="dropbtn" type="button" aria-expanded="false" aria-controls="menu-services">
-            Services ▾
-          </button>
+          <button class="dropbtn" type="button" aria-expanded="false" aria-controls="menu-services">Services ▾</button>
           <div id="menu-services" class="menu" role="menu">
             <div class="grid">
               <a href="primary-care.html" role="menuitem">Primary Care</a>
               <a href="urgent-care.html" role="menuitem">Urgent Care</a>
-              <a href="x-ray.html"role="menuitem">X-ray</a>
+              <a href="x-ray.html" role="menuitem">X-ray</a> <!-- fixed space -->
               <a href="labs.html" role="menuitem">Labs</a>
               <a href="ultrasound.html" role="menuitem">Ultrasound</a>
-              <a href="minor-procedures.html" role="menuitem">Minor Procedures</a>
+              <a href="minor-procedures.html" role="menuitem" aria-current="page">Minor Procedures</a>
               <a href="virtual-care.html" role="menuitem">Virtual Care</a>
               <a href="included-meds.html" role="menuitem">Medications</a>
             </div>
-            <div class="all"><a href="#services">View all services →</a></div>
+            <div class="all"><a href="index.html#services">View all services →</a></div>
           </div>
         </div>
 
@@ -105,42 +122,15 @@
 
         <!-- LOGIN DROPDOWN -->
         <div class="login-dd">
-          <button class="btn login-dd__button" id="loginMenuButton"
-                  aria-haspopup="menu" aria-expanded="false" aria-controls="loginMenu">
-            Login
-          </button>
-
+          <button class="login-dd__button" id="loginMenuButton" aria-haspopup="menu" aria-expanded="false" aria-controls="loginMenu">Login</button>
           <ul class="login-dd__menu" id="loginMenu" role="menu" aria-labelledby="loginMenuButton">
-            <li role="none">
-              <a role="menuitem" href="https://urhealthcare.hint.com/login/request" class="login-dd__link">Membership Login</a>
-            </li>
-            <li role="none">
-              <a role="menuitem" href="https://www.onpatient.com/login/" class="login-dd__link">OnPatient Login</a>
-            </li>
+            <li role="none"><a role="menuitem" href="https://urhealthcare.hint.com/login/request" class="login-dd__link">Membership Login</a></li>
+            <li role="none"><a role="menuitem" href="https://www.onpatient.com/login/" class="login-dd__link">OnPatient Login</a></li>
           </ul>
         </div>
-
-        <style>
-          .login-dd { position: relative; }
-          .login-dd__button { display:inline-flex; align-items:center; gap:6px; }
-          .login-dd__button::after { content:"▾"; font-size:.9em; }
-          .login-dd__menu {
-            position:absolute; right:0; top:calc(100% + 8px);
-            min-width:220px; padding:6px; margin:0; list-style:none;
-            background:#fff; border:1px solid #e5e7eb; border-radius:12px;
-            box-shadow:0 12px 28px rgba(0,0,0,.12);
-            display:none; z-index:1000;
-          }
-          .login-dd__menu[data-open="true"] { display:block; }
-          .login-dd__link { display:block; padding:10px 12px; border-radius:10px; color:#111; text-decoration:none; font-weight:700; }
-          .login-dd__link:hover, .login-dd__link:focus { background:#f2f7ff; color:#0b3a83; outline:none; }
-          .btn { background:#0b3a83; color:#fff; border:none; padding:10px 16px; border-radius:12px; font-weight:800; }
-          .btn:hover { filter:brightness(.95); }
-        </style>
       </nav>
 
-      <button class="menu-btn" aria-label="Menu"
-        onclick="document.body.classList.toggle('menu-open')">☰</button>
+      <button class="menu-btn" aria-label="Menu" onclick="document.body.classList.toggle('menu-open')">☰</button>
     </div>
   </header>
 
@@ -152,22 +142,23 @@
       <p class="muted">Walk-in urgent care for stitches, abscess drainage, ingrown toenail removal, splints, wound care, foreign body removal, nail trephination, earwax removal, nosebleed cautery, burns, joint injections, and more. Serving Rocklin (95677), Roseville, Lincoln, Loomis, Granite Bay, Citrus Heights, Auburn, Antelope, Folsom, Orangevale, Newcastle, and Penryn.</p>
       <div style="margin-top:10px">
         <a class="btn" href="#prices">See cash prices</a>
-        <a class="btn ghost" href="insurance.html">We accept most insurances</a>
+        <a class="btn ghost" href="accepted-insurances.html">We accept most insurances</a>
       </div>
       <p class="small" style="margin-top:8px">Address: 6839 Five Star Blvd, Suite D, Rocklin, CA 95765 • Phone: <a href="tel:+19169642001">(916) 964-2001</a></p>
     </div>
   </section>
 
-  <!-- MOST-SEARCHED PROCEDURES (SEO keyword wall, neatly organized) -->
+  <!-- MOST-SEARCHED PROCEDURES -->
   <section class="section band" id="procedures">
     <div class="container">
-      <h2>Common Minor Procedures We Perform (Same-Day)</h2>
+      <h2 class="reveal">Common Minor Procedures We Perform (Same-Day)</h2>
       <div class="grid four">
-        <div class="card"><h3>Skin & Wound</h3>
+        <div class="card soft a1 reveal">
+          <h3>Skin & Wound</h3>
           <ul class="list-clean">
             <li>Laceration repair / <strong>stitches</strong> / sutures</li>
             <li>Suture or staple removal</li>
-            <li<Wound cleaning & dressing</li>
+            <li>Wound cleaning & dressing</li>
             <li>Burn care (minor)</li>
             <li>Abscess incision & drainage (I&D)</li>
             <li>Paronychia drainage (finger infection)</li>
@@ -177,7 +168,9 @@
             <li>Foreign body removal (splinter, glass, thorn)</li>
           </ul>
         </div>
-        <div class="card"><h3>Musculoskeletal</h3>
+
+        <div class="card soft a2 reveal">
+          <h3>Musculoskeletal</h3>
           <ul class="list-clean">
             <li>Sprain/strain care</li>
             <li>Splints & immobilization</li>
@@ -188,7 +181,9 @@
           </ul>
           <p class="small">*When appropriate; imaging may be recommended.</p>
         </div>
-        <div class="card"><h3>ENT & Eye</h3>
+
+        <div class="card soft a3 reveal">
+          <h3>ENT & Eye</h3>
           <ul class="list-clean">
             <li>Earwax (cerumen) removal (irrigation/manual)</li>
             <li>Nosebleed control / cauterization</li>
@@ -197,7 +192,9 @@
             <li>Fluorescein exam for corneal abrasion</li>
           </ul>
         </div>
-        <div class="card"><h3>Other In-Clinic Services</h3>
+
+        <div class="card soft a4 reveal">
+          <h3>Other In-Clinic Services</h3>
           <ul class="list-clean">
             <li>Tetanus shot (Td/Tdap)</li>
             <li>EKG (12-lead)</li>
@@ -209,16 +206,16 @@
         </div>
       </div>
 
-      <p class="small" style="margin-top:10px">We’ll always confirm whether your condition is appropriate for urgent care. For severe bleeding, large/complex wounds, severe burns, eye injuries with vision loss, or suspected fractures/dislocations requiring sedation, please go to the ER or call 911.</p>
+      <p class="small" style="margin-top:10px">We’ll confirm whether your condition is appropriate for urgent care. For severe bleeding, large/complex wounds, severe burns, eye injuries with vision loss, or fractures/dislocations requiring sedation, go to the ER or call 911.</p>
     </div>
   </section>
 
   <!-- CASH PRICES -->
   <section class="section" id="prices">
     <div class="container">
-      <h2>Transparent Cash Prices (Walk-In Welcome)</h2>
+      <h2 class="reveal">Transparent Cash Prices (Walk-In Welcome)</h2>
       <div class="grid three">
-        <div class="card">
+        <div class="card reveal">
           <h3>Wounds & Skin</h3>
           <ul class="list-clean">
             <li>Laceration repair (simple): <span class="price">$149+</span></li>
@@ -230,7 +227,7 @@
             <li>Foreign body removal (skin): <span class="price">$129+</span></li>
           </ul>
         </div>
-        <div class="card">
+        <div class="card reveal">
           <h3>Musculoskeletal</h3>
           <ul class="list-clean">
             <li>Splint application: <span class="price">$99</span> (+ materials)</li>
@@ -239,7 +236,7 @@
             <li>Joint injection (shoulder/knee): <span class="price">$149+</span> (+ medication)</li>
           </ul>
         </div>
-        <div class="card">
+        <div class="card reveal">
           <h3>ENT, Eye & Other</h3>
           <ul class="list-clean">
             <li>Earwax removal: <span class="price">$69</span></li>
@@ -254,7 +251,7 @@
       </div>
       <p class="small" style="margin-top:8px">“+” indicates price varies by complexity, materials, number of sutures/views, or medication used. We’ll review costs with you before treatment. Supplies (e.g., splints) may be additional. X-ray pricing is <a href="x-ray.html">$75 cash</a>.</p>
       <div style="margin-top:12px">
-        <a class="btn" href="insurance.html">We accept most insurances</a>
+        <a class="btn" href="accepted-insurances.html">We accept most insurances</a>
         <a class="btn ghost" href="contact.html">Directions & Hours</a>
       </div>
     </div>
@@ -263,7 +260,7 @@
   <!-- LOCAL SEO -->
   <section class="section band">
     <div class="container">
-      <h2>Minor Procedures Near Rocklin • Roseville • Lincoln • Loomis • Granite Bay (20-mile radius)</h2>
+      <h2 class="reveal">Minor Procedures Near Rocklin • Roseville • Lincoln • Loomis • Granite Bay (20-mile radius)</h2>
       <p>Our urgent care serves patients across Rocklin <strong>(ZIP 95677)</strong> and nearby cities including Roseville, Lincoln, Loomis, Granite Bay, Citrus Heights, Auburn, Antelope, Folsom, Orangevale, Newcastle, and Penryn.</p>
     </div>
   </section>
@@ -271,21 +268,21 @@
   <!-- FAQ -->
   <section class="section" id="faq">
     <div class="container">
-      <h2>Minor Procedures FAQ</h2>
+      <h2 class="reveal">Minor Procedures FAQ</h2>
 
-      <details><summary>Do I need an appointment?</summary>
-        <p>No — walk-ins welcome. For complex cases, calling ahead can help us prepare.</p>
+      <details class="reveal"><summary>Do I need an appointment?</summary>
+        <p>No—walk-ins welcome. For complex cases, calling ahead can help us prepare.</p>
       </details>
-      <details><summary>Do you accept insurance?</summary>
-        <p>Yes. We accept most major insurances. See our <a href="insurance.html">insurance list</a>. Copays/deductibles vary by plan.</p>
+      <details class="reveal"><summary>Do you accept insurance?</summary>
+        <p>Yes. We accept most major insurances. See our <a href="accepted-insurances.html">accepted insurance list</a>. Copays/deductibles vary by plan.</p>
       </details>
-      <details><summary>How do you decide cash pricing?</summary>
+      <details class="reveal"><summary>How do you decide cash pricing?</summary>
         <p>Prices reflect procedure complexity, materials, and medications used. We provide an estimate before treatment and stay transparent.</p>
       </details>
-      <details><summary>Can you do X-rays, splints, and stitches in the same visit?</summary>
+      <details class="reveal"><summary>Can you do X-rays, splints, and stitches in the same visit?</summary>
         <p>Yes, when appropriate. We offer on-site <a href="x-ray.html">X-ray ($75 cash)</a>, splints, wound closure, and follow-up care.</p>
       </details>
-      <details><summary>What if I need a specialist or surgery?</summary>
+      <details class="reveal"><summary>What if I need a specialist or surgery?</summary>
         <p>We’ll stabilize you, provide initial treatment, and coordinate timely referrals to in-network specialists when needed.</p>
       </details>
     </div>
@@ -294,43 +291,61 @@
   <!-- Footer -->
   <footer class="section" style="padding:40px 0;border-top:1px solid var(--border)">
     <div class="container">
-      <p>© 2025 urHealthcare • Urgent Care Minor Procedures in Rocklin (95677) & Nearby</p>
+      <p>© <span id="y"></span> urHealthcare • Urgent Care Minor Procedures in Rocklin (95677) & Nearby</p>
     </div>
   </footer>
 
   <!-- JSON-LD -->
   <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"MedicalClinic",
-    "name":"urHealthcare - Urgent Care Minor Procedures",
-    "url":"https://harprandeol1.github.io/urhealthcare1/minor-procedures.html",
-    "telephone":"+1-916-964-2001",
-    "address":{"@type":"PostalAddress","streetAddress":"6839 Five Star Blvd, Suite D","addressLocality":"Rocklin","addressRegion":"CA","postalCode":"95765","addressCountry":"US"},
-    "areaServed":["Rocklin 95677","Roseville","Lincoln","Loomis","Granite Bay","Citrus Heights","Auburn","Antelope","Folsom","Orangevale","Newcastle","Penryn"],
-    "medicalSpecialty":["UrgentCare","PrimaryCare","EmergencyMedicine"],
-    "department":{"@type":"MedicalDepartment","name":"Minor Procedures"},
-    "priceRange":"$"
-  }
+  {"@context":"https://schema.org","@type":"MedicalClinic","name":"urHealthcare - Urgent Care Minor Procedures","url":"https://harprandeol1.github.io/urhealthcare1/minor-procedures.html","telephone":"+1-916-964-2001","address":{"@type":"PostalAddress","streetAddress":"6839 Five Star Blvd, Suite D","addressLocality":"Rocklin","addressRegion":"CA","postalCode":"95765","addressCountry":"US"},"areaServed":["Rocklin 95677","Roseville","Lincoln","Loomis","Granite Bay","Citrus Heights","Auburn","Antelope","Folsom","Orangevale","Newcastle","Penryn"],"medicalSpecialty":["UrgentCare","PrimaryCare","EmergencyMedicine"],"department":{"@type":"MedicalDepartment","name":"Minor Procedures"},"priceRange":"$"}
   </script>
   <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Service",
-    "name":"Minor Procedures at Urgent Care",
-    "serviceType":"Ambulatory Procedure",
-    "areaServed":["95677","Rocklin","Roseville","Lincoln","Loomis","Granite Bay","Citrus Heights","Auburn","Antelope","Folsom","Orangevale","Newcastle","Penryn"],
-    "provider":{"@type":"MedicalClinic","name":"urHealthcare"}
-  }
+  {"@context":"https://schema.org","@type":"Service","name":"Minor Procedures at Urgent Care","serviceType":"Ambulatory Procedure","areaServed":["95677","Rocklin","Roseville","Lincoln","Loomis","Granite Bay","Citrus Heights","Auburn","Antelope","Folsom","Orangevale","Newcastle","Penryn"],"provider":{"@type":"MedicalClinic","name":"urHealthcare"}}
   </script>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
     {"@type":"Question","name":"Do I need an appointment?","acceptedAnswer":{"@type":"Answer","text":"No—walk-ins welcome. For complex cases, calling ahead can help us prepare."}},
-    {"@type":"Question","name":"Do you accept insurance?","acceptedAnswer":{"@type":"Answer","text":"Yes. We accept most major insurances. See our insurance list. Copays/deductibles vary by plan."}},
-    {"@type":"Question","name":"How do you decide cash pricing?","acceptedAnswer":{"@type":"Answer","text":"Prices reflect procedure complexity, materials, and medications used. We provide an estimate before treatment."}},
+    {"@type":"Question","name":"Do you accept insurance?","acceptedAnswer":{"@type":"Answer","text":"Yes. We accept most major insurances. See our accepted insurance list. Copays/deductibles vary by plan."}},
+    {"@type":"Question","name":"How do you decide cash pricing?","acceptedAnswer":{"@type":"Answer","text":"Prices reflect procedure complexity, materials, and medications used. We provide an estimate before treatment and stay transparent."}},
     {"@type":"Question","name":"Can you do X-rays, splints, and stitches in the same visit?","acceptedAnswer":{"@type":"Answer","text":"Yes, when appropriate. We offer on-site X-ray ($75 cash), splints, wound closure, and follow-up care."}},
     {"@type":"Question","name":"What if I need a specialist or surgery?","acceptedAnswer":{"@type":"Answer","text":"We stabilize, treat, and coordinate timely referrals to in-network specialists when needed."}}
   ]}
   </script>
+
+  <!-- Dropdowns + footer year + reveal -->
+  <script>
+    // Services dropdown (mobile)
+    const servicesDD = document.getElementById('services-dd');
+    const servicesBtn = servicesDD?.querySelector('.dropbtn');
+    servicesBtn?.addEventListener('click', () => {
+      const open = servicesDD.classList.toggle('open');
+      servicesBtn.setAttribute('aria-expanded', String(open));
+    });
+
+    // Login dropdown
+    const loginBtn = document.getElementById('loginMenuButton');
+    const loginMenu = document.getElementById('loginMenu');
+    function closeLogin(){ loginMenu?.setAttribute('data-open','false'); loginBtn?.setAttribute('aria-expanded','false'); }
+    loginBtn?.addEventListener('click', (e) => {
+      const isOpen = loginMenu.getAttribute('data-open') === 'true';
+      loginMenu.setAttribute('data-open', String(!isOpen));
+      loginBtn.setAttribute('aria-expanded', String(!isOpen));
+      e.stopPropagation();
+    });
+    document.addEventListener('click', (e) => {
+      if (!loginMenu.contains(e.target) && !loginBtn.contains(e.target)) closeLogin();
+    });
+    document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeLogin(); });
+
+    // Footer year
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Reveal on scroll
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); } });
+    },{threshold:0.15});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  </script>
 </body>
 </html>
+
