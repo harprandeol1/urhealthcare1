@@ -3,377 +3,349 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Direct Primary Care (Unlimited Visits) | Rocklin 95677 | urHealthcare</title>
-  <meta name="description" content="Direct Primary Care in Rocklin 95677: unlimited visits, same/next-day access, included meds, labs, X-ray & minor procedures. Membership plans for individuals & families." />
-  <meta name="theme-color" content="#FFFFFF" />
+  <title>Direct Primary Care Membership | urHealthcare</title>
+  <meta name="description" content="Unlimited visits, same/next-day access, and transparent pricing. Membership plans for individuals & families in Rocklin 95677 and nearby." />
 
-  <!-- Fonts -->
+  <!-- Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
 
-  <!-- Global stylesheet (absolute URL + cache-buster) -->
-  <link rel="stylesheet" href="https://harprandeol1.github.io/urhealthcare1/assets/styles.css?v=8" />
-
-  <!-- Page styles -->
+  <!-- === Inspired-by layout (clean, airy, card-first) === -->
   <style>
     :root{
-      --brand:#0b3a83; --ink:#0e1a2f; --muted:#5a6780; --bg:#fff; --soft:#f6f9ff;
-      --border:#e6ebf3; --radius:18px; --shadow:0 10px 30px rgba(11,58,131,.08);
+      --brand:#0b3a83;
+      --brand-ink:#0e1a2f;
+      --ink:#112033;
+      --muted:#5a6780;
+      --soft:#f6f9ff;
+      --soft-sky:#e9f6ff;  /* sky section bg */
+      --card:#ffffff;
+      --border:#e6ebf2;
+      --radius:18px;
+      --radius-lg:22px;
+      --shadow:0 12px 32px rgba(12,40,90,.08);
+      --shadow-sm:0 4px 16px rgba(12,40,90,.08);
+      --focus:#93c5fd;
     }
+
+    /* Base */
     html{scroll-behavior:smooth}
-    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:var(--bg);color:var(--ink);line-height:1.75;font-size:17px}
-    h1,h2,h3{letter-spacing:-.02em;line-height:1.25;margin:.5em 0 .6em}
-    h1{font-size:clamp(32px,4vw,50px)} h2{font-size:clamp(26px,3vw,38px)} h3{font-size:22px}
-    p{margin:0 0 1.15em} a{color:var(--brand);text-decoration:none} a:hover{text-decoration:underline}
-    .muted{color:var(--muted)} .small{font-size:12px;color:var(--muted)}
-    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-    .container{max-width:1160px;margin:auto;padding:0 20px}
-    .section{padding:90px 0} .section.band{background:var(--soft)}
-    .badge{display:inline-block;font-size:12px;font-weight:800;border-radius:999px;padding:6px 10px;background:#eef3ff;color:#10346b;border:1px solid #dce6ff}
-    .btn{display:inline-block;padding:12px 18px;border-radius:999px;font-weight:800;background:var(--brand);color:#fff;box-shadow:var(--shadow);border:2px solid transparent}
-    .btn:hover{filter:brightness(.96)}
-    .btn.ghost,.btn.outline{background:#fff;color:var(--brand);border-color:var(--brand)}
-    .grid{display:grid;gap:28px}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;color:var(--ink);line-height:1.7;background:#fff}
+    h1,h2,h3{letter-spacing:-.02em;margin:.4em 0 .45em;line-height:1.2}
+    h1{font-size:clamp(36px,5vw,56px);font-weight:800}
+    h2{font-size:clamp(26px,3.2vw,40px);font-weight:800}
+    h3{font-size:clamp(19px,2vw,22px);font-weight:800}
+    p{margin:0 0 1.1em}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .muted{color:var(--muted)}
+    .small{font-size:12px;color:var(--muted)}
+    .container{max-width:1120px;margin:auto;padding:0 20px}
+    .section{padding:88px 0}
+    .section.sky{background:var(--soft-sky)}
+    .section.soft{background:var(--soft)}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px}
+    .card.soft{box-shadow:var(--shadow-sm)}
+    .grid{display:grid;gap:24px}
     .grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
     .grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
-    @media (max-width:900px){ .grid.two,.grid.three{grid-template-columns:1fr} }
-    .card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
-    .list-clean{margin:0 0 0 1em}
-    .price{font-size:32px;font-weight:900;color:var(--brand);margin:.25rem 0 .5rem}
+    @media (max-width:960px){ .grid.two,.grid.three{grid-template-columns:1fr} }
 
     /* Header */
     .hdr{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:1px solid var(--border)}
-    .hdr .container.nav{display:flex;align-items:center;gap:16px}
-    .logo{font-weight:800;font-size:24px;color:var(--brand);text-decoration:none}
-    .navlinks{margin-left:auto;display:flex;align-items:center;gap:12px}
-    .menu-btn{margin-left:12px;background:transparent;border:0;font-size:22px}
-    @media (max-width:720px){
+    .nav{display:flex;align-items:center;gap:14px;padding:14px 0}
+    .logo{font-weight:900;font-size:22px;color:var(--brand);text-decoration:none}
+    .navlinks{margin-left:auto;display:flex;gap:12px;align-items:center}
+    .navlinks a{font-weight:700;color:var(--brand-ink);padding:8px 10px;border-radius:10px}
+    .navlinks a:hover{background:#f3f6ff}
+    .menu-btn{display:none;background:transparent;border:0;font-size:22px;margin-left:auto}
+    @media (max-width:760px){
       .navlinks{display:none}
-      .menu-open .navlinks{display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:12px 0;margin-left:0}
+      .menu-open .navlinks{display:flex;flex-direction:column;align-items:flex-start;padding:10px 0}
+      .menu-btn{display:block}
     }
-    /* Services dropdown */
-    .dropdown{position:relative}
-    .dropbtn{background:transparent;border:0;padding:8px 10px;font:inherit;font-weight:600;color:#0b3a83;cursor:pointer;border-radius:8px}
-    .menu{
-      position:absolute; top:110%; left:0; min-width:280px; z-index:1000;
-      background:#b5e2ff; border:1px solid var(--border); border-radius:12px;
-      box-shadow:var(--shadow); padding:8px; list-style:none; margin:0; display:none;
+
+    /* Buttons */
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 18px;border-radius:999px;font-weight:900;background:var(--brand);color:#fff;border:2px solid transparent;box-shadow:var(--shadow-sm)}
+    .btn:hover{filter:brightness(.97)}
+    .btn.ghost{background:#fff;color:var(--brand);border-color:var(--brand)}
+    .btn.block{width:100%}
+
+    /* HERO */
+    .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:34px;align-items:center}
+    .hero img{width:100%;border-radius:var(--radius-lg);box-shadow:var(--shadow)}
+    .hero .kicker{display:inline-flex;align-items:center;gap:8px;background:#eef6ff;border:1px solid var(--border);color:#0b3a83;font-weight:800;border-radius:999px;padding:6px 10px}
+    .hero .question{font-size:clamp(22px,3.6vw,34px);font-weight:900;margin:.3rem 0 1rem}
+    .hero .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+
+    /* Pricing “row of cards” (sticky CTA feel) */
+    .pricing-head{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:10px}
+    .pilltabs{display:flex;gap:8px;background:#fff;border:1px solid var(--border);padding:6px;border-radius:999px}
+    .pilltabs button{border:0;background:transparent;font-weight:900;padding:10px 14px;border-radius:999px;cursor:pointer}
+    .pilltabs button.active{background:#0b3a83;color:#fff}
+    .price{font-size:34px;font-weight:900;color:var(--brand);margin:.25rem 0 .5rem}
+    .plan-card h3{margin-top:0}
+
+    /* Vertical note + zig-zag connector */
+    .v-note{
+      writing-mode:vertical-rl;text-orientation:mixed;
+      background:linear-gradient(180deg,#eaf3ff, #f8fcff);
+      border:1px solid var(--border); border-radius:14px; padding:16px 12px;
+      font-weight:800; color:#0b3a83; box-shadow:var(--shadow-sm);
+      position:absolute; left:-42px; top:14px;
     }
-    .menu .grid{display:grid;grid-template-columns:repeat(2,minmax(160px,1fr));gap:4px 8px}
-    .menu a{display:block;padding:8px 10px;border-radius:8px;color:#111;white-space:nowrap}
-    .menu a:hover{background:#f5f8ff}
-    .menu .all{border-top:1px solid var(--border);margin-top:6px;padding-top:6px}
-    .dropdown.open .menu{display:block !important}
-    @media(min-width:721px){ .dropdown:hover .menu, .dropdown:focus-within .menu{display:block} }
-    @media(max-width:720px){ .dropdown{width:100%} .menu{position:static;box-shadow:none;border:0;padding:0} }
-    /* Login dropdown */
-    .login-dd{position:relative}
-    .login-dd__button{display:inline-flex;align-items:center;gap:6px;background:var(--brand);color:#fff;border:none;padding:10px 16px;border-radius:12px;font-weight:800}
-    .login-dd__button::after{content:"▾";font-size:.9em}
-    .login-dd__menu{
-      position:absolute;right:0;top:calc(100% + 8px);min-width:220px;padding:6px;margin:0;list-style:none;
-      background:#fff;border:1px solid #e5e7eb;border-radius:12px;box-shadow:0 12px 28px rgba(0,0,0,.12);display:none;z-index:1000;
-    }
-    .login-dd__menu[data-open="true"]{display:block}
-    .login-dd__link{display:block;padding:10px 12px;border-radius:10px;color:#111;text-decoration:none;font-weight:700}
-    .login-dd__link:hover,.login-dd__link:focus{background:#f2f7ff;color:var(--brand);outline:none}
+    @media (max-width:960px){ .v-note{position:static;writing-mode:horizontal-tb;margin:8px 0} }
+    .connector{position:relative;height:120px;margin:-36px 0 6px}
+    .connector svg{width:100%;height:100%}
+    .connector path{fill:none;stroke:#0b3a83;stroke-width:2.6;stroke-linejoin:round;stroke-dasharray:10 12;opacity:.8;animation:dash 2.6s ease-in-out infinite}
+    @keyframes dash{to{stroke-dashoffset:-22}}
 
-    /* Reveal */
-    .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
-    .reveal.in{opacity:1;transform:none}
-    @media (prefers-reduced-motion: reduce){ .reveal, .reveal.in{opacity:1;transform:none;transition:none} }
+    /* Slow “pop-in” for Included grid */
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease, transform .7s ease}
+    .in{opacity:1;transform:none}
+    .pop:nth-child(1){transition-delay:.08s}.pop:nth-child(2){transition-delay:.16s}.pop:nth-child(3){transition-delay:.24s}
+    .pop:nth-child(4){transition-delay:.32s}.pop:nth-child(5){transition-delay:.40s}.pop:nth-child(6){transition-delay:.48s}
 
-    /* === HERO vertical note + zigzag connector === */
-    .hero-wrap{position:relative; display:grid; grid-template-columns:1.2fr .8fr; align-items:center; gap:34px}
-    @media(max-width:980px){ .hero-wrap{grid-template-columns:1fr} }
-    .hero-note{
-      writing-mode: vertical-rl;
-      text-orientation: mixed;
-      background:linear-gradient(180deg,#eaf3ff 0%,#f8fcff 100%);
-      border:1px solid var(--border);
-      border-radius:14px;
-      padding:18px 10px;
-      font-weight:700;
-      letter-spacing:.02em;
-      color:#0b3a83;
-      box-shadow:var(--shadow);
-      position:absolute; left:-38px; top:10px; z-index:2;
-    }
-    @media (max-width:980px){ .hero-note{position:static; writing-mode:horizontal-tb} }
+    /* WHY (left/right with divider) */
+    .why{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;background:#fff;box-shadow:var(--shadow)}
+    .why > div{padding:28px}
+    .why .left{border-right:1px dashed #cfe0ff}
+    @media (max-width:960px){ .why{grid-template-columns:1fr}.why .left{border-right:0;border-bottom:1px dashed #cfe0ff} }
 
-    .connector{position:relative; height:120px; margin:-40px 0 10px}
-    .connector svg{width:100%; height:100%}
-    .connector path{
-      fill:none; stroke:#0b3a83; stroke-width:2.5; stroke-linejoin:round;
-      stroke-dasharray:8 10; animation:dashMove 2.6s ease-in-out infinite;
-      opacity:.8;
-    }
-    @keyframes dashMove{ to{ stroke-dashoffset:-18 } }
+    /* Value chain (chips + arrows) */
+    .chain{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+    .chip{padding:10px 12px;border-radius:12px;background:#fff;border:1px solid var(--border);font-weight:800}
+    .arrow{width:22px;height:22px;border-right:3px solid #0b3a83;border-top:3px solid #0b3a83;transform:rotate(45deg);margin:0 2px}
 
-    /* “What’s Included” slow pop-ins */
-    .pop-slow{opacity:0; transform:translateY(16px) scale(.98); transition:opacity .8s ease, transform .8s ease}
-    .in .pop-slow{opacity:1; transform:none}
-    #included .grid.three > .card:nth-child(1){transition-delay:.08s}
-    #included .grid.three > .card:nth-child(2){transition-delay:.18s}
-    #included .grid.three > .card:nth-child(3){transition-delay:.28s}
-    #included .grid.three > .card:nth-child(4){transition-delay:.38s}
-    #included .grid.three > .card:nth-child(5){transition-delay:.48s}
-    #included .grid.three > .card:nth-child(6){transition-delay:.58s}
+    /* FAQ — big tabs + accordions */
+    .faq-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+    .faq-tabs .tab{border:1px solid var(--border);background:#fff;border-radius:12px;padding:10px 14px;font-weight:900;cursor:pointer}
+    .faq-tabs .tab[aria-selected="true"]{background:#0b3a83;color:#fff}
+    .faq-group{display:none}
+    .faq-group.active{display:block}
+    .faq details{background:#fff;border:1px solid var(--border);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow-sm)}
+    .faq details+details{margin-top:12px}
+    .faq summary{font-weight:900;color:#0b3a83;cursor:pointer;list-style:none}
+    .faq summary::-webkit-details-marker{display:none}
 
-    /* Bigger “Frustrated…” font if used as a question label */
-    .question .bubble{transform:scale(1.15)}
-    .question{font-size:clamp(18px,3.2vw,28px); font-weight:800}
-
-    /* FAQ — broader look */
-    .faq-wide details{
-      border:1px solid var(--border); border-radius:16px; padding:16px 18px; background:#fff;
-    }
-    .faq-wide details+details{margin-top:12px}
-    .faq-wide summary{
-      font-weight:800; font-size:clamp(16px,2.2vw,20px); color:#0b3a83; cursor:pointer; list-style:none;
-    }
-    .faq-wide summary::-webkit-details-marker{display:none}
-    .faq-wide p{margin-top:10px}
-    .faq-two{display:grid; grid-template-columns:1fr 1fr; gap:18px}
-    @media(max-width:900px){ .faq-two{grid-template-columns:1fr} }
-
-    /* Optional helper */
-    .skyblue{ background:#e0f7ff; }
+    /* Footer */
+    .ftr{background:#0b3a83;color:#fff;padding:28px 0;text-align:center}
+    .ftr a{color:#fff}
+    /* Focus states */
+    :focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:8px}
   </style>
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Direct Primary Care Membership | Rocklin 95677" />
-  <meta property="og:description" content="Unlimited visits, same/next-day access, included meds, labs, X-ray & procedures. Join online in minutes." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://harprandeol1.github.io/urhealthcare1/direct-primary-care.html" />
 </head>
+
 <body>
   <!-- Header -->
   <header class="hdr">
     <div class="container nav">
       <a class="logo" href="index.html">urHealthcare</a>
-
       <nav class="navlinks" aria-label="Primary">
-        <div class="dropdown" id="services-dd">
-          <button class="dropbtn" type="button" aria-expanded="false" aria-controls="menu-services">Services ▾</button>
-          <div id="menu-services" class="menu" role="menu">
-            <div class="grid">
-              <a href="primary-care.html" role="menuitem">Primary Care</a>
-              <a href="urgent-care.html" role="menuitem">Urgent Care</a>
-              <a href="x-ray.html" role="menuitem">X-ray</a>
-              <a href="labs.html" role="menuitem">Labs</a>
-              <a href="ultrasound.html" role="menuitem">Ultrasound</a>
-              <a href="minor-procedures.html" role="menuitem">Minor Procedures</a>
-              <a href="virtual-care.html" role="menuitem">Virtual Care</a>
-              <a href="included-meds.html" role="menuitem">Medications</a>
-            </div>
-            <div class="all"><a href="index.html#services">View all services →</a></div>
-          </div>
-        </div>
-
-        <a href="direct-primary-care.html" aria-current="page">Membership</a>
+        <a href="primary-care.html">Primary Care</a>
+        <a href="urgent-care.html">Urgent Care</a>
+        <a href="included-meds.html">Medications</a>
+        <a href="labs.html">Labs</a>
+        <a href="x-ray.html">X-ray</a>
+        <a href="minor-procedures.html">Procedures</a>
         <a href="employers.html">Employers</a>
         <a href="faq.html">FAQ</a>
-
-        <!-- LOGIN DROPDOWN -->
-        <div class="login-dd">
-          <button class="login-dd__button" id="loginMenuButton" aria-haspopup="menu" aria-expanded="false" aria-controls="loginMenu">Login</button>
-          <ul class="login-dd__menu" id="loginMenu" role="menu" aria-labelledby="loginMenuButton">
-            <li role="none"><a role="menuitem" href="https://urhealthcare.hint.com/login/request" class="login-dd__link">Membership Login</a></li>
-            <li role="none"><a role="menuitem" href="https://www.onpatient.com/login/" class="login-dd__link">OnPatient Login</a></li>
-          </ul>
-        </div>
       </nav>
-
       <button class="menu-btn" aria-label="Menu" onclick="document.body.classList.toggle('menu-open')">☰</button>
     </div>
   </header>
 
-  <!-- Hero -->
+  <!-- HERO (big question, OneMedical-like airiness) -->
   <section class="section">
-    <div class="container hero-wrap">
-      <div class="reveal in" style="position:relative">
-        <span class="badge">Direct Primary Care • Rocklin, CA 95677</span>
-        <h1>Direct Primary Care That Puts You First</h1>
-
-        <!-- vertical ribbon text -->
-        <div class="hero-note" aria-hidden="true">
-          Unlimited visits • same/next-day access • transparent pricing • Rocklin • Roseville • Lincoln
+    <div class="container">
+      <div class="hero" style="position:relative">
+        <div>
+          <span class="kicker">Direct Primary Care • Rocklin 95677</span>
+          <div class="question">Frustrated with rising health costs and poor access?</div>
+          <h1>Direct Primary Care that puts you first</h1>
+          <!-- Vertical ribbon on desktop -->
+          <div class="v-note" aria-hidden="true">Unlimited visits • same/next-day • transparent pricing</div>
+          <p class="muted">Unlimited visits, same/next-day access, and transparent pricing. Serving Rocklin, Roseville, Lincoln, and nearby communities.</p>
+          <div class="cta">
+            <a class="btn" href="https://urhealthcare.hint.com/signup/membership/contacts?=">Join Online</a>
+            <a class="btn ghost" href="#plans">See Plans</a>
+          </div>
         </div>
-        <!-- screen-reader copy -->
-        <p class="muted"><span class="sr-only">Unlimited visits, same/next-day access, and transparent pricing. Serving Rocklin, Roseville, Lincoln, and nearby communities.</span></p>
-
-        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
-          <a class="btn" href="https://urhealthcare.hint.com/signup/membership/contacts?=">Join Online</a>
-          <a class="btn ghost" href="#plans">See Plans</a>
-        </div>
+        <img src="assets/img/hero-dpc.jpg" alt="Friendly clinician greeting a member at check-in">
       </div>
-
-      <img src="assets/img/hero-dpc.jpg" alt="Doctor and patient smiling" class="reveal">
     </div>
   </section>
 
-  <!-- Pricing moved directly after hero -->
-  <hr style="border:0;height:1px;background:var(--border);margin:0">
-  <section id="plans" class="section">
+  <!-- PRICING directly after hero (clean tabbed cards) -->
+  <section id="plans" class="section sky">
     <div class="container">
-      <h2 class="reveal">Membership Pricing</h2>
-      <div class="reveal" style="margin-bottom:10px">
-        <div role="tablist" aria-label="Billing period" style="display:flex;gap:10px;flex-wrap:wrap">
-          <button id="tab-monthly" class="btn outline" role="tab" aria-selected="true">Monthly</button>
-          <button id="tab-yearly" class="btn ghost" role="tab" aria-selected="false">Yearly (Save more)</button>
+      <div class="pricing-head">
+        <h2>Membership pricing</h2>
+        <div class="pilltabs" role="tablist" aria-label="Billing period">
+          <button id="tab-monthly" class="active" role="tab" aria-selected="true">Monthly</button>
+          <button id="tab-yearly" role="tab" aria-selected="false">Yearly (Save more)</button>
         </div>
       </div>
 
-      <!-- Monthly -->
       <div id="prices-monthly" class="grid three" aria-labelledby="tab-monthly">
-        <div class="card reveal"><h3>Individual</h3><div class="price">$79/mo</div><p>Unlimited care, same/next-day access.</p><a class="btn" href="https://urhealthcare.hint.com/signup/membership/contacts?=">Join Online</a></div>
-        <div class="card reveal"><h3>Spouse</h3><div class="price">$50/mo</div><p>Add a partner anytime.</p><a class="btn" href="https://urhealthcare.hint.com/signup/membership/contacts?=">Add Spouse</a></div>
-        <div class="card reveal"><h3>Child (5+)</h3><div class="price">$30/mo</div><p>Pediatric sick & well visits.</p><a class="btn" href="https://urhealthcare.hint.com/signup/membership/contacts?=">Add Child</a></div>
+        <div class="card plan-card">
+          <h3>Individual</h3>
+          <div class="price">$79/mo</div>
+          <p>Unlimited primary & urgent care, same/next-day access.</p>
+          <a class="btn block" href="https://urhealthcare.hint.com/signup/membership/contacts?=">Join Individual</a>
+        </div>
+        <div class="card plan-card">
+          <h3>Spouse</h3>
+          <div class="price">$50/mo</div>
+          <p>Add a partner anytime.</p>
+          <a class="btn block" href="https://urhealthcare.hint.com/signup/membership/contacts?=">Add Spouse</a>
+        </div>
+        <div class="card plan-card">
+          <h3>Child (5+)</h3>
+          <div class="price">$30/mo</div>
+          <p>Pediatric sick & well visits.</p>
+          <a class="btn block" href="https://urhealthcare.hint.com/signup/membership/contacts?=">Add Child</a>
+        </div>
       </div>
 
-      <!-- Yearly -->
       <div id="prices-yearly" class="grid three" aria-labelledby="tab-yearly" style="display:none">
-        <div class="card reveal"><h3>Individual</h3><div class="price">$599/yr</div><p>Pay once, save vs. monthly.</p><a class="btn" href="https://urhealthcare.hint.com/signup/membership/contacts?=">Join Yearly</a></div>
-        <div class="card reveal"><h3>Spouse</h3><div class="price">$499/yr</div><p>Spouse membership, billed yearly.</p><a class="btn" href="https://urhealthcare.hint.com/signup/membership/contacts?=">Add Spouse Yearly</a></div>
-        <div class="card reveal"><h3>Child (5+)</h3><div class="price">$199/yr</div><p>Child membership, billed yearly.</p><a class="btn" href="https://urhealthcare.hint.com/signup/membership/contacts?=">Add Child Yearly</a></div>
+        <div class="card plan-card">
+          <h3>Individual</h3>
+          <div class="price">$599/yr</div>
+          <p>Pay once, save vs. monthly.</p>
+          <a class="btn block" href="https://urhealthcare.hint.com/signup/membership/contacts?=">Join Individual (Yearly)</a>
+        </div>
+        <div class="card plan-card">
+          <h3>Spouse</h3>
+          <div class="price">$499/yr</div>
+          <p>Yearly partner membership.</p>
+          <a class="btn block" href="https://urhealthcare.hint.com/signup/membership/contacts?=">Add Spouse (Yearly)</a>
+        </div>
+        <div class="card plan-card">
+          <h3>Child (5+)</h3>
+          <div class="price">$199/yr</div>
+          <p>Yearly pediatric membership.</p>
+          <a class="btn block" href="https://urhealthcare.hint.com/signup/membership/contacts?=">Add Child (Yearly)</a>
+        </div>
       </div>
 
-      <p class="small" style="margin-top:12px">Specialty and hospital services are outside the DPC fee. Plan available for patients <strong>65 years and younger</strong>.</p>
+      <p class="small" style="margin-top:10px">Specialty and hospital services are outside the DPC fee. Plan available for patients <strong>65 years and younger</strong>.</p>
     </div>
   </section>
 
-  <!-- What is DPC -->
-  <section id="about" class="section">
+  <!-- INCLUDED (slow pop-ups) -->
+  <section id="included" class="section soft">
     <div class="container">
-      <h2 class="reveal">What is Direct Primary Care?</h2>
-      <p class="reveal">Direct Primary Care (DPC) is a modern, patient-centered approach that removes insurance middlemen so you can focus on your health with your doctor. Instead of paying for each visit, you join through a simple <strong>monthly membership</strong> that covers unlimited access to primary and urgent care.</p>
-    </div>
-  </section>
-
-  <!-- What's Included (slow pop-ins) -->
-  <section id="included" class="section band">
-    <div class="container">
-      <h2 class="reveal">What’s Included at urHealthcare</h2>
+      <h2>What’s included at urHealthcare</h2>
       <div class="grid three">
-        <div class="card reveal pop-slow"><h3>Primary Care</h3><p>Preventive, chronic, and acute care with the provider you choose.</p></div>
-        <div class="card reveal pop-slow"><h3>7-Day Urgent Care</h3><p>Walk-in or virtual care for common illnesses & injuries.</p></div>
-        <div class="card reveal pop-slow"><h3>250+ Medications</h3><p>Included at no extra cost. <a href="included-meds.html">See list</a>.</p></div>
-        <div class="card reveal pop-slow"><h3>Labs</h3><p>Routine panels and rapid tests.</p></div>
-        <div class="card reveal pop-slow"><h3>Imaging</h3><p>On-site X-ray & ultrasound for faster diagnosis.</p></div>
-        <div class="card reveal pop-slow"><h3>Procedures</h3><p>Stitches, splints, abscess drainage, and more.</p></div>
+        <div class="card soft reveal pop"><h3>Primary Care</h3><p>Preventive, chronic, and acute care with the provider you choose.</p></div>
+        <div class="card soft reveal pop"><h3>7-Day Urgent Care</h3><p>Walk-in or virtual for common illnesses & injuries.</p></div>
+        <div class="card soft reveal pop"><h3>250+ Medications</h3><p>Included at no extra cost. <a href="included-meds.html">See list</a>.</p></div>
+        <div class="card soft reveal pop"><h3>Labs</h3><p>Routine panels and rapid tests.</p></div>
+        <div class="card soft reveal pop"><h3>Imaging</h3><p>On-site X-ray & ultrasound for faster diagnosis.</p></div>
+        <div class="card soft reveal pop"><h3>Procedures</h3><p>Stitches, splints, abscess drainage, and more.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- Zigzag connector to Why Patients Choose -->
+  <!-- Zig-zag connector to WHY -->
   <div class="connector" aria-hidden="true">
-    <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-      <path d="M5,5 L25,25 L45,5 L65,25 L85,5 L95,15 L80,35 L95,55 L75,75 L95,95" />
-    </svg>
+    <svg viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M5,5 L25,25 L45,5 L65,25 L85,5 L95,15 L80,35 L95,55 L75,75 L95,95" /></svg>
   </div>
 
-  <!-- Why Patients Choose -->
+  <!-- WHY (two columns with dashed divider; OneMedical-like clarity) -->
   <section class="section">
     <div class="container">
-      <h2 class="reveal">Why Patients Choose Direct Care</h2>
-      <div class="card reveal">
-        <div class="grid two">
-          <div>
-            <h3>Transparent Pricing</h3><p>Predictable monthly fees with no copays or deductibles.</p>
-            <h3>Better Access</h3><p>Same/next-day appointments and 7-day urgent care.</p>
-          </div>
-          <div>
-            <h3>Whole-Person Health</h3><p>Wellness built into every visit—nutrition, sleep, stress.</p>
-            <h3>Continuity & Trust</h3><p>Build strong relationships with your provider.</p>
-          </div>
+      <h2>Why patients choose direct care</h2>
+      <div class="why">
+        <div class="left">
+          <h3>Transparent pricing</h3>
+          <p>Predictable monthly fees with no copays or deductibles.</p>
+          <h3>Better access</h3>
+          <p>Same/next-day appointments and 7-day urgent care.</p>
+        </div>
+        <div class="right">
+          <h3>Whole-person health</h3>
+          <p>Wellness built into every visit—nutrition, sleep, stress.</p>
+          <h3>Continuity & trust</h3>
+          <p>Build strong, long-term relationships with your provider.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Why Different -->
-  <section class="section band">
+  <!-- Value chain with arrows (easy to scan) -->
+  <section class="section sky">
     <div class="container">
-      <h2 class="reveal">Why It’s Different</h2>
-      <p class="reveal">In traditional healthcare, insurance companies often dictate how doctors practice—limiting time with patients and inflating costs. Direct Primary Care flips that model: your membership is a direct relationship with your doctor.</p>
+      <h2>Lower costs. Better access. Happier teams.</h2>
+      <div class="chain" aria-label="Value chain">
+        <span class="chip">Unlimited primary care</span><span class="arrow"></span>
+        <span class="chip">Fewer ER/urgent claims</span><span class="arrow"></span>
+        <span class="chip">Same/next-day visits</span><span class="arrow"></span>
+        <span class="chip">Higher productivity</span><span class="arrow"></span>
+        <span class="chip">Lower total spend</span>
+      </div>
     </div>
   </section>
 
-  <!-- Pairing -->
+  <!-- Pair DPC + HDHP -->
   <section class="section">
     <div class="container">
-      <h2 class="reveal">Pair DPC with High-Deductible or Catastrophic Insurance</h2>
-      <p class="reveal">We help you <strong>combine your DPC membership</strong> with a high-deductible (HDHP) or catastrophic insurance plan to cover specialty, hospital, or emergency needs.</p>
-      <div class="card reveal">
-        <ul class="list-clean">
-          <li><strong>Lower total cost:</strong> Many members see premiums and overall healthcare costs go down by <strong>~20–25%</strong> when pairing DPC with an HDHP.</li>
-          <li><strong>Coverage for the rare stuff:</strong> About <strong>95% of everyday care</strong> is primary care—we take care of that directly. Catastrophic/HDHP plans handle the bigger, rarer events.</li>
-          <li><strong>We’ll guide you:</strong> Our team can walk you through options so your plan fits your health and budget.</li>
+      <h2>Pair DPC with a high-deductible or catastrophic plan</h2>
+      <div class="card">
+        <ul style="margin:0 0 0 1.1em">
+          <li><strong>Lower total cost:</strong> Many members see overall costs go down by <strong>~20–25%</strong> when pairing DPC with an HDHP.</li>
+          <li><strong>Cover the rare stuff:</strong> DPC handles ~95% of everyday care; HDHP covers the bigger, rarer events.</li>
+          <li><strong>We guide you:</strong> We’ll help match options to your needs and budget.</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- Who Benefits -->
-  <section id="benefits" class="section band">
+  <!-- FAQ (broad tabs like sections) -->
+  <section class="section soft" id="faq">
     <div class="container">
-      <h2 class="reveal">Who Benefits from DPC?</h2>
-      <div class="grid three">
-        <div class="card reveal"><h3>Individuals & Families</h3><p>Affordable, predictable costs with unlimited access.</p></div>
-        <div class="card reveal"><h3>Employers</h3><p>Lower healthcare costs while offering better access.</p></div>
-        <div class="card reveal"><h3>Chronic Conditions</h3><p>Ongoing support without worrying about per-visit charges.</p></div>
+      <h2>FAQ</h2>
+      <div class="faq-tabs" role="tablist" aria-label="FAQ categories">
+        <button class="tab" data-target="faq-general" role="tab" aria-selected="true">General</button>
+        <button class="tab" data-target="faq-billing" role="tab" aria-selected="false">Billing</button>
+        <button class="tab" data-target="faq-coverage" role="tab" aria-selected="false">Coverage</button>
       </div>
-    </div>
-  </section>
 
-  <!-- FAQ (broader + more questions) -->
-  <section class="section band" id="faq">
-    <div class="container">
-      <h2 class="reveal">FAQ</h2>
-
-      <div class="faq-two faq-wide">
-        <div>
-          <details class="reveal"><summary>Is DPC the same as health insurance?</summary>
-            <p>No. DPC covers primary & urgent care (including many meds/labs/procedures). Specialty, hospital, surgery, and ER are outside the membership and typically handled by your insurance.</p>
+      <div class="faq">
+        <div id="faq-general" class="faq-group active" role="region" aria-labelledby="General">
+          <details><summary>Is DPC the same as insurance?</summary>
+            <p>No. DPC covers primary & urgent care (many meds/labs/procedures). Specialty, hospital, surgery, and ER are outside the membership and typically handled by insurance.</p>
           </details>
-
-          <details class="reveal"><summary>Are medications included?</summary>
-            <p>Yes. Our <a href="included-meds.html">covered list</a> is included at no extra cost for members.</p>
+          <details><summary>Do you offer telehealth and after-hours help?</summary>
+            <p>Yes—same/next-day video visits and 7-day urgent care. After-hours messaging guides next steps for urgent issues.</p>
           </details>
-
-          <details class="reveal"><summary>Do you do telehealth and after-hours?</summary>
-            <p>Yes. We offer same/next-day video visits and 7-day urgent care access. After-hours messaging helps guide next steps for urgent needs.</p>
-          </details>
-
-          <details class="reveal"><summary>Can I keep my specialists?</summary>
-            <p>Absolutely. We coordinate referrals and share records; you can continue seeing your existing specialists.</p>
-          </details>
-
-          <details class="reveal"><summary>Is there an age limit?</summary>
-            <p>Membership is available for patients <strong>65 years and younger</strong>.</p>
+          <details><summary>Can kids join? What ages?</summary>
+            <p>Yes, ages 5+. Pediatric sick & well visits are included. Vaccinations may be billed separately if obtained externally.</p>
           </details>
         </div>
 
-        <div>
-          <details class="reveal"><summary>How do billing & cancellations work?</summary>
-            <p>Membership is billed monthly or yearly. You can cancel anytime before your next billing cycle—no long-term contract.</p>
+        <div id="faq-billing" class="faq-group" role="region" aria-labelledby="Billing">
+          <details><summary>How do billing and cancellations work?</summary>
+            <p>Choose monthly or yearly. Cancel anytime before your next billing cycle—no long-term contract.</p>
           </details>
-
-          <details class="reveal"><summary>Do you accept HSA/FSA?</summary>
-            <p><strong>Yes — effective January 2026</strong> DPC will be HSA-eligible (confirm with your tax advisor/plan). FSA cards are commonly accepted for eligible services.</p>
+          <details><summary>Is the membership HSA/FSA eligible?</summary>
+            <p><strong>Yes—effective January 2026</strong> DPC is HSA-eligible (confirm with your tax advisor/plan). FSA cards are commonly accepted for eligible services.</p>
           </details>
-
-          <details class="reveal"><summary>What if I’m traveling or move?</summary>
-            <p>Telehealth can help for many needs while traveling. If you move out of area, you can cancel or ask us for a handoff to a nearby DPC clinic.</p>
+          <details><summary>Can I switch between monthly and yearly?</summary>
+            <p>Yes—contact us to switch before your next billing date.</p>
           </details>
+        </div>
 
-          <details class="reveal"><summary>Can kids join? What ages?</summary>
-            <p>Yes, ages 5+. Pediatric sick/well visits are included. Vaccinations may be billed separately if obtained externally.</p>
+        <div id="faq-coverage" class="faq-group" role="region" aria-labelledby="Coverage">
+          <details><summary>Are medications included?</summary>
+            <p>Yes—our <a href="included-meds.html">covered list</a> is included at no extra cost for members.</p>
           </details>
-
-          <details class="reveal"><summary>How do I sign up?</summary>
-            <p>Join online in minutes: <a href="https://urhealthcare.hint.com/signup/membership/contacts?=">Start here</a>.</p>
+          <details><summary>Do you coordinate referrals and imaging?</summary>
+            <p>Yes—we coordinate specialists and advanced imaging and help navigate in-network options.</p>
+          </details>
+          <details><summary>Is there an age limit?</summary>
+            <p>Membership is available for patients <strong>65 years and younger</strong>.</p>
           </details>
         </div>
       </div>
@@ -381,136 +353,52 @@
   </section>
 
   <!-- Footer -->
-  <footer class="ftr" style="background:#0b3a83; color:#fff; padding:20px 0; text-align:center;">
+  <footer class="ftr">
     <div class="container">
-      <nav>
-        <a href="index.html" style="color:#fff; margin:0 10px; text-decoration:none;">Home</a> |
-        <a href="primary-care.html" style="color:#fff; margin:0 10px; text-decoration:none;">Primary Care</a> |
-        <a href="urgent-care.html" style="color:#fff; margin:0 10px; text-decoration:none;">Urgent Care</a> |
-        <a href="health-plans.html" style="color:#fff; margin:0 10px; text-decoration:none;">Health Plans</a> |
-        <a href="faq.html" style="color:#fff; margin:0 10px; text-decoration:none;">FAQ</a> |
-        <a href="business.html" style="color:#fff; margin:0 10px; text-decoration:none;">For Business</a> |
-        <a href="contact.html" style="color:#fff; margin:0 10px; text-decoration:none;">Contact</a>
-      </nav>
-      <p style="margin-top:15px;">
-        <strong>Address:</strong> 6839 Five Star Blvd, Suite D, Rocklin, CA<br>
-        <strong>Phone:</strong> <a href="tel:19169642001" style="color:#fff;">916-964-2001</a> •
-        <strong>Email:</strong> <a href="mailto:info@urhealthcare.org" style="color:#fff;">info@urhealthcare.org</a>
-      </p>
-      <p style="margin-top:10px;">© <span id="y"></span> urHealthcare. All rights reserved.</p>
+      <p><strong>urHealthcare</strong> • 6839 Five Star Blvd, Suite D, Rocklin, CA • <a href="tel:+19169642001">916-964-2001</a> • <a href="mailto:info@urhealthcare.org">info@urhealthcare.org</a></p>
+      <p class="small" style="margin-top:6px">© <span id="y"></span> urHealthcare. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- JSON-LD: Clinic -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"MedicalClinic",
-    "name":"urHealthcare — Direct Primary Care",
-    "url":"https://harprandeol1.github.io/urhealthcare1/direct-primary-care.html",
-    "telephone":"+1-916-964-2001",
-    "address":{
-      "@type":"PostalAddress",
-      "streetAddress":"6839 Five Star Blvd, Suite D",
-      "addressLocality":"Rocklin",
-      "addressRegion":"CA",
-      "postalCode":"95677",
-      "addressCountry":"US"
-    },
-    "medicalSpecialty":["PrimaryCare","UrgentCare"],
-    "areaServed":["Rocklin 95677","Roseville","Lincoln","Loomis","Granite Bay"],
-    "priceRange":"$$"
-  }
-  </script>
-
-  <!-- JSON-LD: Service -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Service",
-    "name":"Direct Primary Care Membership",
-    "serviceType":"PrimaryCareMembership",
-    "areaServed":["95677","Rocklin","Roseville","Lincoln","Loomis","Granite Bay"],
-    "provider":{"@type":"MedicalClinic","name":"urHealthcare"},
-    "offers":[
-      {"@type":"Offer","priceCurrency":"USD","price":"79","category":"monthly","url":"https://urhealthcare.hint.com/signup/membership/contacts?="},
-      {"@type":"Offer","priceCurrency":"USD","price":"599","category":"yearly","url":"https://urhealthcare.hint.com/signup/membership/contacts?="}
-    ]
-  }
-  </script>
-
-  <!-- JSON-LD: FAQ -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "mainEntity":[
-      {"@type":"Question","name":"Is DPC the same as health insurance?","acceptedAnswer":{"@type":"Answer","text":"No. DPC covers primary and urgent care, many medications, basic labs, and minor procedures. Specialty and hospital services are outside the membership. Most members pair DPC with a high-deductible or catastrophic insurance plan."}},
-      {"@type":"Question","name":"Are medications included?","acceptedAnswer":{"@type":"Answer","text":"Yes. Medications on our covered list are provided at no extra cost and included in the membership."}},
-      {"@type":"Question","name":"Do you do telehealth and after-hours?","acceptedAnswer":{"@type":"Answer","text":"Yes. We offer same/next-day video visits and 7-day urgent care access. After-hours messaging helps guide next steps for urgent needs."}},
-      {"@type":"Question","name":"Can I keep my specialists?","acceptedAnswer":{"@type":"Answer","text":"Yes. We coordinate referrals and share records; you can continue seeing your existing specialists."}},
-      {"@type":"Question","name":"Is there an age limit?","acceptedAnswer":{"@type":"Answer","text":"Yes. This membership is available to patients 65 years and younger."}},
-      {"@type":"Question","name":"How do billing & cancellations work?","acceptedAnswer":{"@type":"Answer","text":"Membership is billed monthly or yearly. You can cancel anytime before your next billing cycle—no long-term contract."}},
-      {"@type":"Question","name":"Do you accept HSA/FSA?","acceptedAnswer":{"@type":"Answer","text":"Yes—effective January 2026 DPC will be HSA-eligible (confirm with your tax advisor/plan). FSA cards are commonly accepted for eligible services."}},
-      {"@type":"Question","name":"What if I’m traveling or move?","acceptedAnswer":{"@type":"Answer","text":"Telehealth can help for many needs while traveling. If you move out of area, you can cancel or ask us for a handoff to a nearby DPC clinic."}},
-      {"@type":"Question","name":"Can kids join? What ages?","acceptedAnswer":{"@type":"Answer","text":"Yes, ages 5+. Pediatric sick/well visits are included. Vaccinations may be billed separately if obtained externally."}},
-      {"@type":"Question","name":"How do I sign up?","acceptedAnswer":{"@type":"Answer","text":"Join online in minutes at the link above."}}
-    ]
-  }
-  </script>
-
   <!-- Scripts -->
   <script>
-    // Reveal
+    // Intersection-based reveal
     const io = new IntersectionObserver((entries)=>{
       entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); } });
     },{threshold:0.15});
     document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-    // Services dropdown (mobile/desktop toggle)
-    const servicesDD = document.getElementById('services-dd');
-    const servicesBtn = servicesDD?.querySelector('.dropbtn');
-    servicesBtn?.addEventListener('click', () => {
-      const open = servicesDD.classList.toggle('open');
-      servicesBtn.setAttribute('aria-expanded', String(open));
-    });
-
-    // Login dropdown
-    const loginBtn = document.getElementById('loginMenuButton');
-    const loginMenu = document.getElementById('loginMenu');
-    function closeLogin(){ loginMenu?.setAttribute('data-open','false'); loginBtn?.setAttribute('aria-expanded','false'); }
-    loginBtn?.addEventListener('click', (e) => {
-      const isOpen = loginMenu.getAttribute('data-open') === 'true';
-      loginMenu.setAttribute('data-open', String(!isOpen));
-      loginBtn.setAttribute('aria-expanded', String(!isOpen));
-      e.stopPropagation();
-    });
-    document.addEventListener('click', (e) => {
-      if (!loginMenu.contains(e.target) && !loginBtn.contains(e.target)) closeLogin();
-    });
-    document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeLogin(); });
-
-    // Footer year
-    const yEl = document.getElementById('y'); if (yEl) yEl.textContent = new Date().getFullYear();
-
-    // Pricing tabs
+    // Tabs (pricing)
     const tabM = document.getElementById('tab-monthly');
     const tabY = document.getElementById('tab-yearly');
     const monthly = document.getElementById('prices-monthly');
     const yearly  = document.getElementById('prices-yearly');
-    function setTab(which){
+    function setPricing(which){
       const isYearly = which === 'yearly';
       monthly.style.display = isYearly ? 'none' : '';
       yearly.style.display  = isYearly ? '' : 'none';
-      tabM.classList.toggle('outline', !isYearly);
-      tabM.classList.toggle('ghost', isYearly);
-      tabY.classList.toggle('outline', isYearly);
-      tabY.classList.toggle('ghost', !isYearly);
+      tabM.classList.toggle('active', !isYearly);
       tabM.setAttribute('aria-selected', String(!isYearly));
+      tabY.classList.toggle('active', isYearly);
       tabY.setAttribute('aria-selected', String(isYearly));
     }
-    tabM?.addEventListener('click', ()=>setTab('monthly'));
-    tabY?.addEventListener('click', ()=>setTab('yearly'));
+    tabM?.addEventListener('click', ()=>setPricing('monthly'));
+    tabY?.addEventListener('click', ()=>setPricing('yearly'));
+
+    // FAQ big tabs
+    const faqTabs = document.querySelectorAll('.faq-tabs .tab');
+    const groups = document.querySelectorAll('.faq-group');
+    faqTabs.forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        faqTabs.forEach(b=>b.setAttribute('aria-selected','false'));
+        btn.setAttribute('aria-selected','true');
+        const target = btn.dataset.target;
+        groups.forEach(g=>g.classList.toggle('active', g.id===target));
+      });
+    });
+
+    // Footer year
+    const y = document.getElementById('y'); if (y) y.textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
