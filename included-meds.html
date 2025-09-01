@@ -3,99 +3,118 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>urHealthcare — Primary & Urgent Care in Sacramento Metro</title>
-  <meta name="description" content="Direct primary & urgent care. Unlimited visits, 7-day urgent care, 250+ meds included, x-ray, labs, ultrasound, and minor procedures." />
-  <meta name="theme-color" content="##FFFFFF" />
+  <title>In-House Medications (250+): Rocklin 95677 | urHealthcare</title>
+  <meta name="description" content="In-house medications dispensed at urHealthcare in Rocklin 95677. Same-day access to common antibiotics, respiratory/allergy meds, blood pressure, cholesterol, diabetes, GI, dermatology, eye/ear, and more. Major insurances accepted, plus Direct Primary Care membership." />
+  <meta name="theme-color" content="#FFFFFF" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
 
-  <!-- Always-works stylesheet for GitHub Pages (absolute URL + cache-buster) -->
-  <link rel="stylesheet" href="https://harprandeol1.github.io/urhealthcare1/assets/styles.css?v=5" />
+  <!-- Global stylesheet (absolute URL + cache-buster) -->
+  <link rel="stylesheet" href="https://harprandeol1.github.io/urhealthcare1/assets/styles.css?v=8" />
 
-  <!-- Page/transition extras -->
+  <!-- Local hardening styles so header changes don't break this page -->
   <style>
-    /* ===== Scroll-snap “slides” + reveal transitions ===== */
-    :root { --hdrH: 72px; }
-    html, body { height: 100%; scroll-behavior: smooth; }
-    /* pad for fixed headers (if any) when snapping or using #anchors */
-    main.snap { scroll-snap-type: y mandatory; scroll-padding-top: var(--hdrH); overscroll-behavior-y: contain; }
-    section.slide { 
-      scroll-snap-align: start; 
-      min-height: calc(100vh - var(--hdrH)); 
-      padding-block: clamp(56px, 10vh, 128px);   /* clear space in every section */
+    :root{
+      --brand:#0b3a83; --ink:#0e1a2f; --muted:#5a6780; --bg:#ffffff; --bg-soft:#f6f9ff;
+      --border:#e6ebf3; --radius:18px; --shadow:0 10px 30px rgba(11,58,131,.08);
+      --accent1:#eef5ff; --accent2:#f0fbf4; --accent3:#fff7f0; --accent4:#fff1f1;
     }
-    /* soft separators so the transition feels like a new page */
-    section.slide:not(:first-of-type) { border-top: 1px solid rgba(0,0,0,.04); }
-    /* content reveal on enter */
-    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
-    .in .reveal { opacity: 1; transform: none; }
-    /* reduced motion preference */
-    @media (prefers-reduced-motion: reduce) {
-      main.snap { scroll-snap-type: none; }
-      .reveal, .in .reveal { opacity: 1; transform: none; transition: none; }
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:var(--bg);color:var(--ink);line-height:1.75;font-size:17px}
+    h1,h2,h3{letter-spacing:-.02em;line-height:1.25;margin:.5em 0 .6em}
+    h1{font-size:clamp(32px,4vw,50px)} h2{font-size:clamp(26px,3vw,38px)} h3{font-size:22px}
+    p{margin:0 0 1.15em} a{color:var(--brand);text-decoration:none} a:hover{text-decoration:underline}
+    .muted{color:var(--muted)} .small{font-size:12px;color:var(--muted)}
+    .container{max-width:1160px;margin:auto;padding:0 20px}
+    .section{padding:90px 0} .section.band{background:var(--bg-soft)}
+    .badge{display:inline-block;font-size:12px;font-weight:800;border-radius:999px;padding:6px 10px;background:#eef3ff;color:#10346b;border:1px solid #dce6ff}
+    .btn{display:inline-block;padding:12px 18px;border-radius:999px;font-weight:800;background:var(--brand);color:#fff;box-shadow:var(--shadow);border:2px solid transparent}
+    .btn:hover{filter:brightness(.96)}
+    .btn.ghost,.btn.outline{background:#fff;color:var(--brand);border-color:var(--brand)}
+    .pill{display:inline-block;padding:8px 12px;border-radius:999px;background:#eef3ff;border:1px solid #dce6ff;font-weight:700;margin:6px 6px 0 0}
+    .toolbox{margin-top:18px}
+    .search{width:100%;max-width:720px;padding:14px 16px;border:1px solid var(--border);border-radius:999px;font-size:16px;background:#fff;box-shadow:var(--shadow)}
+    .filters{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+    .chip{border:1px solid var(--border);background:#fff;padding:8px 12px;border-radius:999px;font-weight:700;cursor:pointer}
+    .chip[data-active="true"]{background:#f2f7ff;border-color:#c9dcff}
+    .grid{display:grid;gap:28px}
+    .card,.soft{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+    .soft.a1{background:var(--accent1)} .soft.a2{background:var(--accent2)} .soft.a3{background:var(--accent3)} .soft.a4{background:var(--accent4)}
+    .list-clean{margin:0;padding-left:18px}
+    .med-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+    .med{border:1px solid var(--border);border-radius:14px;background:#fff;padding:12px 14px;font-weight:700;box-shadow:var(--shadow)}
+    .note{color:var(--muted);font-size:14px}
+    /* Header */
+    .hdr{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:1px solid var(--border)}
+    .hdr .container.nav{display:flex;align-items:center;gap:16px}
+    .logo{font-weight:800;font-size:24px;color:var(--brand);text-decoration:none}
+    .navlinks{margin-left:auto;display:flex;align-items:center;gap:12px}
+    .menu-btn{margin-left:12px;background:transparent;border:0;font-size:22px}
+    @media (max-width:720px){
+      .navlinks{display:none}
+      .menu-open .navlinks{display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:12px 0;margin-left:0}
     }
-
-    /* ===== Existing dropdown CSS kept from your file ===== */
-    .dropdown { position: relative; }
-    .dropbtn{
-      background:transparent; border:0; padding:8px 10px; font:inherit; font-weight:600;
-      color:#0b3a83; cursor:pointer; border-radius:8px;
-    }
+    /* Services dropdown */
+    .dropdown{position:relative}
+    .dropbtn{background:transparent;border:0;padding:8px 10px;font:inherit;font-weight:600;color:#0b3a83;cursor:pointer;border-radius:8px}
     .menu{
       position:absolute; top:110%; left:0; min-width:280px; z-index:1000;
       background:#b5e2ff; border:1px solid var(--border); border-radius:12px;
       box-shadow:var(--shadow); padding:8px; list-style:none; margin:0; display:none;
     }
-    .menu .grid{ display:grid; grid-template-columns:repeat(2,minmax(160px,1fr)); gap:4px 8px; }
-    .menu a{ display:block; padding:8px 10px; border-radius:8px; color:var(--ink); text-decoration:none; white-space:nowrap; }
-    .menu a:hover{ background:#f5f8ff; text-decoration:none; }
-    .menu .all { border-top:1px solid var(--border); margin-top:6px; padding-top:6px; }
-    @media (min-width:721px){ .dropdown:hover .menu, .dropdown:focus-within .menu{ display:block; } }
-    .dropdown.open .menu{ display:block !important; }
-    @media (max-width:720px){
-      .navlinks{ display:none; }
-      .menu-btn{ display:inline-block; background:transparent; border:0; }
-      .menu-open .navlinks{ display:flex; flex-direction:column; align-items:flex-start; gap:10px; padding:12px 0; }
-      .dropdown{ width:100%; }
-      .menu{ position:static; box-shadow:none; border:0; padding:0; }
+    .menu .grid{display:grid;grid-template-columns:repeat(2,minmax(160px,1fr));gap:4px 8px}
+    .menu a{display:block;padding:8px 10px;border-radius:8px;color:#111;text-decoration:none;white-space:nowrap}
+    .menu a:hover{background:#f5f8ff}
+    .menu .all{border-top:1px solid var(--border);margin-top:6px;padding-top:6px}
+    .dropdown.open .menu{display:block !important}
+    @media(min-width:721px){ .dropdown:hover .menu, .dropdown:focus-within .menu{display:block} }
+    @media(max-width:720px){ .dropdown{width:100%} .menu{position:static;box-shadow:none;border:0;padding:0} }
+    /* Login dropdown */
+    .login-dd{position:relative}
+    .login-dd__button{display:inline-flex;align-items:center;gap:6px;background:var(--brand);color:#fff;border:none;padding:10px 16px;border-radius:12px;font-weight:800}
+    .login-dd__button::after{content:"▾";font-size:.9em}
+    .login-dd__menu{
+      position:absolute;right:0;top:calc(100% + 8px);min-width:220px;padding:6px;margin:0;list-style:none;
+      background:#fff;border:1px solid #e5e7eb;border-radius:12px;box-shadow:0 12px 28px rgba(0,0,0,.12);display:none;z-index:1000;
     }
+    .login-dd__menu[data-open="true"]{display:block}
+    .login-dd__link{display:block;padding:10px 12px;border-radius:10px;color:#111;text-decoration:none;font-weight:700}
+    .login-dd__link:hover,.login-dd__link:focus{background:#f2f7ff;color:var(--brand);outline:none}
+    /* Reveal */
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+    .reveal.in{opacity:1;transform:none}
+    @media (prefers-reduced-motion: reduce){ .reveal, .reveal.in{opacity:1;transform:none;transition:none} }
   </style>
 
-  <!-- Open Graph (optional) -->
-  <meta property="og:title" content="urHealthcare — Primary & Urgent Care" />
-  <meta property="og:description" content="Unlimited visits. 7-day urgent care. 250+ meds included. Transparent pricing." />
+  <!-- Open Graph -->
+  <meta property="og:title" content="In-House Medications (250+) | Rocklin 95677" />
+  <meta property="og:description" content="Same-day access to commonly prescribed medications at urHealthcare. Major insurances accepted. Direct Primary Care membership available." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://harprandeol1.github.io/urhealthcare1/" />
+  <meta property="og:url" content="https://harprandeol1.github.io/urhealthcare1/in-house-medications.html" />
 </head>
 <body>
-  <!-- Header with working Services dropdown -->
-  <header class="hdr" style="position:sticky;top:0;z-index:100;background:#fff;">
+  <!-- Header -->
+  <header class="hdr">
     <div class="container nav">
-      <a class="logo" href="index.html" style="font-size: 28px; font-weight: 600; color: #0b3a83; text-decoration: none;">
-  urHealthcare
-</a>
-
-
+      <a class="logo" href="index.html">urHealthcare</a>
 
       <nav class="navlinks" aria-label="Primary">
         <div class="dropdown" id="services-dd">
-          <button class="dropbtn" type="button" aria-expanded="false" aria-controls="menu-services">
-            Services ▾
-          </button>
+          <button class="dropbtn" type="button" aria-expanded="false" aria-controls="menu-services">Services ▾</button>
           <div id="menu-services" class="menu" role="menu">
             <div class="grid">
               <a href="primary-care.html" role="menuitem">Primary Care</a>
               <a href="urgent-care.html" role="menuitem">Urgent Care</a>
-              <a href="x-ray.html"role="menuitem">X-ray</a>
+              <a href="x-ray.html" role="menuitem">X-ray</a>
               <a href="labs.html" role="menuitem">Labs</a>
               <a href="ultrasound.html" role="menuitem">Ultrasound</a>
               <a href="minor-procedures.html" role="menuitem">Minor Procedures</a>
               <a href="virtual-care.html" role="menuitem">Virtual Care</a>
-              <a href="included-meds.html" role="menuitem">Medications</a>
+              <a href="included-meds.html" role="menuitem" aria-current="page">Medications</a>
             </div>
-            <div class="all"><a href="#services">View all services →</a></div>
+            <div class="all"><a href="index.html#services">View all services →</a></div>
           </div>
         </div>
 
@@ -105,60 +124,44 @@
 
         <!-- LOGIN DROPDOWN -->
         <div class="login-dd">
-          <button class="btn login-dd__button" id="loginMenuButton"
-                  aria-haspopup="menu" aria-expanded="false" aria-controls="loginMenu">
-            Login
-          </button>
-
+          <button class="login-dd__button" id="loginMenuButton" aria-haspopup="menu" aria-expanded="false" aria-controls="loginMenu">Login</button>
           <ul class="login-dd__menu" id="loginMenu" role="menu" aria-labelledby="loginMenuButton">
-            <li role="none">
-              <a role="menuitem" href="https://urhealthcare.hint.com/login/request" class="login-dd__link">Membership Login</a>
-            </li>
-            <li role="none">
-              <a role="menuitem" href="https://www.onpatient.com/login/" class="login-dd__link">OnPatient Login</a>
-            </li>
+            <li role="none"><a role="menuitem" href="https://urhealthcare.hint.com/login/request" class="login-dd__link">Membership Login</a></li>
+            <li role="none"><a role="menuitem" href="https://www.onpatient.com/login/" class="login-dd__link">OnPatient Login</a></li>
           </ul>
         </div>
-
-        <style>
-          .login-dd { position: relative; }
-          .login-dd__button { display:inline-flex; align-items:center; gap:6px; }
-          .login-dd__button::after { content:"▾"; font-size:.9em; }
-          .login-dd__menu {
-            position:absolute; right:0; top:calc(100% + 8px);
-            min-width:220px; padding:6px; margin:0; list-style:none;
-            background:#fff; border:1px solid #e5e7eb; border-radius:12px;
-            box-shadow:0 12px 28px rgba(0,0,0,.12);
-            display:none; z-index:1000;
-          }
-          .login-dd__menu[data-open="true"] { display:block; }
-          .login-dd__link { display:block; padding:10px 12px; border-radius:10px; color:#111; text-decoration:none; font-weight:700; }
-          .login-dd__link:hover, .login-dd__link:focus { background:#f2f7ff; color:#0b3a83; outline:none; }
-          .btn { background:#0b3a83; color:#fff; border:none; padding:10px 16px; border-radius:12px; font-weight:800; }
-          .btn:hover { filter:brightness(.95); }
-        </style>
       </nav>
 
-      <button class="menu-btn" aria-label="Menu"
-        onclick="document.body.classList.toggle('menu-open')">☰</button>
+      <button class="menu-btn" aria-label="Menu" onclick="document.body.classList.toggle('menu-open')">☰</button>
     </div>
   </header>
 
   <!-- HERO -->
-  <section class="hero-med">
+  <section class="hero-med section">
     <div class="container">
-      <h1>Medications Dispensed In-House — Rocklin, CA <span class="muted">(95677)</span></h1>
-      <p class="muted">Same-day access to commonly prescribed medicines right at our clinic. Saves time, improves adherence, and keeps your care in one place. We accept major insurance, including <strong>Partnership Medi-Cal</strong>, and we also offer <a href="plans.html">Direct Primary Care</a>.</p>
+      <span class="badge reveal in">In-House Medications • Rocklin, CA 95677</span>
+      <h1 class="reveal in">Medications Dispensed In-House — Rocklin, CA <span class="muted">(95677)</span></h1>
+      <p class="muted reveal in">Same-day access to commonly prescribed medicines right at our clinic. Saves time, improves adherence, and keeps your care in one place. We accept major insurance, including <strong>Partnership Medi-Cal</strong>, and we also offer <a href="direct-primary-care.html">Direct Primary Care</a>.</p>
 
-      <div class="cta-row">
+      <div class="pillrow" aria-label="Highlights" style="margin-top:10px">
+        <span class="pill">Antibiotics</span>
+        <span class="pill">Respiratory & Allergy</span>
+        <span class="pill">Blood Pressure & Heart</span>
+        <span class="pill">Cholesterol</span>
+        <span class="pill">Diabetes & Thyroid</span>
+        <span class="pill">Dermatology</span>
+        <span class="pill">Eye & Ear</span>
+      </div>
+
+      <div class="cta-row" style="margin-top:14px">
         <a class="btn" href="contact.html">Questions? Contact us</a>
-        <a class="btn outline" href="https://www.google.com/maps?q=6839+Five+Star+Blvd,+Suite+D,+Rocklin,+CA+95677" target="_blank" rel="noopener">Get directions</a>
-        <a class="btn outline" href="accepted-insurances.html">Accepted insurances</a>
+        <a class="btn ghost" href="https://www.google.com/maps?q=6839+Five+Star+Blvd,+Suite+D,+Rocklin,+CA+95677" target="_blank" rel="noopener">Get directions</a>
+        <a class="btn ghost" href="accepted-insurances.html">Accepted insurances</a>
       </div>
 
       <!-- Search + Filters -->
       <div class="toolbox">
-        <input id="medSearch" class="search" type="search" placeholder="Search medication or condition (e.g., UTI, blood pressure, diabetes, rash)…" />
+        <input id="medSearch" class="search" type="search" placeholder="Search medication or condition (e.g., UTI, blood pressure, diabetes, rash)..." aria-label="Search medications" />
         <div class="filters" id="medFilters" aria-label="Filter categories">
           <button class="chip" data-filter="all" data-active="true">All</button>
           <button class="chip" data-filter="antibiotic">Antibiotics</button>
@@ -193,7 +196,7 @@
           <div class="med" data-cat="antibiotic" data-tags="throat ear sinus dental">
             <strong>Amoxicillin</strong> 500mg capsules
           </div>
-          <div class="med" data-cat="antibiotic" data-tags="sinus ear throat dental">
+          <div class="med" data-cat="antibiotic" data-tags="throat sinus bronchitis">
             <strong>Amoxicillin</strong> 875mg tablets
           </div>
           <div class="med" data-cat="antibiotic" data-tags="sinus ear dental bite diverticulitis">
@@ -303,7 +306,7 @@
         </div>
       </section>
 
-      <!-- Blood pressure / Heart + Lipids -->
+      <!-- Blood Pressure / Heart -->
       <section class="category" id="cat-cardio">
         <h2>Blood Pressure & Heart</h2>
         <div class="med-grid">
@@ -364,6 +367,7 @@
         </div>
       </section>
 
+      <!-- Cholesterol -->
       <section class="category" id="cat-lipid">
         <h2>Cholesterol</h2>
         <div class="med-grid">
@@ -580,7 +584,7 @@
 
       <!-- Location / NAP -->
       <section>
-        <div class="loc-blurb">
+        <div class="soft a1">
           <p style="margin:0"><strong>urHealthcare — In-House Medications</strong><br>
             6839 Five Star Blvd, Suite D, Rocklin, CA <strong>95677</strong> • <a href="tel:+19169642001">916-964-2001</a>
           </p>
@@ -589,16 +593,16 @@
             <a href="contact.html">Contact / Check-in</a>
           </p>
         </div>
-        <p class="note">This list is a representative inventory. Stock may vary. Medications are dispensed after evaluation by a licensed clinician. We do not operate an internet pharmacy.</p>
+        <p class="note" style="margin-top:10px">This list is a representative inventory. Stock may vary. Medications are dispensed after evaluation by a licensed clinician. We do not operate an internet pharmacy.</p>
       </section>
     </div>
   </main>
 
-  <footer class="ftr">
+  <footer class="section" style="padding:40px 0;border-top:1px solid var(--border)">
     <div class="container">© <span id="y"></span> urHealthcare. All rights reserved.</div>
   </footer>
 
-  <!-- Structured Data: OfferCatalog of in-house medications (sample subset for search engines) -->
+  <!-- Structured Data: OfferCatalog (sample subset) -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -619,7 +623,7 @@
       {"@type":"Offer","itemOffered":{"@type":"Drug","name":"Metformin ER 500 mg tablet"}},
       {"@type":"Offer","itemOffered":{"@type":"Drug","name":"Levothyroxine 100 mcg tablet"}},
       {"@type":"Offer","itemOffered":{"@type":"Drug","name":"Rosuvastatin 20 mg tablet"}},
-      {"@type":"Offer","itemOffered":{"@type":"Drug","name":"Omeprazole 20 mg delayed-release capsule"}},
+      {"@type":"Offer","itemOffered":{"@type":"Drug","name":"Omeprazole 20 mg DR capsule"}},
       {"@type":"Offer","itemOffered":{"@type":"Drug","name":"Ondansetron ODT 4 mg tablet"}},
       {"@type":"Offer","itemOffered":{"@type":"Drug","name":"Sertraline 50 mg tablet"}},
       {"@type":"Offer","itemOffered":{"@type":"Drug","name":"Tamsulosin 0.4 mg capsule"}},
@@ -629,17 +633,46 @@
   }
   </script>
 
-  <!-- Simple search/filter script -->
+  <!-- Reveal on scroll + dropdowns + footer year + search/filter -->
   <script>
-    (function(){
-      const y = document.getElementById('y'); if (y) y.textContent = new Date().getFullYear();
+    // Reveal
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); } });
+    },{threshold:0.15});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
+    // Services dropdown (mobile)
+    const servicesDD = document.getElementById('services-dd');
+    const servicesBtn = servicesDD?.querySelector('.dropbtn');
+    servicesBtn?.addEventListener('click', () => {
+      const open = servicesDD.classList.toggle('open');
+      servicesBtn.setAttribute('aria-expanded', String(open));
+    });
+
+    // Login dropdown
+    const loginBtn = document.getElementById('loginMenuButton');
+    const loginMenu = document.getElementById('loginMenu');
+    function closeLogin(){ loginMenu?.setAttribute('data-open','false'); loginBtn?.setAttribute('aria-expanded','false'); }
+    loginBtn?.addEventListener('click', (e) => {
+      const isOpen = loginMenu.getAttribute('data-open') === 'true';
+      loginMenu.setAttribute('data-open', String(!isOpen));
+      loginBtn.setAttribute('aria-expanded', String(!isOpen));
+      e.stopPropagation();
+    });
+    document.addEventListener('click', (e) => {
+      if (!loginMenu.contains(e.target) && !loginBtn.contains(e.target)) closeLogin();
+    });
+    document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeLogin(); });
+
+    // Footer year
+    const y = document.getElementById('y'); if (y) y.textContent = new Date().getFullYear();
+
+    // Search/filter
+    (function(){
       const search = document.getElementById('medSearch');
       const chips = document.querySelectorAll('#medFilters .chip');
       const meds = Array.from(document.querySelectorAll('.med'));
-
       let active = 'all';
-
       function applyFilter(){
         const q = (search.value || '').toLowerCase().trim();
         meds.forEach(el => {
@@ -650,7 +683,6 @@
           el.style.display = (matchText && matchCat) ? '' : 'none';
         });
       }
-
       chips.forEach(chip => {
         chip.addEventListener('click', () => {
           chips.forEach(c => c.dataset.active = 'false');
@@ -659,28 +691,9 @@
           applyFilter();
         });
       });
-
       search.addEventListener('input', applyFilter);
-    })();
-  </script>
-
-  <!-- Basic dropdown a11y if not already in your global JS -->
-  <script>
-    (function(){
-      const btn = document.querySelector('.dropbtn');
-      const menu = document.getElementById('menu-services');
-      if(!btn || !menu) return;
-      btn.addEventListener('click', () => {
-        const expanded = btn.getAttribute('aria-expanded') === 'true';
-        btn.setAttribute('aria-expanded', String(!expanded));
-        menu.hidden = expanded;
-      });
-      document.addEventListener('click', (e) => {
-        if (!menu.contains(e.target) && !btn.contains(e.target)) {
-          btn.setAttribute('aria-expanded','false'); menu.hidden = true;
-        }
-      });
     })();
   </script>
 </body>
 </html>
+
