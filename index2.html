@@ -374,49 +374,69 @@
       </div>
     </section>
 
-    <!-- INSURANCES (ticker with text badges only) -->
-    <section class="insurances slide" aria-labelledby="insurances-title">
-      <div class="wrap reveal">
-        <h2 id="insurances-title">We Accept Major Health Insurance Plans</h2>
-        <p class="lead">
-          We work with many leading insurance carriers. Coverage can vary by plan and employer.
-          <a class="link" href="insurances.html">Check the full list of accepted insurances</a>.
-        </p>
+    <!-- INSURANCES (compact) -->
+<section class="insurances slide" aria-labelledby="insurances-title" style="background:#fafcff;">
+  <style>
+    .insurances { --brand:#0b3a83; --ink:#111; --muted:#555; --maxw:1100px; color:var(--ink);
+      border-top:1px solid #eee; border-bottom:1px solid #eee; }
+    .insurances .wrap { max-width: var(--maxw); margin: 0 auto; padding: 18px 16px; } /* was ~36–48px */
+    .insurances h2 { font-size:clamp(22px,3.2vw,32px); margin:0 0 6px; font-weight:800; color:var(--brand); }
+    .insurances .lead { color:var(--muted); font-size:clamp(14px,1.8vw,16px); margin:0 0 12px; }
+    .insurances .actions { display:grid; grid-template-columns: 1fr auto; gap:10px; align-items:center; margin-top:10px; }
+    @media (max-width:640px){ .insurances .actions{ grid-template-columns:1fr; } }
+    .insurances .link { text-decoration: underline; color: var(--brand); font-weight:700; }
+    .insurances .cta { justify-self:start; display:inline-block; padding:8px 12px; border-radius:10px; background:var(--brand); color:#fff; font-weight:800; white-space:nowrap; }
+    .insurances .note { margin-top:8px; color:#777; font-size:13px; }
 
-        <div class="actions">
-          <p class="lead" style="margin:0;">
-            Prefer price transparency? We also offer a <strong>Direct Primary Care (DPC) membership</strong> for simple, predictable costs.
-          </p>
-          <a class="cta" href="/plans#dpc">Explore DPC Membership</a>
-        </div>
-        <p class="note">Tip: If your plan isn’t listed, call us—many out-of-network plans still have benefits for primary care.</p>
+    /* Compact ticker */
+    .ticker{ overflow:hidden; position:relative; width:100%; padding:10px 0; } /* was ~22–30px */
+    .ticker-track{ display:flex; gap:18px; width:200%; animation: scroll 30s linear infinite; }
+    .badge-ins{ display:inline-block; background:#eef6ff; color:#0b3a83; border:1px solid #d8e8ff;
+      border-radius:999px; padding:6px 10px; font-weight:800; white-space:nowrap; font-size:14px; }
+    @keyframes scroll{ from{ transform:translateX(0);} to{ transform:translateX(-50%);} }
+  </style>
 
-        <!-- Text ticker -->
-        <div class="ticker" aria-hidden="true">
-          <div class="ticker-track">
-            <span class="badge-ins">Aetna</span>
-            <span class="badge-ins">Anthem Blue Cross</span>
-            <span class="badge-ins">Blue Shield of CA</span>
-            <span class="badge-ins">Health Net</span>
-            <span class="badge-ins">UnitedHealthcare</span>
-            <span class="badge-ins">Sutter Health Plus</span>
-            <span class="badge-ins">Western Health Advantage</span>
-            <span class="badge-ins">TRICARE</span>
-            <span class="badge-ins">Medicare</span>
-            <!-- Repeat for seamless loop -->
-            <span class="badge-ins">Aetna</span>
-            <span class="badge-ins">Anthem Blue Cross</span>
-            <span class="badge-ins">Blue Shield of CA</span>
-            <span class="badge-ins">Health Net</span>
-            <span class="badge-ins">UnitedHealthcare</span>
-            <span class="badge-ins">Sutter Health Plus</span>
-            <span class="badge-ins">Western Health Advantage</span>
-            <span class="badge-ins">TRICARE</span>
-            <span class="badge-ins">Medicare</span>
-          </div>
-        </div>
+  <div class="wrap reveal">
+    <h2 id="insurances-title">We Accept Major Health Insurance Plans</h2>
+    <p class="lead">
+      We work with many leading insurance carriers. Coverage can vary by plan and employer.
+      <a class="link" href="insurances.html">See accepted plans</a>.
+    </p>
+
+    <div class="actions">
+      <p class="lead" style="margin:0;">
+        Prefer price transparency? Try our <strong>Direct Primary Care (DPC)</strong> membership.
+      </p>
+      <a class="cta" href="/plans#dpc">Explore DPC</a>
+    </div>
+    <p class="note">If your plan isn’t listed, call us—some out-of-network plans still have benefits for primary care.</p>
+
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span class="badge-ins">Aetna</span>
+        <span class="badge-ins">Anthem Blue Cross</span>
+        <span class="badge-ins">Blue Shield of CA</span>
+        <span class="badge-ins">Health Net</span>
+        <span class="badge-ins">UnitedHealthcare</span>
+        <span class="badge-ins">Sutter Health Plus</span>
+        <span class="badge-ins">Western Health Advantage</span>
+        <span class="badge-ins">TRICARE</span>
+        <span class="badge-ins">Medicare</span>
+        <!-- repeat for seamless loop -->
+        <span class="badge-ins">Aetna</span>
+        <span class="badge-ins">Anthem Blue Cross</span>
+        <span class="badge-ins">Blue Shield of CA</span>
+        <span class="badge-ins">Health Net</span>
+        <span class="badge-ins">UnitedHealthcare</span>
+        <span class="badge-ins">Sutter Health Plus</span>
+        <span class="badge-ins">Western Health Advantage</span>
+        <span class="badge-ins">TRICARE</span>
+        <span class="badge-ins">Medicare</span>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
+
 
     <!-- DIRECT PRIMARY CARE (Colorful • Pricing Tabs • Included • Know More • FAQ) -->
 <section id="plans" class="section band slide colorful-dpc">
@@ -761,6 +781,29 @@
       activate('overview');
     })();
   </script>
+  <script>
+  // Pricing tabs (3 parallel)
+  (function(){
+    const root = document.getElementById('price-tabs'); if (!root) return;
+    const tabs = root.querySelectorAll('[role="tab"]');
+    const panels = root.querySelectorAll('[role="tabpanel"]');
+    function activate(btn){
+      tabs.forEach(t => t.setAttribute('aria-selected', String(t === btn)));
+      panels.forEach(p => p.setAttribute('aria-hidden', String(p.id !== btn.getAttribute('aria-controls'))));
+    }
+    tabs.forEach(t => {
+      t.addEventListener('click', () => activate(t));
+      t.addEventListener('keydown', (e) => {
+        const i = Array.from(tabs).indexOf(t);
+        if (e.key === 'ArrowRight') { e.preventDefault(); tabs[(i+1)%tabs.length].focus(); }
+        if (e.key === 'ArrowLeft')  { e.preventDefault(); tabs[(i-1+tabs.length)%tabs.length].focus(); }
+      });
+    });
+    // init
+    activate(document.getElementById('pricebtn-individual'));
+  })();
+</script>
+
 </body>
 </html>
 
