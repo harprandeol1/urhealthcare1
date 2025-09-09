@@ -5,90 +5,130 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>urHealthcare — Primary & Urgent Care in Sacramento Metro</title>
   <meta name="description" content="Direct primary & urgent care. Unlimited visits, 7-day urgent care, 250+ meds included, x-ray, labs, ultrasound, and minor procedures." />
-  <meta name="theme-color" content="##FFFFFF" />
+  <!-- FIX: double # -> single # -->
+  <meta name="theme-color" content="#FFFFFF" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
 
-  <!-- Always-works stylesheet for GitHub Pages (absolute URL + cache-buster) -->
+  <!-- Site CSS -->
   <link rel="stylesheet" href="https://harprandeol1.github.io/urhealthcare1/assets/styles.css?v=5" />
 
-  <!-- Page/transition extras -->
   <style>
-    /* ===== Scroll-snap “slides” + reveal transitions ===== */
-    :root { --hdrH: 72px; }
-    html, body { height: 100%; scroll-behavior: smooth; }
-    /* pad for fixed headers (if any) when snapping or using #anchors */
-    main.snap { scroll-snap-type: y mandatory; scroll-padding-top: var(--hdrH); overscroll-behavior-y: contain; }
-    section.slide { 
-      scroll-snap-align: start; 
-      min-height: calc(100vh - var(--hdrH)); 
-      padding-block: clamp(56px, 10vh, 128px);   /* clear space in every section */
-    }
-    /* soft separators so the transition feels like a new page */
-    section.slide:not(:first-of-type) { border-top: 1px solid rgba(0,0,0,.04); }
-    /* content reveal on enter */
-    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
-    .in .reveal { opacity: 1; transform: none; }
-    /* reduced motion preference */
-    @media (prefers-reduced-motion: reduce) {
-      main.snap { scroll-snap-type: none; }
-      .reveal, .in .reveal { opacity: 1; transform: none; transition: none; }
+    /* ===== Top-bar + safe defaults ===== */
+    :root{
+      --hdrH: 72px;
+      --ink: #0b3a83;
+      --border: #e5e7eb;
+      --shadow: 0 12px 28px rgba(0,0,0,.12);
     }
 
-    /* ===== Existing dropdown CSS kept from your file ===== */
-    .dropdown { position: relative; }
+    /* Fallback container if not defined in global CSS */
+    .container{ max-width:1200px; margin:0 auto; padding:0 16px; }
+
+    .hdr{
+      position:sticky; top:0; z-index:1000;
+      background:#fff; border-bottom:1px solid var(--border);
+    }
+    .hdr .container.nav{
+      min-height:var(--hdrH);
+      display:flex; align-items:center; justify-content:space-between; gap:16px;
+    }
+    .logo{
+      font-size:clamp(22px,2.2vw,28px);
+      font-weight:800; color:var(--ink); text-decoration:none; white-space:nowrap;
+    }
+
+    .navlinks{ display:flex; align-items:center; gap:18px; }
+    .navlinks a{ color:var(--ink); font-weight:700; text-decoration:none; }
+
+    .menu-btn{
+      display:none; background:transparent; border:0; font-size:26px; color:var(--ink);
+    }
+    @media (max-width:860px){
+      .navlinks{ display:none; }
+      .menu-open .navlinks{
+        display:flex; flex-direction:column; align-items:flex-start; gap:10px;
+        position:absolute; left:0; right:0; top:var(--hdrH);
+        background:#fff; padding:12px 16px; border-bottom:1px solid var(--border);
+      }
+      .menu-btn{ display:inline-block; }
+    }
+
+    /* ===== Services dropdown ===== */
+    .dropdown{ position:relative; }
     .dropbtn{
       background:transparent; border:0; padding:8px 10px; font:inherit; font-weight:600;
-      color:#0b3a83; cursor:pointer; border-radius:8px;
+      color:var(--ink); cursor:pointer; border-radius:8px;
     }
     .menu{
       position:absolute; top:110%; left:0; min-width:280px; z-index:1000;
-      background:#b5e2ff; border:1px solid var(--border); border-radius:12px;
+      background:#fff; border:1px solid var(--border); border-radius:12px;
       box-shadow:var(--shadow); padding:8px; list-style:none; margin:0; display:none;
     }
     .menu .grid{ display:grid; grid-template-columns:repeat(2,minmax(160px,1fr)); gap:4px 8px; }
-    .menu a{ display:block; padding:8px 10px; border-radius:8px; color:var(--ink); text-decoration:none; white-space:nowrap; }
-    .menu a:hover{ background:#f5f8ff; text-decoration:none; }
-    .menu .all { border-top:1px solid var(--border); margin-top:6px; padding-top:6px; }
-    @media (min-width:721px){ .dropdown:hover .menu, .dropdown:focus-within .menu{ display:block; } }
+    .menu a{ display:block; padding:8px 10px; border-radius:8px; color:#111; text-decoration:none; white-space:nowrap; }
+    .menu a:hover{ background:#f5f8ff; }
+    .menu .all{ border-top:1px solid var(--border); margin-top:6px; padding-top:6px; }
+
+    @media (min-width:721px){
+      .dropdown:hover .menu,
+      .dropdown:focus-within .menu{ display:block; }
+    }
     .dropdown.open .menu{ display:block !important; }
+
     @media (max-width:720px){
-      .navlinks{ display:none; }
-      .menu-btn{ display:inline-block; background:transparent; border:0; }
-      .menu-open .navlinks{ display:flex; flex-direction:column; align-items:flex-start; gap:10px; padding:12px 0; }
       .dropdown{ width:100%; }
       .menu{ position:static; box-shadow:none; border:0; padding:0; }
+      .menu a{ color:var(--ink); }
+    }
+
+    /* ===== Login dropdown (SCOPED; no global .btn) ===== */
+    .login-dd{ position:relative; }
+    .login-dd__button{
+      display:inline-flex; align-items:center; gap:6px;
+      background:var(--ink); color:#fff; border:none; padding:10px 16px;
+      border-radius:12px; font-weight:800; cursor:pointer;
+    }
+    .login-dd__button::after{ content:"▾"; font-size:.9em; }
+    .login-dd__menu{
+      position:absolute; right:0; top:calc(100% + 8px);
+      min-width:220px; padding:6px; margin:0; list-style:none;
+      background:#fff; border:1px solid var(--border); border-radius:12px;
+      box-shadow:var(--shadow); display:none; z-index:1000;
+    }
+    .login-dd__menu[data-open="true"]{ display:block; }
+    .login-dd__link{
+      display:block; padding:10px 12px; border-radius:10px;
+      color:#111; text-decoration:none; font-weight:700;
+    }
+    .login-dd__link:hover, .login-dd__link:focus{
+      background:#f2f7ff; color:var(--ink); outline:none;
     }
   </style>
 
-  <!-- Open Graph (optional) -->
+  <!-- Social (optional) -->
   <meta property="og:title" content="urHealthcare — Primary & Urgent Care" />
   <meta property="og:description" content="Unlimited visits. 7-day urgent care. 250+ meds included. Transparent pricing." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://harprandeol1.github.io/urhealthcare1/" />
 </head>
+
 <body>
-  <!-- Header with working Services dropdown -->
-  <header class="hdr" style="position:sticky;top:0;z-index:100;background:#fff;">
+  <!-- Header -->
+  <header class="hdr">
     <div class="container nav">
-      <a class="logo" href="index.html" style="font-size: 28px; font-weight: 600; color: #0b3a83; text-decoration: none;">
-  urHealthcare
-</a>
-
-
+      <a class="logo" href="index.html">urHealthcare</a>
 
       <nav class="navlinks" aria-label="Primary">
         <div class="dropdown" id="services-dd">
-          <button class="dropbtn" type="button" aria-expanded="false" aria-controls="menu-services">
-            Services ▾
-          </button>
+          <button class="dropbtn" type="button" aria-expanded="false" aria-controls="menu-services">Services ▾</button>
           <div id="menu-services" class="menu" role="menu">
             <div class="grid">
               <a href="primary-care.html" role="menuitem">Primary Care</a>
               <a href="urgent-care.html" role="menuitem">Urgent Care</a>
-              <a href="x-ray.html"role="menuitem">X-ray</a>
+              <a href="x-ray.html" role="menuitem">X-ray</a>
               <a href="labs.html" role="menuitem">Labs</a>
               <a href="ultrasound.html" role="menuitem">Ultrasound</a>
               <a href="minor-procedures.html" role="menuitem">Minor Procedures</a>
@@ -103,46 +143,61 @@
         <a href="employers.html">Employers</a>
         <a href="faq.html">FAQ</a>
 
-        <!-- LOGIN DROPDOWN -->
+        <!-- Login (scoped styles) -->
         <div class="login-dd">
-          <button class="btn login-dd__button" id="loginMenuButton"
+          <button class="login-dd__button" id="loginMenuButton"
                   aria-haspopup="menu" aria-expanded="false" aria-controls="loginMenu">
             Login
           </button>
-
           <ul class="login-dd__menu" id="loginMenu" role="menu" aria-labelledby="loginMenuButton">
-            <li role="none">
-              <a role="menuitem" href="https://urhealthcare.hint.com/login/request" class="login-dd__link">Membership Login</a>
-            </li>
-            <li role="none">
-              <a role="menuitem" href="https://www.onpatient.com/login/" class="login-dd__link">OnPatient Login</a>
-            </li>
+            <li role="none"><a role="menuitem" href="https://urhealthcare.hint.com/login/request" class="login-dd__link">Membership Login</a></li>
+            <li role="none"><a role="menuitem" href="https://www.onpatient.com/login/" class="login-dd__link">OnPatient Login</a></li>
           </ul>
         </div>
-
-        <style>
-          .login-dd { position: relative; }
-          .login-dd__button { display:inline-flex; align-items:center; gap:6px; }
-          .login-dd__button::after { content:"▾"; font-size:.9em; }
-          .login-dd__menu {
-            position:absolute; right:0; top:calc(100% + 8px);
-            min-width:220px; padding:6px; margin:0; list-style:none;
-            background:#fff; border:1px solid #e5e7eb; border-radius:12px;
-            box-shadow:0 12px 28px rgba(0,0,0,.12);
-            display:none; z-index:1000;
-          }
-          .login-dd__menu[data-open="true"] { display:block; }
-          .login-dd__link { display:block; padding:10px 12px; border-radius:10px; color:#111; text-decoration:none; font-weight:700; }
-          .login-dd__link:hover, .login-dd__link:focus { background:#f2f7ff; color:#0b3a83; outline:none; }
-          .btn { background:#0b3a83; color:#fff; border:none; padding:10px 16px; border-radius:12px; font-weight:800; }
-          .btn:hover { filter:brightness(.95); }
-        </style>
       </nav>
 
       <button class="menu-btn" aria-label="Menu"
-        onclick="document.body.classList.toggle('menu-open')">☰</button>
+              onclick="document.body.classList.toggle('menu-open')">☰</button>
     </div>
   </header>
+
+  <!-- Optional: tiny JS to make both dropdowns work well -->
+  <script>
+    // Services dropdown
+    (function(){
+      const dd = document.getElementById('services-dd');
+      if (!dd) return;
+      const btn = dd.querySelector('.dropbtn');
+      const menu = dd.querySelector('.menu');
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const open = dd.classList.toggle('open');
+        btn.setAttribute('aria-expanded', String(open));
+      });
+      document.addEventListener('click', (e)=>{
+        if (!dd.contains(e.target)) { dd.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }
+      });
+      document.addEventListener('keydown', (e)=>{
+        if (e.key === 'Escape'){ dd.classList.remove('open'); btn.setAttribute('aria-expanded','false'); btn.blur(); }
+      });
+    })();
+
+    // Login dropdown (accessible)
+    (function(){
+      document.querySelectorAll('.login-dd').forEach((root) => {
+        const btn = root.querySelector('.login-dd__button');
+        const menu = root.querySelector('.login-dd__menu');
+        const first = root.querySelector('.login-dd__link');
+        const open = () => { menu.dataset.open = 'true'; btn.setAttribute('aria-expanded','true'); setTimeout(()=>first?.focus(),0); };
+        const close = () => { menu.removeAttribute('data-open'); btn.setAttribute('aria-expanded','false'); };
+        btn.addEventListener('click', (e)=>{ e.stopPropagation(); menu.dataset.open==='true' ? close() : open(); });
+        document.addEventListener('click', (e)=>{ if(!root.contains(e.target)) close(); });
+        document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') close(); if(e.key==='ArrowDown' && menu.dataset.open==='true'){ e.preventDefault(); first?.focus(); }});
+      });
+    })();
+  </script>
+</body>
+
 
   <!-- ===== All “slides” are inside this snap container ===== -->
   <main class="snap">
