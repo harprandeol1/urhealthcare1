@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>urHealthcare — Primary & Urgent Care</title>
+  <meta name="description" content="urHealthcare in Rocklin: primary & urgent care, direct primary care memberships, same/next-day access."/>
+  <style>
+    :root{
+      --brand:#0b3a79; /* urHealthcare dark blue */
+      --brand-2:#0e488f;
+      --ink:#0b1220;
+      --muted:#6b7280;
+      --bg:#f7f9fc;
+      --card:#ffffff;
+      --ring:#cbd5e1;
+      --focus:#2563eb;
+      --success:#0ea5e9;
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font:16px/1.5 Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,"Noto Sans",sans-serif;color:var(--ink);background:var(--bg)}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{max-width:1200px;margin-inline:auto;padding:0 20px}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1rem;border:1px solid var(--ring);border-radius:12px;background:#fff;cursor:pointer;transition:.2s ease;box-shadow:0 1px 0 rgba(0,0,0,.02)}
+    .btn.primary{background:var(--brand);color:#fff;border-color:transparent}
+    .btn:hover{transform:translateY(-1px);box-shadow:0 8px 18px rgba(2,6,23,.08)}
+
+    /* --- Header / Navbar --- */
+    .site-header{position:sticky;top:0;z-index:60;background:#fff;border-bottom:1px solid var(--ring)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:10px 0}
+    .brand{display:flex;align-items:center;gap:.6rem;font-weight:800;color:var(--brand)}
+    .brand .dot{width:10px;height:10px;border-radius:50%;background:var(--success)}
+
+    .nav-links{display:flex;align-items:center;gap:10px}
+    .nav-links>li{list-style:none;position:relative}
+    .nav-links>a,.nav-links>li>a{display:inline-flex;align-items:center;gap:.35rem;padding:.6rem .8rem;border-radius:10px}
+    .nav a:focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:10px}
+
+    /* Dropdowns (accessible, works on hover and click) */
+    .menu-parent[aria-expanded="true"]>.submenu{opacity:1;visibility:visible;transform:translateY(0)}
+    .menu-parent:focus-within>.submenu{opacity:1;visibility:visible;transform:translateY(0)}
+    .menu-parent:hover>.submenu{opacity:1;visibility:visible;transform:translateY(0)}
+
+    .submenu{position:absolute;top:100%;left:0;min-width:230px;background:#fff;border:1px solid var(--ring);border-radius:14px;box-shadow:0 16px 40px rgba(2,6,23,.12);padding:8px;margin-top:8px;opacity:0;visibility:hidden;transform:translateY(6px);transition:.18s ease}
+    .submenu a{display:flex;align-items:center;gap:.6rem;padding:.6rem .75rem;border-radius:10px}
+    .submenu a:hover{background:#f1f5f9}
+
+    /* Mobile nav */
+    .burger{display:none;background:transparent;border:0;padding:10px}
+    .mobile-panel{display:none}
+    @media (max-width: 900px){
+      .nav-links{display:none}
+      .burger{display:inline-flex}
+      .mobile-panel{display:grid;gap:10px;padding:12px;border-top:1px solid var(--ring)}
+      .mobile-panel details{border:1px solid var(--ring);border-radius:12px;background:#fff}
+      .mobile-panel summary{cursor:pointer;padding:.85rem 1rem;font-weight:600;list-style:none}
+      .mobile-panel summary::-webkit-details-marker{display:none}
+      .mobile-panel .submenu{position:static;opacity:1;visibility:visible;transform:none;border:0;box-shadow:none;margin:0;padding:0}
+      .mobile-panel a{padding:.75rem 1rem;display:block}
+    }
+
+    /* --- Hero --- */
+    .hero{background:linear-gradient(180deg,var(--brand) 0%,var(--brand-2) 100%);color:#fff;padding:64px 0 40px}
+    .hero .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}
+    .hero .card{background:rgba(255,255,255,.1);backdrop-filter:saturate(120%) blur(6px);border:1px solid rgba(255,255,255,.25);border-radius:16px;padding:16px}
+    .hero h1{font-size:clamp(28px,4vw,40px);margin:0 0 10px}
+    .hero p{opacity:.95;margin:0 0 18px}
+    @media (max-width: 900px){.hero .grid{grid-template-columns:1fr}}
+
+    /* --- Insurance (names only) --- */
+    .section{padding:56px 0}
+    .section h2{font-size:clamp(22px,3vw,28px);margin:0 0 14px}
+    .muted{color:var(--muted)}
+    .ins-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .ins-item{background:var(--card);border:1px solid var(--ring);border-radius:12px;padding:14px;font-weight:600}
+    @media (max-width: 1000px){.ins-grid{grid-template-columns:repeat(3,1fr)}}
+    @media (max-width: 720px){.ins-grid{grid-template-columns:repeat(2,1fr)}}
+
+    /* --- Footer --- */
+    .site-footer{background:#0a0f1a;color:#cbd5e1;margin-top:40px}
+    .site-footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:24px;padding:36px 0}
+    .site-footer a{color:#e2e8f0}
+    .site-footer .copyright{border-top:1px solid #1f2937;padding:12px 0;color:#94a3b8}
+    @media (max-width: 900px){.site-footer .cols{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header" role="banner">
+    <div class="container nav" aria-label="Primary">
+      <a class="brand" href="#" aria-label="urHealthcare home">
+        <span class="dot" aria-hidden="true"></span>
+        <span>urHealthcare</span>
+      </a>
+
+      <nav>
+        <button class="burger" aria-expanded="false" aria-controls="mobileNav" aria-label="Toggle menu">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+        <ul class="nav-links" id="desktopNav">
+          <li class="menu-parent" aria-haspopup="true" aria-expanded="false">
+            <a href="#" aria-controls="care-sub">Care</a>
+            <div class="submenu" id="care-sub" role="menu" aria-label="Care submenu">
+              <a href="#services" role="menuitem">Primary Care</a>
+              <a href="#urgent" role="menuitem">Urgent Care</a>
+              <a href="#dpc" role="menuitem">Direct Primary Care</a>
+              <a href="#ultrasound" role="menuitem">Ultrasound</a>
+            </div>
+          </li>
+          <li class="menu-parent" aria-haspopup="true" aria-expanded="false">
+            <a href="#" aria-controls="patients-sub">Patients</a>
+            <div class="submenu" id="patients-sub" role="menu" aria-label="Patients submenu">
+              <a href="#insurance" role="menuitem">Insurance We Accept</a>
+              <a href="#faq" role="menuitem">FAQs</a>
+              <a href="#contact" role="menuitem">Contact</a>
+            </div>
+          </li>
+          <li><a href="#dpc" class="btn">Memberships</a></li>
+          <li><a href="#book" class="btn primary">Book Now</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div id="mobileNav" class="mobile-panel container" hidden>
+      <details>
+        <summary>Care</summary>
+        <div class="submenu">
+          <a href="#services">Primary Care</a>
+          <a href="#urgent">Urgent Care</a>
+          <a href="#dpc">Direct Primary Care</a>
+          <a href="#ultrasound">Ultrasound</a>
+        </div>
+      </details>
+      <details>
+        <summary>Patients</summary>
+        <div class="submenu">
+          <a href="#insurance">Insurance We Accept</a>
+          <a href="#faq">FAQs</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </details>
+      <a class="btn" href="#dpc">Memberships</a>
+      <a class="btn primary" href="#book">Book Now</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="book">
+    <div class="container grid">
+      <div>
+        <h1>Same/Next‑Day Primary & Urgent Care in Rocklin</h1>
+        <p>Walk‑ins welcome. Members get unlimited visits and 24/7 messaging. Serving Rocklin, Roseville, Lincoln, and nearby communities.</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn primary" href="#">Book Appointment</a>
+          <a class="btn" href="#dpc">Explore Memberships</a>
+        </div>
+      </div>
+      <div class="card">
+        <form onsubmit="event.preventDefault(); alert('This is a demo. Hook to your booking widget.');" aria-label="Quick booking">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+            <label>Visit Type
+              <select required style="width:100%;padding:.7rem;border:1px solid var(--ring);border-radius:10px">
+                <option value="Primary Care">Primary Care</option>
+                <option value="Urgent Care">Urgent Care</option>
+                <option value="DPC Consult">DPC Consult</option>
+              </select>
+            </label>
+            <label>Location
+              <select required style="width:100%;padding:.7rem;border:1px solid var(--ring);border-radius:10px">
+                <option>Rocklin</option>
+              </select>
+            </label>
+            <label style="grid-column:1/-1">Preferred Time
+              <input type="datetime-local" style="width:100%;padding:.7rem;border:1px solid var(--ring);border-radius:10px" />
+            </label>
+          </div>
+          <div style="margin-top:10px;display:flex;gap:10px">
+            <button class="btn primary" type="submit">Check Availability</button>
+            <button class="btn" type="button" onclick="document.getElementById('insurance').scrollIntoView({behavior:'smooth'})">See Insurance</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Insurance (names only) -->
+  <section class="section" id="insurance">
+    <div class="container">
+      <h2>Insurance We Accept</h2>
+      <p class="muted">We also offer transparent, affordable Direct Primary Care memberships if you are uninsured or prefer not to use insurance.</p>
+      <div class="ins-grid" aria-label="List of accepted insurance plans">
+        <div class="ins-item">Blue Shield of California</div>
+        <div class="ins-item">Anthem Blue Cross</div>
+        <div class="ins-item">UnitedHealthcare</div>
+        <div class="ins-item">Aetna</div>
+        <div class="ins-item">Cigna</div>
+        <div class="ins-item">Medicare</div>
+        <div class="ins-item">Partnership HealthPlan (Medi‑Cal)</div>
+        <div class="ins-item">Sutter Independent Physicians</div>
+        <div class="ins-item">Hill Physicians</div>
+        <div class="ins-item">Tricare</div>
+        <div class="ins-item">Workers’ Compensation</div>
+        <div class="ins-item">Cash / Self‑Pay (DPC)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Memberships placeholder -->
+  <section class="section" id="dpc">
+    <div class="container">
+      <h2>Direct Primary Care Memberships</h2>
+      <p class="muted">Unlimited visits, same/next‑day access, transparent pricing. Ask us about employer plans.</p>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+        <div class="ins-item"><strong>Essential</strong><br/>$59/mo per employee</div>
+        <div class="ins-item"><strong>Spouse Add‑On</strong><br/>$30/mo</div>
+        <div class="ins-item"><strong>Child (5+)</strong><br/>$10/mo</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container cols">
+      <div>
+        <div class="brand" style="color:#fff"><span class="dot"></span><span>urHealthcare</span></div>
+        <p style="max-width:50ch">6839 Five Star Blvd, Suite F, Rocklin, CA • Call/Text 916‑249‑8066</p>
+      </div>
+      <div>
+        <h3 style="margin:0 0 8px;font-size:16px;color:#e2e8f0">Patients</h3>
+        <nav style="display:grid;gap:6px">
+          <a href="#book">Book Now</a>
+          <a href="#dpc">Memberships</a>
+          <a href="#insurance">Insurance</a>
+          <a href="#faq">FAQs</a>
+        </nav>
+      </div>
+      <div>
+        <h3 style="margin:0 0 8px;font-size:16px;color:#e2e8f0">Practice</h3>
+        <nav style="display:grid;gap:6px">
+          <a href="#contact">Contact</a>
+          <a href="#privacy">Privacy</a>
+          <a href="#terms">Terms</a>
+        </nav>
+      </div>
+    </div>
+    <div class="container copyright">© <span id="yr"></span> urHealthcare. All rights reserved.</div>
+  </footer>
+
+  <script>
+    // Desktop dropdown toggling via keyboard/click
+    document.querySelectorAll('.menu-parent > a').forEach(link=>{
+      const parent = link.parentElement;
+      link.addEventListener('click',e=>{
+        e.preventDefault();
+        const expanded = parent.getAttribute('aria-expanded')==='true';
+        document.querySelectorAll('.menu-parent').forEach(p=>p.setAttribute('aria-expanded','false'));
+        parent.setAttribute('aria-expanded', expanded?'false':'true');
+      });
+    });
+    document.addEventListener('click', (e)=>{
+      if(!e.target.closest('.menu-parent')){
+        document.querySelectorAll('.menu-parent').forEach(p=>p.setAttribute('aria-expanded','false'));
+      }
+    });
+
+    // Mobile nav toggle
+    const burger=document.querySelector('.burger');
+    const mobile=document.getElementById('mobileNav');
+    burger.addEventListener('click',()=>{
+      const expanded = burger.getAttribute('aria-expanded')==='true';
+      burger.setAttribute('aria-expanded', expanded?'false':'true');
+      mobile.hidden = expanded;
+    });
+
+    // Year in footer
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
