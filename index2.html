@@ -418,82 +418,218 @@
       </div>
     </section>
 
-    <!-- DIRECT PRIMARY CARE (Tabs) -->
-    <section id="plans" class="section band slide">
-      <div class="container center reveal">
-        <h2>Direct Primary Care</h2>
-        <p class="muted">Flat monthly pricing, better access, and transparent care.</p>
-        <div class="tabs" id="dpc-tabs">
-          <div class="tablist" role="tablist" aria-label="Direct Primary Care details">
-            <button class="tab" role="tab" aria-selected="true" aria-controls="tab-overview" id="tabbtn-overview">Overview</button>
-            <button class="tab" role="tab" aria-selected="false" aria-controls="tab-pricing" id="tabbtn-pricing">Pricing</button>
-            <button class="tab" role="tab" aria-selected="false" aria-controls="tab-included" id="tabbtn-included">What’s Included</button>
-            <button class="tab" role="tab" aria-selected="false" aria-controls="tab-why" id="tabbtn-why">Why DPC</button>
-          </div>
+    <!-- DIRECT PRIMARY CARE (Colorful • Pricing Tabs • Included • Know More • FAQ) -->
+<section id="plans" class="section band slide colorful-dpc">
+  <style>
+    /* ===== Colorful DPC section ===== */
+    .colorful-dpc{
+      position:relative; overflow:hidden;
+      background:
+        radial-gradient(900px 420px at -10% -20%, rgba(33,150,243,.25), transparent 60%),
+        radial-gradient(700px 380px at 110% 10%, rgba(21,101,192,.25), transparent 60%),
+        linear-gradient(180deg, #e9f6ff 0%, #f5f9ff 40%, #ffffff 100%);
+    }
+    .colorful-dpc .container{ max-width:1100px; margin:0 auto; }
 
-          <div class="tabpanel" role="tabpanel" id="tab-overview" aria-labelledby="tabbtn-overview" aria-hidden="false">
-            <p>Direct Primary Care (DPC) removes middlemen so you can focus on your health with your clinician. Instead of paying per visit, you join with a simple <strong>monthly membership</strong> that covers unlimited access to primary and urgent care.</p>
-            <div class="cta" style="margin-top:10px;">
-              <a class="btn btn-primary" href="contact.html">Join & Book a Visit</a>
-              <a class="btn ghost" href="plans.html">See plans & pricing</a>
-            </div>
-          </div>
+    .colorful-dpc h2{
+      font-weight: 900; letter-spacing:.2px;
+      font-size: clamp(30px, 4.8vw, 52px); margin: 0 0 4px; color:#0b2a5b;
+    }
+    .colorful-dpc .muted{ color:#54657a; margin: 0 0 18px; }
 
-          <div class="tabpanel" role="tabpanel" id="tab-pricing" aria-labelledby="tabbtn-pricing" aria-hidden="true">
-            <div class="price-grid">
-              <div class="p-card">
-                <h4>Individual</h4>
-                <div class="p-price">$79/mo</div>
-                <ul class="list-clean">
-                  <li>Unlimited primary & urgent care</li>
-                  <li>Same/next-day access</li>
-                  <li>Virtual visits included</li>
-                </ul>
-              </div>
-              <div class="p-card">
-                <h4>Spouse</h4>
-                <div class="p-price">$50/mo</div>
-                <ul class="list-clean">
-                  <li>Add your partner anytime</li>
-                  <li>Same benefits</li>
-                </ul>
-              </div>
-              <div class="p-card">
-                <h4>Child (5+)</h4>
-                <div class="p-price">$30/mo</div>
-                <ul class="list-clean">
-                  <li>Pediatric sick & well visits</li>
-                  <li>Rapid access</li>
-                </ul>
-              </div>
-            </div>
-            <p class="note" style="margin-top:10px;">Specialty/hospital services are outside the DPC fee. Many members pair DPC with a high-deductible or catastrophic insurance plan.</p>
-          </div>
+    /* ===== Pricing tabs (3 parallel tabs) ===== */
+    .pricing{ margin-top: 10px; }
+    .pricing .tablist{
+      display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap:10px;
+      border-bottom:1px solid #cfe2ff; margin-bottom: 0;
+    }
+    .pricing .tab{
+      appearance:none; cursor:pointer;
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+      background: linear-gradient(180deg, #ffffff 0%, #f1f7ff 100%);
+      color:#0b2a5b; border:1px solid #cfe2ff; border-bottom:0;
+      padding:14px 16px; border-top-left-radius:14px; border-top-right-radius:14px;
+      font-weight: 900;
+    }
+    .pricing .tab span.price{
+      font-size: 22px; font-weight: 900; color:#1565C0;
+      padding:4px 10px; border-radius:12px; background:#e8f2ff; border:1px solid #cfe2ff;
+    }
+    .pricing .tab[aria-selected="true"]{
+      background:#fff; color:#0b2a5b; box-shadow: 0 -2px 0 #2196F3 inset;
+    }
 
-          <div class="tabpanel" role="tabpanel" id="tab-included" aria-labelledby="tabbtn-included" aria-hidden="true">
-            <ul class="list-clean">
-              <li><strong>Continuity Primary Care</strong> — preventive, chronic & acute care with the provider you choose</li>
-              <li><strong>7-Day Urgent Care</strong> — walk-in or virtual for common illnesses & injuries</li>
-              <li><strong>250+ Included Medications</strong> — <a href="included-meds.html">see the list</a></li>
-              <li><strong>Basic Labs</strong> — routine panels & rapid tests (<a href="labs.html">see labs</a>)</li>
-              <li><strong>X-ray & Ultrasound</strong> — fast, in-clinic imaging</li>
-              <li><strong>Minor Procedures</strong> — stitches, splints, abscess drainage, foreign body removal</li>
-              <li><strong>Virtual Care</strong> — video visits & secure messaging</li>
-              <li><strong>Care Coordination</strong> — referrals and follow-up across the Sacramento metro</li>
-            </ul>
-          </div>
+    .pricing .panels{
+      border:1px solid #cfe2ff; border-radius:0 14px 14px 14px; background:#fff;
+      padding:18px; margin-bottom: 24px;
+    }
+    .pricing .tabpanel[aria-hidden="true"]{ display:none; }
+    .pricing .tabpanel h3{ margin:0 0 6px; }
+    .pricing .big-price{ font-size: 34px; font-weight: 900; color:#0b3a83; margin: 4px 0 10px; }
+    .pricing .bullets{ margin:0; padding-left: 18px; }
+    .pricing .bullets li{ margin:6px 0; }
+    .pricing .cta{ margin-top: 10px; display:flex; gap:10px; flex-wrap:wrap; }
+    .pricing .btn-primary{ background:#FF6A00; color:#fff; border:none; padding:10px 16px; border-radius:12px; font-weight:800; }
+    .pricing .btn-primary:hover{ filter:brightness(.95); }
+    .pricing .btn-ghost{ background:transparent; border:2px solid #0b3a83; color:#0b3a83; padding:10px 16px; border-radius:12px; font-weight:800; }
 
-          <div class="tabpanel" role="tabpanel" id="tab-why" aria-labelledby="tabbtn-why" aria-hidden="true">
-            <p><strong>Transparent pricing</strong>, <strong>better access</strong>, and <strong>more time</strong> with your clinician. DPC flips the traditional model: your membership is a direct relationship with your provider, not an insurance company.</p>
-            <ul class="list-clean">
-              <li>Individuals & families — predictable costs with unlimited access</li>
-              <li>Employers — lower total costs and fewer sick days</li>
-              <li>Chronic care — ongoing support without visit fees</li>
-            </ul>
+    /* ===== Included grid ===== */
+    .included{ margin-top: 10px; }
+    .included h3{ font-size: clamp(22px, 3.2vw, 28px); margin:10px 0 8px; color:#0b2a5b; }
+    .inc-grid{
+      display:grid; gap:14px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+    .inc-card{
+      background:#ffffff; border:1px solid #e4eefb; border-radius:14px;
+      padding:14px; display:grid; gap:6px; align-content:start;
+      box-shadow: 0 8px 24px rgba(0,0,0,.05);
+    }
+    .inc-icon{ width:42px; height:42px; display:grid; place-items:center; border-radius:12px;
+      background:#eef6ff; color:#1565C0; font-size:22px; font-weight:900; }
+
+    /* ===== Know more CTA ===== */
+    .know-more{
+      margin-top: 14px; background:linear-gradient(180deg, #e8f3ff, #f7fbff);
+      border:1px solid #cfe2ff; border-radius:16px; padding:16px;
+      display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap;
+    }
+    .know-more h4{ margin:0; color:#0b2a5b; font-size: clamp(18px, 2.6vw, 22px); }
+    .know-more .btn{ background:#2196F3; color:#fff; border:none; padding:10px 16px; border-radius:12px; font-weight:800; }
+    .know-more .btn:hover{ filter:brightness(.95); }
+
+    /* ===== FAQ (accordion using <details>) ===== */
+    .faq{ margin-top: 8px; }
+    .faq h3{ font-size: clamp(22px, 3.2vw, 28px); margin:12px 0 8px; color:#0b2a5b; }
+    .faq details{
+      background:#fff; border:1px solid #e4eefb; border-radius:12px; margin:8px 0; padding:12px 14px;
+    }
+    .faq summary{
+      cursor:pointer; font-weight:800; color:#0b2a5b; outline:none;
+    }
+    .faq details[open]{ box-shadow: 0 8px 24px rgba(0,0,0,.05); }
+    .faq p{ margin:8px 0 0; color:#3f4b59; }
+  </style>
+
+  <div class="container reveal">
+    <h2>Direct Primary Care</h2>
+    <p class="muted">Flat monthly pricing, better access, and transparent care.</p>
+
+    <!-- PRICING TABS -->
+    <div class="pricing" id="price-tabs">
+      <div class="tablist" role="tablist" aria-label="DPC Pricing">
+        <button class="tab" id="pricebtn-individual" role="tab" aria-controls="price-individual" aria-selected="true">
+          Individual <span class="price">$79/mo</span>
+        </button>
+        <button class="tab" id="pricebtn-spouse" role="tab" aria-controls="price-spouse" aria-selected="false">
+          Spouse <span class="price">$50/mo</span>
+        </button>
+        <button class="tab" id="pricebtn-child" role="tab" aria-controls="price-child" aria-selected="false">
+          Child (5+) <span class="price">$30/mo</span>
+        </button>
+      </div>
+
+      <div class="panels">
+        <div class="tabpanel" id="price-individual" role="tabpanel" aria-labelledby="pricebtn-individual" aria-hidden="false">
+          <h3>Individual Membership</h3>
+          <div class="big-price">$79/month</div>
+          <ul class="bullets">
+            <li>Unlimited primary & urgent care</li>
+            <li>Same/next-day access + virtual visits</li>
+            <li>Transparent, predictable pricing</li>
+          </ul>
+          <div class="cta">
+            <a class="btn-primary" href="contact.html">Join & Book</a>
+            <a class="btn-ghost" href="direct-primary-care.html">Full details</a>
+          </div>
+        </div>
+
+        <div class="tabpanel" id="price-spouse" role="tabpanel" aria-labelledby="pricebtn-spouse" aria-hidden="true">
+          <h3>Spouse Add-On</h3>
+          <div class="big-price">$50/month</div>
+          <ul class="bullets">
+            <li>Same benefits as Individual</li>
+            <li>Add anytime—cancel anytime</li>
+            <li>Great for couples & families</li>
+          </ul>
+          <div class="cta">
+            <a class="btn-primary" href="contact.html">Add Spouse</a>
+            <a class="btn-ghost" href="direct-primary-care.html">See how it works</a>
+          </div>
+        </div>
+
+        <div class="tabpanel" id="price-child" role="tabpanel" aria-labelledby="pricebtn-child" aria-hidden="true">
+          <h3>Child (5+)</h3>
+          <div class="big-price">$30/month</div>
+          <ul class="bullets">
+            <li>Pediatric sick & well visits</li>
+            <li>Rapid access & virtual care</li>
+            <li>Pair with a parent’s membership</li>
+          </ul>
+          <div class="cta">
+            <a class="btn-primary" href="contact.html">Add Child</a>
+            <a class="btn-ghost" href="direct-primary-care.html">Benefits for kids</a>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+
+    <!-- WHAT'S INCLUDED -->
+    <div class="included">
+      <h3>What’s Included</h3>
+      <div class="inc-grid">
+        <div class="inc-card"><div class="inc-icon">🩺</div><strong>Continuity Primary Care</strong><span>Preventive, chronic & acute care with the provider you choose.</span></div>
+        <div class="inc-card"><div class="inc-icon">⏱️</div><strong>7-Day Urgent Care</strong><span>Walk-in or virtual for common illnesses & injuries.</span></div>
+        <div class="inc-card"><div class="inc-icon">💊</div><strong>250+ Medications</strong><span><a href="included-meds.html">Common meds included</a> for members.</span></div>
+        <div class="inc-card"><div class="inc-icon">🧪</div><strong>Basic Labs & Rapid Tests</strong><span>Routine panels and in-clinic testing.</span></div>
+        <div class="inc-card"><div class="inc-icon">🩻</div><strong>X-ray & Ultrasound</strong><span>On-site imaging for quicker answers.</span></div>
+        <div class="inc-card"><div class="inc-icon">📱</div><strong>Virtual Care</strong><span>Video visits & secure messaging.</span></div>
+        <div class="inc-card"><div class="inc-icon">🧭</div><strong>Care Coordination</strong><span>Referrals & follow-up across the metro.</span></div>
+      </div>
+    </div>
+
+    <!-- KNOW MORE -->
+    <div class="know-more">
+      <h4>Want full details about Direct Primary Care at urHealthcare?</h4>
+      <a class="btn" href="direct-primary-care.html">Know More</a>
+    </div>
+
+    <!-- FAQ -->
+    <div class="faq">
+      <h3>Membership FAQ</h3>
+
+      <details>
+        <summary>What is Direct Primary Care (DPC)?</summary>
+        <p>DPC is a simple monthly membership for primary & urgent care. It removes middlemen and visit-by-visit billing so you can focus on your health with your clinician.</p>
+      </details>
+
+      <details>
+        <summary>Do I need insurance to join?</summary>
+        <p>No. DPC is separate from insurance. Many members keep a high-deductible or catastrophic plan for hospital/specialty care and use DPC for everyday care.</p>
+      </details>
+
+      <details>
+        <summary>Are urgent care visits included?</summary>
+        <p>Yes—urgent care is included with your membership (walk-in or virtual) for common illnesses and injuries.</p>
+      </details>
+
+      <details>
+        <summary>What labs and medications are included?</summary>
+        <p>Members get basic labs and rapid tests in clinic, plus access to <a href="included-meds.html">250+ commonly used medications</a> included with membership.</p>
+      </details>
+
+      <details>
+        <summary>Can I cancel anytime?</summary>
+        <p>Yes. Membership is month-to-month. You can cancel anytime before your next billing date.</p>
+      </details>
+
+      <details>
+        <summary>Can I use HSA or FSA funds?</summary>
+        <p>Many patients do. Check with your plan administrator for eligibility details for membership fees and services.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
 
     <!-- LOCATIONS -->
     <section class="locations slide" aria-labelledby="loc-title">
