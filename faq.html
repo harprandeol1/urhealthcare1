@@ -1,245 +1,219 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
+  <!-- Meta -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>urHealthcare — Primary & Urgent Care in Sacramento Metro</title>
-  <meta name="description" content="Direct primary & urgent care. Unlimited visits, 7-day urgent care, 250+ meds included, x-ray, labs, ultrasound, and minor procedures." />
-  <meta name="theme-color" content="##FFFFFF" />
+  <title>FAQ | urHealthcare — Primary & Urgent Care in Sacramento Metro</title>
+  <meta name="description" content="Frequently asked questions about urHealthcare: accepted insurances, Direct Primary Care memberships, in-house labs, urgent & primary care, online access (OnPatient), transportation, and chronic care management for Medicare." />
+  <meta name="theme-color" content="#FFFFFF" />
+  <link rel="canonical" href="https://harprandeol1.github.io/urhealthcare1/faq.html" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
 
-  <!-- Always-works stylesheet for GitHub Pages (absolute URL + cache-buster) -->
+  <!-- Site CSS (your global styles) -->
   <link rel="stylesheet" href="https://harprandeol1.github.io/urhealthcare1/assets/styles.css?v=5" />
 
-  <!-- Page/transition extras -->
+  <!-- Page styles (scoped) -->
   <style>
-    /* ===== Scroll-snap “slides” + reveal transitions ===== */
-    :root { --hdrH: 72px; }
-    html, body { height: 100%; scroll-behavior: smooth; }
-    /* pad for fixed headers (if any) when snapping or using #anchors */
-    main.snap { scroll-snap-type: y mandatory; scroll-padding-top: var(--hdrH); overscroll-behavior-y: contain; }
-    section.slide { 
-      scroll-snap-align: start; 
-      min-height: calc(100vh - var(--hdrH)); 
-      padding-block: clamp(56px, 10vh, 128px);   /* clear space in every section */
+    :root{
+      --brand:#2196F3;
+      --brand-dark:#0b3a83;
+      --ink:#111827;
+      --muted:#5b6b82;
+      --ring:#e6eef7;
+      --card:#f8fafc;
+      --shadow:0 14px 40px rgba(0,0,0,.08);
+      --hdrH:72px;
     }
-    /* soft separators so the transition feels like a new page */
-    section.slide:not(:first-of-type) { border-top: 1px solid rgba(0,0,0,.04); }
-    /* content reveal on enter */
-    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
-    .in .reveal { opacity: 1; transform: none; }
-    /* reduced motion preference */
-    @media (prefers-reduced-motion: reduce) {
-      main.snap { scroll-snap-type: none; }
-      .reveal, .in .reveal { opacity: 1; transform: none; transition: none; }
-    }
+    /* Layout helpers in case globals are missing */
+    .container{max-width:1200px;margin:0 auto;padding:0 16px}
 
-    /* ===== Existing dropdown CSS kept from your file ===== */
-    .dropdown { position: relative; }
+    /* ===== Top header (FIXED/CLEAN) ===== */
+    .hdr{
+      position:sticky; top:0; z-index:1000;
+      background:#fff; border-bottom:1px solid var(--ring);
+    }
+    .hdr .nav{
+      min-height:var(--hdrH);
+      display:flex; align-items:center; justify-content:space-between; gap:16px;
+    }
+    .logo{font-weight:800; font-size:clamp(22px,2.2vw,28px); color:var(--brand-dark); text-decoration:none; white-space:nowrap;}
+    .navlinks{display:flex; align-items:center; gap:18px;}
+    .navlinks a{color:var(--brand-dark); font-weight:700; text-decoration:none;}
+    .navlinks a:hover{color:#0a2e63}
+
+    /* Services dropdown */
+    .dropdown{position:relative}
     .dropbtn{
-      background:transparent; border:0; padding:8px 10px; font:inherit; font-weight:600;
-      color:#0b3a83; cursor:pointer; border-radius:8px;
+      background:transparent; border:0; padding:8px 10px; font:inherit; font-weight:700;
+      color:var(--brand-dark); cursor:pointer; border-radius:8px;
     }
     .menu{
       position:absolute; top:110%; left:0; min-width:280px; z-index:1000;
-      background:#b5e2ff; border:1px solid var(--border); border-radius:12px;
-      box-shadow:var(--shadow); padding:8px; list-style:none; margin:0; display:none;
+      background:#fff; border:1px solid var(--ring); border-radius:12px; box-shadow:var(--shadow);
+      padding:8px; list-style:none; margin:0; display:none;
     }
-    .menu .grid{ display:grid; grid-template-columns:repeat(2,minmax(160px,1fr)); gap:4px 8px; }
-    .menu a{ display:block; padding:8px 10px; border-radius:8px; color:var(--ink); text-decoration:none; white-space:nowrap; }
-    .menu a:hover{ background:#f5f8ff; text-decoration:none; }
-    .menu .all { border-top:1px solid var(--border); margin-top:6px; padding-top:6px; }
-    @media (min-width:721px){ .dropdown:hover .menu, .dropdown:focus-within .menu{ display:block; } }
-    .dropdown.open .menu{ display:block !important; }
-    @media (max-width:720px){
-      .navlinks{ display:none; }
-      .menu-btn{ display:inline-block; background:transparent; border:0; }
-      .menu-open .navlinks{ display:flex; flex-direction:column; align-items:flex-start; gap:10px; padding:12px 0; }
-      .dropdown{ width:100%; }
-      .menu{ position:static; box-shadow:none; border:0; padding:0; }
+    .menu .grid{display:grid; grid-template-columns:repeat(2,minmax(160px,1fr)); gap:4px 8px;}
+    .menu a{display:block; padding:8px 10px; border-radius:8px; color:#111; white-space:nowrap;}
+    .menu a:hover{background:#f2f7ff}
+    .menu .all{border-top:1px solid var(--ring); margin-top:6px; padding-top:6px;}
+    @media (min-width:721px){
+      .dropdown:hover .menu, .dropdown:focus-within .menu{display:block}
     }
-  </style>
+    .dropdown.open .menu{display:block !important}
 
-  <!-- Open Graph (optional) -->
-  <meta property="og:title" content="urHealthcare — Primary & Urgent Care" />
-  <meta property="og:description" content="Unlimited visits. 7-day urgent care. 250+ meds included. Transparent pricing." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://harprandeol1.github.io/urhealthcare1/" />
-</head>
-<body>
-  <!-- Header with working Services dropdown -->
-  <header class="hdr" style="position:sticky;top:0;z-index:100;background:#fff;">
-    <div class="container nav">
-      <a class="logo" href="index.html" style="font-size: 28px; font-weight: 600; color: #0b3a83; text-decoration: none;">
-  urHealthcare
-</a>
-
-
-
-      <nav class="navlinks" aria-label="Primary">
-        <div class="dropdown" id="services-dd">
-          <button class="dropbtn" type="button" aria-expanded="false" aria-controls="menu-services">
-            Services ▾
-          </button>
-          <div id="menu-services" class="menu" role="menu">
-            <div class="grid">
-              <a href="primary-care.html" role="menuitem">Primary Care</a>
-              <a href="urgent-care.html" role="menuitem">Urgent Care</a>
-              <a href="x-ray.html"role="menuitem">X-ray</a>
-              <a href="labs.html" role="menuitem">Labs</a>
-              <a href="ultrasound.html" role="menuitem">Ultrasound</a>
-              <a href="minor-procedures.html" role="menuitem">Minor Procedures</a>
-              <a href="virtual-care.html" role="menuitem">Virtual Care</a>
-              <a href="included-meds.html" role="menuitem">Medications</a>
-            </div>
-            <div class="all"><a href="#services">View all services →</a></div>
-          </div>
-        </div>
-
-        <a href="direct-primary-care.html">Membership</a>
-        <a href="employers.html">Employers</a>
-        <a href="faq.html">FAQ</a>
-
-        <!-- LOGIN DROPDOWN -->
-        <div class="login-dd">
-          <button class="btn login-dd__button" id="loginMenuButton"
-                  aria-haspopup="menu" aria-expanded="false" aria-controls="loginMenu">
-            Login
-          </button>
-
-          <ul class="login-dd__menu" id="loginMenu" role="menu" aria-labelledby="loginMenuButton">
-            <li role="none">
-              <a role="menuitem" href="https://urhealthcare.hint.com/login/request" class="login-dd__link">Membership Login</a>
-            </li>
-            <li role="none">
-              <a role="menuitem" href="https://www.onpatient.com/login/" class="login-dd__link">OnPatient Login</a>
-            </li>
-          </ul>
-        </div>
-
-        <style>
-          .login-dd { position: relative; }
-          .login-dd__button { display:inline-flex; align-items:center; gap:6px; }
-          .login-dd__button::after { content:"▾"; font-size:.9em; }
-          .login-dd__menu {
-            position:absolute; right:0; top:calc(100% + 8px);
-            min-width:220px; padding:6px; margin:0; list-style:none;
-            background:#fff; border:1px solid #e5e7eb; border-radius:12px;
-            box-shadow:0 12px 28px rgba(0,0,0,.12);
-            display:none; z-index:1000;
-          }
-          .login-dd__menu[data-open="true"] { display:block; }
-          .login-dd__link { display:block; padding:10px 12px; border-radius:10px; color:#111; text-decoration:none; font-weight:700; }
-          .login-dd__link:hover, .login-dd__link:focus { background:#f2f7ff; color:#0b3a83; outline:none; }
-          .btn { background:#0b3a83; color:#fff; border:none; padding:10px 16px; border-radius:12px; font-weight:800; }
-          .btn:hover { filter:brightness(.95); }
-        </style>
-      </nav>
-
-      <button class="menu-btn" aria-label="Menu"
-        onclick="document.body.classList.toggle('menu-open')">☰</button>
-    </div>
-  </header>
-<head>
-  <meta charset="utf-8" />
-  <title>FAQ | urHealthcare</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Frequently asked questions about urHealthcare: insurance acceptance, Direct Primary Care memberships, in-house labs, urgent & primary care, online access, transportation and chronic care management for Medicare." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
-  <style>
-    :root{
-      --brand:#2196F3;           /* requested brand color (0xff2196f3) */
-      --brand-ink:#0b3a83;       /* deep companion blue for accents if needed */
-      --ink:#111;
-      --muted:#52607a;
-      --bg:#ffffff;
-      --card:#f8fafc;
-      --ring:#e6eef7;
-      --shadow: 0 14px 40px rgba(0,0,0,.08);
+    /* Login dropdown (scoped) */
+    .login-dd{position:relative}
+    .login-dd__button{
+      display:inline-flex; align-items:center; gap:6px;
+      background:var(--brand-dark); color:#fff; border:none; padding:10px 16px;
+      border-radius:12px; font-weight:800; cursor:pointer;
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;}
-    a{color:var(--brand);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .wrap{max-width:1100px;margin:0 auto;padding:28px 16px 64px}
+    .login-dd__button::after{content:"▾"; font-size:.9em}
+    .login-dd__menu{
+      position:absolute; right:0; top:calc(100% + 8px); min-width:220px; padding:6px; margin:0; list-style:none;
+      background:#fff; border:1px solid var(--ring); border-radius:12px; box-shadow:var(--shadow); display:none; z-index:1000;
+    }
+    .login-dd__menu[data-open="true"]{display:block}
+    .login-dd__link{display:block; padding:10px 12px; border-radius:10px; color:#111; font-weight:700; text-decoration:none}
+    .login-dd__link:hover,.login-dd__link:focus{background:#f2f7ff; color:var(--brand-dark); outline:none}
 
-    header.site{
+    /* Mobile nav */
+    .menu-btn{display:none; background:transparent; border:0; font-size:26px; color:var(--brand-dark)}
+    @media (max-width:860px){
+      .navlinks{display:none}
+      .menu-open .navlinks{
+        display:flex; flex-direction:column; align-items:flex-start; gap:10px;
+        position:absolute; left:0; right:0; top:var(--hdrH);
+        background:#fff; padding:12px 16px; border-bottom:1px solid var(--ring);
+      }
+      .menu-btn{display:inline-block}
+    }
+
+    /* ===== FAQ Page Header (hero band) ===== */
+    .site-hero{
       background:linear-gradient(180deg,#1e88e5 0%, var(--brand) 60%, #64b5f6 100%);
-      color:#fff;
-      padding:48px 16px 56px;
-      position:relative;
-      overflow:hidden;
+      color:#fff; padding:48px 0 56px; position:relative; overflow:hidden;
     }
-    header.site::after{
-      /* soft texture */
-      content:"";position:absolute;inset:-10% -20% auto -20%;height:140%;
+    .site-hero::after{
+      content:""; position:absolute; inset:-10% -20% auto -20%; height:140%;
       background:radial-gradient(600px 300px at 15% -10%, rgba(255,255,255,.18), transparent 60%);
       pointer-events:none;
     }
-    header .wrap{padding:0 16px}
-    .headline{max-width:900px}
-    .headline h1{margin:0;font-size:clamp(28px,4.5vw,44px);font-weight:800;line-height:1.1}
-    .headline p{margin:10px 0 0;color:#eaf4ff;font-size:clamp(16px,2vw,18px)}
-    .quicklinks{margin-top:14px;display:flex;gap:12px;flex-wrap:wrap}
-    .btn{display:inline-block;padding:10px 16px;border-radius:12px;font-weight:800;border:0}
-    .btn.light{background:#fff;color:#0b3a83}
-    .btn.ghost{background:transparent;border:2px solid #fff;color:#fff}
+    .site-hero h1{margin:0; font-size:clamp(28px,4.6vw,44px); font-weight:800; line-height:1.1}
+    .site-hero p{margin:10px 0 0; color:#eaf4ff; font-size:clamp(16px,2vw,18px)}
+    .quicklinks{margin-top:14px; display:flex; gap:12px; flex-wrap:wrap}
+    .btn{display:inline-block; padding:10px 16px; border-radius:12px; font-weight:800; border:0}
+    .btn.light{background:#fff; color:var(--brand-dark)}
+    .btn.ghost{background:transparent; border:2px solid #fff; color:#fff}
 
-    /* FAQ body */
-    .faq-intro{background:var(--card); border:1px solid var(--ring); border-radius:16px; padding:16px 18px; margin-top:-28px; box-shadow:var(--shadow);}
-    .grid{display:grid;grid-template-columns: 1fr 2fr; gap:22px; margin-top:24px}
+    /* ===== FAQ body ===== */
+    .wrap{max-width:1100px; margin:0 auto; padding:28px 16px 64px}
+    .faq-intro{background:var(--card); border:1px solid var(--ring); border-radius:16px; padding:16px 18px; margin-top:-28px; box-shadow:var(--shadow); color:var(--ink)}
+    .grid{display:grid; grid-template-columns: 1fr 2fr; gap:22px; margin-top:24px}
     @media (max-width: 920px){ .grid{grid-template-columns:1fr} }
 
     .side{
       position:sticky; top:16px; align-self:start;
       background:#fff; border:1px solid var(--ring); border-radius:16px; padding:14px; box-shadow:var(--shadow);
     }
-    .side h3{margin:6px 0 8px;font-size:16px}
-    .toc{display:grid;gap:8px;margin-top:8px}
-    .toc a{padding:8px 10px;border-radius:10px;border:1px solid var(--ring);background:#fff;font-weight:700}
+    .side h3{margin:6px 0 8px; font-size:16px}
+    .toc{display:grid; gap:8px; margin-top:8px}
+    .toc a{padding:8px 10px; border-radius:10px; border:1px solid var(--ring); background:#fff; font-weight:700; color:var(--ink)}
     .toc a:hover{background:#f2f7ff}
 
     .faqs{display:grid; gap:14px}
     details{
-      background:#fff; border:1px solid var(--ring); border-radius:14px; padding:12px 14px;
-      box-shadow: var(--shadow);
+      background:#fff; border:1px solid var(--ring); border-radius:14px; padding:12px 14px; box-shadow: var(--shadow);
     }
     summary{cursor:pointer; font-weight:800; outline:none; list-style:none}
     summary::-webkit-details-marker{display:none}
     summary::after{content:"▾"; float:right; transition:transform .2s ease}
     details[open] summary::after{transform: rotate(-180deg)}
-    .faq-content{margin-top:8px;color:var(--muted);line-height:1.7}
+    .faq-content{margin-top:8px; color:var(--muted); line-height:1.7}
     .faq-content ul{margin:8px 0 0 20px}
-    .note{font-size:14px;color:#6b7a90}
+    .note{font-size:14px; color:#6b7a90}
 
-    footer.site{
-      margin-top:40px;padding:24px 16px;border-top:1px solid var(--ring); text-align:center; color:#6b7a90;
-    }
+    /* Footer */
+    .ftr{background:var(--brand-dark); color:#fff; padding:20px 0; text-align:center}
+    .ftr a{color:#fff; text-decoration:none}
+    .ftr nav a{margin:0 10px}
   </style>
+
+  <!-- Social -->
+  <meta property="og:title" content="FAQ | urHealthcare" />
+  <meta property="og:description" content="Answers about insurance, Direct Primary Care, providers, labs, urgent & primary care, online access, transportation and chronic care management." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://harprandeol1.github.io/urhealthcare1/faq.html" />
 </head>
 <body>
 
-  <header class="site">
-    <div class="wrap">
-      <div class="headline">
-        <h1>Frequently Asked Questions</h1>
-        <p>Answers about insurance, Direct Primary Care, providers, labs, urgent &amp; primary care, online access, transportation and chronic care management.</p>
-        <div class="quicklinks">
-          <a class="btn light" href="/accepted-insurances">Accepted Insurances</a>
-          <a class="btn ghost" href="/direct-primary-care.html">Direct Primary Care Plans</a>
-          <a class="btn ghost" href="https://urhealthcare.zohobookings.com/#/urhealthcare">Book an Appointment</a>
+  <!-- ===== HEADER (fixed & clean) ===== -->
+  <header class="hdr">
+    <div class="container nav">
+      <a class="logo" href="index.html">urHealthcare</a>
+
+      <nav class="navlinks" aria-label="Primary">
+        <div class="dropdown" id="services-dd">
+          <button class="dropbtn" type="button" aria-expanded="false" aria-controls="menu-services">Services ▾</button>
+          <div id="menu-services" class="menu" role="menu">
+            <div class="grid">
+              <a href="primary-care.html" role="menuitem">Primary Care</a>
+              <a href="urgent-care.html" role="menuitem">Urgent Care</a>
+              <a href="x-ray.html" role="menuitem">X-ray</a>
+              <a href="labs.html" role="menuitem">Labs</a>
+              <a href="ultrasound.html" role="menuitem">Ultrasound</a>
+              <a href="minor-procedures.html" role="menuitem">Minor Procedures</a>
+              <a href="virtual-care.html" role="menuitem">Virtual Care</a>
+              <a href="included-meds.html" role="menuitem">Medications</a>
+            </div>
+            <div class="all"><a href="#faq-start">View this FAQ →</a></div>
+          </div>
         </div>
-      </div>
+
+        <a href="direct-primary-care.html">Membership</a>
+        <a href="employers.html">Employers</a>
+        <a href="insurances.html">Insurances</a>
+        <a href="faq.html" aria-current="page">FAQ</a>
+
+        <!-- Login -->
+        <div class="login-dd">
+          <button class="login-dd__button" id="loginMenuButton"
+                  aria-haspopup="menu" aria-expanded="false" aria-controls="loginMenu">
+            Login
+          </button>
+          <ul class="login-dd__menu" id="loginMenu" role="menu" aria-labelledby="loginMenuButton">
+            <li role="none"><a role="menuitem" href="https://urhealthcare.hint.com/login/request" class="login-dd__link">Membership Login</a></li>
+            <li role="none"><a role="menuitem" href="https://www.onpatient.com/login/" class="login-dd__link">OnPatient Login</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <button class="menu-btn" aria-label="Menu"
+        onclick="document.body.classList.toggle('menu-open')">☰</button>
     </div>
   </header>
 
+  <!-- ===== FAQ PAGE HERO ===== -->
+  <section class="site-hero">
+    <div class="container">
+      <h1>Frequently Asked Questions</h1>
+      <p>Answers about insurance acceptance, Direct Primary Care memberships, providers, in-house labs, urgent & primary care, online access, transportation and chronic care management.</p>
+      <div class="quicklinks">
+        <a class="btn light" href="insurances.html">Accepted Insurances</a>
+        <a class="btn ghost" href="direct-primary-care.html">Direct Primary Care Plans</a>
+        <a class="btn ghost" href="https://urhealthcare.zohobookings.com/#/urhealthcare">Book an Appointment</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ BODY ===== -->
   <main class="wrap">
     <div class="faq-intro">
-      <strong>Short answer:</strong> Yes—<em>we accept major health insurance plans</em> and we also offer a transparent <em>Direct Primary Care (DPC)</em> membership. We can help you choose a health plan to pair with DPC, we have multiple providers to choose from, we do many labs in-house, and we offer both urgent and primary care for better continuity. Medicare patients can access transportation and chronic care management.
+      <strong>Short answer:</strong> Yes—<em>we accept major health insurance plans</em> (see our full list), and we also offer a transparent <em>Direct Primary Care (DPC)</em> membership. We can help you choose a health plan to pair with DPC, we have multiple providers to choose from, we collect many labs in-house, and we provide both urgent and primary care for better continuity. Medicare patients can access transportation and chronic care management.
     </div>
 
     <section class="grid" aria-labelledby="faq-start">
@@ -253,7 +227,7 @@
           <a href="#faq-urgent-primary">Urgent + Primary care</a>
           <a href="#faq-onpatient">Online access (OnPatient)</a>
           <a href="#faq-medicare-transport">Transportation (Medicare)</a>
-          <a href="#faq-ccm">Chronic Care Management (Medicare)</a>
+          <a href="#faq-ccm">Chronic Care Management</a>
         </nav>
       </aside>
 
@@ -261,8 +235,8 @@
         <details id="faq-insurance" open>
           <summary>Do you accept health insurance? Do you also offer Direct Primary Care?</summary>
           <div class="faq-content">
-            <p>Yes. We accept many major health insurance plans. For details, see our <a href="/accepted-insurances">Accepted Insurances</a> page.</p>
-            <p>We also offer a <strong>Direct Primary Care (DPC)</strong> membership for simple, predictable pricing. DPC covers unlimited primary and urgent care visits and is a great option if you prefer transparency or have a high deductible plan.</p>
+            <p>Yes. We accept many major health insurance plans. For details, see our <a href="insurances.html">Accepted Insurances</a> page.</p>
+            <p>We also offer a <strong>Direct Primary Care (DPC)</strong> membership for simple, predictable pricing. DPC covers unlimited primary and urgent care visits and is a great option if you prefer transparency or have a high-deductible plan.</p>
           </div>
         </details>
 
@@ -277,14 +251,14 @@
         <details id="faq-providers">
           <summary>Do you have multiple providers to choose from?</summary>
           <div class="faq-content">
-            <p>Yes. You can choose from multiple primary care clinicians and switch if your needs change. This improves continuity and access—virtual visits are available, too.</p>
+            <p>Yes. You can choose from multiple primary care clinicians and switch if your needs change. Virtual visits are available as well.</p>
           </div>
         </details>
 
         <details id="faq-labs">
           <summary>Do you do labs in-house? Will I need to drive to another lab?</summary>
           <div class="faq-content">
-            <p>We collect <strong>most common samples in-house</strong> (blood draws, swabs, and more) so there’s usually <strong>no need to drive to another lab</strong>. Many tests are processed on-site; when a test must be sent out, we handle the logistics for you and share results through your online portal.</p>
+            <p>We collect <strong>most common samples in-house</strong> (blood draws, swabs, and more) so there’s usually <strong>no need to drive to another lab</strong>. Many tests are processed on-site; when a test must be sent out, we handle the logistics and share results through your online portal.</p>
           </div>
         </details>
 
@@ -305,7 +279,7 @@
           <div class="faq-content">
             <p>Yes. Use our <strong>OnPatient</strong> portal to see visit summaries, results, medications, and to message the clinic.</p>
             <ul>
-              <li><a href="/onpatient-login">OnPatient Login</a></li>
+              <li><a href="https://www.onpatient.com/login/">OnPatient Login</a></li>
               <li><a href="https://urhealthcare.zohobookings.com/#/urhealthcare">Book an appointment</a></li>
             </ul>
           </div>
@@ -328,28 +302,28 @@
     </section>
   </main>
 
- <footer class="ftr" style="background:#0b3a83; color:#fff; padding:20px 0; text-align:center;">
-  <div class="container">
-    <nav>
-      <a href="index.html" style="color:#fff; margin:0 10px; text-decoration:none;">Home</a> |
-      <a href="primary-care.html" style="color:#fff; margin:0 10px; text-decoration:none;">Primary Care</a> |
-      <a href="urgent-care.html" style="color:#fff; margin:0 10px; text-decoration:none;">Urgent Care</a> |
-      <a href="health-plans.html" style="color:#fff; margin:0 10px; text-decoration:none;">Health Plans</a> |
-      <a href="faq.html" style="color:#fff; margin:0 10px; text-decoration:none;">FAQ</a> |
-      <a href="business.html" style="color:#fff; margin:0 10px; text-decoration:none;">For Business</a> |
-      <a href="contact.html" style="color:#fff; margin:0 10px; text-decoration:none;">Contact</a>
-    </nav>
-    <p style="margin-top:15px;">
-      <strong>Address:</strong> 6839 Five Star Blvd, Suite D, Rocklin, CA<br>
-      <strong>Phone:</strong> <a href="tel:19169642001" style="color:#fff;">916-964-2001</a> • 
-      <strong>Email:</strong> <a href="mailto:info@urhealthcare.org" style="color:#fff;">info@urhealthcare.org</a>
-    </p>
-    <p style="margin-top:10px;">© <span id="y"></span> urHealthcare. All rights reserved.</p>
-  </div>
-</footer>
+  <!-- ===== FOOTER ===== -->
+  <footer class="ftr">
+    <div class="container">
+      <nav>
+        <a href="index.html">Home</a> |
+        <a href="primary-care.html">Primary Care</a> |
+        <a href="urgent-care.html">Urgent Care</a> |
+        <a href="direct-primary-care.html">Health Plans</a> |
+        <a href="faq.html" aria-current="page">FAQ</a> |
+        <a href="employers.html">For Business</a> |
+        <a href="contact.html">Contact</a>
+      </nav>
+      <p style="margin-top:15px;">
+        <strong>Address:</strong> 6839 Five Star Blvd, Suite D, Rocklin, CA 95677<br>
+        <strong>Phone:</strong> <a href="tel:19169642001">916-964-2001</a> •
+        <strong>Email:</strong> <a href="mailto:info@urhealthcare.org">info@urhealthcare.org</a>
+      </p>
+      <p style="margin-top:10px;">© <span id="y"></span> urHealthcare. All rights reserved.</p>
+    </div>
+  </footer>
 
-
-  <!-- SEO: FAQ structured data -->
+  <!-- JSON-LD (FAQ) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -423,9 +397,43 @@
   }
   </script>
 
+  <!-- Behavior -->
   <script>
-    // year
-    document.getElementById('y').textContent = new Date().getFullYear();
+    // Year
+    const yEl = document.getElementById('y'); if (yEl) yEl.textContent = new Date().getFullYear();
+
+    // Services dropdown
+    (function(){
+      const dd = document.getElementById('services-dd');
+      if (!dd) return;
+      const btn = dd.querySelector('.dropbtn');
+      const menu = dd.querySelector('.menu');
+      btn.addEventListener('click', (e) => {
+        e.preventDefault(); e.stopPropagation();
+        const isOpen = dd.classList.toggle('open');
+        btn.setAttribute('aria-expanded', String(isOpen));
+      });
+      document.addEventListener('click', (e) => {
+        if (!dd.contains(e.target)) { dd.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') { dd.classList.remove('open'); btn.setAttribute('aria-expanded','false'); btn.blur(); }
+      });
+    })();
+
+    // Login dropdown (accessible)
+    (function(){
+      document.querySelectorAll('.login-dd').forEach((root) => {
+        const btn = root.querySelector('.login-dd__button');
+        const menu = root.querySelector('.login-dd__menu');
+        const first = root.querySelector('.login-dd__link');
+        const open = () => { menu.dataset.open = 'true'; btn.setAttribute('aria-expanded','true'); setTimeout(()=>first?.focus(),0); };
+        const close = () => { menu.removeAttribute('data-open'); btn.setAttribute('aria-expanded','false'); };
+        btn.addEventListener('click', (e)=>{ e.stopPropagation(); menu.dataset.open==='true' ? close() : open(); });
+        document.addEventListener('click', (e)=>{ if(!root.contains(e.target)) close(); });
+        document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') close(); if(e.key==='ArrowDown' && menu.dataset.open==='true'){ e.preventDefault(); first?.focus(); }});
+      });
+    })();
   </script>
 </body>
 </html>
