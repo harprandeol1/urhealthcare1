@@ -14,38 +14,112 @@
   <!-- Global stylesheet (absolute URL + cache-buster) -->
   <link rel="stylesheet" href="https://harprandeol1.github.io/urhealthcare1/assets/styles.css?v=8" />
 
-  <!-- Local hardening styles so header changes don't break this page -->
+  <!-- Page styles -->
   <style>
     :root{
       --brand:#0b3a83; --ink:#0e1a2f; --muted:#5a6780; --bg:#ffffff; --bg-soft:#f6f9ff;
       --border:#e6ebf3; --radius:18px; --shadow:0 10px 30px rgba(11,58,131,.08);
-      --accent1:#eef5ff; --accent2:#f0fbf4; --accent3:#fff7f0; --accent4:#fff1f1;
+
+      /* Category palette (color-coded classes) */
+      --c-antibiotic:#2563eb;
+      --c-antiviral:#7c3aed;
+      --c-respiratory:#22c55e;
+      --c-cardio:#ef4444;
+      --c-lipid:#f59e0b;
+      --c-endo:#14b8a6;
+      --c-gi:#f97316;
+      --c-derm:#ec4899;
+      --c-oph:#06b6d4;
+      --c-uro:#6366f1;
+      --c-neuro:#8b5cf6;
+      --c-injectable:#64748b;
     }
+
     html{scroll-behavior:smooth}
     body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:var(--bg);color:var(--ink);line-height:1.75;font-size:17px}
     h1,h2,h3{letter-spacing:-.02em;line-height:1.25;margin:.5em 0 .6em}
     h1{font-size:clamp(32px,4vw,50px)} h2{font-size:clamp(26px,3vw,38px)} h3{font-size:22px}
     p{margin:0 0 1.15em} a{color:var(--brand);text-decoration:none} a:hover{text-decoration:underline}
     .muted{color:var(--muted)} .small{font-size:12px;color:var(--muted)}
-    .container{max-width:1160px;margin:auto;padding:0 20px}
+
+    /* Wider page */
+    .container{max-width:1280px;margin:auto;padding:0 24px}
+
     .section{padding:90px 0} .section.band{background:var(--bg-soft)}
     .badge{display:inline-block;font-size:12px;font-weight:800;border-radius:999px;padding:6px 10px;background:#eef3ff;color:#10346b;border:1px solid #dce6ff}
     .btn{display:inline-block;padding:12px 18px;border-radius:999px;font-weight:800;background:var(--brand);color:#fff;box-shadow:var(--shadow);border:2px solid transparent}
     .btn:hover{filter:brightness(.96)}
     .btn.ghost,.btn.outline{background:#fff;color:var(--brand);border-color:var(--brand)}
     .pill{display:inline-block;padding:8px 12px;border-radius:999px;background:#eef3ff;border:1px solid #dce6ff;font-weight:700;margin:6px 6px 0 0}
-    .toolbox{margin-top:18px}
-    .search{width:100%;max-width:720px;padding:14px 16px;border:1px solid var(--border);border-radius:999px;font-size:16px;background:#fff;box-shadow:var(--shadow)}
+
+    /* Toolbox (sticky search/filters) */
+    .toolbox{margin-top:18px; position:sticky; top:84px; z-index:50; background:#fff; padding:10px 0 14px}
+    .search{width:100%;max-width:860px;padding:14px 16px;border:1px solid var(--border);border-radius:999px;font-size:16px;background:#fff;box-shadow:var(--shadow)}
     .filters{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
-    .chip{border:1px solid var(--border);background:#fff;padding:8px 12px;border-radius:999px;font-weight:700;cursor:pointer}
-    .chip[data-active="true"]{background:#f2f7ff;border-color:#c9dcff}
+    .chip{border:1px solid var(--border);background:#fff;padding:8px 12px;border-radius:999px;font-weight:800;cursor:pointer}
+    .chip[data-active="true"]{outline:3px solid #e6f0ff}
+
+    /* Color the filter chips to match classes */
+    .chip[data-filter="antibiotic"]{background:color-mix(in srgb, var(--c-antibiotic) 12%, #fff); border-color:color-mix(in srgb, var(--c-antibiotic) 35%, #e6ebf3)}
+    .chip[data-filter="antiviral"]{background:color-mix(in srgb, var(--c-antiviral) 12%, #fff); border-color:color-mix(in srgb, var(--c-antiviral) 35%, #e6ebf3)}
+    .chip[data-filter="respiratory"]{background:color-mix(in srgb, var(--c-respiratory) 12%, #fff); border-color:color-mix(in srgb, var(--c-respiratory) 35%, #e6ebf3)}
+    .chip[data-filter="cardio"]{background:color-mix(in srgb, var(--c-cardio) 12%, #fff); border-color:color-mix(in srgb, var(--c-cardio) 35%, #e6ebf3)}
+    .chip[data-filter="lipid"]{background:color-mix(in srgb, var(--c-lipid) 12%, #fff); border-color:color-mix(in srgb, var(--c-lipid) 35%, #e6ebf3)}
+    .chip[data-filter="endo"]{background:color-mix(in srgb, var(--c-endo) 12%, #fff); border-color:color-mix(in srgb, var(--c-endo) 35%, #e6ebf3)}
+    .chip[data-filter="gi"]{background:color-mix(in srgb, var(--c-gi) 12%, #fff); border-color:color-mix(in srgb, var(--c-gi) 35%, #e6ebf3)}
+    .chip[data-filter="derm"]{background:color-mix(in srgb, var(--c-derm) 12%, #fff); border-color:color-mix(in srgb, var(--c-derm) 35%, #e6ebf3)}
+    .chip[data-filter="oph"]{background:color-mix(in srgb, var(--c-oph) 12%, #fff); border-color:color-mix(in srgb, var(--c-oph) 35%, #e6ebf3)}
+    .chip[data-filter="uro"]{background:color-mix(in srgb, var(--c-uro) 12%, #fff); border-color:color-mix(in srgb, var(--c-uro) 35%, #e6ebf3)}
+    .chip[data-filter="neuro"]{background:color-mix(in srgb, var(--c-neuro) 12%, #fff); border-color:color-mix(in srgb, var(--c-neuro) 35%, #e6ebf3)}
+    .chip[data-filter="injectable"]{background:color-mix(in srgb, var(--c-injectable) 12%, #fff); border-color:color-mix(in srgb, var(--c-injectable) 35%, #e6ebf3)}
+
+    /* Grids & cards */
     .grid{display:grid;gap:28px}
     .card,.soft{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
-    .soft.a1{background:var(--accent1)} .soft.a2{background:var(--accent2)} .soft.a3{background:var(--accent3)} .soft.a4{background:var(--accent4)}
-    .list-clean{margin:0;padding-left:18px}
-    .med-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
-    .med{border:1px solid var(--border);border-radius:14px;background:#fff;padding:12px 14px;font-weight:700;box-shadow:var(--shadow)}
+    .soft.a1{background:#eef5ff}
+
+    /* Med grid wider */
+    .med-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+
+    /* Category wrappers with color-coded headers */
+    .category{margin-bottom:56px}
+    .cat-head{
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      padding:14px 16px; border:1px solid var(--border); border-radius:14px; background:#fff; box-shadow:var(--shadow);
+      position:relative; overflow:hidden;
+    }
+    .cat-head::before{
+      content:""; position:absolute; inset:0 50% 0 0; pointer-events:none;
+      background:linear-gradient(90deg, color-mix(in srgb, var(--cat) 16%, #fff), transparent 60%);
+    }
+    .cat-title{display:flex; align-items:center; gap:10px; margin:0}
+    .cat-dot{width:14px;height:14px;border-radius:50%}
+    .cat-quick a{font-weight:800}
+
+    /* Color map for sections + med tiles */
+    .category[data-cat="antibiotic"]{--cat:var(--c-antibiotic)}
+    .category[data-cat="antiviral"]{--cat:var(--c-antiviral)}
+    .category[data-cat="respiratory"]{--cat:var(--c-respiratory)}
+    .category[data-cat="cardio"]{--cat:var(--c-cardio)}
+    .category[data-cat="lipid"]{--cat:var(--c-lipid)}
+    .category[data-cat="endo"]{--cat:var(--c-endo)}
+    .category[data-cat="gi"]{--cat:var(--c-gi)}
+    .category[data-cat="derm"]{--cat:var(--c-derm)}
+    .category[data-cat="oph"]{--cat:var(--c-oph)}
+    .category[data-cat="uro"]{--cat:var(--c-uro)}
+    .category[data-cat="neuro"]{--cat:var(--c-neuro)}
+    .category[data-cat="injectable"]{--cat:var(--c-injectable)}
+
+    /* Individual medication tiles (inherit section color) */
+    .med{
+      border:1px solid var(--border); border-radius:14px; background:#fff; padding:12px 14px; font-weight:700; box-shadow:var(--shadow);
+      position:relative;
+    }
+    .category .med{border-left:6px solid var(--cat)}
+    .med:hover{box-shadow:0 14px 36px color-mix(in srgb, var(--cat) 12%, rgba(0,0,0,.06))}
+
     .note{color:var(--muted);font-size:14px}
+
     /* Header */
     .hdr{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:1px solid var(--border)}
     .hdr .container.nav{display:flex;align-items:center;gap:16px}
@@ -56,6 +130,7 @@
       .navlinks{display:none}
       .menu-open .navlinks{display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:12px 0;margin-left:0}
     }
+
     /* Services dropdown */
     .dropdown{position:relative}
     .dropbtn{background:transparent;border:0;padding:8px 10px;font:inherit;font-weight:600;color:#0b3a83;cursor:pointer;border-radius:8px}
@@ -71,6 +146,7 @@
     .dropdown.open .menu{display:block !important}
     @media(min-width:721px){ .dropdown:hover .menu, .dropdown:focus-within .menu{display:block} }
     @media(max-width:720px){ .dropdown{width:100%} .menu{position:static;box-shadow:none;border:0;padding:0} }
+
     /* Login dropdown */
     .login-dd{position:relative}
     .login-dd__button{display:inline-flex;align-items:center;gap:6px;background:var(--brand);color:#fff;border:none;padding:10px 16px;border-radius:12px;font-weight:800}
@@ -82,6 +158,7 @@
     .login-dd__menu[data-open="true"]{display:block}
     .login-dd__link{display:block;padding:10px 12px;border-radius:10px;color:#111;text-decoration:none;font-weight:700}
     .login-dd__link:hover,.login-dd__link:focus{background:#f2f7ff;color:var(--brand);outline:none}
+
     /* Reveal */
     .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
     .reveal.in{opacity:1;transform:none}
@@ -187,8 +264,14 @@
     <div class="container">
 
       <!-- Antibiotics -->
-      <section class="category" id="cat-antibiotic">
-        <h2>Antibiotics & Antimicrobials</h2>
+      <section class="category" id="cat-antibiotic" data-cat="antibiotic">
+        <div class="cat-head">
+          <h2 class="cat-title">
+            <span class="cat-dot" style="background:var(--c-antibiotic)"></span>
+            Antibiotics & Antimicrobials
+          </h2>
+          <div class="cat-quick"><a href="#medFilters">Filter</a></div>
+        </div>
         <div class="med-grid">
           <div class="med" data-cat="antibiotic" data-tags="throat ear sinus skin dental uti pneumonia">
             <strong>Amoxicillin</strong> 400mg/5ml suspension (100ml)
@@ -247,6 +330,8 @@
           <div class="med" data-cat="antibiotic" data-tags="skin uti mrsa">
             <strong>Sulfamethoxazole/Trimethoprim DS</strong> 800/160mg tablets
           </div>
+
+          <!-- Ophthalmic antibiotics (kept with antibiotic class, still color-coded) -->
           <div class="med" data-cat="antibiotic oph" data-tags="pink eye">
             <strong>Ciprofloxacin</strong> 0.3% ophthalmic solution (5ml)
           </div>
@@ -259,6 +344,8 @@
           <div class="med" data-cat="antibiotic oph" data-tags="pink eye">
             <strong>Trimethoprim/Polymyxin B</strong> ophthalmic solution (10ml)
           </div>
+
+          <!-- Injectables listed here but keep their own color on tiles -->
           <div class="med" data-cat="injectable" data-tags="gonorrhea cellulitis preop">
             <strong>Ceftriaxone</strong> 1g injection
           </div>
@@ -269,8 +356,11 @@
       </section>
 
       <!-- Antivirals -->
-      <section class="category" id="cat-antiviral">
-        <h2>Antivirals</h2>
+      <section class="category" id="cat-antiviral" data-cat="antiviral">
+        <div class="cat-head">
+          <h2 class="cat-title"><span class="cat-dot" style="background:var(--c-antiviral)"></span> Antivirals</h2>
+          <div class="cat-quick"><a href="#medFilters">Filter</a></div>
+        </div>
         <div class="med-grid">
           <div class="med" data-cat="antiviral" data-tags="cold sore hsv shingles">
             <strong>Acyclovir</strong> 400mg tablets
@@ -285,8 +375,11 @@
       </section>
 
       <!-- Respiratory / Allergy -->
-      <section class="category" id="cat-respiratory">
-        <h2>Respiratory & Allergy</h2>
+      <section class="category" id="cat-respiratory" data-cat="respiratory">
+        <div class="cat-head">
+          <h2 class="cat-title"><span class="cat-dot" style="background:var(--c-respiratory)"></span> Respiratory & Allergy</h2>
+          <div class="cat-quick"><a href="#medFilters">Filter</a></div>
+        </div>
         <div class="med-grid">
           <div class="med" data-cat="respiratory" data-tags="asthma wheeze cough">
             <strong>Albuterol</strong> 90mcg HFA inhaler (6.7g)
@@ -307,8 +400,11 @@
       </section>
 
       <!-- Blood Pressure / Heart -->
-      <section class="category" id="cat-cardio">
-        <h2>Blood Pressure & Heart</h2>
+      <section class="category" id="cat-cardio" data-cat="cardio">
+        <div class="cat-head">
+          <h2 class="cat-title"><span class="cat-dot" style="background:var(--c-cardio)"></span> Blood Pressure & Heart</h2>
+          <div class="cat-quick"><a href="#medFilters">Filter</a></div>
+        </div>
         <div class="med-grid">
           <div class="med" data-cat="cardio" data-tags="bp hypertension">
             <strong>Amlodipine</strong> 5mg / 10mg tablets
@@ -368,8 +464,11 @@
       </section>
 
       <!-- Cholesterol -->
-      <section class="category" id="cat-lipid">
-        <h2>Cholesterol</h2>
+      <section class="category" id="cat-lipid" data-cat="lipid">
+        <div class="cat-head">
+          <h2 class="cat-title"><span class="cat-dot" style="background:var(--c-lipid)"></span> Cholesterol</h2>
+          <div class="cat-quick"><a href="#medFilters">Filter</a></div>
+        </div>
         <div class="med-grid">
           <div class="med" data-cat="lipid" data-tags="cholesterol">
             <strong>Atorvastatin</strong> 10mg / 20mg / 40mg / 80mg tablets
@@ -387,8 +486,11 @@
       </section>
 
       <!-- Diabetes / Thyroid -->
-      <section class="category" id="cat-endo">
-        <h2>Diabetes, Thyroid & Vitamins</h2>
+      <section class="category" id="cat-endo" data-cat="endo">
+        <div class="cat-head">
+          <h2 class="cat-title"><span class="cat-dot" style="background:var(--c-endo)"></span> Diabetes, Thyroid & Vitamins</h2>
+          <div class="cat-quick"><a href="#medFilters">Filter</a></div>
+        </div>
         <div class="med-grid">
           <div class="med" data-cat="endo" data-tags="diabetes sugar">
             <strong>Metformin</strong> 500mg / 1000mg tablets
@@ -418,8 +520,11 @@
       </section>
 
       <!-- GI / Pain -->
-      <section class="category" id="cat-gi">
-        <h2>GI, Nausea & Pain</h2>
+      <section class="category" id="cat-gi" data-cat="gi">
+        <div class="cat-head">
+          <h2 class="cat-title"><span class="cat-dot" style="background:var(--c-gi)"></span> GI, Nausea & Pain</h2>
+          <div class="cat-quick"><a href="#medFilters">Filter</a></div>
+        </div>
         <div class="med-grid">
           <div class="med" data-cat="gi" data-tags="ibs cramp">
             <strong>Dicyclomine</strong> 20mg tablets
@@ -467,8 +572,11 @@
       </section>
 
       <!-- Mental Health / Neuro -->
-      <section class="category" id="cat-neuro">
-        <h2>Mental Health & Neurology</h2>
+      <section class="category" id="cat-neuro" data-cat="neuro">
+        <div class="cat-head">
+          <h2 class="cat-title"><span class="cat-dot" style="background:var(--c-neuro)"></span> Mental Health & Neurology</h2>
+          <div class="cat-quick"><a href="#medFilters">Filter</a></div>
+        </div>
         <div class="med-grid">
           <div class="med" data-cat="neuro" data-tags="sleep pain">
             <strong>Amitriptyline</strong> 25mg / 50mg tablets
@@ -516,8 +624,11 @@
       </section>
 
       <!-- Dermatology -->
-      <section class="category" id="cat-derm">
-        <h2>Dermatology & Topicals</h2>
+      <section class="category" id="cat-derm" data-cat="derm">
+        <div class="cat-head">
+          <h2 class="cat-title"><span class="cat-dot" style="background:var(--c-derm)"></span> Dermatology & Topicals</h2>
+          <div class="cat-quick"><a href="#medFilters">Filter</a></div>
+        </div>
         <div class="med-grid">
           <div class="med" data-cat="derm" data-tags="acne">
             <strong>Benzoyl Peroxide</strong> 10% lotion (29.5ml)
@@ -553,8 +664,11 @@
       </section>
 
       <!-- Eye/Ear -->
-      <section class="category" id="cat-oph">
-        <h2>Eye & Ear</h2>
+      <section class="category" id="cat-oph" data-cat="oph">
+        <div class="cat-head">
+          <h2 class="cat-title"><span class="cat-dot" style="background:var(--c-oph)"></span> Eye & Ear</h2>
+          <div class="cat-quick"><a href="#medFilters">Filter</a></div>
+        </div>
         <div class="med-grid">
           <div class="med" data-cat="oph" data-tags="pink eye">
             <strong>Ketorolac Tromethamine</strong> 0.5% ophthalmic solution (5ml)
@@ -564,8 +678,11 @@
       </section>
 
       <!-- Urology / Men's Health -->
-      <section class="category" id="cat-uro">
-        <h2>Urology & Men’s Health</h2>
+      <section class="category" id="cat-uro" data-cat="uro">
+        <div class="cat-head">
+          <h2 class="cat-title"><span class="cat-dot" style="background:var(--c-uro)"></span> Urology & Men’s Health</h2>
+          <div class="cat-quick"><a href="#medFilters">Filter</a></div>
+        </div>
         <div class="med-grid">
           <div class="med" data-cat="uro" data-tags="bph prostate">
             <strong>Tamsulosin</strong> 0.4mg capsules
@@ -597,25 +714,26 @@
       </section>
     </div>
   </main>
-<footer class="ftr" style="background:#0b3a83; color:#fff; padding:20px 0; text-align:center;">
-  <div class="container">
-    <nav>
-      <a href="index.html" style="color:#fff; margin:0 10px; text-decoration:none;">Home</a> |
-      <a href="primary-care.html" style="color:#fff; margin:0 10px; text-decoration:none;">Primary Care</a> |
-      <a href="urgent-care.html" style="color:#fff; margin:0 10px; text-decoration:none;">Urgent Care</a> |
-      <a href="health-plans.html" style="color:#fff; margin:0 10px; text-decoration:none;">Health Plans</a> |
-      <a href="faq.html" style="color:#fff; margin:0 10px; text-decoration:none;">FAQ</a> |
-      <a href="business.html" style="color:#fff; margin:0 10px; text-decoration:none;">For Business</a> |
-      <a href="contact.html" style="color:#fff; margin:0 10px; text-decoration:none;">Contact</a>
-    </nav>
-    <p style="margin-top:15px;">
-      <strong>Address:</strong> 6839 Five Star Blvd, Suite D, Rocklin, CA<br>
-      <strong>Phone:</strong> <a href="tel:19169642001" style="color:#fff;">916-964-2001</a> • 
-      <strong>Email:</strong> <a href="mailto:info@urhealthcare.org" style="color:#fff;">info@urhealthcare.org</a>
-    </p>
-    <p style="margin-top:10px;">© <span id="y"></span> urHealthcare. All rights reserved.</p>
-  </div>
-</footer>
+
+  <footer class="ftr" style="background:#0b3a83; color:#fff; padding:20px 0; text-align:center;">
+    <div class="container">
+      <nav>
+        <a href="index.html" style="color:#fff; margin:0 10px; text-decoration:none;">Home</a> |
+        <a href="primary-care.html" style="color:#fff; margin:0 10px; text-decoration:none;">Primary Care</a> |
+        <a href="urgent-care.html" style="color:#fff; margin:0 10px; text-decoration:none;">Urgent Care</a> |
+        <a href="health-plans.html" style="color:#fff; margin:0 10px; text-decoration:none;">Health Plans</a> |
+        <a href="faq.html" style="color:#fff; margin:0 10px; text-decoration:none;">FAQ</a> |
+        <a href="business.html" style="color:#fff; margin:0 10px; text-decoration:none;">For Business</a> |
+        <a href="contact.html" style="color:#fff; margin:0 10px; text-decoration:none;">Contact</a>
+      </nav>
+      <p style="margin-top:15px;">
+        <strong>Address:</strong> 6839 Five Star Blvd, Suite D, Rocklin, CA<br>
+        <strong>Phone:</strong> <a href="tel:19169642001" style="color:#fff;">916-964-2001</a> •
+        <strong>Email:</strong> <a href="mailto:info@urhealthcare.org" style="color:#fff;">info@urhealthcare.org</a>
+      </p>
+      <p style="margin-top:10px;">© <span id="y"></span> urHealthcare. All rights reserved.</p>
+    </div>
+  </footer>
 
   <!-- Structured Data: OfferCatalog (sample subset) -->
   <script type="application/ld+json">
@@ -704,6 +822,13 @@
           chip.dataset.active = 'true';
           active = chip.dataset.filter;
           applyFilter();
+          // Smooth scroll to first visible category when a specific filter is chosen
+          if(active !== 'all'){
+            const firstVisible = document.querySelector(`.category .med[data-cat*="${active}"]`);
+            if(firstVisible){
+              firstVisible.closest('.category')?.scrollIntoView({behavior:'smooth', block:'start'});
+            }
+          }
         });
       });
       search.addEventListener('input', applyFilter);
@@ -711,4 +836,3 @@
   </script>
 </body>
 </html>
-
