@@ -3,99 +3,174 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>urHealthcare — Primary & Urgent Care in Sacramento Metro</title>
-  <meta name="description" content="Direct primary & urgent care. Unlimited visits, 7-day urgent care, 250+ meds included, x-ray, labs, ultrasound, and minor procedures." />
-  <meta name="theme-color" content="##FFFFFF" />
+  <title>Primary Care in Sacramento Metro (Rocklin, Roseville) | urHealthcare</title>
+  <meta name="description" content="Relationship-based primary care in Rocklin, Roseville, and nearby communities. Same/next-day access, virtual care, meds & basic labs included, and transparent membership pricing." />
+  <meta name="theme-color" content="#FFFFFF" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
 
-  <!-- Always-works stylesheet for GitHub Pages (absolute URL + cache-buster) -->
+  <!-- Site base CSS (keep) -->
   <link rel="stylesheet" href="https://harprandeol1.github.io/urhealthcare1/assets/styles.css?v=5" />
 
-  <!-- Page/transition extras -->
   <style>
-    /* ===== Scroll-snap “slides” + reveal transitions ===== */
-    :root { --hdrH: 72px; }
-    html, body { height: 100%; scroll-behavior: smooth; }
-    /* pad for fixed headers (if any) when snapping or using #anchors */
-    main.snap { scroll-snap-type: y mandatory; scroll-padding-top: var(--hdrH); overscroll-behavior-y: contain; }
-    section.slide { 
-      scroll-snap-align: start; 
-      min-height: calc(100vh - var(--hdrH)); 
-      padding-block: clamp(56px, 10vh, 128px);   /* clear space in every section */
-    }
-    /* soft separators so the transition feels like a new page */
-    section.slide:not(:first-of-type) { border-top: 1px solid rgba(0,0,0,.04); }
-    /* content reveal on enter */
-    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
-    .in .reveal { opacity: 1; transform: none; }
-    /* reduced motion preference */
-    @media (prefers-reduced-motion: reduce) {
-      main.snap { scroll-snap-type: none; }
-      .reveal, .in .reveal { opacity: 1; transform: none; transition: none; }
+    :root{
+      --brand:#0b3a83;
+      --accent:#2196F3;
+      --ink:#0f172a;
+      --muted:#475569;
+      --border:#e5e7eb;
+      --card:#ffffff;
+      --bg:#f8fafc;
+      --hdrH:72px;
     }
 
-    /* ===== Existing dropdown CSS kept from your file ===== */
-    .dropdown { position: relative; }
-    .dropbtn{
-      background:transparent; border:0; padding:8px 10px; font:inherit; font-weight:600;
-      color:#0b3a83; cursor:pointer; border-radius:8px;
+    /* Layout + defaults */
+    html,body{height:100%;}
+    body{color:var(--ink); background:#fff; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;}
+    .container{max-width:1200px; margin:0 auto; padding:0 16px;}
+    .section{padding: clamp(32px,6vw,72px) 0;}
+    .band{background:var(--bg);}
+    .center{text-align:center;}
+    a{color:var(--brand); text-underline-offset:2px;}
+    a:hover{text-decoration:underline;}
+
+    /* Header */
+    .hdr{position:sticky; top:0; z-index:1000; background:#fff; border-bottom:1px solid var(--border);}
+    .hdr .container.nav{min-height:var(--hdrH); display:flex; align-items:center; justify-content:space-between; gap:16px;}
+    .logo{font-size:clamp(22px,2.4vw,28px); font-weight:800; color:var(--brand); text-decoration:none; white-space:nowrap;}
+    .navlinks{display:flex; align-items:center; gap:18px;}
+    .navlinks a{font-weight:700; text-decoration:none; color:var(--ink);}
+    .menu-btn{display:none; background:transparent; border:0; font-size:26px; color:var(--ink);}
+    @media (max-width:860px){
+      .navlinks{display:none;}
+      .menu-open .navlinks{
+        display:flex; flex-direction:column; align-items:flex-start; gap:10px;
+        position:absolute; left:0; right:0; top:var(--hdrH); background:#fff; padding:12px 16px; border-bottom:1px solid var(--border);
+      }
+      .menu-btn{display:inline-block;}
     }
+
+    /* Services dropdown (fixed: white menu, clear hover) */
+    .dropdown{position:relative;}
+    .dropbtn{background:transparent; border:0; padding:8px 10px; font:inherit; font-weight:700; color:var(--ink); cursor:pointer; border-radius:8px;}
     .menu{
       position:absolute; top:110%; left:0; min-width:280px; z-index:1000;
-      background:#b5e2ff; border:1px solid var(--border); border-radius:12px;
-      box-shadow:var(--shadow); padding:8px; list-style:none; margin:0; display:none;
+      background:#fff; border:1px solid var(--border); border-radius:12px;
+      box-shadow:0 12px 28px rgba(0,0,0,.12); padding:8px; list-style:none; margin:0; display:none;
     }
-    .menu .grid{ display:grid; grid-template-columns:repeat(2,minmax(160px,1fr)); gap:4px 8px; }
-    .menu a{ display:block; padding:8px 10px; border-radius:8px; color:var(--ink); text-decoration:none; white-space:nowrap; }
-    .menu a:hover{ background:#f5f8ff; text-decoration:none; }
-    .menu .all { border-top:1px solid var(--border); margin-top:6px; padding-top:6px; }
-    @media (min-width:721px){ .dropdown:hover .menu, .dropdown:focus-within .menu{ display:block; } }
-    .dropdown.open .menu{ display:block !important; }
-    @media (max-width:720px){
-      .navlinks{ display:none; }
-      .menu-btn{ display:inline-block; background:transparent; border:0; }
-      .menu-open .navlinks{ display:flex; flex-direction:column; align-items:flex-start; gap:10px; padding:12px 0; }
-      .dropdown{ width:100%; }
-      .menu{ position:static; box-shadow:none; border:0; padding:0; }
+    .menu .grid{display:grid; grid-template-columns:repeat(2,minmax(160px,1fr)); gap:6px 8px;}
+    .menu a{display:block; padding:10px 12px; border-radius:8px; color:#0f172a; text-decoration:none; white-space:nowrap; font-weight:700;}
+    .menu a:hover{background:#f1f5ff;}
+    .menu .all{border-top:1px solid var(--border); margin-top:8px; padding-top:8px;}
+    @media (min-width:721px){
+      .dropdown:hover .menu,.dropdown:focus-within .menu{display:block;}
     }
+    .dropdown.open .menu{display:block !important;}
+    @media (max-width:720px){ .dropdown{width:100%;} .menu{position:static; box-shadow:none; border:0; padding:0;} }
+
+    /* Login dropdown (scoped) */
+    .login-dd{position:relative;}
+    .login-dd__button{
+      display:inline-flex; align-items:center; gap:6px; background:var(--brand); color:#fff;
+      border:none; padding:10px 16px; border-radius:12px; font-weight:800; cursor:pointer;
+    }
+    .login-dd__button::after{content:"▾"; font-size:.9em;}
+    .login-dd__menu{
+      position:absolute; right:0; top:calc(100% + 8px); min-width:220px; padding:6px; margin:0; list-style:none;
+      background:#fff; border:1px solid var(--border); border-radius:12px; box-shadow:0 12px 28px rgba(0,0,0,.12); display:none; z-index:1000;
+    }
+    .login-dd__menu[data-open="true"]{display:block;}
+    .login-dd__link{display:block; padding:10px 12px; border-radius:10px; color:#0f172a; text-decoration:none; font-weight:700;}
+    .login-dd__link:hover,.login-dd__link:focus{background:#f1f5ff; color:var(--brand); outline:none;}
+
+    /* Buttons (site-wide) */
+    .btn{display:inline-block; background:var(--brand); color:#fff; border:none; padding:12px 18px; border-radius:12px; font-weight:800; text-decoration:none;}
+    .btn:hover{filter:brightness(.95);}
+    .btn.ghost{background:transparent; color:var(--brand); border:2px solid var(--brand);}
+    .btn.accent{background:#ff6a00;}
+
+    /* Breadcrumb */
+    .breadcrumb{padding-top:12px; font-size:14px; color:#64748b;}
+    .breadcrumb a{color:#334155; text-decoration:underline;}
+
+    /* Hero (clean, readable) */
+    .hero-primary{
+      background:
+        radial-gradient(900px 420px at -10% -10%, rgba(33,150,243,.18), transparent 60%),
+        linear-gradient(180deg, #f0f7ff 0%, #ffffff 60%);
+    }
+    .hero-primary .wrap{
+      display:grid; grid-template-columns:1.15fr .85fr; gap:32px; align-items:center;
+    }
+    @media (max-width:980px){ .hero-primary .wrap{grid-template-columns:1fr;} }
+    .hero-primary h1{font-size:clamp(30px,5vw,56px); line-height:1.05; margin:0 0 8px; color:#0b2a5b;}
+    .hero-primary .lead{color:#415a77; font-size:clamp(16px,2.2vw,18px); margin:0;}
+    .hero-art{position:relative; min-height:320px; border-radius:18px; overflow:hidden; box-shadow:0 20px 50px rgba(0,0,0,.12);}
+    .hero-art img{width:100%; height:100%; object-fit:cover; display:block; transform:scale(1.05);}
+
+    .cta-row{display:flex; gap:12px; flex-wrap:wrap; margin-top:14px;}
+
+    /* Cards grid */
+    .grid{display:grid; gap:16px; grid-template-columns:repeat(3,minmax(0,1fr));}
+    @media (max-width:980px){ .grid{grid-template-columns:repeat(2,minmax(0,1fr));} }
+    @media (max-width:640px){ .grid{grid-template-columns:1fr;} }
+    .card{
+      background:var(--card); border:1px solid var(--border); border-radius:14px; padding:16px;
+      box-shadow:0 8px 24px rgba(0,0,0,.05);
+    }
+    .card h3{margin:0 0 8px; font-size:20px;}
+
+    /* Team tabs (accessible) */
+    .tabs{margin-top:8px;}
+    .tablist{
+      display:flex; flex-wrap:wrap; gap:8px; border-bottom:1px solid var(--border); padding-bottom:8px; margin-bottom:12px;
+    }
+    .tab{
+      appearance:none; background:#fff; border:1px solid var(--border); border-bottom:2px solid transparent;
+      padding:10px 12px; border-radius:10px 10px 0 0; font-weight:800; cursor:pointer; color:#0b2a5b;
+    }
+    .tab[aria-selected="true"]{border-color:#b3dcff; border-bottom-color:#2196F3; background:#f7fbff;}
+    .tabpanel{display:none;}
+    .tabpanel.active{display:block;}
+    .doc{display:grid; grid-template-columns:auto 1fr; gap:16px; align-items:start;}
+    .doc img{width:140px; height:140px; object-fit:cover; border-radius:14px; border:1px solid var(--border);}
+
+    /* Footer */
+    .ftr{background:var(--brand); color:#fff; padding:20px 0; text-align:center;}
+    .ftr a{color:#fff; text-decoration:none;}
+    .ftr nav a{margin:0 10px;}
   </style>
 
-  <!-- Open Graph (optional) -->
-  <meta property="og:title" content="urHealthcare — Primary & Urgent Care" />
-  <meta property="og:description" content="Unlimited visits. 7-day urgent care. 250+ meds included. Transparent pricing." />
+  <!-- Social -->
+  <meta property="og:title" content="Primary Care in Sacramento Metro | urHealthcare" />
+  <meta property="og:description" content="Same/next-day access, virtual care, and transparent membership pricing in Rocklin and Roseville." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://harprandeol1.github.io/urhealthcare1/" />
+  <meta property="og:url" content="https://harprandeol1.github.io/urhealthcare1/primary-care.html" />
 </head>
+
 <body>
-  <!-- Header with working Services dropdown -->
-  <header class="hdr" style="position:sticky;top:0;z-index:100;background:#fff;">
+  <!-- Header -->
+  <header class="hdr">
     <div class="container nav">
-      <a class="logo" href="index.html" style="font-size: 28px; font-weight: 600; color: #0b3a83; text-decoration: none;">
-  urHealthcare
-</a>
-
-
+      <a class="logo" href="index.html">urHealthcare</a>
 
       <nav class="navlinks" aria-label="Primary">
         <div class="dropdown" id="services-dd">
-          <button class="dropbtn" type="button" aria-expanded="false" aria-controls="menu-services">
-            Services ▾
-          </button>
+          <button class="dropbtn" type="button" aria-expanded="false" aria-controls="menu-services">Services ▾</button>
           <div id="menu-services" class="menu" role="menu">
-            <div class="grid">
+            <div class="grid" style="grid-template-columns:repeat(2,minmax(160px,1fr));">
               <a href="primary-care.html" role="menuitem">Primary Care</a>
               <a href="urgent-care.html" role="menuitem">Urgent Care</a>
-              <a href="x-ray.html"role="menuitem">X-ray</a>
+              <a href="x-ray.html" role="menuitem">X-ray</a>
               <a href="labs.html" role="menuitem">Labs</a>
               <a href="ultrasound.html" role="menuitem">Ultrasound</a>
               <a href="minor-procedures.html" role="menuitem">Minor Procedures</a>
               <a href="virtual-care.html" role="menuitem">Virtual Care</a>
               <a href="included-meds.html" role="menuitem">Medications</a>
             </div>
-            <div class="all"><a href="#services">View all services →</a></div>
+            <div class="all"><a href="index.html#services">View all services →</a></div>
           </div>
         </div>
 
@@ -103,98 +178,58 @@
         <a href="employers.html">Employers</a>
         <a href="faq.html">FAQ</a>
 
-        <!-- LOGIN DROPDOWN -->
+        <!-- Login -->
         <div class="login-dd">
-          <button class="btn login-dd__button" id="loginMenuButton"
-                  aria-haspopup="menu" aria-expanded="false" aria-controls="loginMenu">
-            Login
-          </button>
-
+          <button class="login-dd__button" id="loginMenuButton" aria-haspopup="menu" aria-expanded="false" aria-controls="loginMenu">Login</button>
           <ul class="login-dd__menu" id="loginMenu" role="menu" aria-labelledby="loginMenuButton">
-            <li role="none">
-              <a role="menuitem" href="https://urhealthcare.hint.com/login/request" class="login-dd__link">Membership Login</a>
-            </li>
-            <li role="none">
-              <a role="menuitem" href="https://www.onpatient.com/login/" class="login-dd__link">OnPatient Login</a>
-            </li>
+            <li role="none"><a role="menuitem" href="https://urhealthcare.hint.com/login/request" class="login-dd__link">Membership Login</a></li>
+            <li role="none"><a role="menuitem" href="https://www.onpatient.com/login/" class="login-dd__link">OnPatient Login</a></li>
           </ul>
         </div>
-
-        <style>
-          .login-dd { position: relative; }
-          .login-dd__button { display:inline-flex; align-items:center; gap:6px; }
-          .login-dd__button::after { content:"▾"; font-size:.9em; }
-          .login-dd__menu {
-            position:absolute; right:0; top:calc(100% + 8px);
-            min-width:220px; padding:6px; margin:0; list-style:none;
-            background:#fff; border:1px solid #e5e7eb; border-radius:12px;
-            box-shadow:0 12px 28px rgba(0,0,0,.12);
-            display:none; z-index:1000;
-          }
-          .login-dd__menu[data-open="true"] { display:block; }
-          .login-dd__link { display:block; padding:10px 12px; border-radius:10px; color:#111; text-decoration:none; font-weight:700; }
-          .login-dd__link:hover, .login-dd__link:focus { background:#f2f7ff; color:#0b3a83; outline:none; }
-          .btn { background:#0b3a83; color:#fff; border:none; padding:10px 16px; border-radius:12px; font-weight:800; }
-          .btn:hover { filter:brightness(.95); }
-        </style>
       </nav>
 
-      <button class="menu-btn" aria-label="Menu"
-        onclick="document.body.classList.toggle('menu-open')">☰</button>
+      <button class="menu-btn" aria-label="Menu" onclick="document.body.classList.toggle('menu-open')">☰</button>
     </div>
   </header>
 
-  <!-- Breadcrumb (SEO + UX) -->
-  <nav class="container" aria-label="Breadcrumb" style="padding-top:12px;">
-    <small><a href="index.html">Home</a> › Primary Care</small>
+  <!-- Breadcrumb -->
+  <nav class="container breadcrumb" aria-label="Breadcrumb">
+    <a href="index.html">Home</a> › <span>Primary Care</span>
   </nav>
 
-  <!-- Hero -->
-  <section class="section">
-    <div class="container">
-      <h1>Primary Care in the Sacramento Metro</h1>
-      <p class="muted">Serving Rocklin, Roseville, and nearby communities with relationship-based care, same/next-day access, and transparent membership pricing.</p>
-      <div class="cta" style="margin-top:12px">
-        <a class="btn" href="https://urhealthcare.zohobookings.com/#/urhealthcare">Book a primary care visit</a>
-        <a class="btn ghost" href="direct-primary-care.html">See membership plans</a>
+  <!-- HERO -->
+  <section class="section hero-primary">
+    <div class="container wrap">
+      <div>
+        <h1>Primary Care in the Sacramento Metro</h1>
+        <p class="lead">Relationship-based care with same/next-day access, virtual visits, and transparent membership pricing. Serving Rocklin, Roseville, and nearby communities.</p>
+        <div class="cta-row">
+          <a class="btn accent" href="https://urhealthcare.zohobookings.com/#/urhealthcare">Book a Primary Care Visit</a>
+          <a class="btn ghost" href="direct-primary-care.html">See Membership Plans</a>
+        </div>
       </div>
+      <figure class="hero-art">
+        <img src="https://harprandeol1.github.io/urhealthcare1/assets/img/primary-hero.jpg" alt="Primary care visit at urHealthcare" />
+      </figure>
     </div>
   </section>
 
-  <!-- Why primary care matters (SEO-rich content) -->
+  <!-- Why primary care matters -->
   <section class="section band">
     <div class="container">
       <h2>Why Primary Care Matters</h2>
       <div class="grid">
-        <div class="card">
-          <h3>Continuity & trust</h3>
-          <p>Seeing the same clinician over time improves accuracy, safety, and satisfaction. Your provider learns your history, goals, and preferences—so care decisions fit your life.</p>
-        </div>
-        <div class="card">
-          <h3>Prevention first</h3>
-          <p>Annual wellness, screenings, vaccines, and lifestyle coaching to catch issues early and prevent avoidable problems.</p>
-        </div>
-        <div class="card">
-          <h3>Chronic condition control</h3>
-          <p>Evidence-based care plans for hypertension, diabetes, asthma/COPD, thyroid disorders, and more—plus close follow-up.</p>
-        </div>
-        <div class="card">
-          <h3>Whole-person care</h3>
-          <p>We address physical and behavioral health together, coordinate referrals, and help you navigate specialists and imaging.</p>
-        </div>
-        <div class="card">
-          <h3>Faster access</h3>
-          <p>Same/next-day primary care and <a href="urgent-care.html">7-day urgent care</a> keep care in-network and convenient.</p>
-        </div>
-        <div class="card">
-          <h3>Transparent costs</h3>
-          <p>Flat monthly membership with <strong>250+ medications included</strong>, basic labs, x-ray, and minor procedures.</p>
-        </div>
+        <div class="card"><h3>Continuity & Trust</h3><p>Seeing the same clinician over time improves accuracy, safety, and satisfaction. Your provider learns your history, goals, and preferences—so care decisions fit your life.</p></div>
+        <div class="card"><h3>Prevention First</h3><p>Annual wellness, screenings, vaccines, and lifestyle coaching to catch issues early and prevent avoidable problems.</p></div>
+        <div class="card"><h3>Chronic Condition Control</h3><p>Evidence-based plans for hypertension, diabetes, asthma/COPD, thyroid disorders, and more—plus close follow-up.</p></div>
+        <div class="card"><h3>Whole-Person Care</h3><p>We address physical and behavioral health together, coordinate referrals, and help you navigate specialists and imaging.</p></div>
+        <div class="card"><h3>Faster Access</h3><p>Same/next-day primary care and <a href="urgent-care.html">7-day urgent care</a> keep care close and convenient.</p></div>
+        <div class="card"><h3>Transparent Costs</h3><p>Flat monthly membership with <strong>250+ medications included</strong>, basic labs, x-ray, and minor procedures.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- Meet our primary care team (Tabs for three doctors) -->
+  <!-- Team (tabs) -->
   <section class="section">
     <div class="container">
       <h2>Meet Our Primary Care Team</h2>
@@ -203,44 +238,44 @@
         <div class="tablist" role="tablist" aria-label="Primary care clinicians">
           <button class="tab" id="tab-1" role="tab" aria-controls="panel-1" aria-selected="true">Dr. Zarlasht Fakiri, DO</button>
           <button class="tab" id="tab-2" role="tab" aria-controls="panel-2" aria-selected="false" tabindex="-1">Dr. Dilip KC, MD</button>
-          <button class="tab" id="tab-3" role="tab" aria-controls="panel-3" aria-selected="false" tabindex="-1"> Nataliya Dorofoyev, PA</button>
+          <button class="tab" id="tab-3" role="tab" aria-controls="panel-3" aria-selected="false" tabindex="-1">Nataliya Dorofoyev, PA</button>
         </div>
 
         <section id="panel-1" class="tabpanel active" role="tabpanel" aria-labelledby="tab-1">
           <div class="doc">
-            <img src="https://harprandeol1.github.io/urhealthcare1/assets/img/dr-smith.jpg" alt="Portrait of Dr. A. Smith, MD (placeholder)" />
+            <img src="https://harprandeol1.github.io/urhealthcare1/assets/img/dr-smith.jpg" alt="Portrait of Dr. Zarlasht Fakiri, DO (placeholder)" />
             <div>
               <p><strong>Focus:</strong> preventive care, women’s health, cardiometabolic risk.</p>
-              <p><strong>Bio:</strong> Dr. Smith Fakiri relationship-based primary care with an emphasis on prevention, shared decision-making, and clear care plans.</p>
+              <p><strong>Bio:</strong> Dr. Fakiri practices relationship-based primary care with an emphasis on prevention, shared decision-making, and clear care plans.</p>
               <p><strong>Languages:</strong> English, Farsi</p>
-              <div class="cta"><a class="btn" href="https://urhealthcare.zohobookings.com/#/urhealthcare">Book with Dr. Fakiri</a></div>
-              <p class="note">Photo placeholder — replace with <code>assets/img/dr-smith.jpg</code> (140×140+).</p>
+              <div class="cta-row"><a class="btn" href="https://urhealthcare.zohobookings.com/#/urhealthcare">Book with Dr. Fakiri</a></div>
+              <p class="muted" style="margin-top:6px;">Photo placeholder — replace <code>assets/img/dr-smith.jpg</code>.</p>
             </div>
           </div>
         </section>
 
         <section id="panel-2" class="tabpanel" role="tabpanel" aria-labelledby="tab-2">
           <div class="doc">
-            <img src="https://harprandeol1.github.io/urhealthcare1/assets/img/dr-nguyen.jpg" alt="Portrait of Dr. B. Nguyen, DO (placeholder)" />
+            <img src="https://harprandeol1.github.io/urhealthcare1/assets/img/dr-nguyen.jpg" alt="Portrait of Dr. Dilip KC, MD (placeholder)" />
             <div>
               <p><strong>Focus:</strong> musculoskeletal medicine, men’s health, procedures.</p>
-              <p><strong>Bio:</strong> Dr. Dilip combines primary care with hands-on procedures and careful follow-up for injuries and chronic pain.</p>
-              <p><strong>Languages:</strong> English, Hindi, Nepalese</p>
-              <div class="cta"><a class="btn" href="https://urhealthcare.zohobookings.com/#/urhealthcare">Book with Dr. Dilip</a></div>
-              <p class="note">Photo placeholder — replace with <code>assets/img/dr-nguyen.jpg</code>.</p>
+              <p><strong>Bio:</strong> Dr. KC combines primary care with hands-on procedures and careful follow-up for injuries and chronic pain.</p>
+              <p><strong>Languages:</strong> English, Hindi, Nepali</p>
+              <div class="cta-row"><a class="btn" href="https://urhealthcare.zohobookings.com/#/urhealthcare">Book with Dr. KC</a></div>
+              <p class="muted" style="margin-top:6px;">Photo placeholder — replace <code>assets/img/dr-nguyen.jpg</code>.</p>
             </div>
           </div>
         </section>
 
         <section id="panel-3" class="tabpanel" role="tabpanel" aria-labelledby="tab-3">
           <div class="doc">
-            <img src="https://harprandeol1.github.io/urhealthcare1/assets/img/pa-patel.jpg" alt="Portrait of Clinician C. Patel, PA-C (placeholder)" />
+            <img src="https://harprandeol1.github.io/urhealthcare1/assets/img/pa-patel.jpg" alt="Portrait of Nataliya Dorofoyev, PA (placeholder)" />
             <div>
               <p><strong>Focus:</strong> chronic condition management, pediatrics (5+), virtual care.</p>
-              <p><strong>Bio:</strong> PA Patel builds long-term relationships and leverages virtual care for rapid access and continuity.</p>
+              <p><strong>Bio:</strong> Nataliya builds long-term relationships and leverages virtual care for rapid access and continuity.</p>
               <p><strong>Languages:</strong> English, Russian</p>
-              <div class="cta"><a class="btn" href= "https://urhealthcare.zohobookings.com/#/urhealthcare">Book with Nataliya</a></div>
-              <p class="note">Photo placeholder — replace with <code>assets/img/pa-patel.jpg</code>.</p>
+              <div class="cta-row"><a class="btn" href="https://urhealthcare.zohobookings.com/#/urhealthcare">Book with Nataliya</a></div>
+              <p class="muted" style="margin-top:6px;">Photo placeholder — replace <code>assets/img/pa-patel.jpg</code>.</p>
             </div>
           </div>
         </section>
@@ -248,35 +283,17 @@
     </div>
   </section>
 
-  <!-- What we do in primary care -->
+  <!-- What we do -->
   <section class="section">
     <div class="container">
       <h2>What We Do in Primary Care</h2>
       <div class="grid">
-        <div class="card">
-          <h3>Preventive Care & Screenings</h3>
-          <p>Annual wellness, cancer screening guidance, vaccines, and lifestyle coaching tailored to your risks and goals.</p>
-        </div>
-        <div class="card">
-          <h3>Acute Concerns</h3>
-          <p>Same/next-day visits for common problems—colds, rashes, minor injuries—plus <a href="urgent-care.html">7-day urgent care</a>.</p>
-        </div>
-        <div class="card">
-          <h3>Chronic Disease Care</h3>
-          <p>Diabetes, high blood pressure, high cholesterol, asthma/COPD, thyroid, obesity, depression/anxiety.</p>
-        </div>
-        <div class="card">
-          <h3>On-site Diagnostics</h3>
-          <p><a href="x-ray.html">X-ray</a>, <a href="labs.html">labs</a>, and <a href="ultrasound.html">ultrasound</a> to speed diagnosis and treatment.</p>
-        </div>
-        <div class="card">
-          <h3>Medications Included</h3>
-          <p>Access to <a href="included-meds.html">250+ commonly used meds</a> at no extra cost with membership.</p>
-        </div>
-        <div class="card">
-          <h3>Care Coordination</h3>
-          <p>Referrals to trusted local specialists and imaging centers across the Sacramento metro, with follow-through.</p>
-        </div>
+        <div class="card"><h3>Preventive Care & Screenings</h3><p>Annual wellness, cancer screening guidance, vaccines, and lifestyle coaching tailored to your risks and goals.</p></div>
+        <div class="card"><h3>Acute Concerns</h3><p>Same/next-day visits for common problems—colds, rashes, minor injuries—plus <a href="urgent-care.html">7-day urgent care</a>.</p></div>
+        <div class="card"><h3>Chronic Disease Care</h3><p>Diabetes, high blood pressure, cholesterol, asthma/COPD, thyroid, obesity, depression/anxiety.</p></div>
+        <div class="card"><h3>On-site Diagnostics</h3><p><a href="x-ray.html">X-ray</a>, <a href="labs.html">labs</a>, and <a href="ultrasound.html">ultrasound</a> to speed diagnosis and treatment.</p></div>
+        <div class="card"><h3>Medications Included</h3><p>Access to <a href="included-meds.html">250+ commonly used meds</a> at no extra cost with membership.</p></div>
+        <div class="card"><h3>Care Coordination</h3><p>Referrals to trusted local specialists and imaging centers across the Sacramento metro, with follow-through.</p></div>
       </div>
     </div>
   </section>
@@ -286,89 +303,91 @@
     <div class="container center">
       <h2>Ready for relationship-based primary care?</h2>
       <p class="muted">Join today and get same/next-day access in the Sacramento metro.</p>
-      <div class="cta" style="justify-content:center">
-        <a class="btn"  href="https://urhealthcare.zohobookings.com/#/urhealthcare">Book a visit</a>
-        <a class="btn ghost" href="direct-primary-care.html">See plans & pricing</a>
+      <div class="cta-row" style="justify-content:center">
+        <a class="btn accent" href="https://urhealthcare.zohobookings.com/#/urhealthcare">Book a Visit</a>
+        <a class="btn ghost" href="direct-primary-care.html">See Plans & Pricing</a>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
- <footer class="ftr" style="background:#0b3a83; color:#fff; padding:20px 0; text-align:center;">
-  <div class="container">
-    <nav>
-      <a href="index.html" style="color:#fff; margin:0 10px; text-decoration:none;">Home</a> |
-      <a href="primary-care.html" style="color:#fff; margin:0 10px; text-decoration:none;">Primary Care</a> |
-      <a href="urgent-care.html" style="color:#fff; margin:0 10px; text-decoration:none;">Urgent Care</a> |
-      <a href="direct-primary-care.html" style="color:#fff; margin:0 10px; text-decoration:none;">Health Plans</a> |
-      <a href="faq.html" style="color:#fff; margin:0 10px; text-decoration:none;">FAQ</a> |
-      <a href="employers.html" style="color:#fff; margin:0 10px; text-decoration:none;">For Business</a> 
-      <a href="contact.html" style="color:#fff; margin:0 10px; text-decoration:none;"></a>
-    </nav>
-    <p style="margin-top:15px;">
-      <strong>Address:</strong> 6839 Five Star Blvd, Suite D, Rocklin, CA<br>
-      <strong>Phone:</strong> <a href="tel:19169642001" style="color:#fff;">916-964-2001</a> • 
-      <strong>Email:</strong> <a href="mailto:info@urhealthcare.org" style="color:#fff;">info@urhealthcare.org</a>
-    </p>
-    <p style="margin-top:10px;">© <span id="y"></span> urHealthcare. All rights reserved.</p>
-  </div>
-</footer>
+  <footer class="ftr">
+    <div class="container">
+      <nav>
+        <a href="index.html">Home</a> |
+        <a href="primary-care.html">Primary Care</a> |
+        <a href="urgent-care.html">Urgent Care</a> |
+        <a href="direct-primary-care.html">Membership</a> |
+        <a href="faq.html">FAQ</a> |
+        <a href="employers.html">For Business</a> |
+        <a href="contact.html">Contact</a>
+      </nav>
+      <p style="margin-top:15px;">
+        <strong>Address:</strong> 6839 Five Star Blvd, Suite D, Rocklin, CA 95677<br>
+        <strong>Phone:</strong> <a href="tel:19169642001">916-964-2001</a> •
+        <strong>Email:</strong> <a href="mailto:info@urhealthcare.org">info@urhealthcare.org</a>
+      </p>
+      <p style="margin-top:10px;">© <span id="y"></span> urHealthcare. All rights reserved.</p>
+    </div>
+  </footer>
 
-  <!-- JS: site base + dropdown + tabs -->
+  <!-- JS: dropdowns + login + tabs -->
   <script src="https://harprandeol1.github.io/urhealthcare1/assets/app.js?v=3"></script>
   <script>
-    // Fallback year
-    const yEl = document.getElementById('y'); if (yEl && !yEl.textContent) yEl.textContent = new Date().getFullYear();
+    // Year fallback
+    const yEl=document.getElementById('y'); if(yEl && !yEl.textContent) yEl.textContent=new Date().getFullYear();
 
-    // Dropdown: click-to-open & close on outside/Esc
-    (function () {
-      const dd = document.getElementById('services-dd');
-      if (!dd) return;
-      const btn = dd.querySelector('.dropbtn');
-      const menu = dd.querySelector('.menu');
+    // Services dropdown
+    (function(){
+      const dd=document.getElementById('services-dd'); if(!dd) return;
+      const btn=dd.querySelector('.dropbtn'); const menu=dd.querySelector('.menu');
+      btn.addEventListener('click',e=>{e.preventDefault(); e.stopPropagation(); const open=dd.classList.toggle('open'); btn.setAttribute('aria-expanded', String(open));});
+      document.addEventListener('click',e=>{ if(!dd.contains(e.target)){ dd.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }});
+      document.addEventListener('keydown',e=>{ if(e.key==='Escape'){ dd.classList.remove('open'); btn.setAttribute('aria-expanded','false'); btn.blur(); }});
+    })();
 
-      btn.addEventListener('click', (e) => {
-        e.preventDefault(); e.stopPropagation();
-        const isOpen = dd.classList.toggle('open');
-        btn.setAttribute('aria-expanded', String(isOpen));
-      });
-      document.addEventListener('click', (e) => {
-        if (!dd.contains(e.target)) { dd.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }
-      });
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') { dd.classList.remove('open'); btn.setAttribute('aria-expanded','false'); btn.blur(); }
+    // Login dropdown
+    (function(){
+      document.querySelectorAll('.login-dd').forEach(root=>{
+        const btn=root.querySelector('.login-dd__button');
+        const menu=root.querySelector('.login-dd__menu');
+        const first=root.querySelector('.login-dd__link');
+        const open=()=>{ menu.dataset.open='true'; btn.setAttribute('aria-expanded','true'); setTimeout(()=>first?.focus(),0); };
+        const close=()=>{ menu.removeAttribute('data-open'); btn.setAttribute('aria-expanded','false'); };
+        btn.addEventListener('click',e=>{ e.stopPropagation(); menu.dataset.open==='true'?close():open(); });
+        document.addEventListener('click',e=>{ if(!root.contains(e.target)) close(); });
+        document.addEventListener('keydown',e=>{ if(e.key==='Escape') close(); if(e.key==='ArrowDown' && menu.dataset.open==='true'){ e.preventDefault(); first?.focus(); }});
       });
     })();
 
-    // Accessible Tabs (3 doctors)
-    (function () {
-      const tabs = Array.from(document.querySelectorAll('.tab'));
-      const panels = Array.from(document.querySelectorAll('.tabpanel'));
-      function activateTab(index, focusTab = true) {
-        tabs.forEach((t, i) => {
-          const selected = i === index;
-          t.setAttribute('aria-selected', String(selected));
-          t.tabIndex = selected ? 0 : -1;
-          panels[i].classList.toggle('active', selected);
-          panels[i].hidden = !selected;
+    // Accessible team tabs
+    (function(){
+      const tabs=[...document.querySelectorAll('.tab')];
+      const panels=[...document.querySelectorAll('.tabpanel')];
+      if(!tabs.length) return;
+      function activate(i, focus=true){
+        tabs.forEach((t,idx)=>{
+          const sel=idx===i;
+          t.setAttribute('aria-selected', String(sel));
+          t.tabIndex=sel?0:-1;
+          panels[idx].classList.toggle('active', sel);
         });
-        if (focusTab) tabs[index].focus();
+        if(focus) tabs[i].focus();
       }
-      // Init
-      panels.forEach((p, i) => { if (i !== 0) { p.hidden = true; } });
-      // Click
-      tabs.forEach((t, i) => t.addEventListener('click', () => activateTab(i)));
-      // Keyboard (← → Home End)
-      document.querySelector('.tablist')?.addEventListener('keydown', (e) => {
-        const current = tabs.findIndex(t => t.getAttribute('aria-selected') === 'true');
-        let next = current;
-        if (e.key === 'ArrowRight') next = (current + 1) % tabs.length;
-        if (e.key === 'ArrowLeft') next = (current - 1 + tabs.length) % tabs.length;
-        if (e.key === 'Home') next = 0;
-        if (e.key === 'End') next = tabs.length - 1;
-        if (next !== current) { e.preventDefault(); activateTab(next); }
+      tabs.forEach((t,i)=> t.addEventListener('click',()=>activate(i)));
+      document.querySelector('.tablist')?.addEventListener('keydown',e=>{
+        const cur=tabs.findIndex(t=>t.getAttribute('aria-selected')==='true');
+        let nxt=cur;
+        if(e.key==='ArrowRight') nxt=(cur+1)%tabs.length;
+        if(e.key==='ArrowLeft') nxt=(cur-1+tabs.length)%tabs.length;
+        if(e.key==='Home') nxt=0;
+        if(e.key==='End') nxt=tabs.length-1;
+        if(nxt!==cur){ e.preventDefault(); activate(nxt); }
       });
+      // init
+      activate(0,false);
     })();
   </script>
 </body>
 </html>
+
