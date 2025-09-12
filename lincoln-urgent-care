@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Urgent Care in Roseville, CA | Walk-In & Same-Day | X-ray & Labs | urHealthcare</title>
+  <meta name="description" content="Need urgent care in Roseville? Walk-in & same-day visits 7 days/week with X-ray, labs, stitches, IV fluids, COVID/flu/strep testing, and 250+ meds on site. Book online. Insurances accepted. Serving Roseville 95661, 95678, 95747." />
+  <meta name="theme-color" content="#0B3A83" />
+  <link rel="canonical" href="https://harprandeol1.github.io/urhealthcare1/urgent-care.html" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Global stylesheet -->
+  <link rel="stylesheet" href="https://harprandeol1.github.io/urhealthcare1/assets/styles.css?v=12" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Urgent Care in Roseville, CA | Walk-In & Same-Day" />
+  <meta property="og:description" content="Fast, affordable urgent care near Roseville. X-ray, labs, stitches, IV fluids & more. Open 7 days. Book online." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://harprandeol1.github.io/urhealthcare1/urgent-care.html" />
+
+  <style>
+    :root{
+      --brand:#0b3a83; --brand2:#0a6bd8; --ink:#0f1a2e; --muted:#5a6780; --ring:#e6ebf3;
+      --bg:#ffffff; --soft:#f7faff; --radius:18px; --shadow:0 18px 50px rgba(10,35,90,.12);
+      --hdrH:72px;
+
+      /* Accent colors for colorful sections/cards */
+      --rose:#ffe8ef; --mint:#e8fbf1; --amber:#fff4df; --violet:#efe8ff; --sky:#eaf3ff;
+      --rose-ink:#9b003f; --mint-ink:#0e7041; --amber-ink:#7a4c00; --violet-ink:#4d2a9a; --sky-ink:#0a4aa5;
+    }
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.75}
+    a{color:var(--brand);text-decoration:none} a:hover{text-decoration:underline}
+    h1,h2,h3{letter-spacing:-.01em;line-height:1.2;margin:.25em 0 .35em}
+    h1{font-size:clamp(32px,4.8vw,52px);font-weight:900}
+    h2{font-size:clamp(26px,3.4vw,38px);font-weight:900}
+    h3{font-size:clamp(18px,2.2vw,22px);font-weight:900}
+    .muted{color:var(--muted)}
+    .container{max-width:1280px;margin:0 auto;padding:0 24px}
+    .section{padding:clamp(44px,7vh,110px) 0}
+    .band{background:var(--soft)}
+    .wide{max-width:1320px}
+    .badge{display:inline-block;padding:8px 12px;border-radius:999px;background:#eef3ff;border:1px solid #dce6ff;font-weight:800}
+    .pill{display:inline-block;padding:8px 12px;border-radius:999px;background:#eef3ff;border:1px solid #dce6ff;font-weight:700;margin:6px 6px 0 0}
+
+    .btn{display:inline-block;padding:14px 18px;border-radius:14px;font-weight:800;border:2px solid transparent;background:var(--brand);color:#fff;box-shadow:var(--shadow)}
+    .btn:hover{filter:brightness(.96)}
+    .btn.light{background:#fff;color:var(--brand);border-color:var(--brand)}
+    .btn.ghost{background:transparent;border-color:#fff;color:#fff}
+
+    /* Header — same pattern as other pages */
+    .hdr{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:1px solid var(--ring)}
+    .container.nav{display:flex;align-items:center;gap:16px;min-height:var(--hdrH)}
+    .logo{font-weight:800;font-size:24px;color:var(--brand);text-decoration:none}
+    .navlinks{margin-left:auto;display:flex;align-items:center;gap:14px}
+    .menu-btn{margin-left:8px;background:transparent;border:0;font-size:22px}
+    @media (max-width:860px){
+      .navlinks{display:none}
+      .menu-open .navlinks{display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:12px 16px;background:#fff;border-bottom:1px solid var(--ring);position:absolute;left:0;right:0;top:var(--hdrH)}
+    }
+    .dropdown{position:relative}
+    .dropbtn{background:transparent;border:0;padding:8px 10px;font:inherit;font-weight:700;color:var(--brand);cursor:pointer;border-radius:8px}
+    .menu{position:absolute;top:110%;left:0;min-width:280px;z-index:1000;background:#fff;border:1px solid var(--ring);border-radius:12px;box-shadow:var(--shadow);padding:8px;display:none}
+    .menu .grid{display:grid;grid-template-columns:repeat(2,minmax(160px,1fr));gap:6px 8px}
+    .menu a{display:block;padding:8px 10px;border-radius:8px;color:#111;text-decoration:none;font-weight:700}
+    .menu a:hover{background:#f2f7ff}
+    .dropdown.open .menu{display:block !important}
+    @media (min-width:721px){ .dropdown:hover .menu, .dropdown:focus-within .menu{display:block} }
+
+    /* HERO — bold gradient + soft blobs for color */
+    .hero-urgent{
+      color:#fff;
+      background:
+        radial-gradient(1100px 520px at 12% -10%, rgba(255,255,255,.18), transparent 60%),
+        radial-gradient(800px 480px at 110% 10%, rgba(255,255,255,.10), transparent 50%),
+        linear-gradient(180deg, #124b99 0%, var(--brand) 54%, #0a6bd8 100%);
+      padding: clamp(32px, 7vh, 72px) 0;
+    }
+    .hero-urgent .meta{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0 14px}
+    .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:12px}
+    .callout{margin-top:14px;background:#ffffff;color:#0a3a7f;border:1px solid #d9e6ff;border-left:6px solid #0a6bd8;border-radius:14px;padding:12px 14px;font-weight:700}
+
+    /* Grids */
+    .grid-2{display:grid;gap:24px;grid-template-columns:repeat(2,minmax(0,1fr))}
+    .grid-3{display:grid;gap:24px;grid-template-columns:repeat(3,minmax(0,1fr))}
+    @media (max-width:1024px){ .grid-3{grid-template-columns:repeat(2,1fr)} }
+    @media (max-width:720px){ .grid-2,.grid-3{grid-template-columns:1fr} }
+
+    /* Colorful cards */
+    .card{border:1px solid var(--ring);border-radius:18px;padding:20px;background:#fff;box-shadow:var(--shadow)}
+    .card.c-rose{background:linear-gradient(180deg, var(--rose), #fff);}
+    .card.c-mint{background:linear-gradient(180deg, var(--mint), #fff);}
+    .card.c-amber{background:linear-gradient(180deg, var(--amber), #fff);}
+    .card.c-violet{background:linear-gradient(180deg, var(--violet), #fff);}
+    .card.c-sky{background:linear-gradient(180deg, var(--sky), #fff);}
+
+    ul.clean{margin:.25rem 0 0 1.2rem}
+    .note{font-size:14px;color:#6b7a90}
+
+    /* Hours block */
+    .hours table{width:100%;border-collapse:collapse;border:1px solid var(--ring);background:#fff;border-radius:14px;overflow:hidden}
+    .hours th,.hours td{padding:12px;border-bottom:1px solid var(--ring);text-align:left}
+    .hours tr:last-child td{border-bottom:none}
+
+    /* Right rail booking (desktop) */
+    .rail{position:sticky;top:calc(var(--hdrH) + 18px);align-self:start}
+    .bookcard{background:#fff;border:1px solid var(--ring);border-radius:18px;padding:18px;box-shadow:var(--shadow)}
+    .bookcard .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+
+    /* Sticky mobile booking bar */
+    .stickybar{
+      position:fixed;bottom:12px;left:12px;right:12px;z-index:1000;
+      display:none;gap:10px;justify-content:space-between;background:#0b3a83;
+      border:1px solid #08326f;border-radius:16px;padding:10px 12px;box-shadow:var(--shadow)
+    }
+    .stickybar a{color:#fff;text-decoration:none;font-weight:900}
+    @media (max-width:860px){ .stickybar{display:flex} }
+
+    /* Footer */
+    .ftr{background:#0b3a83;color:#fff;padding:22px 0;text-align:center}
+  </style>
+</head>
+<body>
+  <!-- Header (same as other pages) -->
+  <header class="hdr">
+    <div class="container nav">
+      <a class="logo" href="index.html">urHealthcare</a>
+
+      <nav class="navlinks" aria-label="Primary">
+        <div class="dropdown" id="services-dd">
+          <button class="dropbtn" type="button" aria-expanded="false" aria-controls="menu-services">Services ▾</button>
+          <div id="menu-services" class="menu" role="menu">
+            <div class="grid">
+              <a href="primary-care.html" role="menuitem">Primary Care</a>
+              <a href="urgent-care.html" role="menuitem" aria-current="page">Urgent Care</a>
+              <a href="x-ray.html" role="menuitem">X-ray</a>
+              <a href="labs.html" role="menuitem">Labs</a>
+              <a href="ultrasound.html" role="menuitem">Ultrasound</a>
+              <a href="minor-procedures.html" role="menuitem">Minor Procedures</a>
+              <a href="virtual-care.html" role="menuitem">Virtual Care</a>
+              <a href="included-meds.html" role="menuitem">Medications</a>
+            </div>
+            <div class="all"><a href="index.html#services">View all services →</a></div>
+          </div>
+        </div>
+
+        <a href="direct-primary-care.html">Membership</a>
+        <a href="employers.html">Employers</a>
+        <a href="accepted-insurances.html">Accepted Insurances</a>
+        <a href="faq.html">FAQ</a>
+
+        <!-- LOGIN DROPDOWN (same as other pages) -->
+        <div class="login-dd">
+          <button class="btn login-dd__button" id="loginMenuButton" aria-haspopup="menu" aria-expanded="false" aria-controls="loginMenu">Login</button>
+          <ul class="login-dd__menu" id="loginMenu" role="menu" aria-labelledby="loginMenuButton">
+            <li role="none"><a role="menuitem" href="https://urhealthcare.hint.com/login/request" class="login-dd__link">Membership Login</a></li>
+            <li role="none"><a role="menuitem" href="https://www.onpatient.com/login/" class="login-dd__link">OnPatient Login</a></li>
+          </ul>
+        </div>
+
+        <style>
+          .login-dd { position: relative; }
+          .login-dd__button { display:inline-flex; align-items:center; gap:6px; }
+          .login-dd__button::after { content:"▾"; font-size:.9em; }
+          .login-dd__menu {
+            position:absolute; right:0; top:calc(100% + 8px);
+            min-width:220px; padding:6px; margin:0; list-style:none;
+            background:#fff; border:1px solid #e5e7eb; border-radius:12px;
+            box-shadow:0 12px 28px rgba(0,0,0,.12);
+            display:none; z-index:1000;
+          }
+          .login-dd__menu[data-open="true"] { display:block; }
+          .login-dd__link { display:block; padding:10px 12px; border-radius:10px; color:#111; text-decoration:none; font-weight:700; }
+          .login-dd__link:hover, .login-dd__link:focus { background:#f2f7ff; color:#0b3a83; outline:none; }
+        </style>
+      </nav>
+
+      <button class="menu-btn" aria-label="Menu" onclick="document.body.classList.toggle('menu-open')">☰</button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero-urgent">
+    <div class="container wide">
+      <h1>Urgent Care Near Roseville, CA — Walk-In & Same-Day</h1>
+      <p class="muted" style="color:#eaf2ff">Fast, affordable care minutes from Roseville with on-site X-ray, labs, stitches, IV fluids, and 250+ medications. Open 7 days. Book online or walk in.</p>
+      <div class="meta">
+        <span class="badge">Serving Roseville 95661 • 95678 • 95747</span>
+        <span class="badge">Near I-80 & Hwy 65 (Rocklin)</span>
+        <span class="badge">Walk-in • Virtual visits</span>
+      </div>
+      <div class="cta-row">
+        <a class="btn" href="https://urhealthcare.zohobookings.com/#/urhealthcare">Book Urgent Care Now</a>
+        <a class="btn ghost" href="accepted-insurances.html">See Accepted Insurances</a>
+      </div>
+      <div class="callout">Tip: Last walk-in check-in is usually 30 minutes before closing. Call <a href="tel:+19169642001">916-964-2001</a> with questions.</div>
+    </div>
+  </section>
+
+  <!-- WHAT WE TREAT (colorful tiles) -->
+  <section class="section band">
+    <div class="container wide">
+      <h2>What Our Roseville Urgent Care Treats</h2>
+      <p class="muted">Common illnesses & injuries treated every day by our urgent care clinicians.</p>
+      <div class="grid-3">
+        <article class="card c-sky">
+          <h3>Colds, Flu & COVID-19</h3>
+          <ul class="clean">
+            <li>Fever, cough, sore throat, body aches</li>
+            <li>Rapid COVID/flu/strep testing</li>
+            <li>Antivirals/antibiotics when indicated</li>
+          </ul>
+        </article>
+        <article class="card c-rose">
+          <h3>Ear, Nose & Throat</h3>
+          <ul class="clean">
+            <li>Ear infections & ear pain</li>
+            <li>Sinus infections & congestion</li>
+            <li>Pink eye, allergies</li>
+          </ul>
+        </article>
+        <article class="card c-mint">
+          <h3>Women’s Health & UTI</h3>
+          <ul class="clean">
+            <li>UTI testing & treatment</li>
+            <li>Yeast/bacterial infections</li>
+            <li>Pregnancy tests; STI care</li>
+          </ul>
+        </article>
+        <article class="card c-amber">
+          <h3>Skin, Bites & Rashes</h3>
+          <ul class="clean">
+            <li>Rash, hives, poison oak</li>
+            <li>Abscess drainage; wound care</li>
+            <li>Minor animal/insect bites</li>
+          </ul>
+        </article>
+        <article class="card c-violet">
+          <h3>Injuries & Fractures</h3>
+          <ul class="clean">
+            <li>Sprains/strains, sports injuries</li>
+            <li>X-ray on site; splints</li>
+            <li>Laceration repair (stitches)</li>
+          </ul>
+        </article>
+        <article class="card c-mint">
+          <h3>Stomach & Dehydration</h3>
+          <ul class="clean">
+            <li>Nausea, vomiting, diarrhea</li>
+            <li>Abdominal pain evaluation</li>
+            <li>IV fluids when appropriate</li>
+          </ul>
+        </article>
+      </div>
+      <p class="note" style="margin-top:12px">Emergency symptoms (chest pain, stroke signs, major trauma, severe breathing trouble, uncontrolled bleeding) require 911 or the nearest ER.</p>
+    </div>
+  </section>
+
+  <!-- SERVICES + RIGHT RAIL BOOKING -->
+  <section class="section">
+    <div class="container wide" style="display:grid;grid-template-columns:2fr 1fr;gap:28px">
+      <div>
+        <h2>On-Site Services to Speed Your Visit</h2>
+        <div class="grid-3">
+          <article class="card c-sky">
+            <h3>X-ray & Procedures</h3>
+            <ul class="clean">
+              <li><a href="x-ray.html">X-ray</a> for suspected fractures & chest imaging</li>
+              <li>Splints, slings, crutches</li>
+              <li>Sutures, skin glue, wound care</li>
+            </ul>
+          </article>
+          <article class="card c-amber">
+            <h3>Lab Testing</h3>
+            <ul class="clean">
+              <li><a href="labs.html">Rapid tests</a>: strep, flu, COVID, UA, pregnancy</li>
+              <li>Common blood work (on site / send-out)</li>
+              <li>STI testing & treatment</li>
+            </ul>
+          </article>
+          <article class="card c-mint">
+            <h3>Medications On Site</h3>
+            <ul class="clean">
+              <li><a href="included-meds.html">250+ in-house medications</a></li>
+              <li>Antibiotics, eye/ear drops, inhalers</li>
+              <li>Anti-nausea, pain & allergy meds</li>
+            </ul>
+          </article>
+        </div>
+
+        <h2 style="margin-top:36px">Why Roseville Chooses urHealthcare</h2>
+        <div class="grid-3">
+          <article class="card c-violet">
+            <h3>Fast Access</h3>
+            <p>Same-day online booking, walk-ins welcome, and virtual visits when appropriate.</p>
+          </article>
+          <article class="card c-rose">
+            <h3>Continuity of Care</h3>
+            <p>Urgent care integrates with our <a href="primary-care.html">primary care</a> team for better follow-up.</p>
+          </article>
+          <article class="card c-sky">
+            <h3>Transparent Options</h3>
+            <p>Major <a href="accepted-insurances.html">insurances accepted</a> plus <a href="direct-primary-care.html">Direct Primary Care</a> membership.</p>
+          </article>
+        </div>
+      </div>
+
+      <!-- Right rail booking card -->
+      <aside class="rail">
+        <div class="bookcard">
+          <h3 style="margin-top:0">Book Urgent Care</h3>
+          <p class="muted" style="margin:.25rem 0 0">Walk-ins welcome • Save your spot</p>
+          <div class="row" style="margin-top:10px">
+            <a class="btn" href="https://urhealthcare.zohobookings.com/#/urhealthcare">Book Online</a>
+            <a class="btn light" href="tel:+19169642001">Call 916-964-2001</a>
+          </div>
+          <hr style="border:none;border-top:1px solid var(--ring);margin:16px 0">
+          <h3 style="margin:.1rem 0 .35rem">Hours (Open 7 Days)</h3>
+          <div class="hours">
+            <table aria-label="Urgent care hours">
+              <tbody>
+                <tr><th scope="row">Mon–Sun</th><td>8:00 AM – 8:00 PM</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="note" style="margin-top:8px">Last walk-in check-in ~30 minutes before close. Holiday hours may vary.</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- LOCATION / MAP -->
+  <section class="section band">
+    <div class="container wide">
+      <h2>Location — Minutes from Roseville</h2>
+      <div class="grid-2">
+        <div class="card">
+          <p><strong>urHealthcare — Urgent Care (Near Roseville)</strong><br>
+            6839 Five Star Blvd, Suite D, Rocklin, CA 95677</p>
+          <p><a href="https://www.google.com/maps?q=6839+Five+Star+Blvd,+Suite+D,+Rocklin,+CA+95677" target="_blank" rel="noopener">Open in Google Maps</a></p>
+          <div class="pillrow" style="margin-top:8px">
+            <span class="pill">Roseville 95661</span>
+            <span class="pill">Roseville 95678</span>
+            <span class="pill">Roseville 95747</span>
+            <span class="pill">Cresthaven • Cirby Ranch • Fiddyment</span>
+          </div>
+        </div>
+        <div class="card" style="border-radius:18px;overflow:hidden">
+          <iframe
+            title="Map to urHealthcare"
+            src="https://www.google.com/maps?q=6839%20Five%20Star%20Blvd%2C%20Suite%20D%2C%20Rocklin%2C%20CA%2095677&z=14&output=embed"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            style="width:100%;height:340px;border:0"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSURANCE & PRICING -->
+  <section class="section">
+    <div class="container wide">
+      <h2>Insurance & Transparent Pricing</h2>
+      <p>We accept many major plans (see the full list) and offer clear, up-front costs. Prefer even more predictability? Pair your benefits with our <a href="direct-primary-care.html">Direct Primary Care</a> membership.</p>
+      <div class="cta-row">
+        <a class="btn light" href="accepted-insurances.html">See Accepted Insurances</a>
+        <a class="btn" href="https://urhealthcare.zohobookings.com/#/urhealthcare">Book Urgent Care</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section band">
+    <div class="container wide">
+      <h2>Urgent Care — Frequently Asked Questions</h2>
+      <div class="grid-2">
+        <details class="card c-sky" open>
+          <summary><strong>Do you take walk-ins?</strong></summary>
+          <p>Yes. Walk-ins are welcome. You can also <a href="https://urhealthcare.zohobookings.com/#/urhealthcare">book online</a> to save your spot.</p>
+        </details>
+        <details class="card c-rose">
+          <summary><strong>Do you accept my insurance?</strong></summary>
+          <p>We work with many major plans. Check our <a href="accepted-insurances.html">Accepted Insurances</a> page or call us and we’ll confirm your benefits.</p>
+        </details>
+        <details class="card c-mint">
+          <summary><strong>When should I go to the ER instead?</strong></summary>
+          <p>Severe chest pain, stroke symptoms, major trauma, severe shortness of breath, or uncontrolled bleeding require 911 or the nearest ER.</p>
+        </details>
+        <details class="card c-amber">
+          <summary><strong>Do you have X-ray, labs, and medications on site?</strong></summary>
+          <p>Yes — on-site <a href="x-ray.html">X-ray</a>, <a href="labs.html">labs</a>, and <a href="included-meds.html">common medications</a> help you get treated faster.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sticky mobile booking bar -->
+  <div class="stickybar" role="region" aria-label="Quick booking">
+    <a href="https://urhealthcare.zohobookings.com/#/urhealthcare">Book Urgent Care</a>
+    <a href="tel:+19169642001" style="text-decoration:underline">Call 916-964-2001</a>
+  </div>
+
+  <!-- Footer -->
+  <footer class="ftr">
+    <div class="container">© <span id="y"></span> urHealthcare. All rights reserved.</div>
+  </footer>
+
+  <!-- Schema: MedicalClinic -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"MedicalClinic",
+    "name":"urHealthcare — Urgent Care near Roseville",
+    "description":"Walk-in & same-day urgent care near Roseville, CA with X-ray, labs, stitches, IV fluids & more. Open 7 days. Book online.",
+    "url":"https://harprandeol1.github.io/urhealthcare1/urgent-care.html",
+    "telephone":"+1-916-964-2001",
+    "medicalSpecialty":["UrgentCare","PrimaryCare"],
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"6839 Five Star Blvd, Suite D",
+      "addressLocality":"Rocklin",
+      "addressRegion":"CA",
+      "postalCode":"95677",
+      "addressCountry":"US"
+    },
+    "areaServed":["Roseville 95661","Roseville 95678","Roseville 95747","Placer County","Sacramento Metro"],
+    "openingHoursSpecification":[
+      {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"08:00","closes":"20:00"}
+    ],
+    "hasMap":"https://www.google.com/maps?q=6839+Five+Star+Blvd,+Suite+D,+Rocklin,+CA+95677"
+  }
+  </script>
+
+  <!-- Schema: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"Do you take walk-ins?","acceptedAnswer":{"@type":"Answer","text":"Yes. Walk-ins are welcome. You can also book online to save your spot."}},
+      {"@type":"Question","name":"Do you accept my insurance?","acceptedAnswer":{"@type":"Answer","text":"We work with many major plans. Check our Accepted Insurances page or call us and we’ll confirm your benefits."}},
+      {"@type":"Question","name":"When should I go to the ER instead?","acceptedAnswer":{"@type":"Answer","text":"Severe chest pain, stroke symptoms, major trauma, severe shortness of breath, or uncontrolled bleeding require 911 or the nearest ER."}},
+      {"@type":"Question","name":"Do you have X-ray, labs, and medications on site?","acceptedAnswer":{"@type":"Answer","text":"Yes — on-site X-ray, labs, and common medications help you get treated faster."}}
+    ]
+  }
+  </script>
+
+  <!-- Schema: Breadcrumbs -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://harprandeol1.github.io/urhealthcare1/index.html"},
+      {"@type":"ListItem","position":2,"name":"Urgent Care — Roseville, CA","item":"https://harprandeol1.github.io/urhealthcare1/urgent-care.html"}
+    ]
+  }
+  </script>
+
+  <!-- Minimal JS: dropdowns + login menu + year -->
+  <script>
+    // Footer year
+    const yEl=document.getElementById('y'); if(yEl) yEl.textContent=new Date().getFullYear();
+
+    // Services dropdown
+    (function(){
+      const dd=document.getElementById('services-dd');
+      const btn=dd?.querySelector('.dropbtn');
+      btn?.addEventListener('click',(e)=>{ e.stopPropagation(); dd.classList.toggle('open'); btn.setAttribute('aria-expanded', dd.classList.contains('open')); });
+      document.addEventListener('click',(e)=>{ if(!dd.contains(e.target)){ dd.classList.remove('open'); btn?.setAttribute('aria-expanded','false'); } });
+      document.addEventListener('keydown',(e)=>{ if(e.key==='Escape'){ dd.classList.remove('open'); btn?.setAttribute('aria-expanded','false'); } });
+    })();
+
+    // Login dropdown a11y
+    (function(){
+      const loginBtn=document.getElementById('loginMenuButton');
+      const loginMenu=document.getElementById('loginMenu');
+      function closeLogin(){ loginMenu?.setAttribute('data-open','false'); loginBtn?.setAttribute('aria-expanded','false'); }
+      loginBtn?.addEventListener('click',(e)=>{ const isOpen=loginMenu.getAttribute('data-open')==='true'; loginMenu.setAttribute('data-open', String(!isOpen)); loginBtn.setAttribute('aria-expanded', String(!isOpen)); e.stopPropagation(); });
+      document.addEventListener('click',(e)=>{ if(!loginMenu.contains(e.target) && !loginBtn.contains(e.target)) closeLogin(); });
+      document.addEventListener('keydown',(e)=>{ if(e.key==='Escape') closeLogin(); });
+    })();
+  </script>
+</body>
+</html>
