@@ -466,11 +466,14 @@
       </div>
     </section>
 
-    <!-- INSURANCES (compact with logo ticker) -->
+  <!-- INSURANCES (logo tiles, big logos + names under) -->
 <section class="insurances slide" aria-labelledby="insurances-title" style="background:#fafcff;">
   <style>
-    .insurances{--brand:#0b3a83;--ink:#111;--muted:#555;--maxw:1100px;--bg:#fafcff;color:var(--ink);
-      border-top:1px solid #eee;border-bottom:1px solid #eee}
+    .insurances{
+      --brand:#0b3a83; --ink:#111; --muted:#555; --maxw:1100px; --bg:#fafcff;
+      --logo:72px; /* <<< bigger logos */
+      color:var(--ink); border-top:1px solid #eee; border-bottom:1px solid #eee;
+    }
     .insurances .wrap{max-width:var(--maxw);margin:0 auto;padding:28px 16px}
     .insurances h2{font-size:clamp(22px,3.2vw,32px);margin:0 0 8px;font-weight:800;color:var(--brand)}
     .insurances .lead{color:var(--muted);font-size:clamp(14px,1.8vw,16px);margin:0 0 14px}
@@ -481,31 +484,33 @@
     .insurances .note{margin-top:10px;color:#777;font-size:13px}
 
     /* Ticker */
-    .ticker{position:relative;overflow:hidden;width:100%;padding:14px 0}
-    /* edge fades */
+    .ticker{position:relative;overflow:hidden;width:100%;padding:16px 0}
     .ticker::before,.ticker::after{
-      content:"";position:absolute;top:0;bottom:0;width:70px;pointer-events:none;z-index:2
+      content:"";position:absolute;top:0;bottom:0;width:80px;pointer-events:none;z-index:2
     }
     .ticker::before{left:0;background:linear-gradient(to right,var(--bg),rgba(250,252,255,0))}
     .ticker::after{right:0;background:linear-gradient(to left,var(--bg),rgba(250,252,255,0))}
-    .ticker-track{display:flex;gap:24px;align-items:center;will-change:transform;
-      animation:ins-scroll 28s linear infinite}
+    .ticker-track{display:flex;gap:28px;align-items:center;will-change:transform;animation:ins-scroll 28s linear infinite}
     .ticker:hover .ticker-track{animation-play-state:paused}
     @keyframes ins-scroll{to{transform:translateX(-50%)}}
+    .ticker-row{display:flex;gap:28px;align-items:center;flex:0 0 auto}
 
-    .ticker-row{display:flex;gap:24px;align-items:center;flex:0 0 auto}
-    .ins-chip{
-      display:inline-flex;align-items:center;gap:10px;
-      background:#eef6ff;border:1px solid #d8e8ff;color:#0b3a83;
-      border-radius:999px;padding:8px 12px;font-weight:800;white-space:nowrap;
-      text-decoration:none;box-shadow:0 6px 18px rgba(11,58,131,.06)
+    /* Tile with big logo & label under */
+    .ins-tile{
+      display:flex;flex-direction:column;align-items:center;justify-content:center;
+      gap:10px;width:146px;min-height:142px;padding:14px;
+      background:#fff;border:1px solid #e6eef7;border-radius:16px;
+      text-decoration:none;color:var(--brand);font-weight:900;text-align:center;
+      box-shadow:0 10px 26px rgba(11,58,131,.08); transition:transform .18s ease, box-shadow .18s ease;
     }
+    .ins-tile:hover{transform:translateY(-2px); box-shadow:0 14px 36px rgba(11,58,131,.12)}
     .ins-logo{
-      width:22px;height:22px;object-fit:contain;object-position:center;
-      background:#fff;border-radius:6px;border:1px solid #e6eef7;padding:2px;flex:0 0 22px
+      width:var(--logo);height:var(--logo);object-fit:contain;object-position:center;
+      background:#fff;border-radius:12px;border:1px solid #e8eef7;padding:8px;flex:0 0 var(--logo)
     }
+    .ins-label{line-height:1.15;font-size:14px}
 
-    /* Reduced motion = no scroll; show one row */
+    /* Reduced motion */
     @media (prefers-reduced-motion: reduce){
       .ticker-track{animation:none}
     }
@@ -519,9 +524,7 @@
     </p>
 
     <div class="actions">
-      <p class="lead" style="margin:0;">
-        Prefer price transparency? Try our <strong>Direct Primary Care (DPC)</strong> membership.
-      </p>
+      <p class="lead" style="margin:0;">Prefer price transparency? Try our <strong>Direct Primary Care (DPC)</strong> membership.</p>
       <a class="cta" href="direct-primary-care.html">Explore DPC</a>
     </div>
     <p class="note">If your plan isn’t listed, call us—some out-of-network plans still have benefits for primary care.</p>
@@ -529,97 +532,98 @@
     <!-- LOGO TICKER -->
     <div class="ticker" aria-hidden="true">
       <div class="ticker-track">
-        <!-- ROW 1 -->
+        <!-- pass 1 -->
         <div class="ticker-row">
-          <a class="ins-chip" href="accepted-insurances.html#Aetna">
+          <a class="ins-tile" href="accepted-insurances.html#Aetna">
             <img class="ins-logo" src="assets/img/insurers/aetna.svg" alt="">
-            <span>Aetna</span>
+            <span class="ins-label">Aetna</span>
           </a>
-          <a class="ins-chip" href="accepted-insurances.html#Anthem">
+          <a class="ins-tile" href="accepted-insurances.html#Anthem">
             <img class="ins-logo" src="assets/img/insurers/anthem-blue-cross.svg" alt="">
-            <span>Anthem Blue Cross</span>
+            <span class="ins-label">Anthem Blue Cross</span>
           </a>
-          <a class="ins-chip" href="accepted-insurances.html#BlueShield">
+          <a class="ins-tile" href="accepted-insurances.html#BlueShield">
             <img class="ins-logo" src="assets/img/insurers/BSC.jpg" alt="">
-            <span>Blue Shield of CA</span>
+            <span class="ins-label">Blue Shield of CA</span>
           </a>
-          <a class="ins-chip" href="accepted-insurances.html#HealthNet">
+          <a class="ins-tile" href="accepted-insurances.html#HealthNet">
             <img class="ins-logo" src="assets/img/insurers/healthnet.png" alt="">
-            <span>Health Net</span>
+            <span class="ins-label">Health Net</span>
           </a>
-          <a class="ins-chip" href="accepted-insurances.html#UnitedHealthcare">
+          <a class="ins-tile" href="accepted-insurances.html#UnitedHealthcare">
             <img class="ins-logo" src="assets/img/insurers/unitedhealthcare.svg" alt="">
-            <span>UnitedHealthcare</span>
+            <span class="ins-label">UnitedHealthcare</span>
           </a>
-          <a class="ins-chip" href="accepted-insurances.html#SutterHealthPlus">
+          <a class="ins-tile" href="accepted-insurances.html#SutterHealthPlus">
             <img class="ins-logo" src="assets/img/insurers/sutter-health-plus.svg" alt="">
-            <span>Sutter Health Plus</span>
+            <span class="ins-label">Sutter Health Plus</span>
           </a>
-          <a class="ins-chip" href="accepted-insurances.html#WesternHealthAdvantage">
+          <a class="ins-tile" href="accepted-insurances.html#WesternHealthAdvantage">
             <img class="ins-logo" src="assets/img/insurers/western-health-advantage.svg" alt="">
-            <span>Western Health Advantage</span>
+            <span class="ins-label">Western Health Advantage</span>
           </a>
-          <a class="ins-chip" href="accepted-insurances.html#TRICARE">
+          <a class="ins-tile" href="accepted-insurances.html#TRICARE">
             <img class="ins-logo" src="assets/img/insurers/tricare-for-life.svg" alt="">
-            <span>TRICARE</span>
+            <span class="ins-label">TRICARE</span>
           </a>
-          <a class="ins-chip" href="accepted-insurances.html#Medicare">
+          <a class="ins-tile" href="accepted-insurances.html#Medicare">
             <img class="ins-logo" src="assets/img/insurers/medicare.svg" alt="">
-            <span>Medicare</span>
+            <span class="ins-label">Medicare</span>
           </a>
-          <a class="ins-chip" href="partnership.html">
+          <a class="ins-tile" href="partnership.html">
             <img class="ins-logo" src="assets/img/insurers/partnership-medi-cal.svg" alt="">
-            <span>Partnership Medi-Cal</span>
+            <span class="ins-label">Partnership Medi-Cal</span>
           </a>
         </div>
 
-        <!-- ROW 2 (duplicate for seamless loop) -->
+        <!-- pass 2 (duplicate for seamless loop) -->
         <div class="ticker-row" aria-hidden="true">
-          <a class="ins-chip" href="accepted-insurances.html#Aetna">
+          <a class="ins-tile" href="accepted-insurances.html#Aetna">
             <img class="ins-logo" src="assets/img/insurers/aetna.svg" alt="">
-            <span>Aetna</span>
+            <span class="ins-label">Aetna</span>
           </a>
-          <a class="ins-chip" href="accepted-insurances.html#Anthem">
+          <a class="ins-tile" href="accepted-insurances.html#Anthem">
             <img class="ins-logo" src="assets/img/insurers/anthem-blue-cross.svg" alt="">
-            <span>Anthem Blue Cross</span>
+            <span class="ins-label">Anthem Blue Cross</span>
           </a>
-          <a class="ins-chip" href="accepted-insurances.html#BlueShield">
+          <a class="ins-tile" href="accepted-insurances.html#BlueShield">
             <img class="ins-logo" src="assets/img/insurers/BSC.jpg" alt="">
-            <span>Blue Shield of CA</span>
+            <span class="ins-label">Blue Shield of CA</span>
           </a>
-          <a class="ins-chip" href="accepted-insurances.html#HealthNet">
+          <a class="ins-tile" href="accepted-insurances.html#HealthNet">
             <img class="ins-logo" src="assets/img/insurers/healthnet.png" alt="">
-            <span>Health Net</span>
+            <span class="ins-label">Health Net</span>
           </a>
-          <a class="ins-chip" href="accepted-insurances.html#UnitedHealthcare">
+          <a class="ins-tile" href="accepted-insurances.html#UnitedHealthcare">
             <img class="ins-logo" src="assets/img/insurers/unitedhealthcare.svg" alt="">
-            <span>UnitedHealthcare</span>
+            <span class="ins-label">UnitedHealthcare</span>
           </a>
-          <a class="ins-chip" href="accepted-insurances.html#SutterHealthPlus">
+          <a class="ins-tile" href="accepted-insurances.html#SutterHealthPlus">
             <img class="ins-logo" src="assets/img/insurers/sutter-health-plus.svg" alt="">
-            <span>Sutter Health Plus</span>
+            <span class="ins-label">Sutter Health Plus</span>
           </a>
-          <a class="ins-chip" href="accepted-insurances.html#WesternHealthAdvantage">
+          <a class="ins-tile" href="accepted-insurances.html#WesternHealthAdvantage">
             <img class="ins-logo" src="assets/img/insurers/western-health-advantage.svg" alt="">
-            <span>Western Health Advantage</span>
+            <span class="ins-label">Western Health Advantage</span>
           </a>
-          <a class="ins-chip" href="accepted-insurances.html#TRICARE">
+          <a class="ins-tile" href="accepted-insurances.html#TRICARE">
             <img class="ins-logo" src="assets/img/insurers/tricare-for-life.svg" alt="">
-            <span>TRICARE</span>
+            <span class="ins-label">TRICARE</span>
           </a>
-          <a class="ins-chip" href="accepted-insurances.html#Medicare">
+          <a class="ins-tile" href="accepted-insurances.html#Medicare">
             <img class="ins-logo" src="assets/img/insurers/medicare.svg" alt="">
-            <span>Medicare</span>
+            <span class="ins-label">Medicare</span>
           </a>
-          <a class="ins-chip" href="partnership.html">
+          <a class="ins-tile" href="partnership.html">
             <img class="ins-logo" src="assets/img/insurers/partnership-medi-cal.svg" alt="">
-            <span>Partnership Medi-Cal</span>
+            <span class="ins-label">Partnership Medi-Cal</span>
           </a>
         </div>
       </div>
     </div>
   </div>
 </section>
+
 
 
 
