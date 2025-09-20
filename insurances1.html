@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="https://harprandeol1.github.io/urhealthcare1/favicon.svg">
+  <link rel="icon" href="https://harprandeol1.github.io/urhealthcare1/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="https://harprandeol1.github.io/urhealthcare1/apple-touch-icon.png">
+  <link rel="mask-icon" href="https://harprandeol1.github.io/urhealthcare1/safari-pinned-tab.svg" color="#0b3a83">
+  <meta name="theme-color" content="#0b3a83">
+
+  <!-- Social preview -->
+  <meta property="og:image" content="https://harprandeol1.github.io/urhealthcare1/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Schema.org (Clinic) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalClinic",
+    "name": "urHealthcare",
+    "image": "https://www.urhealthcare.org/images/logo.png",
+    "url": "https://www.urhealthcare.org",
+    "telephone": "+1-916-964-2001",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "6839 Five Star Blvd, Suite D",
+      "addressLocality": "Rocklin",
+      "addressRegion": "CA",
+      "postalCode": "95677",
+      "addressCountry": "US"
+    },
+    "openingHours": [
+      "Tu-Sa 08:00-19:00",
+      "Su 09:00-17:00",
+      "Mo 09:00-17:00"
+    ],
+    "priceRange": "$$",
+    "medicalSpecialty": ["PrimaryCare","UrgentCare"]
+  }
+  </script>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Accepted Insurance Plans | urHealthcare • Rocklin 95677</title>
+  <meta name="description" content="We accept many major insurance plans in the Sacramento metro. See our vertical list of accepted insurances with logos. We can also help you enroll in Medi-Cal, Medicare, or a private plan." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://harprandeol1.github.io/urhealthcare1/assets/styles.css?v=5" />
+
+  <style>
+    :root{
+      --brand:#0b3a83; --ink:#0e1a2f; --muted:#5a6780; --bg:#ffffff;
+      --border:#e6ebf3; --radius:16px; --shadow:0 10px 30px rgba(11,58,131,.08);
+      --stripe1:#3b82f6; --stripe2:#22c55e; --stripe3:#f59e0b; --stripe4:#ef4444; --stripe5:#8b5cf6;
+    }
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:var(--bg);color:var(--ink);line-height:1.75;font-size:17px}
+    h1,h2,h3{letter-spacing:-.02em;line-height:1.2;margin:.35em 0 .5em}
+    h1{font-size:clamp(32px,4.5vw,48px)} h2{font-size:clamp(22px,3vw,28px)} h3{font-size:20px}
+    p{margin:0 0 1.1em} a{color:var(--brand);text-decoration:none} a:hover{text-decoration:underline}
+    .muted{color:var(--muted)}
+    .container{max-width:1120px;margin:auto;padding:0 20px}
+    .section{padding:64px 0}
+    .btn{display:inline-block;padding:12px 18px;border-radius:999px;font-weight:800;background:var(--brand);color:#fff;border:2px solid transparent;box-shadow:var(--shadow)}
+    .btn:hover{filter:brightness(.96)}
+    .btn.outline{background:#fff;color:var(--brand);border-color:var(--brand)}
+    .badge{display:inline-block;font-size:12px;font-weight:800;border-radius:999px;padding:6px 10px;background:#eef3ff;color:#10346b;border:1px solid #dce6ff}
+    .callout{margin-top:12px;background:#f8fbff;border:1px dashed #cfe0ff;padding:12px 14px;border-radius:12px;color:#29415f}
+
+    /* Header */
+    .hdr{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid var(--border)}
+    .hdr .container.nav{display:flex;align-items:center;gap:16px}
+    .logo{font-weight:800;font-size:24px;color:var(--brand);text-decoration:none}
+    .navlinks{margin-left:auto;display:flex;align-items:center;gap:12px}
+    .menu-btn{margin-left:12px;background:transparent;border:0;font-size:22px}
+    @media (max-width:720px){
+      .navlinks{display:none}
+      .menu-open .navlinks{display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:12px 0;margin-left:0}
+    }
+    .dropdown{position:relative}
+    .dropbtn{background:transparent;border:0;padding:8px 10px;font:inherit;font-weight:600;color:#0b3a83;cursor:pointer;border-radius:8px}
+    .menu{position:absolute;top:110%;left:0;min-width:280px;z-index:1000;background:#b5e2ff;border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow);padding:8px;list-style:none;margin:0;display:none}
+    .menu .grid{display:grid;grid-template-columns:repeat(2,minmax(160px,1fr));gap:4px 8px}
+    .menu a{display:block;padding:8px 10px;border-radius:8px;color:#111;text-decoration:none;white-space:nowrap}
+    .menu a:hover{background:#f5f8ff}
+    .menu .all{border-top:1px solid var(--border);margin-top:6px;padding-top:6px}
+    .dropdown.open .menu{display:block !important}
+    @media(min-width:721px){ .dropdown:hover .menu, .dropdown:focus-within .menu{display:block} }
+    @media(max-width:720px){ .dropdown{width:100%} .menu{position:static;box-shadow:none;border:0;padding:0} }
+
+    /* HERO */
+    .ins-hero{padding:56px 0;background:
+      radial-gradient(600px 300px at 15% -10%, rgba(255,255,255,.25), transparent 60%),
+      linear-gradient(180deg,#1e88e5 0%, #0b66c3 60%, #64b5f6 100%);}
+    .ins-hero h1,.ins-hero p{color:#fff}
+    .ins-hero .cta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+
+    /* VERTICAL LIST WITH LOGOS */
+    .ins-wrap{margin-top:18px}
+    .ins-list{list-style:none;margin:0;padding:0;display:block}
+    .ins-card{
+      display:flex;align-items:center;gap:14px;
+      padding:14px 16px;border:1px solid var(--border);border-radius:var(--radius);background:#fff;box-shadow:var(--shadow);
+      position:relative;overflow:hidden;
+    }
+    .ins-card + .ins-card{margin-top:10px}
+    .stripe{width:8px;align-self:stretch;border-radius:8px}
+    .ins-card:nth-child(5n+1) .stripe{background:var(--stripe1)}
+    .ins-card:nth-child(5n+2) .stripe{background:var(--stripe2)}
+    .ins-card:nth-child(5n+3) .stripe{background:var(--stripe3)}
+    .ins-card:nth-child(5n+4) .stripe{background:var(--stripe4)}
+    .ins-card:nth-child(5n+5) .stripe{background:var(--stripe5)}
+
+    .ins-logo{
+      width:44px;height:44px;flex:0 0 44px;
+      object-fit:contain;object-position:center;
+      border-radius:10px;background:#f7f8fb;border:1px solid #eef1f6;
+      padding:6px;
+    }
+    .ins-body{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+    .ins-name{font-weight:800}
+    .ins-note{margin-left:auto;font-size:13px;color:#6b7a90}
+    .ins-more{margin-left:8px;font-weight:800}
+
+    /* FAQ */
+    .faq details{background:#fff;border:1px solid var(--border);border-radius:12px;padding:12px 14px;box-shadow:var(--shadow)}
+    .faq details + details{margin-top:10px}
+    summary{cursor:pointer;font-weight:800;list-style:none}
+    summary::-webkit-details-marker{display:none}
+
+    /* Enroll help band */
+    .assist{background:#0b3a83;color:#fff;border-radius:18px;padding:18px 20px;display:flex;flex-wrap:wrap;align-items:center;gap:10px;box-shadow:0 14px 40px rgba(0,0,0,.12)}
+    .assist a.btn.outline{border-color:#fff;color:#0b3a83;background:#fff}
+
+    /* Footer */
+    .ftr{border-top:1px solid var(--border);padding:18px 0;text-align:center;color:#6b7a90}
+  </style>
+
+  <meta property="og:title" content="Accepted Insurance Plans | urHealthcare" />
+  <meta property="og:description" content="See our list of accepted insurances. We can also help you enroll in Medi-Cal, Medicare, or a private plan." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://harprandeol1.github.io/urhealthcare1/accepted-insurances.html" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="hdr">
+    <div class="container nav">
+      <a class="logo" href="index.html">urHealthcare</a>
+
+      <nav class="navlinks" aria-label="Primary">
+        <div class="dropdown" id="services-dd">
+          <button class="dropbtn" type="button" aria-expanded="false" aria-controls="menu-services">Services ▾</button>
+          <div id="menu-services" class="menu" role="menu">
+            <div class="grid">
+              <a href="primary-care.html" role="menuitem">Primary Care</a>
+              <a href="urgent-care.html" role="menuitem">Urgent Care</a>
+              <a href="x-ray.html" role="menuitem">X-ray</a>
+              <a href="labs.html" role="menuitem">Labs</a>
+              <a href="ultrasound.html" role="menuitem">Ultrasound</a>
+              <a href="minor-procedures.html" role="menuitem">Minor Procedures</a>
+              <a href="virtual-care.html" role="menuitem">Virtual Care</a>
+              <a href="included-meds.html" role="menuitem">Medications</a>
+            </div>
+            <div class="all"><a href="index.html#services">View all services →</a></div>
+          </div>
+        </div>
+
+        <a href="direct-primary-care.html">Membership</a>
+        <a href="employers.html">Employers</a>
+        <a href="faq.html">FAQ</a>
+
+        <!-- LOGIN DROPDOWN -->
+        <div class="login-dd">
+          <button class="btn login-dd__button" id="loginMenuButton" aria-haspopup="menu" aria-expanded="false" aria-controls="loginMenu">
+            Login
+          </button>
+          <ul class="login-dd__menu" id="loginMenu" role="menu" aria-labelledby="loginMenuButton">
+            <li role="none"><a role="menuitem" href="https://urhealthcare.hint.com/login/request" class="login-dd__link">Membership Login</a></li>
+            <li role="none"><a role="menuitem" href="https://www.onpatient.com/login/" class="login-dd__link">OnPatient Login</a></li>
+          </ul>
+        </div>
+
+        <style>
+          .login-dd{position:relative}
+          .login-dd__button::after{content:"▾";font-size:.9em;margin-left:6px}
+          .login-dd__menu{position:absolute;right:0;top:calc(100% + 8px);min-width:220px;padding:6px;margin:0;list-style:none;background:#fff;border:1px solid #e5e7eb;border-radius:12px;box-shadow:0 12px 28px rgba(0,0,0,.12);display:none;z-index:1000}
+          .login-dd__menu[data-open="true"]{display:block}
+          .login-dd__link{display:block;padding:10px 12px;border-radius:10px;color:#111;text-decoration:none;font-weight:700}
+          .login-dd__link:hover,.login-dd__link:focus{background:#f2f7ff;color:#0b3a83;outline:none}
+        </style>
+      </nav>
+
+      <button class="menu-btn" aria-label="Menu" onclick="document.body.classList.toggle('menu-open')">☰</button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="ins-hero">
+    <div class="container">
+      <span class="badge">Rocklin • ZIP 95677</span>
+      <h1>Accepted Insurance Plans</h1>
+      <p class="muted" style="color:#eaf4ff">We work with many major health plans for primary & urgent care. Coverage can vary by plan and employer; we’ll verify benefits at check-in and explain any costs upfront.</p>
+      <div class="cta-row">
+        <a class="btn" href="contact.html">Questions? Contact us</a>
+        <a class="btn outline" href="direct-primary-care.html">Prefer transparent pricing? See DPC</a>
+        <a class="btn outline" href="https://www.google.com/maps?q=6839+Five+Star+Blvd,+Suite+D,+Rocklin,+CA+95677" target="_blank" rel="noopener">Get directions</a>
+      </div>
+      <div class="callout">Tip: Bring your photo ID and insurance card. If a referral is required by your plan, we’ll help coordinate it.</div>
+    </div>
+  </section>
+
+  <main class="section">
+    <div class="container">
+
+      <!-- Filter -->
+      <div class="filterbar" aria-label="Filter insurers">
+        <input id="insSearch" class="search" type="search" placeholder="Search plan (e.g., Blue Shield, Medicare, Health Net)..." aria-label="Search insurers" />
+      </div>
+
+      <!-- VERTICAL LIST WITH LOGOS -->
+      <div class="ins-wrap" aria-labelledby="list-title">
+        <h2 id="list-title">Plans We Work With</h2>
+        <div class="ins-list" id="insList">
+
+          <!-- Each card: stripe • logo • name • note (+ optional 'Know more') -->
+          <div class="ins-card">
+            <span class="stripe" aria-hidden="true"></span>
+            <img class="ins-logo" src="assets/img/kp.svg" alt="AARP logo" onerror="this.style.display='none'">
+            <div class="ins-body"><span class="ins-name">AARP</span></div>
+            <div class="ins-note">Medicare Supplement</div>
+          </div>
+
+          <div class="ins-card">
+            <span class="stripe" aria-hidden="true"></span>
+            <img class="ins-logo" src="assets/img/insurers/aetna.svg" alt="Aetna logo" onerror="this.style.display='none'">
+            <div class="ins-body"><span class="ins-name">Aetna</span></div>
+            <div class="ins-note">HMO / PPO</div>
+          </div>
+
+          <div class="ins-card">
+            <span class="stripe" aria-hidden="true"></span>
+            <img class="ins-logo" src="assets/img/insurers/alignment-health.svg" alt="Alignment Health logo" onerror="this.style.display='none'">
+            <div class="ins-body"><span class="ins-name">Alignment Health</span></div>
+            <div class="ins-note">Medicare Advantage</div>
+          </div>
+
+          <div class="ins-card">
+            <span class="stripe" aria-hidden="true"></span>
+            <img class="ins-logo" src="assets/img/insurers/anthem-blue-cross.svg" alt="Anthem Blue Cross logo" onerror="this.style.display='none'">
+            <div class="ins-body"><span class="ins-name">Anthem Blue Cross</span></div>
+            <div class="ins-note">HMO / PPO</div>
+          </div>
+
+          <div class="ins-card">
+            <span class="stripe" aria-hidden="true"></span>
+            <img class="ins-logo" src="assets/img/insurers/blue-cross.svg" alt="Blue Cross logo" onerror="this.style.display='none'">
+            <div class="ins-body"><span class="ins-name">Blue Cross</span></div>
+            <div class="ins-note">Commercial</div>
+          </div>
+
+          <div class="ins-card">
+            <span class="stripe" aria-hidden="true"></span>
+            <img class="ins-logo" src="assets/img/insurers/BSC.jpg" alt="Blue Shield logo" onerror="this.style.display='none'">
+            <div class="ins-body"><span class="ins-name">Blue Shield</span></div>
+            <div class="ins-note">HMO / PPO</div>
+          </div>
+
+          <div class="ins-card">
+            <span class="stripe" aria-hidden="true"></span>
+            <img class="ins-logo" src="assets/img/insurers/medi-cal.svg" alt="Medi-Cal logo" onerror="this.style.display='none'">
+            <div class="ins-body"><span class="ins-name">Medi-Cal</span></div>
+            <div class="ins-note"></div>
+          </div>
+
+          <div class="ins-card">
+            <span class="stripe" aria-hidden="true"></span>
+            <img class="ins-logo" src="assets/img/insurers/partnership-medi-cal.svg" alt="Partnership Medi-Cal logo" onerror="this.style.display='none'">
+            <div class="ins-body">
+              <a class="ins-name" href="partnership.html">Partnership Medi-Cal</a>
+              <a class="ins-more" href="partnership.html" aria-label="Learn more about Partnership Medi-Cal">Know more →</a>
+            </div>
+            <div class="ins-note"></div>
+          </div>
+
+          <div class="ins-card">
+            <span class="stripe" aria-hidden="true"></span>
+            <img class="ins-logo" src="assets/img/insurers/cigna.svg" alt="Cigna logo" onerror="this.style.display='none'">
+            <div class="ins-body"><span class="ins-name">Cigna</span></div>
+            <div class="ins-note">HMO / PPO</div>
+          </div>
+
+          <div class="ins-card">
+            <span class="stripe" aria-hidden="true"></span>
+            <img class="ins-logo" src="assets/img/insurers/healthnet.png" alt="Health Net logo" onerror="this.style.display='none'">
+            <div class="ins-body"><span class="ins-name">Health Net</span></div>
+            <div class="ins-note">HMO / PPO / Medi-Cal*</div>
+          </div>
+
+          <div class="ins-card">
+            <span class="stripe" aria-hidden="true"></span>
+            <img class="ins-logo" src="assets/img/insurers/hill-physicians.svg" alt="Hill Physicians logo" onerror="this.style.display='none'">
+            <div class="ins-body"><span class="ins-name">Hill Physicians Medical Group</span></div>
+            <div class="ins-note">IPA</div>
+          </div>
+
+          <div class="ins-card">
+            <span class="stripe" aria-hidden="true"></span>
+            <img class="ins-logo" src="assets/img/insurers/humana.svg" alt="Humana logo" onerror="this.style.display='none'">
+            <div class="ins-body"><span class="ins-name">Humana</span></div>
+            <div class="ins-note">Medicare Advantage</div>
+          </div>
+
+          <div class="ins-card">
+            <span class="stripe" aria-hidden="true"></span>
+            <img class="ins-logo" src="assets/img/insurers/medicare.svg" alt="Medicare logo" onerror="this.style.display='none'">
+            <div class="ins-body"><span class="ins-name">Medicare</span></div>
+            <div class="ins-note">Traditional</div>
+          </div>
+
+          <div class="ins-card">
+            <span class="stripe" aria-hidden="true"></span>
+            <img class="ins-logo" src="assets/img/insurers/multiplan.svg" alt="MultiPlan logo" onerror="this.style.display='none'">
+            <div class="ins-body"><span class="ins-name">MultiPlan</span></div>
+            <div class="ins-note">Network</div>
+          </div>
+
+          <div class="ins-card">
+            <span class="stripe" aria-hidden="true"></span>
+            <img class="ins-logo" src="assets/img/insurers/sutter-health-plus.svg" alt="Sutter Health Plus logo" onerror="this.style.display='none'">
+            <div class="ins-body"><span class="ins-name">Sutter Health Plus</span></div>
+            <div class="ins-note">HMO</div>
+          </div>
+
+          <div class="ins-card">
+            <span class="stripe" aria-hidden="true"></span>
+            <img class="ins-logo" src="assets/img/insurers/sutter-independent-physicians.svg" alt="Sutter Independent Physicians logo" onerror="this.style.display='none'">
+            <div class="ins-body"><span class="ins-name">Sutter Independent Physicians</span></div>
+            <div class="ins-note">IPA</div>
+          </div>
+
+          <div class="ins-card">
+            <span class="stripe" aria-hidden="true"></span>
+            <img class="ins-logo" src="assets/img/insurers/sutter-select.svg" alt="Sutter Select logo" onerror="this.style.display='none'">
+            <div class="ins-body"><span class="ins-name">Sutter Select</span></div>
+            <div class="ins-note">Employer Plans</div>
+          </div>
+
+          <div class="ins-card">
+            <span class="stripe" aria-hidden="true"></span>
+            <img class="ins-logo" src="assets/img/insurers/tricare-for-life.svg" alt="TRICARE for Life logo" onerror="this.style.display='none'">
+            <div class="ins-body"><span class="ins-name">TRICARE for Life</span></div>
+            <div class="ins-note">Military & Retirees</div>
+          </div>
+
+          <div class="ins-card">
+            <span class="stripe" aria-hidden="true"></span>
+            <img class="ins-logo" src="assets/img/insurers/triwest.svg" alt="TriWest logo" onerror="this.style.display='none'">
+            <div class="ins-body"><span class="ins-name">TriWest Healthcare Alliance</span></div>
+            <div class="ins-note">VA Community Care</div>
+          </div>
+
+          <div class="ins-card">
+            <span class="stripe" aria-hidden="true"></span>
+            <img class="ins-logo" src="assets/img/insurers/unitedhealthcare.svg" alt="UnitedHealthcare logo" onerror="this.style.display='none'">
+            <div class="ins-body"><span class="ins-name">UnitedHealthcare</span></div>
+            <div class="ins-note">HMO / PPO / MA</div>
+          </div>
+
+          <div class="ins-card">
+            <span class="stripe" aria-hidden="true"></span>
+            <img class="ins-logo" src="assets/img/insurers/va.svg" alt="VA logo" onerror="this.style.display='none'">
+            <div class="ins-body"><span class="ins-name">VA — U.S. Department of Veterans Affairs</span></div>
+            <div class="ins-note">Eligibility-based</div>
+          </div>
+
+          <div class="ins-card">
+            <span class="stripe" aria-hidden="true"></span>
+            <img class="ins-logo" src="assets/img/insurers/western-health-advantage.svg" alt="Western Health Advantage logo" onerror="this.style.display='none'">
+            <div class="ins-body"><span class="ins-name">Western Health Advantage</span></div>
+            <div class="ins-note">HMO</div>
+          </div>
+
+        </div>
+
+        <p class="muted" style="margin-top:10px">* Participation and referrals may vary by plan and employer group. Call <a href="tel:+19169642001">916-964-2001</a> and we’ll confirm your specific benefits.</p>
+      </div>
+
+      <!-- Location / NAP -->
+      <section style="margin-top:22px">
+        <div class="ins-card" style="align-items:flex-start">
+          <span class="stripe" style="background:var(--brand)"></span>
+          <div>
+            <strong>urHealthcare — Rocklin</strong><br/>
+            6839 Five Star Blvd, Suite D, Rocklin, CA <strong>95677</strong> • <a href="tel:+19169642001">916-964-2001</a><br/>
+            <a href="https://www.google.com/maps?q=6839+Five+Star+Blvd,+Suite+D,+Rocklin,+CA+95677" target="_blank" rel="noopener">Get Directions</a> •
+            <a href="contact.html">Contact / Check-in</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Insurance FAQ -->
+      <section class="section" style="padding-top:28px;padding-bottom:0">
+        <h2>Insurance FAQ</h2>
+        <div class="faq">
+          <details>
+            <summary>Do you accept HMO and PPO plans?</summary>
+            <p>Yes. We work with many PPO and HMO plans listed above. Some HMO plans require choosing a primary care provider (PCP) or a referral for specialty care—our team will guide you.</p>
+          </details>
+          <details>
+            <summary>What if my plan isn’t listed?</summary>
+            <p>Call us. Many out-of-network plans still include out-of-network benefits or cash options. We also offer a <a href="direct-primary-care.html">Direct Primary Care</a> membership for transparent pricing.</p>
+          </details>
+          <details>
+            <summary>How do you verify coverage and costs?</summary>
+            <p>We verify eligibility and benefits at check-in. Before treatment, we’ll explain any copays, deductibles, or coinsurance so there are no surprises.</p>
+          </details>
+        </div>
+      </section>
+
+      <!-- Enroll help -->
+      <section class="section" style="padding-top:24px">
+        <div class="assist">
+          <h3 style="margin:0">Need coverage?</h3>
+          <p style="margin:0">We can help you sign up for <strong>Medi-Cal</strong>, <strong>Medicare</strong>, or a <strong>private insurance</strong> plan that fits your needs.</p>
+          <a class="btn outline" href="contact.html" style="margin-left:auto">Get enrollment help</a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="ftr" style="background:#0b3a83;color:#fff;padding:20px 0;text-align:center;">
+    <div class="container">
+      <nav>
+        <a href="index.html" style="color:#fff;margin:0 10px;text-decoration:none;">Home</a> |
+        <a href="primary-care.html" style="color:#fff;margin:0 10px;text-decoration:none;">Primary Care</a> |
+        <a href="urgent-care.html" style="color:#fff;margin:0 10px;text-decoration:none;">Urgent Care</a> |
+        <a href="direct-primary-care.html" style="color:#fff;margin:0 10px;text-decoration:none;">Health Plans</a> |
+        <a href="faq.html" style="color:#fff;margin:0 10px;text-decoration:none;">FAQ</a> |
+        <a href="employers.html" style="color:#fff;margin:0 10px;text-decoration:none;">For Business</a> |
+        <a style="color:#fff;margin:0 10px;text-decoration:none;">Contact</a>
+      </nav>
+      <p style="margin-top:15px;">
+        <strong>Address:</strong> 6839 Five Star Blvd, Suite D, Rocklin, CA<br>
+        <strong>Phone:</strong> <a href="tel:19169642001" style="color:#fff;">916-964-2001</a> •
+        <strong>Email:</strong> <a href="mailto:info@urhealthcare.org" style="color:#fff;">info@urhealthcare.org</a>
+      </p>
+      <p style="margin-top:10px;">© <span id="y"></span> urHealthcare. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Structured Data: accepted insurances -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"MedicalClinic",
+    "name":"urHealthcare",
+    "url":"https://harprandeol1.github.io/urhealthcare1/accepted-insurances.html",
+    "telephone":"+1-916-964-2001",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"6839 Five Star Blvd, Suite D",
+      "addressLocality":"Rocklin",
+      "addressRegion":"CA",
+      "postalCode":"95677",
+      "addressCountry":"US"
+    },
+    "acceptsInsurance":[
+      "AARP","Aetna","Alignment Health","Anthem Blue Cross","Blue Cross","Blue Shield","Medi-Cal",
+      "Partnership Medi-Cal","Cigna","Health Net","Hill Physicians Medical Group","Humana","Medicare",
+      "MultiPlan","Sutter Health Plus","Sutter Independent Physicians","Sutter Select",
+      "TRICARE for Life","TriWest","UnitedHealthcare","VA — U.S. Department of Veterans Affairs",
+      "Western Health Advantage"
+    ]
+  }
+  </script>
+
+  <!-- Small JS: dropdowns, search, year -->
+  <script>
+    // Footer year
+    const yEl = document.getElementById('y'); if (yEl) yEl.textContent = new Date().getFullYear();
+
+    // Services dropdown (mobile click)
+    const dd = document.getElementById('services-dd');
+    const btn = dd?.querySelector('.dropbtn');
+    btn?.addEventListener('click', () => {
+      const open = dd.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+    });
+
+    // Login dropdown
+    const loginBtn = document.getElementById('loginMenuButton');
+    const loginMenu = document.getElementById('loginMenu');
+    function closeLogin(){ loginMenu?.setAttribute('data-open','false'); loginBtn?.setAttribute('aria-expanded','false'); }
+    loginBtn?.addEventListener('click', (e) => {
+      const isOpen = loginMenu.getAttribute('data-open') === 'true';
+      loginMenu.setAttribute('data-open', String(!isOpen));
+      loginBtn.setAttribute('aria-expanded', String(!isOpen));
+      e.stopPropagation();
+    });
+    document.addEventListener('click', (e) => {
+      if (!loginMenu.contains(e.target) && !loginBtn.contains(e.target)) closeLogin();
+    });
+    document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeLogin(); });
+
+    // Insurer search filter
+    (function(){
+      const search = document.getElementById('insSearch');
+      const cards = Array.from(document.querySelectorAll('#insList .ins-card'));
+      if (!search) return;
+      search.addEventListener('input', () => {
+        const q = (search.value||'').toLowerCase().trim();
+        cards.forEach(c => {
+          const txt = c.innerText.toLowerCase();
+          c.style.display = !q || txt.includes(q) ? '' : 'none';
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
