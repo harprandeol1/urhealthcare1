@@ -14,37 +14,12 @@
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
 
-  <!-- Schema.org (Clinic) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "MedicalClinic",
-    "name": "urHealthcare",
-    "image": "https://www.urhealthcare.org/images/logo.png",
-    "url": "https://www.urhealthcare.org",
-    "telephone": "+1-916-964-2001",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "6839 Five Star Blvd, Suite D",
-      "addressLocality": "Rocklin",
-      "addressRegion": "CA",
-      "postalCode": "95677",
-      "addressCountry": "US"
-    },
-    "openingHours": [
-      "Tu-Sa 08:00-19:00",
-      "Su 09:00-17:00",
-      "Mo 09:00-17:00"
-    ],
-    "priceRange": "$$",
-    "medicalSpecialty": ["PrimaryCare","UrgentCare"]
-  }
-  </script>
-
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Accepted Insurance Plans | urHealthcare • Rocklin 95677</title>
-  <meta name="description" content="We accept many major insurance plans in the Sacramento metro. See our vertical list of accepted insurances with logos. We can also help you enroll in Medi-Cal, Medicare, or a private plan." />
+  <meta name="description" content="We accept many major insurance plans in the Sacramento metro. Browse accepted insurances by category or search by name. We can also help you enroll in Medi-Cal, Medicare, or a private plan." />
+
+  <!-- Fonts & Global CSS -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://harprandeol1.github.io/urhealthcare1/assets/styles.css?v=5" />
@@ -54,20 +29,22 @@
       --brand:#0b3a83; --ink:#0e1a2f; --muted:#5a6780; --bg:#ffffff;
       --border:#e6ebf3; --radius:16px; --shadow:0 10px 30px rgba(11,58,131,.08);
       --stripe1:#3b82f6; --stripe2:#22c55e; --stripe3:#f59e0b; --stripe4:#ef4444; --stripe5:#8b5cf6;
+      --tab:#215cb6; --tab-bg:#eef5ff;
+      --panel-pad: 22px;
     }
     html{scroll-behavior:smooth}
-    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:var(--bg);color:var(--ink);line-height:1.75;font-size:17px}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;background:var(--bg);color:var(--ink);line-height:1.78;font-size:17px}
     h1,h2,h3{letter-spacing:-.02em;line-height:1.2;margin:.35em 0 .5em}
-    h1{font-size:clamp(32px,4.5vw,48px)} h2{font-size:clamp(22px,3vw,28px)} h3{font-size:20px}
+    h1{font-size:clamp(32px,4.5vw,50px)} h2{font-size:clamp(22px,3vw,30px)} h3{font-size:20px}
     p{margin:0 0 1.1em} a{color:var(--brand);text-decoration:none} a:hover{text-decoration:underline}
     .muted{color:var(--muted)}
-    .container{max-width:1120px;margin:auto;padding:0 20px}
-    .section{padding:64px 0}
+    .container{max-width:1180px;margin:auto;padding:0 20px}
+    .section{padding:68px 0}
     .btn{display:inline-block;padding:12px 18px;border-radius:999px;font-weight:800;background:var(--brand);color:#fff;border:2px solid transparent;box-shadow:var(--shadow)}
     .btn:hover{filter:brightness(.96)}
     .btn.outline{background:#fff;color:var(--brand);border-color:var(--brand)}
     .badge{display:inline-block;font-size:12px;font-weight:800;border-radius:999px;padding:6px 10px;background:#eef3ff;color:#10346b;border:1px solid #dce6ff}
-    .callout{margin-top:12px;background:#f8fbff;border:1px dashed #cfe0ff;padding:12px 14px;border-radius:12px;color:#29415f}
+    .callout{margin-top:14px;background:#f8fbff;border:1px dashed #cfe0ff;padding:14px 16px;border-radius:14px;color:#29415f}
 
     /* Header */
     .hdr{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid var(--border)}
@@ -88,25 +65,40 @@
     .menu .all{border-top:1px solid var(--border);margin-top:6px;padding-top:6px}
     .dropdown.open .menu{display:block !important}
     @media(min-width:721px){ .dropdown:hover .menu, .dropdown:focus-within .menu{display:block} }
-    @media(max-width:720px){ .dropdown{width:100%} .menu{position:static;box-shadow:none;border:0;padding:0} }
 
     /* HERO */
-    .ins-hero{padding:56px 0;background:
+    .ins-hero{padding:64px 0;background:
       radial-gradient(600px 300px at 15% -10%, rgba(255,255,255,.25), transparent 60%),
       linear-gradient(180deg,#1e88e5 0%, #0b66c3 60%, #64b5f6 100%);}
     .ins-hero h1,.ins-hero p{color:#fff}
-    .ins-hero .cta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    .ins-hero .cta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
 
-    /* VERTICAL LIST WITH LOGOS */
-    .ins-wrap{margin-top:18px}
-    .ins-list{list-style:none;margin:0;padding:0;display:block}
+    /* TABS */
+    .tabs{
+      margin-top:22px;
+      background:#fff;border:1px solid var(--border);border-radius:16px;box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .tablist{
+      display:flex;flex-wrap:wrap;gap:8px;padding:12px;background:var(--tab-bg);border-bottom:1px solid var(--border)
+    }
+    .tab{
+      appearance:none;background:#fff;border:1px solid #d9e6ff;color:#144286;
+      padding:10px 14px;border-radius:999px;font-weight:800;cursor:pointer;
+    }
+    .tab[aria-selected="true"]{background:var(--tab);border-color:var(--tab);color:#fff}
+    .tabpanel{padding:var(--panel-pad)}
+    .tabpanel > .panel-inner{max-width:980px}
+
+    /* Vertical list with logos */
+    .ins-list{list-style:none;margin:0;padding:0}
     .ins-card{
-      display:flex;align-items:center;gap:14px;
-      padding:14px 16px;border:1px solid var(--border);border-radius:var(--radius);background:#fff;box-shadow:var(--shadow);
+      display:flex;align-items:center;gap:16px;
+      padding:16px;border:1px solid var(--border);border-radius:16px;background:#fff;box-shadow:var(--shadow);
       position:relative;overflow:hidden;
     }
-    .ins-card + .ins-card{margin-top:10px}
-    .stripe{width:8px;align-self:stretch;border-radius:8px}
+    .ins-card + .ins-card{margin-top:12px}
+    .stripe{width:8px;align-self:stretch;border-radius:10px}
     .ins-card:nth-child(5n+1) .stripe{background:var(--stripe1)}
     .ins-card:nth-child(5n+2) .stripe{background:var(--stripe2)}
     .ins-card:nth-child(5n+3) .stripe{background:var(--stripe3)}
@@ -114,7 +106,7 @@
     .ins-card:nth-child(5n+5) .stripe{background:var(--stripe5)}
 
     .ins-logo{
-      width:44px;height:44px;flex:0 0 44px;
+      width:48px;height:48px;flex:0 0 48px;
       object-fit:contain;object-position:center;
       border-radius:10px;background:#f7f8fb;border:1px solid #eef1f6;
       padding:6px;
@@ -124,14 +116,19 @@
     .ins-note{margin-left:auto;font-size:13px;color:#6b7a90}
     .ins-more{margin-left:8px;font-weight:800}
 
-    /* FAQ */
-    .faq details{background:#fff;border:1px solid var(--border);border-radius:12px;padding:12px 14px;box-shadow:var(--shadow)}
-    .faq details + details{margin-top:10px}
-    summary{cursor:pointer;font-weight:800;list-style:none}
-    summary::-webkit-details-marker{display:none}
+    /* SEARCH tab UI */
+    .search-wrap{display:grid;gap:12px}
+    .search-row{display:flex;gap:10px;flex-wrap:wrap}
+    .search-input{flex:1;min-width:260px;max-width:640px;padding:14px 16px;border:1px solid var(--border);border-radius:999px}
+    .chip{border:1px solid var(--border);background:#fff;padding:8px 12px;border-radius:999px;font-weight:800;cursor:pointer}
+    .chip[data-active="true"]{background:#f2f7ff;border-color:#c9dcff}
+    .az{display:flex;flex-wrap:wrap;gap:6px}
+    .az .chip{padding:6px 10px;font-size:14px}
+    .results{margin-top:8px}
+    .empty{padding:14px;border:1px dashed #cfe0ff;border-radius:12px;background:#f8fbff;color:#29415f}
 
     /* Enroll help band */
-    .assist{background:#0b3a83;color:#fff;border-radius:18px;padding:18px 20px;display:flex;flex-wrap:wrap;align-items:center;gap:10px;box-shadow:0 14px 40px rgba(0,0,0,.12)}
+    .assist{margin-top:24px;background:#0b3a83;color:#fff;border-radius:18px;padding:18px 20px;display:flex;flex-wrap:wrap;align-items:center;gap:10px;box-shadow:0 14px 40px rgba(0,0,0,.12)}
     .assist a.btn.outline{border-color:#fff;color:#0b3a83;background:#fff}
 
     /* Footer */
@@ -139,7 +136,7 @@
   </style>
 
   <meta property="og:title" content="Accepted Insurance Plans | urHealthcare" />
-  <meta property="og:description" content="See our list of accepted insurances. We can also help you enroll in Medi-Cal, Medicare, or a private plan." />
+  <meta property="og:description" content="See our list of accepted insurances by category or search by name. We can also help you enroll in Medi-Cal, Medicare, or a private plan." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://harprandeol1.github.io/urhealthcare1/accepted-insurances.html" />
 </head>
@@ -148,7 +145,6 @@
   <header class="hdr">
     <div class="container nav">
       <a class="logo" href="index.html">urHealthcare</a>
-
       <nav class="navlinks" aria-label="Primary">
         <div class="dropdown" id="services-dd">
           <button class="dropbtn" type="button" aria-expanded="false" aria-controls="menu-services">Services ▾</button>
@@ -166,32 +162,10 @@
             <div class="all"><a href="index.html#services">View all services →</a></div>
           </div>
         </div>
-
         <a href="direct-primary-care.html">Membership</a>
         <a href="employers.html">Employers</a>
         <a href="faq.html">FAQ</a>
-
-        <!-- LOGIN DROPDOWN -->
-        <div class="login-dd">
-          <button class="btn login-dd__button" id="loginMenuButton" aria-haspopup="menu" aria-expanded="false" aria-controls="loginMenu">
-            Login
-          </button>
-          <ul class="login-dd__menu" id="loginMenu" role="menu" aria-labelledby="loginMenuButton">
-            <li role="none"><a role="menuitem" href="https://urhealthcare.hint.com/login/request" class="login-dd__link">Membership Login</a></li>
-            <li role="none"><a role="menuitem" href="https://www.onpatient.com/login/" class="login-dd__link">OnPatient Login</a></li>
-          </ul>
-        </div>
-
-        <style>
-          .login-dd{position:relative}
-          .login-dd__button::after{content:"▾";font-size:.9em;margin-left:6px}
-          .login-dd__menu{position:absolute;right:0;top:calc(100% + 8px);min-width:220px;padding:6px;margin:0;list-style:none;background:#fff;border:1px solid #e5e7eb;border-radius:12px;box-shadow:0 12px 28px rgba(0,0,0,.12);display:none;z-index:1000}
-          .login-dd__menu[data-open="true"]{display:block}
-          .login-dd__link{display:block;padding:10px 12px;border-radius:10px;color:#111;text-decoration:none;font-weight:700}
-          .login-dd__link:hover,.login-dd__link:focus{background:#f2f7ff;color:#0b3a83;outline:none}
-        </style>
       </nav>
-
       <button class="menu-btn" aria-label="Menu" onclick="document.body.classList.toggle('menu-open')">☰</button>
     </div>
   </header>
@@ -201,194 +175,113 @@
     <div class="container">
       <span class="badge">Rocklin • ZIP 95677</span>
       <h1>Accepted Insurance Plans</h1>
-      <p class="muted" style="color:#eaf4ff">We work with many major health plans for primary & urgent care. Coverage can vary by plan and employer; we’ll verify benefits at check-in and explain any costs upfront.</p>
+      <p class="muted" style="color:#eaf4ff">Browse by category or use the Search tab to find your plan. Coverage varies by plan/employer; we’ll verify benefits at check-in and explain any costs upfront.</p>
       <div class="cta-row">
         <a class="btn" href="contact.html">Questions? Contact us</a>
         <a class="btn outline" href="direct-primary-care.html">Prefer transparent pricing? See DPC</a>
         <a class="btn outline" href="https://www.google.com/maps?q=6839+Five+Star+Blvd,+Suite+D,+Rocklin,+CA+95677" target="_blank" rel="noopener">Get directions</a>
       </div>
-      <div class="callout">Tip: Bring your photo ID and insurance card. If a referral is required by your plan, we’ll help coordinate it.</div>
+      <div class="callout">Tip: Bring your photo ID and insurance card. If your plan requires a referral, we’ll help coordinate it.</div>
     </div>
   </section>
 
   <main class="section">
     <div class="container">
 
-      <!-- Filter -->
-      <div class="filterbar" aria-label="Filter insurers">
-        <input id="insSearch" class="search" type="search" placeholder="Search plan (e.g., Blue Shield, Medicare, Health Net)..." aria-label="Search insurers" />
+      <!-- TABS -->
+      <div class="tabs" role="tablist" aria-label="Insurance categories" id="tablist">
+        <button class="tab" role="tab" aria-selected="true" aria-controls="panel-all" id="tab-all">All</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="panel-medicare" id="tab-medicare">Medicare</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="panel-medical" id="tab-medical">Medi-Cal</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="panel-commercial" id="tab-commercial">Commercial</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="panel-military" id="tab-military">Military & Veterans</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="panel-ipa" id="tab-ipa">Provider Groups / IPA</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="panel-network" id="tab-network">Employer / Network</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="panel-search" id="tab-search">Search</button>
       </div>
 
-      <!-- VERTICAL LIST WITH LOGOS -->
-      <div class="ins-wrap" aria-labelledby="list-title">
-        <h2 id="list-title">Plans We Work With</h2>
-        <div class="ins-list" id="insList">
-
-          <!-- Each card: stripe • logo • name • note (+ optional 'Know more') -->
-          <div class="ins-card">
-            <span class="stripe" aria-hidden="true"></span>
-            <img class="ins-logo" src="assets/img/kp.svg" alt="AARP logo" onerror="this.style.display='none'">
-            <div class="ins-body"><span class="ins-name">AARP</span></div>
-            <div class="ins-note">Medicare Supplement</div>
-          </div>
-
-          <div class="ins-card">
-            <span class="stripe" aria-hidden="true"></span>
-            <img class="ins-logo" src="assets/img/insurers/aetna.svg" alt="Aetna logo" onerror="this.style.display='none'">
-            <div class="ins-body"><span class="ins-name">Aetna</span></div>
-            <div class="ins-note">HMO / PPO</div>
-          </div>
-
-          <div class="ins-card">
-            <span class="stripe" aria-hidden="true"></span>
-            <img class="ins-logo" src="assets/img/insurers/alignment-health.svg" alt="Alignment Health logo" onerror="this.style.display='none'">
-            <div class="ins-body"><span class="ins-name">Alignment Health</span></div>
-            <div class="ins-note">Medicare Advantage</div>
-          </div>
-
-          <div class="ins-card">
-            <span class="stripe" aria-hidden="true"></span>
-            <img class="ins-logo" src="assets/img/insurers/anthem-blue-cross.svg" alt="Anthem Blue Cross logo" onerror="this.style.display='none'">
-            <div class="ins-body"><span class="ins-name">Anthem Blue Cross</span></div>
-            <div class="ins-note">HMO / PPO</div>
-          </div>
-
-          <div class="ins-card">
-            <span class="stripe" aria-hidden="true"></span>
-            <img class="ins-logo" src="assets/img/insurers/blue-cross.svg" alt="Blue Cross logo" onerror="this.style.display='none'">
-            <div class="ins-body"><span class="ins-name">Blue Cross</span></div>
-            <div class="ins-note">Commercial</div>
-          </div>
-
-          <div class="ins-card">
-            <span class="stripe" aria-hidden="true"></span>
-            <img class="ins-logo" src="assets/img/insurers/BSC.jpg" alt="Blue Shield logo" onerror="this.style.display='none'">
-            <div class="ins-body"><span class="ins-name">Blue Shield</span></div>
-            <div class="ins-note">HMO / PPO</div>
-          </div>
-
-          <div class="ins-card">
-            <span class="stripe" aria-hidden="true"></span>
-            <img class="ins-logo" src="assets/img/insurers/medi-cal.svg" alt="Medi-Cal logo" onerror="this.style.display='none'">
-            <div class="ins-body"><span class="ins-name">Medi-Cal</span></div>
-            <div class="ins-note"></div>
-          </div>
-
-          <div class="ins-card">
-            <span class="stripe" aria-hidden="true"></span>
-            <img class="ins-logo" src="assets/img/insurers/partnership-medi-cal.svg" alt="Partnership Medi-Cal logo" onerror="this.style.display='none'">
-            <div class="ins-body">
-              <a class="ins-name" href="partnership.html">Partnership Medi-Cal</a>
-              <a class="ins-more" href="partnership.html" aria-label="Learn more about Partnership Medi-Cal">Know more →</a>
-            </div>
-            <div class="ins-note"></div>
-          </div>
-
-          <div class="ins-card">
-            <span class="stripe" aria-hidden="true"></span>
-            <img class="ins-logo" src="assets/img/insurers/cigna.svg" alt="Cigna logo" onerror="this.style.display='none'">
-            <div class="ins-body"><span class="ins-name">Cigna</span></div>
-            <div class="ins-note">HMO / PPO</div>
-          </div>
-
-          <div class="ins-card">
-            <span class="stripe" aria-hidden="true"></span>
-            <img class="ins-logo" src="assets/img/insurers/healthnet.png" alt="Health Net logo" onerror="this.style.display='none'">
-            <div class="ins-body"><span class="ins-name">Health Net</span></div>
-            <div class="ins-note">HMO / PPO / Medi-Cal*</div>
-          </div>
-
-          <div class="ins-card">
-            <span class="stripe" aria-hidden="true"></span>
-            <img class="ins-logo" src="assets/img/insurers/hill-physicians.svg" alt="Hill Physicians logo" onerror="this.style.display='none'">
-            <div class="ins-body"><span class="ins-name">Hill Physicians Medical Group</span></div>
-            <div class="ins-note">IPA</div>
-          </div>
-
-          <div class="ins-card">
-            <span class="stripe" aria-hidden="true"></span>
-            <img class="ins-logo" src="assets/img/insurers/humana.svg" alt="Humana logo" onerror="this.style.display='none'">
-            <div class="ins-body"><span class="ins-name">Humana</span></div>
-            <div class="ins-note">Medicare Advantage</div>
-          </div>
-
-          <div class="ins-card">
-            <span class="stripe" aria-hidden="true"></span>
-            <img class="ins-logo" src="assets/img/insurers/medicare.svg" alt="Medicare logo" onerror="this.style.display='none'">
-            <div class="ins-body"><span class="ins-name">Medicare</span></div>
-            <div class="ins-note">Traditional</div>
-          </div>
-
-          <div class="ins-card">
-            <span class="stripe" aria-hidden="true"></span>
-            <img class="ins-logo" src="assets/img/insurers/multiplan.svg" alt="MultiPlan logo" onerror="this.style.display='none'">
-            <div class="ins-body"><span class="ins-name">MultiPlan</span></div>
-            <div class="ins-note">Network</div>
-          </div>
-
-          <div class="ins-card">
-            <span class="stripe" aria-hidden="true"></span>
-            <img class="ins-logo" src="assets/img/insurers/sutter-health-plus.svg" alt="Sutter Health Plus logo" onerror="this.style.display='none'">
-            <div class="ins-body"><span class="ins-name">Sutter Health Plus</span></div>
-            <div class="ins-note">HMO</div>
-          </div>
-
-          <div class="ins-card">
-            <span class="stripe" aria-hidden="true"></span>
-            <img class="ins-logo" src="assets/img/insurers/sutter-independent-physicians.svg" alt="Sutter Independent Physicians logo" onerror="this.style.display='none'">
-            <div class="ins-body"><span class="ins-name">Sutter Independent Physicians</span></div>
-            <div class="ins-note">IPA</div>
-          </div>
-
-          <div class="ins-card">
-            <span class="stripe" aria-hidden="true"></span>
-            <img class="ins-logo" src="assets/img/insurers/sutter-select.svg" alt="Sutter Select logo" onerror="this.style.display='none'">
-            <div class="ins-body"><span class="ins-name">Sutter Select</span></div>
-            <div class="ins-note">Employer Plans</div>
-          </div>
-
-          <div class="ins-card">
-            <span class="stripe" aria-hidden="true"></span>
-            <img class="ins-logo" src="assets/img/insurers/tricare-for-life.svg" alt="TRICARE for Life logo" onerror="this.style.display='none'">
-            <div class="ins-body"><span class="ins-name">TRICARE for Life</span></div>
-            <div class="ins-note">Military & Retirees</div>
-          </div>
-
-          <div class="ins-card">
-            <span class="stripe" aria-hidden="true"></span>
-            <img class="ins-logo" src="assets/img/insurers/triwest.svg" alt="TriWest logo" onerror="this.style.display='none'">
-            <div class="ins-body"><span class="ins-name">TriWest Healthcare Alliance</span></div>
-            <div class="ins-note">VA Community Care</div>
-          </div>
-
-          <div class="ins-card">
-            <span class="stripe" aria-hidden="true"></span>
-            <img class="ins-logo" src="assets/img/insurers/unitedhealthcare.svg" alt="UnitedHealthcare logo" onerror="this.style.display='none'">
-            <div class="ins-body"><span class="ins-name">UnitedHealthcare</span></div>
-            <div class="ins-note">HMO / PPO / MA</div>
-          </div>
-
-          <div class="ins-card">
-            <span class="stripe" aria-hidden="true"></span>
-            <img class="ins-logo" src="assets/img/insurers/va.svg" alt="VA logo" onerror="this.style.display='none'">
-            <div class="ins-body"><span class="ins-name">VA — U.S. Department of Veterans Affairs</span></div>
-            <div class="ins-note">Eligibility-based</div>
-          </div>
-
-          <div class="ins-card">
-            <span class="stripe" aria-hidden="true"></span>
-            <img class="ins-logo" src="assets/img/insurers/western-health-advantage.svg" alt="Western Health Advantage logo" onerror="this.style.display='none'">
-            <div class="ins-body"><span class="ins-name">Western Health Advantage</span></div>
-            <div class="ins-note">HMO</div>
-          </div>
-
+      <!-- PANELS -->
+      <section class="tabpanel" id="panel-all" role="tabpanel" tabindex="0" aria-labelledby="tab-all">
+        <div class="panel-inner">
+          <div class="ins-list" data-panel="all"></div>
         </div>
+      </section>
 
-        <p class="muted" style="margin-top:10px">* Participation and referrals may vary by plan and employer group. Call <a href="tel:+19169642001">916-964-2001</a> and we’ll confirm your specific benefits.</p>
-      </div>
+      <section class="tabpanel" id="panel-medicare" role="tabpanel" tabindex="0" aria-labelledby="tab-medicare" hidden>
+        <div class="panel-inner">
+          <h2>Medicare & Medicare Advantage</h2>
+          <div class="ins-list" data-panel="medicare"></div>
+        </div>
+      </section>
 
-      <!-- Location / NAP -->
-      <section style="margin-top:22px">
+      <section class="tabpanel" id="panel-medical" role="tabpanel" tabindex="0" aria-labelledby="tab-medical" hidden>
+        <div class="panel-inner">
+          <h2>Medi-Cal</h2>
+          <div class="ins-list" data-panel="medi-cal"></div>
+        </div>
+      </section>
+
+      <section class="tabpanel" id="panel-commercial" role="tabpanel" tabindex="0" aria-labelledby="tab-commercial" hidden>
+        <div class="panel-inner">
+          <h2>Commercial Plans</h2>
+          <div class="ins-list" data-panel="commercial"></div>
+        </div>
+      </section>
+
+      <section class="tabpanel" id="panel-military" role="tabpanel" tabindex="0" aria-labelledby="tab-military" hidden>
+        <div class="panel-inner">
+          <h2>Military & Veterans</h2>
+          <div class="ins-list" data-panel="military"></div>
+        </div>
+      </section>
+
+      <section class="tabpanel" id="panel-ipa" role="tabpanel" tabindex="0" aria-labelledby="tab-ipa" hidden>
+        <div class="panel-inner">
+          <h2>Provider Groups / IPAs</h2>
+          <div class="ins-list" data-panel="ipa"></div>
+        </div>
+      </section>
+
+      <section class="tabpanel" id="panel-network" role="tabpanel" tabindex="0" aria-labelledby="tab-network" hidden>
+        <div class="panel-inner">
+          <h2>Employer / Network Plans</h2>
+          <div class="ins-list" data-panel="network"></div>
+        </div>
+      </section>
+
+      <section class="tabpanel" id="panel-search" role="tabpanel" tabindex="0" aria-labelledby="tab-search" hidden>
+        <div class="panel-inner">
+          <h2>Search Accepted Insurances</h2>
+          <div class="search-wrap">
+            <div class="search-row">
+              <input id="insQuery" class="search-input" type="search" placeholder="Search plan (e.g., Blue Shield, UHC, Partnership, VA, TRICARE, SIP)…" aria-label="Search insurers" />
+              <button id="resetSearch" class="chip" type="button">Reset</button>
+            </div>
+            <div class="search-row" aria-label="Filter by category">
+              <button class="chip" data-chip-cat="all" data-active="true" type="button">All</button>
+              <button class="chip" data-chip-cat="medicare" type="button">Medicare</button>
+              <button class="chip" data-chip-cat="medi-cal" type="button">Medi-Cal</button>
+              <button class="chip" data-chip-cat="commercial" type="button">Commercial</button>
+              <button class="chip" data-chip-cat="military" type="button">Military & Veterans</button>
+              <button class="chip" data-chip-cat="ipa" type="button">Provider Groups / IPA</button>
+              <button class="chip" data-chip-cat="network" type="button">Employer / Network</button>
+            </div>
+            <div class="az" aria-label="Filter by first letter">
+              <!-- A–Z chips -->
+              <script>
+                document.currentScript.insertAdjacentHTML('afterend',
+                  'ABCDEFGHIJKLMNOPQRSTUVWXYZ#'.split('').map(l => `<button class="chip" data-az="${l}" type="button">${l}</button>`).join('')
+                );
+              </script>
+            </div>
+            <div class="results" id="searchResults"></div>
+            <div class="empty" id="noResults" hidden>No results yet—try “Blue Shield of California”, “UHC / UnitedHealthcare”, “Partnership Medi-Cal”, “TRICARE”, “SIP”, or “VA”.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- LOCATION / NAP -->
+      <section class="section" style="padding-top:34px">
         <div class="ins-card" style="align-items:flex-start">
           <span class="stripe" style="background:var(--brand)"></span>
           <div>
@@ -400,7 +293,7 @@
         </div>
       </section>
 
-      <!-- Insurance FAQ -->
+      <!-- FAQ -->
       <section class="section" style="padding-top:28px;padding-bottom:0">
         <h2>Insurance FAQ</h2>
         <div class="faq">
@@ -419,7 +312,7 @@
         </div>
       </section>
 
-      <!-- Enroll help -->
+      <!-- ENROLL HELP -->
       <section class="section" style="padding-top:24px">
         <div class="assist">
           <h3 style="margin:0">Need coverage?</h3>
@@ -441,7 +334,7 @@
         <a href="direct-primary-care.html" style="color:#fff;margin:0 10px;text-decoration:none;">Health Plans</a> |
         <a href="faq.html" style="color:#fff;margin:0 10px;text-decoration:none;">FAQ</a> |
         <a href="employers.html" style="color:#fff;margin:0 10px;text-decoration:none;">For Business</a> |
-        <a style="color:#fff;margin:0 10px;text-decoration:none;">Contact</a>
+        <a href="contact.html" style="color:#fff;margin:0 10px;text-decoration:none;">Contact</a>
       </nav>
       <p style="margin-top:15px;">
         <strong>Address:</strong> 6839 Five Star Blvd, Suite D, Rocklin, CA<br>
@@ -452,73 +345,193 @@
     </div>
   </footer>
 
-  <!-- Structured Data: accepted insurances -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"MedicalClinic",
-    "name":"urHealthcare",
-    "url":"https://harprandeol1.github.io/urhealthcare1/accepted-insurances.html",
-    "telephone":"+1-916-964-2001",
-    "address":{
-      "@type":"PostalAddress",
-      "streetAddress":"6839 Five Star Blvd, Suite D",
-      "addressLocality":"Rocklin",
-      "addressRegion":"CA",
-      "postalCode":"95677",
-      "addressCountry":"US"
-    },
-    "acceptsInsurance":[
-      "AARP","Aetna","Alignment Health","Anthem Blue Cross","Blue Cross","Blue Shield","Medi-Cal",
-      "Partnership Medi-Cal","Cigna","Health Net","Hill Physicians Medical Group","Humana","Medicare",
-      "MultiPlan","Sutter Health Plus","Sutter Independent Physicians","Sutter Select",
-      "TRICARE for Life","TriWest","UnitedHealthcare","VA — U.S. Department of Veterans Affairs",
-      "Western Health Advantage"
-    ]
-  }
-  </script>
+  <!-- MASTER LIST (hidden template source) -->
+  <template id="insTemplate">
+    <!-- Each entry: data-cat may contain multiple categories separated by space -->
+    <div class="ins-card" data-cat="">
+      <span class="stripe" aria-hidden="true"></span>
+      <img class="ins-logo" src="" alt="" onerror="this.style.display='none'">
+      <div class="ins-body">
+        <span class="ins-name"></span>
+        <a class="ins-more" href="#" hidden>Know more →</a>
+      </div>
+      <div class="ins-note"></div>
+    </div>
+  </template>
 
-  <!-- Small JS: dropdowns, search, year -->
   <script>
+    // ---------- DATA ----------
+    const plans = [
+      { name:"AARP", logo:"assets/img/insurers/aarp.svg", note:"Medicare Supplement", cats:"medicare", aliases:["aarp medicare","aarp supplement","united aarp"] },
+      { name:"Aetna", logo:"assets/img/insurers/aetna.svg", note:"HMO / PPO", cats:"commercial", aliases:["aetna health","aetna ppo","aetna hmo"] },
+      { name:"Alignment Health", logo:"assets/img/insurers/alignment-health.svg", note:"Medicare Advantage", cats:"medicare", aliases:["alignment","alignment health plan"] },
+      { name:"Anthem Blue Cross", logo:"assets/img/insurers/anthem-blue-cross.svg", note:"HMO / PPO", cats:"commercial", aliases:["anthem","blue cross anthem"] },
+      { name:"Blue Cross", logo:"assets/img/insurers/blue-cross.svg", note:"Commercial", cats:"commercial", aliases:["blue cross ca","bcbs cross"] },
+      { name:"Blue Shield of California", logo:"assets/img/insurers/BSC.jpg", note:"HMO / PPO", cats:"commercial", aliases:["blue shield","blue shield ca","bsc","blue shield of ca"] },
+      { name:"Medi-Cal", logo:"assets/img/insurers/medi-cal.svg", note:"California Medicaid", cats:"medi-cal", aliases:["medical","medi cal"] },
+      { name:"Partnership Medi-Cal", logo:"assets/img/insurers/partnership-medi-cal.svg", note:"Placer & Sacramento County*", cats:"medi-cal", aliases:["partnership","partnership healthplan","phc","partnership medi cal"], more:"partnership.html" },
+      { name:"Cigna", logo:"assets/img/insurers/cigna.svg", note:"HMO / PPO", cats:"commercial", aliases:["cigna health","cigna ppo","cigna hmo"] },
+      { name:"Health Net", logo:"assets/img/insurers/healthnet.png", note:"HMO / PPO / Medi-Cal*", cats:"commercial medi-cal", aliases:["healthnet","health net ca"] },
+      { name:"Hill Physicians Medical Group", logo:"assets/img/insurers/hill-physicians.svg", note:"IPA", cats:"ipa", aliases:["hill physicians","hpmg"] },
+      { name:"Humana", logo:"assets/img/insurers/humana.svg", note:"Medicare Advantage", cats:"medicare", aliases:["humana medicare","humana advantage"] },
+      { name:"Medicare", logo:"assets/img/insurers/medicare.svg", note:"Traditional", cats:"medicare", aliases:["original medicare","cms medicare"] },
+      { name:"MultiPlan", logo:"assets/img/insurers/multiplan.svg", note:"Network", cats:"network", aliases:["multi plan","multiplan network"] },
+      { name:"Sutter Health Plus", logo:"assets/img/insurers/sutter-health-plus.svg", note:"HMO", cats:"commercial", aliases:["shp","sutter plus"] },
+      { name:"Sutter Independent Physicians (SIP)", logo:"assets/img/insurers/sutter-independent-physicians.svg", note:"IPA", cats:"ipa", aliases:["sip","sutter ipa","sutter independent"] },
+      { name:"Sutter Select", logo:"assets/img/insurers/sutter-select.svg", note:"Employer Plans", cats:"network", aliases:["sutter select employer"] },
+      { name:"TRICARE for Life", logo:"assets/img/insurers/tricare-for-life.svg", note:"Military & Retirees", cats:"military", aliases:["tricare","tricare life"] },
+      { name:"TriWest Healthcare Alliance", logo:"assets/img/insurers/triwest.svg", note:"VA Community Care", cats:"military", aliases:["triwest va","tri west"] },
+      { name:"UnitedHealthcare (UHC)", logo:"assets/img/insurers/unitedhealthcare.svg", note:"HMO / PPO / MA", cats:"commercial medicare", aliases:["uhc","united health care","united healthcare"] },
+      { name:"VA — U.S. Department of Veterans Affairs", logo:"assets/img/insurers/va.svg", note:"Eligibility-based", cats:"military", aliases:["va","veterans affairs","va healthcare"] },
+      { name:"Western Health Advantage", logo:"assets/img/insurers/western-health-advantage.svg", note:"HMO", cats:"commercial", aliases:["wha","western health"] },
+    ];
+
+    // ---------- UTIL ----------
+    const byId = id => document.getElementById(id);
+    const q = (sel, root=document) => root.querySelector(sel);
+    const qa = (sel, root=document) => Array.from(root.querySelectorAll(sel));
+    const norm = s => (s||"").toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g," ").trim();
+    const starts = (s,l) => s.trim().toUpperCase().startsWith(l);
+    const template = byId('insTemplate');
+
+    // Build a card element
+    function makeCard(item){
+      const node = template.content.firstElementChild.cloneNode(true);
+      node.dataset.cat = item.cats;
+      const img = q('.ins-logo', node);
+      img.src = item.logo; img.alt = `${item.name} logo`;
+      q('.ins-name', node).textContent = item.name;
+      q('.ins-note', node).textContent = item.note || "";
+      const more = q('.ins-more', node);
+      if(item.more){ more.href = item.more; more.hidden = false; }
+      return node;
+    }
+
+    // Mount cards into a target list by category filter
+    function mountPanel(panelSel, filterCat){
+      const list = q(`.ins-list[data-panel="${panelSel}"]`);
+      list.innerHTML = "";
+      plans.forEach(p=>{
+        if(!filterCat || p.cats.split(/\s+/).includes(filterCat)){
+          list.appendChild(makeCard(p));
+        }
+      });
+    }
+
+    // Initial mount
+    mountPanel("all", null);
+    mountPanel("medicare", "medicare");
+    mountPanel("medi-cal", "medi-cal");
+    mountPanel("commercial", "commercial");
+    mountPanel("military", "military");
+    mountPanel("ipa", "ipa");
+    mountPanel("network", "network");
+
+    // ---------- TABS (ARIA) ----------
+    (function(){
+      const tabs = qa('[role="tab"]');
+      const panels = qa('[role="tabpanel"]');
+      function activate(tab){
+        tabs.forEach(t=>t.setAttribute('aria-selected','false'));
+        panels.forEach(p=>p.hidden = true);
+        tab.setAttribute('aria-selected','true');
+        const panel = byId(tab.getAttribute('aria-controls'));
+        panel.hidden = false;
+        panel.focus();
+      }
+      tabs.forEach(t=>{
+        t.addEventListener('click',()=>activate(t));
+        t.addEventListener('keydown',e=>{
+          const i = tabs.indexOf ? tabs.indexOf(t) : tabs.findIndex(x=>x===t);
+          if(e.key==='ArrowRight') { e.preventDefault(); activate(tabs[(i+1)%tabs.length]); }
+          if(e.key==='ArrowLeft')  { e.preventDefault(); activate(tabs[(i-1+tabs.length)%tabs.length]); }
+        });
+      });
+    })();
+
+    // ---------- SEARCH TAB ----------
+    (function(){
+      const results = byId('searchResults');
+      const noResults = byId('noResults');
+      const input = byId('insQuery');
+      const chips = qa('.search-wrap [data-chip-cat]');
+      const azChips = qa('.az [data-az]');
+      const resetBtn = byId('resetSearch');
+      let currentCat = 'all';
+      let currentAZ = '';
+
+      function render(list){
+        results.innerHTML = "";
+        list.forEach(item => results.appendChild(makeCard(item)));
+        noResults.hidden = list.length > 0;
+      }
+
+      function search(){
+        const qn = norm(input.value);
+        let pool = plans.filter(p => currentCat==='all' || p.cats.split(/\s+/).includes(currentCat));
+        if(currentAZ){
+          const letter = currentAZ;
+          pool = pool.filter(p=>{
+            const first = (p.name || '').trim().charAt(0).toUpperCase();
+            return letter === '#' ? !/^[A-Z]/.test(first) : first === letter;
+          });
+        }
+        if(qn){
+          pool = pool.filter(p=>{
+            const hay = [p.name, p.note, (p.aliases||[]).join(' ')].map(norm).join(' ');
+            return hay.includes(qn);
+          });
+        }
+        // Sort alpha
+        pool.sort((a,b)=> a.name.localeCompare(b.name));
+        render(pool);
+      }
+
+      // Events
+      input.addEventListener('input', search);
+      chips.forEach(c=>{
+        c.addEventListener('click', ()=>{
+          chips.forEach(x=>x.dataset.active='false');
+          c.dataset.active='true';
+          currentCat = c.dataset.chipCat;
+          search();
+        });
+      });
+      azChips.forEach(c=>{
+        c.addEventListener('click', ()=>{
+          const value = c.dataset.az;
+          // Toggle behavior
+          currentAZ = (currentAZ === value) ? '' : value;
+          azChips.forEach(x=>x.dataset.active='false');
+          if(currentAZ){ c.dataset.active='true'; }
+          search();
+        });
+      });
+      resetBtn.addEventListener('click', ()=>{
+        input.value = '';
+        currentCat = 'all';
+        currentAZ = '';
+        chips.forEach(x=>x.dataset.active = (x.dataset.chipCat==='all') ? 'true' : 'false');
+        azChips.forEach(x=>x.dataset.active='false');
+        search();
+        input.focus();
+      });
+
+      // First paint
+      search();
+    })();
+
     // Footer year
     const yEl = document.getElementById('y'); if (yEl) yEl.textContent = new Date().getFullYear();
 
-    // Services dropdown (mobile click)
+    // Services dropdown (mobile)
     const dd = document.getElementById('services-dd');
     const btn = dd?.querySelector('.dropbtn');
     btn?.addEventListener('click', () => {
       const open = dd.classList.toggle('open');
       btn.setAttribute('aria-expanded', String(open));
     });
-
-    // Login dropdown
-    const loginBtn = document.getElementById('loginMenuButton');
-    const loginMenu = document.getElementById('loginMenu');
-    function closeLogin(){ loginMenu?.setAttribute('data-open','false'); loginBtn?.setAttribute('aria-expanded','false'); }
-    loginBtn?.addEventListener('click', (e) => {
-      const isOpen = loginMenu.getAttribute('data-open') === 'true';
-      loginMenu.setAttribute('data-open', String(!isOpen));
-      loginBtn.setAttribute('aria-expanded', String(!isOpen));
-      e.stopPropagation();
-    });
-    document.addEventListener('click', (e) => {
-      if (!loginMenu.contains(e.target) && !loginBtn.contains(e.target)) closeLogin();
-    });
-    document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeLogin(); });
-
-    // Insurer search filter
-    (function(){
-      const search = document.getElementById('insSearch');
-      const cards = Array.from(document.querySelectorAll('#insList .ins-card'));
-      if (!search) return;
-      search.addEventListener('input', () => {
-        const q = (search.value||'').toLowerCase().trim();
-        cards.forEach(c => {
-          const txt = c.innerText.toLowerCase();
-          c.style.display = !q || txt.includes(q) ? '' : 'none';
-        });
-      });
-    })();
   </script>
 </body>
 </html>
+
