@@ -220,31 +220,44 @@
     .why-card .grid.two>div{padding-right:14px}
     .why-card .grid.two>div:last-child{padding-left:14px}
 
+    /* Better mobile layout for Why section */
+    @media(max-width:980px){
+      .why-card{box-shadow:none;border:none;background:transparent;padding:0}
+      .why-joiner{display:none}
+      .why-card .grid.two{grid-template-columns:1fr;gap:22px}
+      .why-card .grid.two>div,
+      .why-card .grid.two>div:last-child{padding:0}
+    }
+
     /* Comparison table – Traditional vs DPC */
-    .compare-wrap{overflow-x:auto;margin-top:32px}
-    .compare-table{width:100%;border-collapse:collapse;font-size:15px}
+    .compare-wrap{
+      margin-top:28px;
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:18px;
+      background:#fff;
+      box-shadow:var(--shadow);
+      overflow-x:auto;
+    }
+    .compare-table{width:100%;border-collapse:collapse;font-size:15px;min-width:680px}
     .compare-table th,
     .compare-table td{padding:12px 14px;border-bottom:1px solid var(--border);text-align:left;vertical-align:top}
     .compare-table thead th{font-size:16px}
     .compare-table thead th:first-child{font-weight:600}
-    .compare-table .col-traditional{background:#f5f7fb}
-    .compare-table .col-dpc{background:#0b3a83;color:#fff}
+    .col-traditional{background:#ffffff;color:var(--ink)}
+    .col-dpc{background:#0b3a83;color:#fff}
     .compare-table .col-dpc span{color:#e0edff}
     .compare-tag{display:inline-block;font-size:11px;padding:3px 8px;border-radius:999px;background:rgba(255,255,255,.18);margin-top:4px}
     .compare-yes{font-weight:700}
-    .compare-no{color:#b3261e;font-weight:600}
+    .compare-no{color:#ffcdd2;font-weight:600}
     .compare-limited{color:#7a7a7a}
 
-    /* Big-tab FAQ */
-    .faq-tabs{display:grid;grid-template-columns:320px 1fr;gap:20px}
-    @media(max-width:980px){ .faq-tabs{grid-template-columns:1fr} }
-    .faq-nav{display:flex;flex-direction:column;gap:10px}
-    .faq-tab{
-      padding:14px 16px;border-radius:14px;border:1px solid var(--border);background:#fff;font-weight:700;cursor:pointer;text-align:left;
+    /* Make entire urHealthcare column blue */
+    .compare-table tbody td:nth-child(3){
+      background:#0b3a83;
+      color:#fff;
     }
-    .faq-tab[aria-selected="true"]{background:var(--soft);border-color:#cfe9ff}
-    .faq-panel{background:#fff;border:1px solid var(--border);border-radius:16px;padding:18px;box-shadow:var(--shadow)}
-    .faq-panel h3{margin-top:0}
+    .compare-table tbody tr:last-child td{border-bottom:none}
 
     /* Footer */
     .ftr{background:var(--brand);color:#fff;padding:28px 0;margin-top:40px}
@@ -302,7 +315,7 @@
     </div>
   </header>
 
-  <!-- Hero (One Medical–style) -->
+  <!-- Hero -->
   <section class="section">
     <div class="container hero-wrap">
       <div class="hero-copy">
@@ -333,7 +346,7 @@
     </div>
   </section>
 
-  <!-- A modern approach band -->
+  <!-- Modern approach band -->
   <section class="section band">
     <div class="container-narrow">
       <h2>A modern approach to primary care</h2>
@@ -346,7 +359,7 @@
     </div>
   </section>
 
-  <!-- What’s Included (kept, just visually earlier in the flow) -->
+  <!-- Included -->
   <section id="included" class="section">
     <div class="container">
       <h2 class="reveal">What’s included in your urHealthcare membership</h2>
@@ -379,7 +392,7 @@
     </div>
   </section>
 
-  <!-- Comparison: Traditional vs Direct Primary Care -->
+  <!-- Comparison -->
   <section class="section band" id="compare">
     <div class="container">
       <h2 class="reveal">How urHealthcare compares to traditional primary care</h2>
@@ -394,7 +407,7 @@
               <th></th>
               <th class="col-traditional">
                 Traditional primary care
-                <div class="compare-tag">Insurance-based</div>
+                <div class="compare-tag" style="background:rgba(11,58,131,.06);color:var(--ink)">Insurance-based</div>
               </th>
               <th class="col-dpc">
                 urHealthcare Direct Primary Care
@@ -588,7 +601,7 @@
     </div>
   </section>
 
-  <!-- Big-tab FAQ -->
+  <!-- FAQ -->
   <section class="section" id="faq">
     <div class="container">
       <h2 class="reveal">Membership FAQ</h2>
@@ -679,7 +692,7 @@
     </div>
   </footer>
 
-  <!-- JSON-LD kept concise & consistent -->
+  <!-- JSON-LD concise -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
