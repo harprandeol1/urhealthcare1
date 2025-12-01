@@ -242,12 +242,15 @@
     .compare-inner{
       min-width:720px;
     }
-    .compare-head-row{
-      display:grid;
-      grid-template-columns:2.1fr 1.2fr 1.2fr;
-      gap:12px;
-      margin-bottom:8px;
-    }
+    /* Comparison – One Medical style */
+.compare-head-row{
+  display:grid;
+  /* OLD: grid-template-columns:2.1fr 1.2fr 1.2fr; */
+  grid-template-columns:4fr 3fr 3fr;  /* 40% / 30% / 30% to align with table */
+  gap:12px;
+  margin-bottom:8px;
+}
+
     .compare-head-spacer{padding:8px}
     .compare-head-card{
       border-radius:18px 18px 12px 12px;
