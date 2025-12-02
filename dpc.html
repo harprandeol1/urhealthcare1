@@ -203,6 +203,38 @@
     .pill-switch .btn{padding:10px 14px}
     .pricing-note{margin-top:10px;font-size:14px;color:var(--muted)}
 
+    .plan-grid{
+      display:grid;
+      gap:28px;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      margin-top:18px;
+    }
+    @media(max-width:980px){
+      .plan-grid{grid-template-columns:1fr}
+    }
+    .plan-card{position:relative;overflow:hidden}
+    .plan-comprehensive{
+      background:#ffffff;
+    }
+    .plan-premium{
+      background:linear-gradient(135deg,#0b3a83,#174ea6);
+      color:#fff;
+      border-color:#052655;
+    }
+    .plan-premium p,
+    .plan-premium .small,
+    .plan-premium .plan-meta{
+      color:#e0edff;
+    }
+    .plan-meta{font-size:14px;color:var(--muted);}
+    .plan-premium .price{color:#fff;}
+    .plan-premium .btn{
+      background:#fff;
+      color:#0b3a83;
+      border-color:#fff;
+    }
+    .plan-included{font-size:14px;margin-top:8px;}
+
     /* Reveal */
     .reveal{opacity:0;transform:translateY(22px);transition:opacity .75s ease,transform .75s ease}
     .reveal.in{opacity:1;transform:none}
@@ -229,7 +261,7 @@
       .why-card .grid.two>div:last-child{padding:0}
     }
 
-    /* Comparison – One Medical style */
+    /* Comparison – One Medical–style */
     .compare-shell{
       margin-top:32px;
       border-radius:24px;
@@ -242,15 +274,12 @@
     .compare-inner{
       min-width:720px;
     }
-    /* Comparison – One Medical style */
-.compare-head-row{
-  display:grid;
-  /* OLD: grid-template-columns:2.1fr 1.2fr 1.2fr; */
-  grid-template-columns:4fr 3fr 3fr;  /* 40% / 30% / 30% to align with table */
-  gap:12px;
-  margin-bottom:8px;
-}
-
+    .compare-head-row{
+      display:grid;
+      grid-template-columns:4fr 3fr 3fr; /* aligned with 40% / 30% / 30% */
+      gap:12px;
+      margin-bottom:8px;
+    }
     .compare-head-spacer{padding:8px}
     .compare-head-card{
       border-radius:18px 18px 12px 12px;
@@ -419,17 +448,17 @@
   <section class="section">
     <div class="container hero-wrap">
       <div class="hero-copy">
-        <span class="hero-label">Healthcare Membership</span>
-        <h1>Direct Primary Care, $59/month.</h1>
+        <span class="hero-label">Comprehensive Care Plan</span>
+        <h1>Care for your family, $79/month.</h1>
         <p class="hero-sub">
           Direct primary care with unlimited visits, urgent care 7 days a week, and
           virtual care — all from a team you know and choose.
         </p>
 
         <div class="hero-pill">
-          <span>Individual & Family membership</span>
-          <strong>$59/month</strong>
-          <span>Primary Care • Urgent Care • Telemedicine </span>
+          <span>Family membership</span>
+          <strong>$79/month</strong>
+          <span>Month-to-month • Cancel anytime • Medications & labs from home</span>
         </div>
 
         <div class="hero-actions">
@@ -469,7 +498,7 @@
           <p>Preventive, chronic, and acute care with the provider you choose.</p>
         </div>
         <div class="card reveal">
-          <h3>Urgent Care</h3>
+          <h3>7-Day Urgent Care</h3>
           <p>Walk-in or virtual care for common illnesses & injuries, 7 days a week.</p>
         </div>
         <div class="card reveal">
@@ -477,12 +506,12 @@
           <p>Included at no extra cost, with home delivery options. <a href="included-meds.html">See list</a>.</p>
         </div>
         <div class="card reveal">
-          <h3>Labs </h3>
-          <p>Routine panels and rapid tests.</p>
+          <h3>Labs from Home</h3>
+          <p>Routine panels and rapid tests, including options for labs drawn at your home.</p>
         </div>
         <div class="card reveal">
           <h3>Imaging</h3>
-          <p>On-site X-ray for faster diagnosis.</p>
+          <p>On-site X-ray & ultrasound for faster diagnosis.</p>
         </div>
         <div class="card reveal">
           <h3>Common Procedures</h3>
@@ -534,9 +563,9 @@
                 <td>Included medication list with home delivery options</td>
               </tr>
               <tr>
-                <th>Labs drawn in office</th>
+                <th>Labs drawn at your home</th>
                 <td><span class="compare-limited">Rarely available</span></td>
-                <td>Available — labs drawn in office</td>
+                <td>Available — many labs can be drawn at home</td>
               </tr>
               <tr>
                 <th>24/7 access to care team</th>
@@ -591,7 +620,7 @@
       <div class="pricing-intro">
         <h2 class="reveal">Membership pricing</h2>
         <p class="pricing-note reveal">
-         
+          Month-to-month membership. Cancel anytime. Medications and many labs are available from home.
         </p>
         <div class="pill-switch reveal" role="tablist" aria-label="Billing period">
           <button id="tab-monthly" class="btn outline" role="tab" aria-selected="true">Monthly</button>
@@ -600,64 +629,79 @@
       </div>
 
       <!-- Monthly -->
-      <div id="prices-monthly" class="grid three" aria-labelledby="tab-monthly" style="margin-top:18px">
-        <div class="card reveal">
-          <h3>Primary Member</h3>
+      <div id="prices-monthly" class="plan-grid" aria-labelledby="tab-monthly">
+        <!-- Comprehensive Care Plan -->
+        <div class="card plan-card plan-comprehensive reveal">
+          <h3>Comprehensive Care Plan</h3>
           <div class="price-row">
-            <span class="old-price">$79/mo</span>
-            <div class="price">$59/mo</div>
+            <span class="old-price">$99/mo</span>
+            <div class="price">$79/mo</div>
           </div>
-          <p>Unlimited care, same/next-day access for the main member.</p>
-          <a class="btn" href="https://urhealthcare.hint.com/signup/membership/contacts?=">Join Online</a>
+          <p class="plan-meta">
+            Includes primary member plus spouse and up to 2 children (5+) at $0/month.
+          </p>
+          <ul class="list-clean plan-included">
+            <li>Unlimited in-clinic &amp; virtual visits</li>
+            <li>7-day urgent care access</li>
+            <li>250+ included medications &amp; core labs</li>
+          </ul>
+          <br>
+          <a class="btn" href="https://urhealthcare.hint.com/signup/membership/contacts?=">Choose Comprehensive</a>
         </div>
-        <div class="card reveal">
-          <h3>Spouse</h3>
-          <div class="price-row">
-            <span class="old-price">$50/mo</span>
-            <div class="price">$0/mo</div>
-          </div>
-          <p>Add your spouse at no additional monthly cost.</p>
-          <a class="btn" href="https://urhealthcare.hint.com/signup/membership/contacts?=">Add Spouse</a>
-        </div>
-        <div class="card reveal">
-          <h3>Children (5+)</h3>
-          <div class="price-row">
-            <span class="old-price">$30/mo</span>
-            <div class="price">$0/mo</div>
-          </div>
-          <p>Up to 2 kids included at $0/month for pediatric sick &amp; well visits.</p>
-          <a class="btn" href="https://urhealthcare.hint.com/signup/membership/contacts?=">Add Children</a>
+
+        <!-- Premium Care Plan -->
+        <div class="card plan-card plan-premium reveal">
+          <h3>Premium Care Plan</h3>
+          <div class="price">$199/mo</div>
+          <p class="plan-meta">
+            Spouse and up to 2 children (5+) included at $0/month.
+          </p>
+          <ul class="list-clean plan-included">
+            <li>Medication home delivery</li>
+            <li>Lab collection from home</li>
+            <li>Same-day appointment guarantee</li>
+            <li>Everything in the Comprehensive Care Plan</li>
+          </ul>
+          <br>
+          <a class="btn" href="https://urhealthcare.hint.com/signup/membership/contacts?=">Choose Premium</a>
         </div>
       </div>
 
       <!-- Yearly -->
-      <div id="prices-yearly" class="grid three" aria-labelledby="tab-yearly" style="display:none;margin-top:18px">
-        <div class="card reveal">
-          <h3>Primary Member</h3>
+      <div id="prices-yearly" class="plan-grid" aria-labelledby="tab-yearly" style="display:none">
+        <!-- Comprehensive yearly -->
+        <div class="card plan-card plan-comprehensive reveal">
+          <h3>Comprehensive Care Plan</h3>
           <div class="price-row">
-            <span class="old-price">$799/yr</span>
-            <div class="price">$599/yr</div>
+            <div class="price">$948/yr</div>
           </div>
-          <p>Pay once for the year and save vs. monthly. Spouse &amp; up to 2 kids still $0.</p>
-          <a class="btn" href="https://urhealthcare.hint.com/signup/membership/contacts?=">Join Yearly</a>
+          <p class="plan-meta">
+            Equivalent to $79/month. Spouse and up to 2 children (5+) included at $0/year.
+          </p>
+          <ul class="list-clean plan-included">
+            <li>Unlimited visits all year</li>
+            <li>7-day urgent care access</li>
+            <li>250+ included medications &amp; core labs</li>
+          </ul>
+          <br>
+          <a class="btn" href="https://urhealthcare.hint.com/signup/membership/contacts?=">Choose Comprehensive Yearly</a>
         </div>
-        <div class="card reveal">
-          <h3>Spouse</h3>
-          <div class="price-row">
-            <span class="old-price">$399/yr</span>
-            <div class="price">$0/yr</div>
-          </div>
-          <p>Spouse membership included with your plan.</p>
-          <a class="btn" href="https://urhealthcare.hint.com/signup/membership/contacts?=">Add Spouse Yearly</a>
-        </div>
-        <div class="card reveal">
-          <h3>Children (5+)</h3>
-          <div class="price-row">
-            <span class="old-price">$199/yr</span>
-            <div class="price">$0/yr</div>
-          </div>
-          <p>Up to 2 children (5+) included at no yearly fee.</p>
-          <a class="btn" href="https://urhealthcare.hint.com/signup/membership/contacts?=">Add Children Yearly</a>
+
+        <!-- Premium yearly -->
+        <div class="card plan-card plan-premium reveal">
+          <h3>Premium Care Plan</h3>
+          <div class="price">$2,388/yr</div>
+          <p class="plan-meta">
+            Equivalent to $199/month. Spouse and up to 2 children (5+) included at $0/year.
+          </p>
+          <ul class="list-clean plan-included">
+            <li>Medication home delivery</li>
+            <li>Lab collection from home</li>
+            <li>Same-day appointment guarantee</li>
+            <li>Everything in the Comprehensive Care Plan</li>
+          </ul>
+          <br>
+          <a class="btn" href="https://urhealthcare.hint.com/signup/membership/contacts?=">Choose Premium Yearly</a>
         </div>
       </div>
 
@@ -732,7 +776,8 @@
           <div class="faq-a">
             <p>
               Unlimited visits, same/next-day access, 7-day urgent care, 250+ covered meds, basic labs,
-              X-ray &amp;  and common procedures like stitches, splints, and abscess drainage
+              X-ray &amp; ultrasound, and common procedures like stitches, splints, and abscess drainage,
+              plus options for home labs and medication delivery.
             </p>
           </div>
         </div>
@@ -769,7 +814,8 @@
           <div class="faq-a">
             <p>
               Yes—common meds on our covered list are included at no extra cost, along with routine labs
-              and on-site X-ray for faster diagnosis. 
+              and on-site X-ray/ultrasound for faster diagnosis. Many labs and medications can be arranged
+              from home.
             </p>
           </div>
         </div>
@@ -780,7 +826,7 @@
             <span class="icon">+</span>
           </button>
           <div class="faq-a">
-            <p>Membership is available to patients <strong>65 years and younger</strong>. Children 3+ can be added.</p>
+            <p>Membership is available to patients <strong>65 years and younger</strong>. Children 5+ can be added.</p>
           </div>
         </div>
 
